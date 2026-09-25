@@ -8,24 +8,33 @@ Se lee y se escribe con la herramienta `ArtifactData`.
 - `ArtifactData list` de `inmuebles` (limit 1000) con `out_dir` al scratchpad.
 - Anotar, por inmueble: fuentes (código y URL), precio, estatus y `version` (para `if_version`).
 
-## 2. Buscar publicaciones
+## 2. Buscar publicaciones (SOLO RE/MAX Venezuela y MercadoLibre)
 Por cada zona y tipo (venta y alquiler):
 - Guatire, Guarenas, Costa Mirandina (Higuerote, Río Chico, Carenero, Tacarigua, Buche, Chirimena, Paparo).
 - Residencial (apartamento, casa, townhouse), terreno, galpón, local.
-- Fuentes: Rent-A-House (`site:rentahouse.com.ve`, títulos "RAH … Precio Referencial"), RE/MAX
-  (`remax.com.ve`), MercadoLibre, Tu Inmueble, Conlallave, Century 21, Inmobiliaria.com, BienesOnline, ZonaVen.
-- Primero se prueba `WebFetch` directo; si el portal está bloqueado, se usa `WebSearch`.
+- **Únicas fuentes permitidas:**
+  - RE/MAX Venezuela: `www.remax.com.ve/inmuebles/...` (se busca con `allowed_domains: ["remax.com.ve"]`).
+  - MercadoLibre: `apartamento.` / `casa.` / `inmueble.mercadolibre.com.ve/MLV-...` (se busca con `allowed_domains: ["mercadolibre.com.ve"]`).
+- No se agrega nada de otros portales. Solo se aceptan otros enlaces cuando los envía Eduardo.
+- El enlace guardado tiene que ser **la publicación individual**, nunca una página de búsqueda o de listado.
+- Primero se prueba `WebFetch` en la publicación; si está bloqueada, se usa `WebSearch`.
 
 ## 3. Reglas
-- **Nuevos:** venta ≥ USD 20.000 (alquiler sin mínimo) que no estén ya en la base (mismo código o URL,
-  o mismo sector + precio + m²). ID con el prefijo de la zona (GTR/GRN/CST) y el siguiente número libre.
-  `fecha_detectada` = hoy. Historial: "Nuevo en actualización semanal". Hay que calificar los 5 criterios (1-5)
-  y escribir la `nota` explicando por qué la inversión es buena, media o baja.
-  Estatus `disponible` si la publicación es reciente; si no, `por_verificar`.
+- **Exactitud antes que cantidad:** habitaciones, baños, puestos, m² y precio se anotan **solo si la
+  publicación los dice explícitamente**. Si hay dudas, el campo queda vacío y se explica en la `nota`.
+  Nunca se suma, redondea ni supone (por ejemplo, "4 habitaciones + estudio" son 4 habitaciones).
+  Un precio que aparece en un resumen de varias publicaciones no se asigna a una publicación concreta.
+- `verificado = true` solo cuando se leyó la página de la publicación (`WebFetch`) y los datos coinciden.
+  Si los datos salieron del buscador, `verificado = false`.
+- **Nuevos:** venta ≥ USD 20.000 (o sin precio visible) y alquileres sin mínimo, que no estén ya en la base
+  (mismo código RE/MAX o MLV, o misma URL). ID con el prefijo de la zona (GTR/GRN/CST) y el siguiente número libre.
+  `fecha_detectada` = hoy, estatus `por_verificar` y al historial "Nuevo en actualización semanal". Hay que calificar
+  los 5 criterios (1-5) y escribir la `nota`: por qué la inversión es buena, media o baja, o qué dato falta.
 - **Cambios de precio:** actualizar `precio` y agregar al historial "Cambio de precio (antes $X)".
-- **Ya no aparece** (la URL da 404 o el anuncio dice vendido o pausado): estatus `retirado` y al historial
+- **Ya no aparece** (la publicación da 404 o dice finalizada o pausada): estatus `retirado` y al historial
   "Publicación no encontrada: posible venta". **Nunca marcar `vendido`**: eso lo confirma Eduardo.
-- **No tocar** los inmuebles en `negociacion` o `vendido`, ni la `nota` o `cal` que Eduardo haya editado.
+- **No tocar** los inmuebles en `negociacion` o `vendido`, ni los que tengan `verificado = true`
+  (salvo precio y estatus), ni la `nota` o `cal` que Eduardo haya editado.
 - Escribir en lotes (`batch`, máximo 50) con `if_version`.
 - Actualizar `ultima_verificacion` = hoy en los que se volvieron a encontrar.
 

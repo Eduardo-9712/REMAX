@@ -4,6 +4,9 @@ Estudio de mercado y análisis comparativo privado de **Eduardo León (RE/MAX)**
 **Guatire**, **Guarenas** y la **Costa Mirandina**, dividido en residencial, terrenos,
 galpones y locales, en venta y en alquiler.
 
+**Fuentes: solo RE/MAX Venezuela y MercadoLibre** (más los enlaces que envíe Eduardo). Cada inmueble
+guarda el enlace directo a su publicación.
+
 - **Aplicación (privada):** https://claude.ai/artifact/PA1onp1SF72ZFpKKgjhyYY
 - **Código de la aplicación:** `app/index.html`
 - **Copia de los datos:** `data/inmuebles.json` (la base de datos viva está en la aplicación)
@@ -42,6 +45,8 @@ precios y estatus. **Exportar a Excel** genera un libro con una hoja por zona m�
 
 ## Reglas del estudio
 
+- Habitaciones, baños, m² y precio se anotan solo si la publicación los dice. La marca **Confirmado**
+  indica que los datos se revisaron contra la página del anuncio.
 - Solo se incluyen ventas desde **USD 20.000**, sin tope. Los alquileres se incluyen como referencia de renta.
 - Un anuncio que desaparece pasa a **Retirado**, nunca a **Vendido**: eso lo confirma Eduardo.
 - La actualización corre cada **domingo a las 9:00 p.m.** (hora de Venezuela).

@@ -114,6 +114,7 @@ td.mono{white-space:nowrap}
 .delta{font-size:12px;font-weight:700}
 .delta.dn{color:var(--good)} .delta.up{color:var(--low)}
 .star{color:var(--mid)}
+.ok{font-family:var(--f-body);font-size:11.5px;font-weight:700;color:var(--good)}
 
 /* Panel */
 .grid2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;margin-top:16px}
@@ -180,6 +181,7 @@ td.mono{white-space:nowrap}
     <div class="brand">
       <div class="mark"><span><span class="r">RE</span><span class="b">/MAX</span></span><span class="who">EDUARDO LEÓN · ASESOR INMOBILIARIO</span></div>
       <h1>Estudio de Mercado <span>·</span> Este de Miranda</h1>
+      <div class="sub">Fuentes: RE/MAX Venezuela · MercadoLibre</div>
     </div>
     <div class="tools">
       <span class="sync" id="sync"><span class="dot" id="syncdot"></span><span id="synctxt">Conectando…</span></span>
@@ -196,9 +198,9 @@ td.mono{white-space:nowrap}
 <script>
 /* ───────────── Configuración ───────────── */
 const ZONAS = [
-  {id:"guatire", nombre:"Guatire", pref:"GTR", sectores:["El Ingenio","Castillejo","Villa Heroica","Buenaventura","Villas de Buenaventura","Valle Arriba","Las Rosas","La Sabana","San Pedro","Frutas Condominio","Terrazas del Ingenio","Valle Grande","El Marqués","Araira","Vega Arriba (Z.I.)","Zona Industrial Terrinca","Zona Industrial Inproceca","Guatire (centro)","Plaza Oro","Las Acacias"]},
-  {id:"guarenas", nombre:"Guarenas", pref:"GRN", sectores:["Trapichito","Menca de Leoni","Nueva Casarapa","Ciudad Casarapa","El Naranjal","La Vaquera","Los Girasoles","Ruiz Pineda","Guarenas (centro)","Zona Industrial del Este","Zona Industrial Cloris","Los Naranjos","Av. Intercomunal Guarenas-Guatire"]},
-  {id:"costa", nombre:"Costa Mirandina", pref:"CST", sectores:["Higuerote","Higuerote (Ciudad Balneario)","Higuerote (Agua Sal)","Higuerote (Playa Cristal)","Carenero","Río Chico","Río Chico (Los Canales)","Tacarigua de la Laguna","Tacarigua","Buche","Chirimena","Paparo"]},
+  {id:"guatire", nombre:"Guatire", pref:"GTR", sectores:["El Ingenio","Castillejo","Villa Heroica","Buenaventura","Villas de Buenaventura","Valle Arriba","Las Rosas","La Sabana","San Pedro","Frutas Condominio","Terrazas del Ingenio","Valle Grande","El Marqués","Araira","Vega Arriba (Z.I.)","Zona Industrial Terrinca","Zona Industrial Inproceca","Guatire (centro)","Plaza Oro","Las Acacias","Buena Vista","El Encantado","El Refugio","Los Pinos","Canaima II","Las Barrancas","Casco central"]},
+  {id:"guarenas", nombre:"Guarenas", pref:"GRN", sectores:["Trapichito","Menca de Leoni","Nueva Casarapa","Ciudad Casarapa","El Naranjal","La Vaquera","Los Girasoles","Ruiz Pineda","Guarenas (centro)","Zona Industrial del Este","Zona Industrial Cloris","Los Naranjos","Terrazas del Este","Oropeza Castillo","El Calvario","Alto Grande (Loma Linda)","Av. Intercomunal Guarenas-Guatire"]},
+  {id:"costa", nombre:"Costa Mirandina", pref:"CST", sectores:["Higuerote","Higuerote (Ciudad Balneario)","Higuerote (Agua Sal)","Higuerote (Playa Cristal)","Higuerote (Puerto Encantado)","Higuerote (Jardín Higuerote)","Carenero","Río Chico","Río Chico (Los Canales)","Tacarigua de la Laguna","Tacarigua","Buche","Chirimena","Paparo"]},
 ];
 const TIPOS = [
   {id:"residencial", nombre:"Residencial"},
@@ -278,6 +280,7 @@ function comparables(it){
 
 function evaluar(it, perfil="general"){
   if(it.operacion!=="venta") return {ref:true};
+  if(it.precio==null || it.precio==="") return {falta:true};
   const w = PERFILES[perfil].w, c = it.cal || {};
   const sub = {}; let ratio=null, comp=null;
   const p = ppm2(it);
@@ -295,6 +298,7 @@ const claseColor = {exc:"var(--good)", med:"var(--mid)", baj:"var(--low)"};
 
 function analisis(it, ev){
   if(ev.ref) return ["Es un alquiler: sirve de referencia para calcular la renta de los inmuebles en venta del mismo sector."];
+  if(ev.falta) return ["Falta el precio. Ábrelo en la plataforma, anota el precio y los m² y el puntaje se calcula solo."];
   const out = [];
   if(ev.ratio!=null){
     const pct = Math.round((ev.ratio-1)*100);
@@ -376,7 +380,8 @@ function vistaPanel(){
     <div class="kpi"><span class="lbl">Nuevos esta semana</span><b class="num">${semana}</b><small>detectados en los últimos 7 días</small></div>
     <div class="kpi"><span class="lbl">Salieron del mercado</span><b class="num">${salieron}</b><small>vendidos, alquilados o retirados</small></div>
     <div class="kpi"><span class="lbl">Oportunidades excelentes</span><b class="num" style="color:var(--good)">${exc}</b><small>puntaje de 75 o más</small></div>
-    <div class="kpi"><span class="lbl">Por verificar</span><b class="num" style="color:var(--info)">${act.filter(i=>i.estatus==="por_verificar").length}</b><small>confirmar vigencia y datos</small></div>
+    <div class="kpi"><span class="lbl">Por verificar</span><b class="num" style="color:var(--info)">${act.filter(i=>i.estatus==="por_verificar").length}</b><small>${act.filter(i=>i.operacion==="venta"&&i.precio==null).length} sin precio publicado a la vista</small></div>
+    <div class="kpi"><span class="lbl">Datos confirmados</span><b class="num" style="color:var(--good)">${act.filter(i=>i.verificado).length}</b><small>revisados contra la publicación</small></div>
   </div>
   <div class="grid2">
     <div class="card"><h2>Mapa del inventario</h2>${mat}</div>
@@ -454,16 +459,16 @@ function vistaZona(){
     <tbody>${rows.map(({it,ev})=>{
       const d = ev.ratio!=null ? Math.round((ev.ratio-1)*100) : null;
       return `<tr data-open="${esc(it.id)}">
-      <td class="mono">${it.favorito?'<span class="star">★</span> ':""}${esc(it.id)}</td>
+      <td class="mono">${it.favorito?'<span class="star">★</span> ':""}${esc(it.id)}${it.verificado?'<div class="ok" title="Datos confirmados en la publicación">✓ Confirmado</div>':""}</td>
       <td><div class="tt">${esc(it.titulo)}</div><div class="sub">${esc(it.sector)} · ${esc(it.subtipo)}</div></td>
       <td><span class="op ${it.operacion}">${it.operacion==="venta"?"Venta":"Alquiler"}</span></td>
-      <td class="r num"><b>${usd(it.precio)}</b>${it.operacion==="alquiler"?'<div class="sub">al mes</div>':""}</td>
+      <td class="r num">${it.precio==null?'<span class="sub">Por confirmar</span>':`<b>${usd(it.precio)}</b>`}${it.operacion==="alquiler"&&it.precio!=null?'<div class="sub">al mes</div>':""}</td>
       <td class="r num">${fmt(area(it))}</td>
       <td class="r num">${ppm2(it)?usd(ppm2(it)):"—"}${d!=null?`<div class="delta ${d<0?"dn":"up"}">${d>0?"+":""}${d}%</div>`:""}</td>
       <td>${extra(it)}</td>
       <td class="r num">${dias(it.fecha_detectada)??"—"}</td>
       <td><span class="chip st-${it.estatus}">${stNom(it.estatus)}</span></td>
-      <td>${ev.ref?'<span class="chip cl-ref">Referencia</span>':`<div class="score"><span class="bar"><i style="width:${ev.score}%;background:${claseColor[ev.clase]}"></i></span><b class="num">${ev.score}</b><span class="chip cl-${ev.clase}">${claseNom[ev.clase]}</span></div>`}</td>
+      <td>${ev.ref?'<span class="chip cl-ref">Referencia</span>':ev.falta?'<span class="chip cl-ref">Falta precio</span>':`<div class="score"><span class="bar"><i style="width:${ev.score}%;background:${claseColor[ev.clase]}"></i></span><b class="num">${ev.score}</b><span class="chip cl-${ev.clase}">${claseNom[ev.clase]}</span></div>`}</td>
     </tr>`;}).join("") || `<tr><td colspan="10" class="empty">No hay inmuebles con estos filtros.</td></tr>`}</tbody>
   </table></div>
   <p class="sub">El % debajo del $/m² compara con la mediana de sus comparables (verde: más barato). Toca una fila para ver la ficha completa, editarla o cambiar el estatus.</p>`;
@@ -488,12 +493,14 @@ function pintarDrawer(){
     <div class="dhead"><div><div class="mono muted">${esc(D.id)} · ${esc(zonaNom(D.zona))} · ${esc(tipoNom(D.tipo))}</div><h2>${esc(D.titulo||"Nuevo inmueble")}</h2></div>
       <button class="btn sm" id="d-close" type="button" aria-label="Cerrar">Cerrar ✕</button></div>
     <div class="statusbar">${ESTATUS.map(s=>`<button type="button" class="st-${s.id}" data-st="${s.id}" aria-pressed="${D.estatus===s.id}">${s.nombre}</button>`).join("")}
-      <button type="button" data-fav aria-pressed="${!!D.favorito}" style="color:var(--mid)">${D.favorito?"★ Destacado":"☆ Destacar"}</button></div>
+      <button type="button" data-fav aria-pressed="${!!D.favorito}" style="color:var(--mid)">${D.favorito?"★ Destacado":"☆ Destacar"}</button>
+      <button type="button" data-verif aria-pressed="${!!D.verificado}" style="color:var(--good)">${D.verificado?"✓ Confirmado en la publicación":"Marcar datos como confirmados"}</button></div>
+    ${D.verificado?"":`<p class="sub" style="margin:-6px 0 12px">Los datos de esta ficha vienen del buscador y todavía no se han comparado con la publicación. Abre el enlace, revisa habitaciones, baños, m² y precio, y márcala como confirmada.</p>`}
 
-    <div class="analysis">${ev.ref?`<b>Alquiler: sirve como referencia de renta</b>`:`
+    <div class="analysis">${ev.ref?`<b>Alquiler: sirve como referencia de renta</b>`:ev.falta?`<b>Sin puntaje todavía: falta el precio</b>`:`
       <div class="big"><b class="num" style="color:${claseColor[ev.clase]}">${ev.score}</b><div><span class="chip cl-${ev.clase}">Inversión ${claseNom[ev.clase]}</span><div class="sub">Puntaje de 0 a 100 con el perfil general</div></div></div>`}
       <ul>${analisis(D,ev).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
-      ${ev.ref?"":`<div class="breakdown">${CRIT.map(([k,n])=>`<span class="muted">${n} · ${Math.round(PERFILES.general.w[k]*100)}%</span><b class="num">${ev.sub[k]==null?"—":Math.round(ev.sub[k])}</b>`).join("")}</div>`}
+      ${ev.ref||ev.falta?"":`<div class="breakdown">${CRIT.map(([k,n])=>`<span class="muted">${n} · ${Math.round(PERFILES.general.w[k]*100)}%</span><b class="num">${ev.sub[k]==null?"—":Math.round(ev.sub[k])}</b>`).join("")}</div>`}
     </div>
 
     <div class="sec"><h3>Análisis del asesor</h3>
@@ -530,7 +537,7 @@ function pintarDrawer(){
 
     <div class="sec"><h3>Fuentes y enlaces</h3><div class="src">
       ${(D.fuentes||[]).map((s,i)=>`<div class="row"><b>${esc(s.nombre)}</b>${s.codigo?`<span class="mono">${esc(s.codigo)}</span>`:""}${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">Abrir publicación ↗</a>`:""}<button class="btn sm danger" type="button" data-delsrc="${i}">Quitar</button></div>`).join("") || `<span class="muted">Sin fuentes.</span>`}
-      <div class="form"><label>Plataforma<input id="ns-nombre" placeholder="MercadoLibre, Instagram…"></label><label>Código<input id="ns-codigo"></label><label class="wide">Enlace<input id="ns-url" placeholder="https://…"></label></div>
+      <div class="form"><label>Plataforma<select id="ns-nombre"><option>RE/MAX Venezuela</option><option>MercadoLibre</option><option value="Enlace enviado por Eduardo">Otro enlace (enviado por Eduardo)</option></select></label><label>Código<input id="ns-codigo"></label><label class="wide">Enlace<input id="ns-url" placeholder="https://…"></label></div>
       <div><button class="btn sm" type="button" id="d-addsrc">Añadir fuente</button></div>
     </div></div>
 
@@ -564,6 +571,7 @@ async function guardarDrawer(){
   else {
     if(prev.precio!==D.precio) D.historial.push({fecha:hoy(), evento:`Cambio de precio (antes ${usd(prev.precio)})`, precio:D.precio});
     if(prev.estatus!==D.estatus) D.historial.push({fecha:hoy(), evento:`Estatus: ${stNom(prev.estatus)} → ${stNom(D.estatus)}`});
+    if(!prev.verificado && D.verificado) D.historial.push({fecha:hoy(), evento:"Datos confirmados en la publicación"});
   }
   const it = {...D}; delete it._conf;
   if(await guardar(it)){ toast("Cambios guardados"); cerrar(); }
@@ -577,7 +585,7 @@ function plantilla(){
   const zona = ZONAS.some(z=>z.id===S.tab) ? S.tab : "guatire";
   return {id:nuevoId(zona), zona, tipo:S.tipo, subtipo:"", operacion:"venta", sector:"", titulo:"", precio:null, m2c:null, m2t:null,
     hab:null, banos:null, puestos:null, specs:{}, descripcion:"", fuentes:[], cal:{ubicacion:3,estado:3,rentabilidad:3,liquidez:3,documentacion:3},
-    nota:"", estatus:"disponible", fecha_detectada:hoy(), ultima_verificacion:hoy(), historial:[], agente:"", contacto:"", favorito:false};
+    nota:"", estatus:"disponible", fecha_detectada:hoy(), ultima_verificacion:hoy(), historial:[], agente:"", contacto:"", favorito:false, verificado:false};
 }
 
 /* ───────────── Clientes e inversionistas ───────────── */
@@ -628,7 +636,7 @@ function vistaClientes(){
         <td><div class="tt">${esc(it.titulo)}</div><div class="sub">${esc(zonaNom(it.zona))} · ${esc(it.sector)} · <span class="mono">${esc(it.id)}</span></div></td>
         <td class="r num"><b>${usd(it.precio)}</b></td><td class="r num">${fmt(area(it))}</td>
         <td><span class="chip st-${it.estatus}">${stNom(it.estatus)}</span></td>
-        <td>${ev.ref?'<span class="chip cl-ref">Ref.</span>':`<div class="score"><b class="num">${ev.score}</b><span class="chip cl-${ev.clase}">${claseNom[ev.clase]}</span></div>`}</td></tr>`).join("") || `<tr><td colspan="6" class="empty">Ningún inmueble activo cumple estos criterios.</td></tr>`}
+        <td>${ev.ref?'<span class="chip cl-ref">Ref.</span>':ev.falta?'<span class="chip cl-ref">Falta precio</span>':`<div class="score"><b class="num">${ev.score}</b><span class="chip cl-${ev.clase}">${claseNom[ev.clase]}</span></div>`}</td></tr>`).join("") || `<tr><td colspan="6" class="empty">Ningún inmueble activo cumple estos criterios.</td></tr>`}
       </tbody></table></div>`:`<p class="muted">Crea o elige un cliente: cuando dices "llegó un inversionista que busca esto", aquí aparecen los inmuebles del estudio que le sirven, ordenados según su perfil.</p>`}
     </div></div>`;
 }
@@ -659,9 +667,9 @@ async function exportar(){
   const wb = XLSX.utils.book_new();
   const fila = it => { const ev=evaluar(it); return {
     "Código":it.id, "Tipo":tipoNom(it.tipo), "Subtipo":it.subtipo, "Operación":it.operacion, "Sector":it.sector, "Título":it.titulo,
-    "Precio USD":it.precio, "m² construcción":it.m2c, "m² terreno":it.m2t, "$/m²":ppm2(it)?Math.round(ppm2(it)):null,
+    "Precio USD":it.precio, "Datos confirmados":it.verificado?"Sí":"No", "m² construcción":it.m2c, "m² terreno":it.m2t, "$/m²":ppm2(it)?Math.round(ppm2(it)):null,
     "Habitaciones":it.hab, "Baños":it.banos, "Puestos":it.puestos, "Estatus":stNom(it.estatus),
-    "Puntaje":ev.ref?"":ev.score, "Calificación":ev.ref?"Referencia":claseNom[ev.clase], "Análisis":it.nota,
+    "Puntaje":ev.ref||ev.falta?"":ev.score, "Calificación":ev.ref?"Referencia":ev.falta?"Falta precio":claseNom[ev.clase], "Análisis":it.nota,
     "Características":Object.entries(it.specs||{}).map(([k,v])=>k.replace(/_/g," ")+": "+v).join(" | "),
     "Fuente":(it.fuentes||[]).map(s=>s.nombre+(s.codigo?" "+s.codigo:"")).join(" | "), "Enlace":(it.fuentes||[])[0]?.url||"",
     "Detectado":it.fecha_detectada, "Últ. verificación":it.ultima_verificacion, "Días en mercado":dias(it.fecha_detectada) }; };
@@ -700,7 +708,7 @@ document.addEventListener("click", async e => {
     case "d-del0": D._conf=false; pintarDrawer(); return;
     case "d-del2": if(S.db){ try{ await S.db.collection("inmuebles").doc(D.id).delete(); toast("Inmueble eliminado"); cerrar(); }catch(err){ toast("No se pudo eliminar: "+err.code); } } return;
     case "d-addsrc": { leerForm(); const nombre=$("#ns-nombre").value.trim(), url=$("#ns-url").value.trim(), codigo=$("#ns-codigo").value.trim();
-      if(!nombre && !url){ toast("Escribe la plataforma o el enlace"); return; }
+      if(!url){ toast("Pega el enlace de la publicación"); return; }
       D.fuentes=[...(D.fuentes||[]), {nombre:nombre||"Enlace", codigo, url}]; pintarDrawer(); return; }
     case "c-new": S.cliente=null; S.pick.clear(); render(); return;
     case "c-save": { const data=leerCliente(); if(!data.nombre){ toast("Escribe el nombre del cliente"); return; }
@@ -715,6 +723,7 @@ document.addEventListener("click", async e => {
   }
   if(t.dataset.st){ leerForm(); D.estatus=t.dataset.st; if(D.estatus!=="por_verificar") D.ultima_verificacion=hoy(); pintarDrawer(); return; }
   if(t.hasAttribute("data-fav")){ leerForm(); D.favorito=!D.favorito; pintarDrawer(); return; }
+  if(t.hasAttribute("data-verif")){ leerForm(); D.verificado=!D.verificado; if(D.verificado) D.ultima_verificacion=hoy(); pintarDrawer(); return; }
   if(t.dataset.rate){ leerForm(); D.cal={...(D.cal||{}), [t.dataset.rate]:+t.dataset.v}; pintarDrawer(); return; }
   if(t.dataset.delsrc){ leerForm(); D.fuentes=D.fuentes.filter((_,i)=>i!==+t.dataset.delsrc); pintarDrawer(); return; }
 });
