@@ -1,0 +1,2658 @@
+[
+ {
+  "id": "GTR-001",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "Frutas Condominio",
+  "titulo": "Apartamento 1 nivel en Frutas Condominio",
+  "precio": 90000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 25-1180",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_guatire_en_frutas-condominio_rah-25-1180.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 4,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Precio alto para Guatire. Hace falta el m² para compararlo; urbanización cerrada de buena demanda.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 90000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-002",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "El Ingenio (Parque Habitad)",
+  "titulo": "Apartamento en obra gris, Parque Habitad El Ingenio",
+  "precio": 25000,
+  "m2c": 68,
+  "m2t": null,
+  "hab": 2,
+  "banos": 1,
+  "puestos": null,
+  "specs": {
+   "estado_obra": "Obra gris"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 21-18466",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_guatire_en_parque-habitad-el-ingenio_rah-21-18466.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 2,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "Entrada barata a El Ingenio (~$368/m²). Obra gris: sumar ~$8-12k de acabados. Bueno para comprar, terminar y alquilar o revender. Publicación de 2021: confirmar si sigue vigente.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 25000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-003",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "San Pedro",
+  "titulo": "Apartamento en Sector San Pedro",
+  "precio": 40000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 22-23025",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_guatire_en_sector-san-pedro_rah-22-23025.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Faltan m² y distribución. Publicación de 2022: confirmar vigencia.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 40000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-004",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Townhouse",
+  "operacion": "venta",
+  "sector": "Terrazas del Ingenio",
+  "titulo": "Townhouse dúplex en Terrazas del Ingenio",
+  "precio": 50000,
+  "m2c": 100,
+  "m2t": 100,
+  "hab": 3,
+  "banos": 3,
+  "puestos": null,
+  "specs": {
+   "niveles": "2"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 24-15888",
+    "url": "https://rentahouse.com.ve/townhouse_en_venta_en_guatire_en_terrazas-del-ingenio_rah-24-15888.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$500/m² en un townhouse con terreno propio. Producto muy buscado por familias; se vende rápido.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 50000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-005",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Casa",
+  "operacion": "venta",
+  "sector": "Araira",
+  "titulo": "Casa de 2 niveles con anexo independiente, Araira",
+  "precio": 37000,
+  "m2c": 500,
+  "m2t": null,
+  "hab": 5,
+  "banos": 5,
+  "puestos": 3,
+  "specs": {
+   "niveles": "2",
+   "anexo": "Apartamento independiente con cocina"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 24-21415",
+    "url": "https://rentahouse.com.ve/casa_en_venta_en_guatire_en_araira_rah-24-21415.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 2,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "Solo $74/m² construido, muy por debajo del mercado. El anexo se puede alquilar aparte. Araira es periférica y de menor liquidez; revisar vía de acceso y servicios.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 37000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-006",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Casa",
+  "operacion": "venta",
+  "sector": "Villas de Buenaventura",
+  "titulo": "Casa de 1 nivel amoblada, Villas de Buenaventura",
+  "precio": 115000,
+  "m2c": 280,
+  "m2t": 282,
+  "hab": 3,
+  "banos": 4,
+  "puestos": 3,
+  "specs": {
+   "niveles": "1",
+   "amoblado": "Sí"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 22-13663",
+    "url": "https://rentahouse.com.ve/casa_en_venta_en_guatire_en_villas-de-buenaventura_rah-22-13663.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 5,
+   "estado": 4,
+   "rentabilidad": 2,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Producto premium de Guatire (~$411/m²). Para uso propio o plusvalía; poca rentabilidad por alquiler a este precio.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 115000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-007",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Casa",
+  "operacion": "venta",
+  "sector": "El Ingenio",
+  "titulo": "Casa de 4 habitaciones en El Ingenio",
+  "precio": 43000,
+  "m2c": 320,
+  "m2t": 120,
+  "hab": 4,
+  "banos": 4,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 21-8127",
+    "url": "https://rentahouse.com.ve/casa_en_venta_en_guatire_en_el-ingenio-1_rah-21-8127.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$134/m² construido en El Ingenio es muy bajo. Por el tamaño se puede alquilar por habitaciones o por niveles. Publicación de 2021: confirmar vigencia y precio.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 43000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-008",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Casa",
+  "operacion": "venta",
+  "sector": "Valle Arriba",
+  "titulo": "Casa de 3 niveles en urbanización cerrada, Valle Arriba",
+  "precio": 65000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "niveles": "3",
+   "agua": "5 pozos en la urbanización",
+   "vigilancia": "Portones eléctricos"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 23-133",
+    "url": "https://rentahouse.com.ve/casa_en_venta_en_guatire_en_valle-arriba_rah-23-133.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Punto fuerte: agua garantizada con 5 pozos. Faltan m² para compararla.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 65000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-009",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Casa",
+  "operacion": "venta",
+  "sector": "Villas de Buenaventura",
+  "titulo": "Casa de varios niveles, Villas de Buenaventura",
+  "precio": 110000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "niveles": "Varios"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 22-14195",
+    "url": "https://rentahouse.com.ve/casa_en_venta_en_guatire_en_villas-de-buenaventura_rah-22-14195.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 5,
+   "estado": 3,
+   "rentabilidad": 2,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Referencia de precio en Buenaventura. Faltan m².",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 110000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-010",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "Las Rosas (Conj. El Mirador)",
+  "titulo": "Apartamento 3 habitaciones, Conj. Res. El Mirador",
+  "precio": 29000,
+  "m2c": 63,
+  "m2t": null,
+  "hab": 3,
+  "banos": 1,
+  "puestos": 1,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "RE/MAX Venezuela",
+    "codigo": "326701",
+    "url": "https://www.remax.com.ve/inmuebles/apartamento/venta/apartamento-en-venta-las-rosas-mirador-guatire-326701"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$460/m². Tres habitaciones en 63 m², ideal para alquiler a familias. Buena liquidez por el precio.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 29000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-011",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "Castillejo (Jardines de Castillejo)",
+  "titulo": "Apartamento 2 habitaciones, Jardines de Castillejo",
+  "precio": 64000,
+  "m2c": 67,
+  "m2t": null,
+  "hab": 2,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "RE/MAX Venezuela",
+    "codigo": "",
+    "url": "https://www.remax.com.ve/inmuebles/apartamento/venta?ubi=Guatire%2C+Zamora%2C+Miranda%2C+VEN"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 4,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "~$955/m², de los más caros de la zona. Justificable solo si tiene acabados de lujo y buenas áreas comunes.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 64000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-012",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "San Pedro (Terrazas de San Pedro)",
+  "titulo": "Apartamento 2 habitaciones, Terrazas de San Pedro",
+  "precio": 30000,
+  "m2c": 77,
+  "m2t": null,
+  "hab": 2,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "RE/MAX Venezuela",
+    "codigo": "",
+    "url": "https://www.remax.com.ve/inmuebles/apartamento/venta?ubi=Guatire%2C+Zamora%2C+Miranda%2C+VEN"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$390/m²: buen precio. En la misma urbanización se alquila en ~$430/mes (ver GTR-022), lo que da ~14-17% bruto anual si se alquila amoblado.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 30000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-013",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "La Sabana (Parque Residencial)",
+  "titulo": "Apartamento 3 habitaciones, Parque Residencial La Sabana",
+  "precio": 29000,
+  "m2c": 95,
+  "m2t": null,
+  "hab": 3,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "RE/MAX Venezuela",
+    "codigo": "",
+    "url": "https://www.remax.com.ve/inmuebles/apartamento/venta?ubi=Guatire%2C+Zamora%2C+Miranda%2C+VEN"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$305/m², de los m² más baratos en apartamentos de Guatire. Buena opción de renta.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 29000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-014",
+  "zona": "guatire",
+  "tipo": "galpon",
+  "subtipo": "Galpón / Depósito",
+  "operacion": "venta",
+  "sector": "Zona Industrial Inproceca",
+  "titulo": "Galpón divisible en 2 unidades, Inproceca",
+  "precio": 1000000,
+  "m2c": 2895,
+  "m2t": null,
+  "hab": null,
+  "banos": 6,
+  "puestos": null,
+  "specs": {
+   "vigilancia": "Privada 24h, doble portón",
+   "montacarga": "Sí",
+   "oficinas": "Oficinas y sala de conferencias",
+   "divisible": "2 galpones independientes"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 25-3085",
+    "url": "https://rentahouse.com.ve/comercial_en_venta_en_guatire_en_guatire_rah-25-3085.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 4,
+   "rentabilidad": 4,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "$345/m². Se puede dividir en dos galpones para alquilarlos por separado. Ticket alto: pocos compradores.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 1000000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-015",
+  "zona": "guatire",
+  "tipo": "galpon",
+  "subtipo": "Galpón / Depósito",
+  "operacion": "venta",
+  "sector": "Valle Arriba",
+  "titulo": "Galpón de 3.400 m², Valle Arriba",
+  "precio": 1800000,
+  "m2c": 3400,
+  "m2t": null,
+  "hab": null,
+  "banos": 7,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-4992",
+    "url": "https://rentahouse.com.ve/comercial_en_venta_en_guatire_en_valle-arriba_rah-26-4992.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "$529/m², caro frente a Inproceca y Terrinca. Negociable.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 1800000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-016",
+  "zona": "guatire",
+  "tipo": "galpon",
+  "subtipo": "Industrial",
+  "operacion": "venta",
+  "sector": "Guatire",
+  "titulo": "Inmueble industrial de 1.050 m²",
+  "precio": 850000,
+  "m2c": 1050,
+  "m2t": null,
+  "hab": null,
+  "banos": 3,
+  "puestos": null,
+  "specs": {
+   "estacionamiento": "Techado"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 25-13840",
+    "url": "https://rentahouse.com.ve/comercial_en_venta_en_guatire_en_guatire_rah-25-13840.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 2,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "$810/m²: muy por encima del resto de galpones. Solo tiene sentido si incluye maquinaria o un negocio en marcha.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 850000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-017",
+  "zona": "guatire",
+  "tipo": "galpon",
+  "subtipo": "Galpón",
+  "operacion": "venta",
+  "sector": "Zona Industrial Terrinca",
+  "titulo": "Galpón de 1.259 m², Zona Industrial Terrinca",
+  "precio": 290000,
+  "m2c": 1259,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "RIV Premium",
+    "codigo": "",
+    "url": "https://rivinotinto.com/premiumcumana/detalle.php?id=24102"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "$230/m², el mejor precio por m² de galpones en Guatire. Terrinca tiene buena salida a la autopista.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 290000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-018",
+  "zona": "guatire",
+  "tipo": "terreno",
+  "subtipo": "Industrial",
+  "operacion": "venta",
+  "sector": "El Marqués",
+  "titulo": "Terreno industrial de 5.553 m² junto al Forum Guatire",
+  "precio": 225000,
+  "m2c": null,
+  "m2t": 5553,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "zonificacion": "Industrial",
+   "acceso": "Acceso inmediato a la autopista"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-4321",
+    "url": "https://rentahouse.com.ve/terreno_en_venta_en_guatire_en_el-marques_rah-26-4321.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 5,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$41/m² en una zona industrial con acceso a la autopista: muy por debajo del promedio de Guatire (~$97/m²). Oportunidad para desarrollar galpones.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 225000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-019",
+  "zona": "guatire",
+  "tipo": "terreno",
+  "subtipo": "Industrial",
+  "operacion": "venta",
+  "sector": "Vega Arriba (Z.I.)",
+  "titulo": "Lote de 4.030 m², Zona Industrial Vega Arriba",
+  "precio": 445000,
+  "m2c": null,
+  "m2t": 4030,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "zonificacion": "Industrial"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "ZonaVen",
+    "codigo": "",
+    "url": "https://zonaven.com/venta-terrenos/guatire"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "$110/m², en línea con el promedio del mercado.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 445000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-020",
+  "zona": "guatire",
+  "tipo": "local",
+  "subtipo": "Local comercial",
+  "operacion": "venta",
+  "sector": "El Ingenio",
+  "titulo": "Local comercial en El Ingenio",
+  "precio": 35000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-17879",
+    "url": "https://rentahouse.com.ve/comercial_en_venta_en_guatire_en_el-ingenio_rah-26-17879.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "Local de entrada en la zona más poblada de Guatire. Faltan m²; en El Ingenio se alquilan locales en ~$1.500/mes (GTR-023).",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 35000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-021",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Casa",
+  "operacion": "venta",
+  "sector": "Villa Heroica",
+  "titulo": "Casa de 2 plantas, Villa Heroica",
+  "precio": 45000,
+  "m2c": 200,
+  "m2t": null,
+  "hab": 4,
+  "banos": 4,
+  "puestos": null,
+  "specs": {
+   "niveles": "2"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "MercadoLibre",
+    "codigo": "",
+    "url": "https://listado.mercadolibre.com.ve/inmuebles/casas/venta/miranda/guatire/casas-baratas-en-guatire-estado-miranda"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "$225/m²: precio razonable para una casa de 4 habitaciones.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 45000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-022",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "alquiler",
+  "sector": "San Pedro (Terrazas Altos de San Pedro)",
+  "titulo": "Apartamento amoblado en alquiler, Terrazas Altos de San Pedro",
+  "precio": 430,
+  "m2c": null,
+  "m2t": null,
+  "hab": 3,
+  "banos": 2,
+  "puestos": 2,
+  "specs": {
+   "amoblado": "Sí, con aire acondicionado"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-5133",
+    "url": "https://rentahouse.com.ve/apartamento_en_alquiler_en_guatire_en_sector-san-pedro_rah-26-5133.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 4,
+   "rentabilidad": 3,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "Sirve de referencia de renta en San Pedro: ~$430/mes amoblado con 3 habitaciones.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 430,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-023",
+  "zona": "guatire",
+  "tipo": "local",
+  "subtipo": "Local comercial",
+  "operacion": "alquiler",
+  "sector": "El Ingenio",
+  "titulo": "Local comercial en alquiler, El Ingenio",
+  "precio": 1500,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 25-864",
+    "url": "https://rentahouse.com.ve/comercial_en_alquiler_en_guatire_en_el-ingenio_rah-25-864.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Referencia de renta comercial en El Ingenio.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 1500,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-024",
+  "zona": "guatire",
+  "tipo": "terreno",
+  "subtipo": "Comercial",
+  "operacion": "alquiler",
+  "sector": "Guatire (centro)",
+  "titulo": "Terreno comercial en alquiler, centro de Guatire",
+  "precio": 1500,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "uso": "Depósito, estacionamiento o comercio"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-14751",
+    "url": "https://rentahouse.com.ve/terreno_en_alquiler_en_guatire_en_guatire_rah-26-14751.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Sirve para estacionamiento o como patio de depósito.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 1500,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GTR-025",
+  "zona": "guatire",
+  "tipo": "residencial",
+  "subtipo": "Casa",
+  "operacion": "venta",
+  "sector": "El Ingenio (La Muralla)",
+  "titulo": "Casa semi-amoblada, Urb. La Muralla",
+  "precio": 60000,
+  "m2c": 150,
+  "m2t": null,
+  "hab": 5,
+  "banos": 4,
+  "puestos": null,
+  "specs": {
+   "amoblado": "Semi-amoblada"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "MercadoLibre",
+    "codigo": "",
+    "url": "https://listado.mercadolibre.com.ve/inmuebles/casas/venta/miranda/guatire/casas-baratas-en-guatire-estado-miranda"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "$400/m², en línea con El Ingenio. Tiene 5 habitaciones.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 60000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-001",
+  "zona": "guarenas",
+  "tipo": "residencial",
+  "subtipo": "Apartamento dúplex",
+  "operacion": "venta",
+  "sector": "Los Girasoles",
+  "titulo": "Dúplex de 3 niveles con terraza y parrillera, Los Girasoles",
+  "precio": 20000,
+  "m2c": 96,
+  "m2t": null,
+  "hab": 2,
+  "banos": 2,
+  "puestos": null,
+  "specs": {
+   "niveles": "3",
+   "terraza": "Techada con parrillera"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 25-8691",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_guarenas_en_los-girasoles_rah-25-8691.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 5,
+   "documentacion": 3
+  },
+  "nota": "$208/m², en el piso del rango ($20k). Muy líquido para compradores primerizos o inversión de renta.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 20000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-002",
+  "zona": "guarenas",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "Ciudad Casarapa",
+  "titulo": "Apartamento 3 habitaciones, Ciudad Casarapa",
+  "precio": 36000,
+  "m2c": null,
+  "m2t": null,
+  "hab": 3,
+  "banos": 2,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-14693",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_guarenas_en_ciudad-casarapa_rah-26-14693.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "Faltan m². Precio medio para Casarapa.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 36000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-003",
+  "zona": "guarenas",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "La Vaquera",
+  "titulo": "Apartamento en conjunto de baja densidad, La Vaquera",
+  "precio": 48000,
+  "m2c": null,
+  "m2t": null,
+  "hab": 3,
+  "banos": 2,
+  "puestos": 1,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-19133",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_guarenas_en_la-vaquera_rah-26-19133.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 4,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Conjunto exclusivo de baja densidad. Faltan m².",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 48000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-004",
+  "zona": "guarenas",
+  "tipo": "residencial",
+  "subtipo": "Casa",
+  "operacion": "venta",
+  "sector": "Guarenas",
+  "titulo": "Casa de 1 nivel con jardín, 392 m²",
+  "precio": 50000,
+  "m2c": 392,
+  "m2t": null,
+  "hab": 5,
+  "banos": 6,
+  "puestos": null,
+  "specs": {
+   "niveles": "1",
+   "jardin": "Privado"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 24-4024",
+    "url": "https://rentahouse.com.ve/casa_en_venta_en_guarenas_en_guarenas_rah-24-4024.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "$128/m²: mucho metraje por el precio. Se puede alquilar por habitaciones.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 50000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-005",
+  "zona": "guarenas",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "Nueva Casarapa",
+  "titulo": "Apartamento 3 habitaciones, Nueva Casarapa",
+  "precio": 34000,
+  "m2c": 74,
+  "m2t": null,
+  "hab": 3,
+  "banos": 2,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "MercadoLibre",
+    "codigo": "",
+    "url": "https://listado.mercadolibre.com.ve/inmuebles/apartamentos/venta/miranda/guarenas/nueva-casarapa/"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$459/m², en línea con el mercado.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 34000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-006",
+  "zona": "guarenas",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "Nueva Casarapa",
+  "titulo": "Apartamento 4 habitaciones, 127 m², Nueva Casarapa",
+  "precio": 45000,
+  "m2c": 127,
+  "m2t": null,
+  "hab": 4,
+  "banos": 3,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "MercadoLibre",
+    "codigo": "",
+    "url": "https://listado.mercadolibre.com.ve/inmuebles/apartamentos/venta/miranda/guarenas/nueva-casarapa/"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$354/m²: grande y barato por m². Buena opción para familias.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 45000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-007",
+  "zona": "guarenas",
+  "tipo": "galpon",
+  "subtipo": "Galpón",
+  "operacion": "venta",
+  "sector": "Zona Industrial del Este",
+  "titulo": "Galpón de 1.800 m² en 2 naves, Z.I. del Este",
+  "precio": 700000,
+  "m2c": 1800,
+  "m2t": 2500,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "naves": "2 comunicadas"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "BienesOnline",
+    "codigo": "",
+    "url": "https://venezuela.bienesonline.com/buscar-galpon-zona-industrial-guarenas.php"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "$389/m² de galpón.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 700000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-008",
+  "zona": "guarenas",
+  "tipo": "galpon",
+  "subtipo": "Galpón / Depósito",
+  "operacion": "venta",
+  "sector": "Zona Industrial Cloris",
+  "titulo": "Complejo industrial de más de 20.000 m²",
+  "precio": 2500000,
+  "m2c": 20000,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-14650",
+    "url": "https://rentahouse.com.ve/comercial_en_venta_en_guarenas_en_guarenas_rah-26-14650.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 1,
+   "documentacion": 3
+  },
+  "nota": "$125/m², barato por m² pero es un ticket de $2,5M para muy pocos compradores. Aparece también en otros portales: posiblemente es el mismo inmueble.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 2500000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-009",
+  "zona": "guarenas",
+  "tipo": "galpon",
+  "subtipo": "Galpón / Depósito",
+  "operacion": "venta",
+  "sector": "Los Naranjos",
+  "titulo": "Galpón en Los Naranjos",
+  "precio": 1770000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 24-20174",
+    "url": "https://rentahouse.com.ve/comercial_en_venta_en_guarenas_en_los-naranjos_rah-24-20174.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "Faltan m² para compararlo.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 1770000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-010",
+  "zona": "guarenas",
+  "tipo": "terreno",
+  "subtipo": "Comercial",
+  "operacion": "venta",
+  "sector": "Av. Intercomunal Guarenas-Guatire",
+  "titulo": "Terreno comercial de 27.600 m² en la Intercomunal",
+  "precio": 3500000,
+  "m2c": null,
+  "m2t": 27600,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "zonificacion": "Comercial"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Tu Casa Nova Inmuebles",
+    "codigo": "",
+    "url": "https://tucasanovainmuebles.com/terreno-venta-guarenas-guarenas/4538808"
+   }
+  ],
+  "cal": {
+   "ubicacion": 5,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "$127/m² en el eje comercial más importante entre las dos ciudades. Para un desarrollador.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 3500000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-011",
+  "zona": "guarenas",
+  "tipo": "local",
+  "subtipo": "Edificio de uso mixto",
+  "operacion": "venta",
+  "sector": "Guarenas (zona comercial)",
+  "titulo": "Edificio de 3 niveles: local + apartamentos + sótano",
+  "precio": 92500,
+  "m2c": 650,
+  "m2t": 126,
+  "hab": null,
+  "banos": null,
+  "puestos": 4,
+  "specs": {
+   "composicion": "Local en PB, apartamentos en niveles 2-3, terraza"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 23-30863",
+    "url": "https://rentahouse.com.ve/casa_en_venta_en_guarenas_en_guarenas_rah-23-30863.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 5,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "$142/m² por un edificio que genera renta en tres partes (local + 2 aptos). Excelente para un inversionista de renta.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 92500,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-012",
+  "zona": "guarenas",
+  "tipo": "local",
+  "subtipo": "Edificio comercial",
+  "operacion": "venta",
+  "sector": "Guarenas (centro)",
+  "titulo": "Edificio con local, clínica y apartamento en el centro",
+  "precio": 580000,
+  "m2c": 1150,
+  "m2t": 300,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "composicion": "Local, clínica, apartamento de 3 hab. y terraza"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 23-33430",
+    "url": "https://rentahouse.com.ve/casa_en_venta_en_guarenas_en_guarenas_rah-23-33430.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 5,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "$504/m². Mucho tráfico peatonal y vehicular. Ticket alto.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 580000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-013",
+  "zona": "guarenas",
+  "tipo": "local",
+  "subtipo": "Local comercial",
+  "operacion": "venta",
+  "sector": "Guarenas",
+  "titulo": "Local en planta baja de 50 m² con vidriera",
+  "precio": 27000,
+  "m2c": 50,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": 1,
+  "specs": {
+   "ubicacion": "Pie de calle",
+   "vidriera": "Amplia"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Inmobiliaria.com",
+    "codigo": "",
+    "url": "https://venezuela.inmobiliaria.com/guarenas/locales-comerciales+venta/"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$540/m², a pie de calle y con mucho tráfico. Precio negociable en efectivo.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 27000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-014",
+  "zona": "guarenas",
+  "tipo": "local",
+  "subtipo": "Local comercial",
+  "operacion": "alquiler",
+  "sector": "Ruiz Pineda",
+  "titulo": "Local de 70 m² en alquiler, Ruiz Pineda",
+  "precio": 500,
+  "m2c": 70,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-11653",
+    "url": "https://rentahouse.com.ve/comercial_en_alquiler_en_guarenas_en_ruiz-pineda_rah-26-11653.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Referencia: ~$7/m² al mes.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 500,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-015",
+  "zona": "guarenas",
+  "tipo": "local",
+  "subtipo": "Local comercial",
+  "operacion": "alquiler",
+  "sector": "Guarenas",
+  "titulo": "Local comercial en alquiler",
+  "precio": 2700,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 24-22691",
+    "url": "https://rentahouse.com.ve/comercial_en_alquiler_en_guarenas_en_guarenas_rah-24-22691.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Faltan m².",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 2700,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "GRN-016",
+  "zona": "guarenas",
+  "tipo": "galpon",
+  "subtipo": "Galpón / Depósito",
+  "operacion": "alquiler",
+  "sector": "Guarenas (zona industrial)",
+  "titulo": "Galpón en alquiler",
+  "precio": 10000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-2870",
+    "url": "https://rentahouse.com.ve/comercial_en_alquiler_en_guarenas_en_guarenas_rah-26-2870.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Referencia de renta industrial en Guarenas.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 10000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-001",
+  "zona": "costa",
+  "tipo": "residencial",
+  "subtipo": "Townhouse dúplex",
+  "operacion": "venta",
+  "sector": "Higuerote (Ciudad Balneario)",
+  "titulo": "Townhouse vacacional con acceso al canal",
+  "precio": 24000,
+  "m2c": null,
+  "m2t": null,
+  "hab": 2,
+  "banos": 2,
+  "puestos": 1,
+  "specs": {
+   "vista": "Canales",
+   "extras": "Parrillera, terraza, acceso al canal principal"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 23-16966",
+    "url": "https://rentahouse.com.ve/townhouse_en_venta_en_higuerote_en_ciudad-balneario-higuerote_rah-23-16966.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 5,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "Acceso al canal por $24k. Alta demanda de alquiler vacacional por temporadas.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 24000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-002",
+  "zona": "costa",
+  "tipo": "local",
+  "subtipo": "Local comercial",
+  "operacion": "venta",
+  "sector": "Higuerote (C.C. Cabo Mall)",
+  "titulo": "Local de 67 m² en obra gris, Cabo Mall",
+  "precio": 68000,
+  "m2c": 67,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "ubicacion": "Centro comercial",
+   "estado_obra": "Obra gris"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 23-27068",
+    "url": "https://rentahouse.com.ve/comercial_en_venta_en_higuerote_en_higuerote_rah-23-27068.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 2,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "$1.015/m² más acabados. Caro; conviene solo si el centro comercial tiene buena ocupación.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 68000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-003",
+  "zona": "costa",
+  "tipo": "terreno",
+  "subtipo": "Residencial multifamiliar (AR-5)",
+  "operacion": "venta",
+  "sector": "Higuerote (Ciudad Balneario)",
+  "titulo": "Terreno de 1.400 m², AR-5, con proyecto incluido",
+  "precio": 120000,
+  "m2c": null,
+  "m2t": 1400,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "zonificacion": "AR-5 multifamiliar",
+   "topografia": "Plana",
+   "proyecto": "Incluido con variables urbanas"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-17396",
+    "url": "https://rentahouse.com.ve/terreno_en_venta_en_higuerote_en_ciudad-balneario-higuerote_rah-26-17396.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 5,
+   "estado": 4,
+   "rentabilidad": 4,
+   "liquidez": 3,
+   "documentacion": 4
+  },
+  "nota": "$86/m² con un proyecto multifamiliar ya listo: ahorra meses de trámites. Excelente para un desarrollador.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 120000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-004",
+  "zona": "costa",
+  "tipo": "residencial",
+  "subtipo": "Casa de playa",
+  "operacion": "venta",
+  "sector": "Higuerote (Ciudad Balneario)",
+  "titulo": "Villa con muelle en el canal, 2 parcelas de 2.545 m²",
+  "precio": 120000,
+  "m2c": null,
+  "m2t": 2545,
+  "hab": 4,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "muelle": "Sí, en el canal",
+   "anexo": "2 hab. + 1 baño",
+   "extras": "2 cocinas, cuarto de bombas, árboles frutales"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-8656",
+    "url": "https://rentahouse.com.ve/casa_en_venta_en_higuerote_en_ciudad-balneario-higuerote_rah-26-8656.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 5,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Solo el terreno de 2.545 m² con muelle vale el precio ($47/m²). Buena para alquiler vacacional o para subdividir.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 120000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-005",
+  "zona": "costa",
+  "tipo": "local",
+  "subtipo": "Local comercial",
+  "operacion": "venta",
+  "sector": "Higuerote",
+  "titulo": "Local comercial en Higuerote",
+  "precio": 101000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 23-27069",
+    "url": "https://rentahouse.com.ve/comercial_en_venta_en_higuerote_en_higuerote_rah-23-27069.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Faltan m².",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 101000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-006",
+  "zona": "costa",
+  "tipo": "local",
+  "subtipo": "Local comercial",
+  "operacion": "venta",
+  "sector": "Higuerote",
+  "titulo": "Local comercial en Higuerote",
+  "precio": 380000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-7204",
+    "url": "https://rentahouse.com.ve/comercial_en_venta_en_higuerote_en_higuerote_rah-26-7204.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "Ticket alto para la costa. Faltan m².",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 380000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-007",
+  "zona": "costa",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "Higuerote (Agua Sal)",
+  "titulo": "Apartamento en Agua Sal",
+  "precio": 65000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 26-16221",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_higuerote_en_agua-sal_rah-26-16221.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Faltan m².",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 65000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-008",
+  "zona": "costa",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "Río Chico (Los Canales)",
+  "titulo": "Apartamento con terraza, vista al mar y al golf",
+  "precio": 30000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "vista": "Mar, canales y golf",
+   "areas_comunes": "Piscina, minigolf, parrilleras, churuatas"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 22-11880",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_rio-chico_en_los-canales-de-rio-chico_rah-22-11880.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Muy buenas áreas comunes para alquiler de fin de semana.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 30000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-009",
+  "zona": "costa",
+  "tipo": "residencial",
+  "subtipo": "Penthouse",
+  "operacion": "venta",
+  "sector": "Río Chico (Los Canales)",
+  "titulo": "Penthouse renovado con terraza amplia",
+  "precio": 23000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "estado": "Renovado",
+   "extras": "2 aires acondicionados, nevera"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 23-23931",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_rio-chico_en_los-canales-de-rio-chico_rah-23-23931.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 4,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "Penthouse renovado por $23k: entrada barata al mercado vacacional.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 23000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-010",
+  "zona": "costa",
+  "tipo": "residencial",
+  "subtipo": "Penthouse",
+  "operacion": "venta",
+  "sector": "Río Chico (Los Canales)",
+  "titulo": "Penthouse de lujo con terraza panorámica",
+  "precio": 110000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "extras": "Cocina con granito, A/A central",
+   "areas_comunes": "Piscinas, minigolf de 9 hoyos, muelle"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 25-22672",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_rio-chico_en_los-canales-de-rio-chico_rah-25-22672.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 5,
+   "rentabilidad": 3,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "Producto premium de Los Canales. En Río Chico se consigue muy por debajo de este precio: de lujo, pero cara.",
+  "estatus": "disponible",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 110000,
+    "estatus": "disponible"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-011",
+  "zona": "costa",
+  "tipo": "residencial",
+  "subtipo": "Apartamento (PB)",
+  "operacion": "venta",
+  "sector": "Río Chico (Los Canales)",
+  "titulo": "Apartamento en planta baja",
+  "precio": 80000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 24-9997",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_rio-chico_en_los-canales-de-rio-chico_rah-24-9997.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Faltan m².",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 80000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-012",
+  "zona": "costa",
+  "tipo": "residencial",
+  "subtipo": "Apartamento",
+  "operacion": "venta",
+  "sector": "Tacarigua de la Laguna",
+  "titulo": "Apartamento 1 nivel, Tacarigua la Laguna",
+  "precio": 20000,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Rent-A-House",
+    "codigo": "VE 24-17600",
+    "url": "https://rentahouse.com.ve/apartamento_en_venta_en_rio-chico_en_tacarigua-la-laguna_rah-24-17600.html"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Piso del rango. Faltan m².",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 20000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-013",
+  "zona": "costa",
+  "tipo": "terreno",
+  "subtipo": "Lote",
+  "operacion": "venta",
+  "sector": "Higuerote (Playa Cristal)",
+  "titulo": "Lote de terreno en Playa Cristal (MC-15-002)",
+  "precio": 290616,
+  "m2c": null,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "zonificacion": "Por confirmar"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "RIV",
+    "codigo": "MC-15-002",
+    "url": "https://riv.com.ve/lote-terreno-venta-playa-cristal-costa-mirandina/3429000"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 3,
+   "liquidez": 2,
+   "documentacion": 3
+  },
+  "nota": "Faltan m² para compararlo.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 290616,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-014",
+  "zona": "costa",
+  "tipo": "residencial",
+  "subtipo": "Casa",
+  "operacion": "venta",
+  "sector": "Carenero",
+  "titulo": "Casa de 3 habitaciones en Carenero",
+  "precio": 31000,
+  "m2c": 104,
+  "m2t": null,
+  "hab": 3,
+  "banos": 2,
+  "puestos": null,
+  "specs": {},
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "MercadoLibre",
+    "codigo": "",
+    "url": "https://listado.mercadolibre.com.ve/inmuebles/casas/casas-en-venta-carenero-higuerote"
+   }
+  ],
+  "cal": {
+   "ubicacion": 4,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 4,
+   "documentacion": 3
+  },
+  "nota": "$298/m², cerca de la marina de Carenero. Buen precio.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": 31000,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ },
+ {
+  "id": "CST-015",
+  "zona": "costa",
+  "tipo": "galpon",
+  "subtipo": "Galpón comercial",
+  "operacion": "venta",
+  "sector": "Tacarigua",
+  "titulo": "Galpón de 2.081 m² con 4 locales y 4 oficinas",
+  "precio": null,
+  "m2c": 2081,
+  "m2t": null,
+  "hab": null,
+  "banos": null,
+  "puestos": null,
+  "specs": {
+   "edificacion": "2 niveles, 4 locales con baño, 4 oficinas, depósito"
+  },
+  "descripcion": "",
+  "fuentes": [
+   {
+    "nombre": "Varios (buscador)",
+    "codigo": "",
+    "url": "https://casa.mitula.com.ve/tacarigua-mamporal"
+   }
+  ],
+  "cal": {
+   "ubicacion": 3,
+   "estado": 3,
+   "rentabilidad": 4,
+   "liquidez": 3,
+   "documentacion": 3
+  },
+  "nota": "Precio no publicado. Hay que pedirlo: si se ofrece por debajo de ~$200/m² puede ser una oportunidad.",
+  "estatus": "por_verificar",
+  "fecha_detectada": "2026-09-25",
+  "ultima_verificacion": "2026-09-25",
+  "historial": [
+   {
+    "fecha": "2026-09-25",
+    "evento": "Detectado en levantamiento piloto",
+    "precio": null,
+    "estatus": "por_verificar"
+   }
+  ],
+  "agente": "",
+  "contacto": "",
+  "favorito": false
+ }
+]

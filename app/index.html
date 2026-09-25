@@ -1,0 +1,737 @@
+<title>Estudio de Mercado Este de Miranda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+:root{
+  --bg:#F3F5F9; --surface:#FFFFFF; --sunk:#E9EDF4; --ink:#0E1B2E; --muted:#56657C; --line:#D8DEE8;
+  --blue:#0B3D91; --blue-soft:#E3EBFA; --red:#D1202E; --red-soft:#FBE6E8;
+  --good:#1D7F47; --good-soft:#E1F3E8; --mid:#A8690F; --mid-soft:#FBF0DC; --low:#B8322A; --low-soft:#F9E3E1;
+  --gray:#6B7280; --gray-soft:#ECEEF1; --info:#1F5FBF; --info-soft:#E2ECFB;
+  --shadow:0 10px 40px rgba(14,27,46,.18);
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#0A111E; --surface:#111B2D; --sunk:#0D1626; --ink:#E7EDF6; --muted:#98A6BD; --line:#24324B;
+  --blue:#8DB0FF; --blue-soft:#17264A; --red:#FF6470; --red-soft:#3A1720;
+  --good:#5BD28E; --good-soft:#123324; --mid:#F0B75A; --mid-soft:#382A12; --low:#FF7B72; --low-soft:#3B1A18;
+  --gray:#A0A8B5; --gray-soft:#1C2536; --info:#8DB0FF; --info-soft:#17264A; --shadow:0 10px 40px rgba(0,0,0,.5);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0A111E; --surface:#111B2D; --sunk:#0D1626; --ink:#E7EDF6; --muted:#98A6BD; --line:#24324B;
+  --blue:#8DB0FF; --blue-soft:#17264A; --red:#FF6470; --red-soft:#3A1720;
+  --good:#5BD28E; --good-soft:#123324; --mid:#F0B75A; --mid-soft:#382A12; --low:#FF7B72; --low-soft:#3B1A18;
+  --gray:#A0A8B5; --gray-soft:#1C2536; --info:#8DB0FF; --info-soft:#17264A; --shadow:0 10px 40px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1280px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+.mono{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.02em}
+.muted{color:var(--muted)}
+.lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+
+/* Cabecera */
+header.top{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;padding-block:22px 16px;border-bottom:3px solid var(--ink)}
+.brand{display:flex;flex-direction:column;gap:4px}
+.brand .mark{font-family:var(--f-display);font-weight:800;font-size:13px;letter-spacing:.14em;display:flex;gap:10px;align-items:center}
+.mark .r{color:var(--red)} .mark .b{color:var(--blue)}
+.mark .who{color:var(--muted);font-weight:600;letter-spacing:.06em}
+.brand h1{font-size:clamp(24px,3.4vw,34px);font-weight:800}
+.brand h1 span{color:var(--red)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid var(--line);background:var(--surface);padding:8px 14px;border-radius:8px;font-weight:600;font-size:14px}
+.btn:hover{border-color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:var(--surface)}
+.btn.danger{color:var(--red);border-color:var(--red-soft)}
+.btn.sm{padding:5px 10px;font-size:13px}
+.sync{font-size:12.5px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--gray)}
+.dot.on{background:var(--good)}
+
+/* Pestañas */
+nav.zones{display:flex;gap:4px;overflow-x:auto;margin-top:14px;border-bottom:1px solid var(--line)}
+nav.zones button{border:0;background:none;padding:10px 16px;font-family:var(--f-display);font-weight:700;font-size:15px;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap}
+nav.zones button[aria-selected="true"]{color:var(--ink);border-color:var(--red)}
+nav.zones .count{font-family:var(--f-body);font-weight:600;font-size:12px;background:var(--sunk);border-radius:10px;padding:1px 7px;margin-left:6px;color:var(--muted)}
+nav.types{display:flex;gap:6px;flex-wrap:wrap;margin-block:16px 12px}
+nav.types button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px}
+nav.types button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-block:12px}
+.kpi{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.kpi b{font-family:var(--f-display);font-size:22px;font-weight:700}
+.kpi small{color:var(--muted);font-size:12.5px}
+
+/* Filtros */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:end;margin-block:6px 12px}
+.filters label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted);font-weight:600}
+.filters input,.filters select{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:6px 8px;font-size:14px;min-width:0}
+.filters input[type=search]{width:200px;max-width:100%}
+.filters input[type=number]{width:110px}
+
+/* Tabla */
+.tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:960px}
+th{position:sticky;top:0;background:var(--sunk);text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:9px 10px;font-weight:700;white-space:nowrap}
+td{padding:10px;border-top:1px solid var(--line);vertical-align:middle}
+tbody tr{cursor:pointer}
+tbody tr:hover td{background:var(--sunk)}
+td.r,th.r{text-align:right}
+td.mono{white-space:nowrap}
+.tt{font-weight:600;line-height:1.25}
+.sub{font-size:12.5px;color:var(--muted)}
+.empty{padding:32px;text-align:center;color:var(--muted)}
+
+/* Chips */
+.chip{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:2px 9px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.st-disponible{color:var(--good);background:var(--good-soft)}
+.st-negociacion{color:var(--mid);background:var(--mid-soft)}
+.st-vendido{color:var(--low);background:var(--low-soft)}
+.st-retirado{color:var(--gray);background:var(--gray-soft)}
+.st-por_verificar{color:var(--info);background:var(--info-soft)}
+.cl-exc{color:var(--good);background:var(--good-soft)}
+.cl-med{color:var(--mid);background:var(--mid-soft)}
+.cl-baj{color:var(--low);background:var(--low-soft)}
+.cl-ref{color:var(--gray);background:var(--gray-soft)}
+.op{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 7px;border-radius:5px;border:1px solid var(--line);color:var(--muted)}
+.op.alquiler{color:var(--blue);border-color:var(--blue-soft);background:var(--blue-soft)}
+.score{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.score b{font-family:var(--f-display);font-size:18px;width:30px;text-align:right}
+.bar{width:54px;height:6px;border-radius:3px;background:var(--sunk);overflow:hidden}
+.bar i{display:block;height:100%}
+.delta{font-size:12px;font-weight:700}
+.delta.dn{color:var(--good)} .delta.up{color:var(--low)}
+.star{color:var(--mid)}
+
+/* Panel */
+.grid2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;margin-top:16px}
+@media (max-width:900px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card h2{font-size:17px;margin-bottom:10px}
+.matrix{width:100%;min-width:560px}
+.matrix td,.matrix th{padding:8px}
+.matrix td{cursor:pointer}
+.opp{display:flex;flex-direction:column}
+.opp .row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line);cursor:pointer}
+.opp .row:first-child{border-top:0}
+.rank{font-family:var(--f-display);font-weight:800;color:var(--muted);width:22px}
+.update p{margin:6px 0}
+.method li{margin-block:4px}
+
+/* Panel lateral de detalle */
+.overlay{position:fixed;inset:0;background:rgba(8,14,26,.45);z-index:20;display:flex;justify-content:flex-end}
+.drawer{background:var(--bg);width:min(760px,100%);height:100%;overflow-y:auto;box-shadow:var(--shadow);padding-inline:20px;padding-block:calc(env(safe-area-inset-top,0px) + 18px) calc(env(safe-area-inset-bottom,0px) + 28px)}
+.dhead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.dhead h2{font-size:21px}
+.statusbar{display:flex;flex-wrap:wrap;gap:6px;margin-block:14px}
+.statusbar button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-weight:700;font-size:13px}
+.statusbar button[aria-pressed="true"]{border-color:currentColor}
+.sec{margin-top:18px}
+.sec h3{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+.form{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.form label{display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:600;color:var(--muted)}
+.form label.wide{grid-column:1/-1}
+.form input,.form select,.form textarea{font-weight:400;border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:7px 9px;font-size:14px;color:var(--ink);width:100%}
+.form textarea{min-height:84px;resize:vertical}
+.analysis{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:8px;padding:12px 14px}
+.analysis .big{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.analysis .big b{font-family:var(--f-display);font-size:34px;line-height:1}
+.analysis ul{margin:6px 0 0;padding-left:18px}
+.breakdown{display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:13.5px;margin-top:8px}
+.rate{display:flex;gap:4px}
+.rate button{width:30px;height:30px;border-radius:6px;border:1px solid var(--line);background:var(--surface);font-weight:700}
+.rate button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--surface)}
+.rates{display:grid;grid-template-columns:1fr auto;gap:8px 14px;align-items:center}
+.hist{font-size:13.5px;border-left:2px solid var(--line);padding-left:12px;display:flex;flex-direction:column;gap:6px}
+.src{display:flex;flex-direction:column;gap:6px}
+.src .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.src a{color:var(--blue);word-break:break-all}
+.dfoot{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;margin-top:22px;padding-top:14px;border-top:1px solid var(--line)}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--red);font-weight:600}
+
+/* Clientes */
+.clients{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:18px;margin-top:16px}
+@media (max-width:900px){.clients{grid-template-columns:1fr}}
+.clist{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.clist button{text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 12px}
+.clist button[aria-selected="true"]{border-color:var(--blue);background:var(--blue-soft)}
+.checks{display:flex;flex-wrap:wrap;gap:6px}
+.checks label{flex-direction:row;align-items:center;gap:5px;font-weight:600;color:var(--ink);font-size:13.5px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:var(--surface)}
+.checks input{width:auto}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-weight:600;z-index:40;box-shadow:var(--shadow)}
+.notice{background:var(--mid-soft);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px}
+@media (prefers-reduced-motion:no-preference){.drawer{animation:slide .18s ease-out}@keyframes slide{from{transform:translateX(24px);opacity:.6}}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="mark"><span><span class="r">RE</span><span class="b">/MAX</span></span><span class="who">EDUARDO LEÓN · ASESOR INMOBILIARIO</span></div>
+      <h1>Estudio de Mercado <span>·</span> Este de Miranda</h1>
+    </div>
+    <div class="tools">
+      <span class="sync" id="sync"><span class="dot" id="syncdot"></span><span id="synctxt">Conectando…</span></span>
+      <button class="btn" id="btn-export" type="button">Exportar a Excel</button>
+      <button class="btn primary" id="btn-add" type="button">+ Agregar inmueble</button>
+    </div>
+  </header>
+  <nav class="zones" id="zones" role="tablist"></nav>
+  <main id="view"></main>
+</div>
+<div id="drawer-root"></div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ───────────── Configuración ───────────── */
+const ZONAS = [
+  {id:"guatire", nombre:"Guatire", pref:"GTR", sectores:["El Ingenio","Castillejo","Villa Heroica","Buenaventura","Villas de Buenaventura","Valle Arriba","Las Rosas","La Sabana","San Pedro","Frutas Condominio","Terrazas del Ingenio","Valle Grande","El Marqués","Araira","Vega Arriba (Z.I.)","Zona Industrial Terrinca","Zona Industrial Inproceca","Guatire (centro)","Plaza Oro","Las Acacias"]},
+  {id:"guarenas", nombre:"Guarenas", pref:"GRN", sectores:["Trapichito","Menca de Leoni","Nueva Casarapa","Ciudad Casarapa","El Naranjal","La Vaquera","Los Girasoles","Ruiz Pineda","Guarenas (centro)","Zona Industrial del Este","Zona Industrial Cloris","Los Naranjos","Av. Intercomunal Guarenas-Guatire"]},
+  {id:"costa", nombre:"Costa Mirandina", pref:"CST", sectores:["Higuerote","Higuerote (Ciudad Balneario)","Higuerote (Agua Sal)","Higuerote (Playa Cristal)","Carenero","Río Chico","Río Chico (Los Canales)","Tacarigua de la Laguna","Tacarigua","Buche","Chirimena","Paparo"]},
+];
+const TIPOS = [
+  {id:"residencial", nombre:"Residencial"},
+  {id:"terreno", nombre:"Terrenos"},
+  {id:"galpon", nombre:"Galpones"},
+  {id:"local", nombre:"Locales"},
+];
+const ESTATUS = [
+  {id:"disponible", nombre:"Disponible"},
+  {id:"negociacion", nombre:"En negociación"},
+  {id:"vendido", nombre:"Vendido / Alquilado"},
+  {id:"retirado", nombre:"Retirado del mercado"},
+  {id:"por_verificar", nombre:"Por verificar"},
+];
+const ACTIVOS = ["disponible","negociacion","por_verificar"];
+const SPECS = {
+  residencial:[["niveles","Niveles"],["piso","Piso"],["ascensor","Ascensor"],["amoblado","Amoblado"],["agua","Agua (pozo / tanque)"],["planta_electrica","Planta eléctrica"],["vigilancia","Vigilancia"],["areas_comunes","Áreas comunes"],["condominio","Condominio mensual"],["estado_obra","Estado de la obra"],["vista","Vista"],["anexo","Anexo"],["extras","Extras"]],
+  terreno:[["zonificacion","Zonificación"],["topografia","Topografía"],["frente_fondo","Frente × fondo"],["servicios","Servicios"],["acceso","Acceso vial"],["uso","Uso permitido"],["proyecto","Proyecto / permisos"]],
+  galpon:[["altura_libre","Altura libre"],["electricidad","Electricidad (trifásica / KVA)"],["acceso_gandolas","Acceso de gandolas"],["patio_maniobras","Patio de maniobras"],["oficinas","Oficinas"],["montacarga","Montacarga"],["vigilancia","Vigilancia"],["divisible","Divisible"],["naves","Naves"],["estacionamiento","Estacionamiento"],["edificacion","Edificación"]],
+  local:[["ubicacion","Ubicación (C.C. / pie de calle)"],["nivel","Nivel"],["vidriera","Frente de vidriera"],["flujo","Flujo de personas"],["mezzanina","Mezzanina"],["fondo_comercio","Fondo de comercio"],["composicion","Composición"],["estado_obra","Estado de la obra"]],
+};
+const CRIT = [
+  ["precio","Precio por m² vs. su sector"],["ubicacion","Ubicación y demanda"],["estado","Estado y servicios"],
+  ["rentabilidad","Rentabilidad por alquiler"],["liquidez","Liquidez (rapidez de venta)"],["documentacion","Documentación y riesgo"],
+];
+const PERFILES = {
+  general:   {nombre:"General",                       w:{precio:.35,ubicacion:.20,estado:.15,rentabilidad:.10,liquidez:.10,documentacion:.10}},
+  renta:     {nombre:"Renta (alquiler)",              w:{precio:.25,ubicacion:.15,estado:.15,rentabilidad:.30,liquidez:.05,documentacion:.10}},
+  plusvalia: {nombre:"Plusvalía (largo plazo)",       w:{precio:.25,ubicacion:.35,estado:.10,rentabilidad:.05,liquidez:.15,documentacion:.10}},
+  reventa:   {nombre:"Comprar, remodelar y revender", w:{precio:.45,ubicacion:.15,estado:.05,rentabilidad:0,liquidez:.25,documentacion:.10}},
+  propio:    {nombre:"Uso propio / vivienda",         w:{precio:.25,ubicacion:.25,estado:.30,rentabilidad:0,liquidez:.10,documentacion:.10}},
+  desarrollo:{nombre:"Desarrollador / constructor",   w:{precio:.40,ubicacion:.30,estado:0,rentabilidad:.05,liquidez:.10,documentacion:.15}},
+};
+const FIRMA = "Eduardo León · Asesor Inmobiliario RE/MAX";
+
+/* ───────────── Estado ───────────── */
+const S = {
+  items:[], clientes:[], meta:null, db:null, dl:null, ready:false,
+  tab:"panel", tipo:"residencial",
+  f:{q:"", op:"todas", st:"activos", sector:"", min:"", max:"", orden:"puntaje"},
+  sel:null, cliente:null, pick:new Set(),
+};
+try{ const t=localStorage.getItem("em-tab"); if(t) S.tab=t; const ti=localStorage.getItem("em-tipo"); if(ti) S.tipo=ti; }catch(e){}
+
+/* ───────────── Utilidades ───────────── */
+const $ = s => document.querySelector(s);
+const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const usd = n => n==null||n==="" ? "—" : "$" + Math.round(n).toLocaleString("es-VE");
+const fmt = n => n==null||n==="" ? "—" : Number(n).toLocaleString("es-VE");
+const hoy = () => new Date().toISOString().slice(0,10);
+const zonaNom = id => (ZONAS.find(z=>z.id===id)||{}).nombre || id;
+const tipoNom = id => (TIPOS.find(t=>t.id===id)||{}).nombre || id;
+const stNom = id => (ESTATUS.find(s=>s.id===id)||{}).nombre || id;
+const dias = f => f ? Math.max(0, Math.round((Date.now() - new Date(f+"T00:00:00").getTime())/864e5)) : null;
+const median = a => { if(!a.length) return null; const s=[...a].sort((x,y)=>x-y); const m=s.length>>1; return s.length%2?s[m]:(s[m-1]+s[m])/2; };
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(()=>t.hidden=true,2600); }
+
+function area(it){
+  if(it.tipo==="terreno") return it.m2t || null;
+  if(it.tipo==="galpon") return it.m2c || it.m2t || null;
+  return it.m2c || null;
+}
+function ppm2(it){ const a=area(it); return (it.operacion==="venta" && it.precio && a) ? it.precio/a : null; }
+
+const familia = it => /casa|town|quinta|villa/i.test(it.subtipo||"") ? "casas" : "apartamentos";
+/* Mediana de $/m² de los comparables: mismo tipo y zona (y sector si hay 3+). */
+function comparables(it){
+  // En residencial se comparan casas con casas y apartamentos con apartamentos.
+  const base = S.items.filter(o => o.operacion==="venta" && o.tipo===it.tipo && ppm2(o)!=null && (it.tipo!=="residencial" || familia(o)===familia(it)));
+  const sec = base.filter(o => o.zona===it.zona && o.sector===it.sector);
+  if(sec.length>=3) return {vals:sec.map(ppm2), ambito:"sector " + it.sector};
+  const zon = base.filter(o => o.zona===it.zona);
+  if(zon.length>=3) return {vals:zon.map(ppm2), ambito:(it.tipo==="residencial"?familia(it):tipoNom(it.tipo).toLowerCase()) + " en " + zonaNom(it.zona)};
+  if(base.length>=3) return {vals:base.map(ppm2), ambito:(it.tipo==="residencial"?familia(it):tipoNom(it.tipo).toLowerCase()) + " de las 3 zonas"};
+  return null;
+}
+
+function evaluar(it, perfil="general"){
+  if(it.operacion!=="venta") return {ref:true};
+  const w = PERFILES[perfil].w, c = it.cal || {};
+  const sub = {}; let ratio=null, comp=null;
+  const p = ppm2(it);
+  if(p!=null){ comp = comparables(it); if(comp){ const m=median(comp.vals); ratio=p/m; comp.med=m; comp.n=comp.vals.length;
+    sub.precio = Math.max(0, Math.min(100, 100 - (ratio-0.6)*125)); } }
+  for(const k of ["ubicacion","estado","rentabilidad","liquidez","documentacion"]) sub[k] = ((c[k]||3)-1)*25;
+  let tot=0, ws=0;
+  for(const [k] of CRIT){ if(sub[k]==null || !w[k]) continue; tot+=sub[k]*w[k]; ws+=w[k]; }
+  const score = ws? Math.round(tot/ws) : null;
+  const clase = score>=75?"exc":score>=50?"med":"baj";
+  return {score, clase, sub, ratio, comp, sinPrecio: sub.precio==null};
+}
+const claseNom = {exc:"Excelente", med:"Media", baj:"Baja"};
+const claseColor = {exc:"var(--good)", med:"var(--mid)", baj:"var(--low)"};
+
+function analisis(it, ev){
+  if(ev.ref) return ["Es un alquiler: sirve de referencia para calcular la renta de los inmuebles en venta del mismo sector."];
+  const out = [];
+  if(ev.ratio!=null){
+    const pct = Math.round((ev.ratio-1)*100);
+    out.push(`${usd(ppm2(it))}/m²: ${pct<0? Math.abs(pct)+"% por debajo" : pct>0? pct+"% por encima":"igual a"} de la mediana de ${ev.comp.ambito} (${usd(ev.comp.med)}/m², ${ev.comp.n} comparables).`);
+  } else out.push("Sin precio por m² comparable (faltan m² o comparables). El puntaje usa solo los demás criterios.");
+  const c = it.cal||{}, fu=[], de=[];
+  const nom = {ubicacion:"ubicación",estado:"estado y servicios",rentabilidad:"potencial de renta",liquidez:"liquidez",documentacion:"documentación"};
+  for(const k in nom){ if((c[k]||3)>=4) fu.push(nom[k]); if((c[k]||3)<=2) de.push(nom[k]); }
+  if(fu.length) out.push("A favor: " + fu.join(", ") + ".");
+  if(de.length) out.push("En contra: " + de.join(", ") + ".");
+  return out;
+}
+
+/* ───────────── Base de datos ───────────── */
+function setSync(on, txt){ $("#syncdot").className = "dot" + (on?" on":""); $("#synctxt").textContent = txt; }
+async function iniciar(){
+  render();
+  if(!window.claude || !window.claude.use){ setSync(false,"Sin conexión a la base de datos"); S.ready=true; render(); return; }
+  const db = await window.claude.use("db");
+  S.dl = await window.claude.use("downloads");
+  if(!db){ setSync(false,"Base de datos no disponible en esta vista"); S.ready=true; render(); return; }
+  S.db = db;
+  db.collection("inmuebles").onSnapshot(snap => {
+    S.items = snap.docs.map(d => ({...d.data(), id:d.id}));
+    S.ready = true; setSync(true, "Guardado en la nube · " + S.items.length + " inmuebles");
+    render(); if(S.sel) pintarDrawer();
+  }, e => setSync(false, "Error de conexión: " + e.code));
+  db.collection("clientes").onSnapshot(snap => { S.clientes = snap.docs.map(d=>({...d.data(), id:d.id})); if(S.tab==="clientes") render(); }, ()=>{});
+  db.doc("meta/estado").onSnapshot(s => { S.meta = s.exists ? s.data() : null; if(S.tab==="panel") render(); }, ()=>{});
+}
+async function guardar(it){
+  if(!S.db){ toast("No hay base de datos: el cambio no se guardó"); return false; }
+  const body = JSON.parse(JSON.stringify(it)); delete body.id;
+  try{ await S.db.collection("inmuebles").doc(it.id).set(body); return true; }
+  catch(e){ toast(e.code==="invalid_argument" ? "No tienes permiso para guardar cambios" : "No se pudo guardar: " + e.code); return false; }
+}
+
+/* ───────────── Render principal ───────────── */
+function render(){
+  const tabs = [{id:"panel",nombre:"Panel general"}, ...ZONAS.map(z=>({id:z.id,nombre:z.nombre})), {id:"clientes",nombre:"Clientes e inversionistas"}];
+  $("#zones").innerHTML = tabs.map(t => {
+    const n = ZONAS.some(z=>z.id===t.id) ? S.items.filter(i=>i.zona===t.id && ACTIVOS.includes(i.estatus)).length : null;
+    return `<button role="tab" aria-selected="${S.tab===t.id}" data-tab="${t.id}">${esc(t.nombre)}${n!=null?`<span class="count">${n}</span>`:""}</button>`;
+  }).join("");
+  const v = $("#view");
+  if(!S.ready){ v.innerHTML = `<p class="empty">Cargando el estudio de mercado…</p>`; return; }
+  if(!S.db && !S.items.length){ v.innerHTML = `<div class="notice">Esta vista no tiene acceso a la base de datos del estudio. Abre la página desde tu cuenta de claude.ai para ver y editar los inmuebles.</div>`; return; }
+  if(S.tab==="panel") v.innerHTML = vistaPanel();
+  else if(S.tab==="clientes") v.innerHTML = vistaClientes();
+  else v.innerHTML = vistaZona();
+}
+
+/* Panel general */
+function vistaPanel(){
+  const act = S.items.filter(i=>ACTIVOS.includes(i.estatus));
+  const semana = S.items.filter(i => dias(i.fecha_detectada)<=7).length;
+  const salieron = S.items.filter(i => ["vendido","retirado"].includes(i.estatus)).length;
+  const evs = act.filter(i=>i.operacion==="venta").map(i=>({it:i, ev:evaluar(i)})).filter(x=>x.ev.score!=null);
+  const exc = evs.filter(x=>x.ev.clase==="exc").length;
+  const top = evs.sort((a,b)=>b.ev.score-a.ev.score).slice(0,10);
+  let mat = `<div class="tablebox"><table class="matrix"><thead><tr><th>Zona</th>${TIPOS.map(t=>`<th class="r">${t.nombre}</th>`).join("")}<th class="r">Total</th></tr></thead><tbody>`;
+  for(const z of ZONAS){
+    mat += `<tr><td><b>${z.nombre}</b></td>`;
+    for(const t of TIPOS){
+      const g = act.filter(i=>i.zona===z.id && i.tipo===t.id);
+      const m = median(g.map(ppm2).filter(x=>x!=null));
+      mat += `<td class="r num" data-go="${z.id}|${t.id}"><b>${g.length}</b><div class="sub">${m?usd(m)+"/m²":"—"}</div></td>`;
+    }
+    mat += `<td class="r num"><b>${act.filter(i=>i.zona===z.id).length}</b></td></tr>`;
+  }
+  mat += `</tbody></table></div><p class="sub">Inmuebles activos por zona y tipo, con la mediana del precio por m² en venta. Toca una celda para abrirla.</p>`;
+  const m = S.meta;
+  const upd = m ? `<p><span class="lbl">Última actualización</span><br><b>${esc(m.ultima_actualizacion||"—")}</b></p>
+      ${m.resumen?`<p>${esc(m.resumen)}</p>`:""}
+      ${m.proxima?`<p class="sub">Próxima: ${esc(m.proxima)}</p>`:""}` : `<p class="muted">Todavía no hay actualizaciones registradas.</p>`;
+  return `
+  <div class="kpis">
+    <div class="kpi"><span class="lbl">Inventario activo</span><b class="num">${act.length}</b><small>de ${S.items.length} inmuebles registrados</small></div>
+    <div class="kpi"><span class="lbl">Nuevos esta semana</span><b class="num">${semana}</b><small>detectados en los últimos 7 días</small></div>
+    <div class="kpi"><span class="lbl">Salieron del mercado</span><b class="num">${salieron}</b><small>vendidos, alquilados o retirados</small></div>
+    <div class="kpi"><span class="lbl">Oportunidades excelentes</span><b class="num" style="color:var(--good)">${exc}</b><small>puntaje de 75 o más</small></div>
+    <div class="kpi"><span class="lbl">Por verificar</span><b class="num" style="color:var(--info)">${act.filter(i=>i.estatus==="por_verificar").length}</b><small>confirmar vigencia y datos</small></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h2>Mapa del inventario</h2>${mat}</div>
+    <div class="card update"><h2>Actualización semanal</h2>${upd}<p class="sub">Se actualiza cada domingo a las 9:00 p.m.: entran los inmuebles nuevos, se revisa si siguen activos los publicados y se registran los cambios de precio.</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h2>Mejores oportunidades en venta</h2><div class="opp">${top.map((x,i)=>`
+      <div class="row" data-open="${esc(x.it.id)}"><span class="rank">${i+1}</span>
+        <div><div class="tt">${esc(x.it.titulo)}</div><div class="sub">${esc(zonaNom(x.it.zona))} · ${esc(x.it.sector)} · ${usd(x.it.precio)}</div></div>
+        <span class="chip cl-${x.ev.clase}">${x.ev.score} · ${claseNom[x.ev.clase]}</span></div>`).join("") || `<p class="muted">Sin datos.</p>`}</div></div>
+    <div class="card method"><h2>Cómo se calcula el puntaje</h2>
+      <ul class="sub">
+        <li><b>Precio por m² (35%)</b>: se compara con la mediana de su sector, o de su zona y tipo si no hay 3 comparables. 40% por debajo de la mediana da 100 puntos, igual a la mediana da 50 y 40% por encima da 0.</li>
+        <li><b>Ubicación (20%), Estado y servicios (15%), Rentabilidad (10%), Liquidez (10%), Documentación (10%)</b>: se califican de 1 a 5 en la ficha de cada inmueble.</li>
+        <li><b>Excelente</b>: 75 o más · <b>Media</b>: de 50 a 74 · <b>Baja</b>: menos de 50.</li>
+        <li>En <b>Clientes</b> los pesos cambian según el perfil del inversionista: renta, plusvalía, reventa, uso propio o desarrollo.</li>
+      </ul></div>
+  </div>`;
+}
+
+/* Vista de zona */
+function filtrar(list){
+  const f = S.f, q = f.q.trim().toLowerCase();
+  return list.filter(i =>
+    (f.op==="todas" || i.operacion===f.op) &&
+    (f.st==="todos" || (f.st==="activos" ? ACTIVOS.includes(i.estatus) : i.estatus===f.st)) &&
+    (!f.sector || i.sector===f.sector) &&
+    (f.min==="" || (i.precio!=null && i.precio>=+f.min)) &&
+    (f.max==="" || (i.precio!=null && i.precio<=+f.max)) &&
+    (!q || [i.id,i.titulo,i.sector,i.subtipo,i.nota,i.descripcion].join(" ").toLowerCase().includes(q))
+  );
+}
+function ordenar(rows){
+  const o = S.f.orden, k = {
+    puntaje:(a,b)=>(b.ev.score??-1)-(a.ev.score??-1),
+    precio_asc:(a,b)=>(a.it.precio??1e15)-(b.it.precio??1e15),
+    precio_desc:(a,b)=>(b.it.precio??-1)-(a.it.precio??-1),
+    m2:(a,b)=>(ppm2(a.it)??1e15)-(ppm2(b.it)??1e15),
+    recientes:(a,b)=>String(b.it.fecha_detectada).localeCompare(String(a.it.fecha_detectada)),
+  }[o];
+  return rows.sort(k);
+}
+function vistaZona(){
+  const z = ZONAS.find(x=>x.id===S.tab);
+  const enZona = S.items.filter(i=>i.zona===z.id);
+  const deTipo = enZona.filter(i=>i.tipo===S.tipo);
+  const rows = ordenar(filtrar(deTipo).map(it=>({it, ev:evaluar(it)})));
+  const act = deTipo.filter(i=>ACTIVOS.includes(i.estatus) && i.operacion==="venta");
+  const pm = act.map(ppm2).filter(x=>x!=null), precios = act.map(i=>i.precio).filter(Boolean);
+  const exc = act.map(i=>evaluar(i)).filter(e=>e.clase==="exc").length;
+  const sectores = [...new Set(deTipo.map(i=>i.sector))].sort();
+  const f = S.f;
+  const extraCol = S.tipo==="residencial" ? "Hab · Baños" : S.tipo==="terreno" ? "Zonificación" : S.tipo==="galpon" ? "Detalle" : "Ubicación";
+  const extra = it => S.tipo==="residencial" ? `${it.hab??"—"} · ${it.banos??"—"}` :
+    esc((it.specs||{})[S.tipo==="terreno"?"zonificacion":S.tipo==="galpon"?"divisible":"ubicacion"] || it.subtipo || "—");
+  return `
+  <nav class="types" role="tablist">${TIPOS.map(t=>`<button role="tab" data-tipo="${t.id}" aria-selected="${S.tipo===t.id}">${t.nombre} <span class="muted">${enZona.filter(i=>i.tipo===t.id && ACTIVOS.includes(i.estatus)).length}</span></button>`).join("")}</nav>
+  <div class="kpis">
+    <div class="kpi"><span class="lbl">En venta activos</span><b class="num">${act.length}</b><small>${tipoNom(S.tipo)} en ${z.nombre}</small></div>
+    <div class="kpi"><span class="lbl">Mediana $/m²</span><b class="num">${pm.length?usd(median(pm)):"—"}</b><small>${pm.length} con m² conocido</small></div>
+    <div class="kpi"><span class="lbl">Rango de precios</span><b class="num" style="font-size:18px">${precios.length?usd(Math.min(...precios))+" – "+usd(Math.max(...precios)):"—"}</b><small>venta, en USD</small></div>
+    <div class="kpi"><span class="lbl">Excelentes</span><b class="num" style="color:var(--good)">${exc}</b><small>puntaje de 75 o más</small></div>
+  </div>
+  <div class="filters">
+    <label>Buscar<input type="search" id="f-q" value="${esc(f.q)}" placeholder="Código, sector, palabra…"></label>
+    <label>Operación<select id="f-op">${[["todas","Todas"],["venta","Venta"],["alquiler","Alquiler"]].map(([v,n])=>`<option value="${v}" ${f.op===v?"selected":""}>${n}</option>`).join("")}</select></label>
+    <label>Estatus<select id="f-st"><option value="activos" ${f.st==="activos"?"selected":""}>Activos</option><option value="todos" ${f.st==="todos"?"selected":""}>Todos</option>${ESTATUS.map(s=>`<option value="${s.id}" ${f.st===s.id?"selected":""}>${s.nombre}</option>`).join("")}</select></label>
+    <label>Sector<select id="f-sector"><option value="">Todos</option>${sectores.map(s=>`<option ${f.sector===s?"selected":""}>${esc(s)}</option>`).join("")}</select></label>
+    <label>Precio mín.<input type="number" id="f-min" value="${esc(f.min)}" placeholder="20000"></label>
+    <label>Precio máx.<input type="number" id="f-max" value="${esc(f.max)}" placeholder="Sin tope"></label>
+    <label>Ordenar por<select id="f-orden">${[["puntaje","Mejor puntaje"],["precio_asc","Precio: menor a mayor"],["precio_desc","Precio: mayor a menor"],["m2","$/m² más bajo"],["recientes","Más recientes"]].map(([v,n])=>`<option value="${v}" ${f.orden===v?"selected":""}>${n}</option>`).join("")}</select></label>
+  </div>
+  <div class="tablebox"><table>
+    <thead><tr><th>Código</th><th>Inmueble</th><th>Op.</th><th class="r">Precio</th><th class="r">m²</th><th class="r">$/m²</th><th>${extraCol}</th><th class="r">Días</th><th>Estatus</th><th class="r">Inversión</th></tr></thead>
+    <tbody>${rows.map(({it,ev})=>{
+      const d = ev.ratio!=null ? Math.round((ev.ratio-1)*100) : null;
+      return `<tr data-open="${esc(it.id)}">
+      <td class="mono">${it.favorito?'<span class="star">★</span> ':""}${esc(it.id)}</td>
+      <td><div class="tt">${esc(it.titulo)}</div><div class="sub">${esc(it.sector)} · ${esc(it.subtipo)}</div></td>
+      <td><span class="op ${it.operacion}">${it.operacion==="venta"?"Venta":"Alquiler"}</span></td>
+      <td class="r num"><b>${usd(it.precio)}</b>${it.operacion==="alquiler"?'<div class="sub">al mes</div>':""}</td>
+      <td class="r num">${fmt(area(it))}</td>
+      <td class="r num">${ppm2(it)?usd(ppm2(it)):"—"}${d!=null?`<div class="delta ${d<0?"dn":"up"}">${d>0?"+":""}${d}%</div>`:""}</td>
+      <td>${extra(it)}</td>
+      <td class="r num">${dias(it.fecha_detectada)??"—"}</td>
+      <td><span class="chip st-${it.estatus}">${stNom(it.estatus)}</span></td>
+      <td>${ev.ref?'<span class="chip cl-ref">Referencia</span>':`<div class="score"><span class="bar"><i style="width:${ev.score}%;background:${claseColor[ev.clase]}"></i></span><b class="num">${ev.score}</b><span class="chip cl-${ev.clase}">${claseNom[ev.clase]}</span></div>`}</td>
+    </tr>`;}).join("") || `<tr><td colspan="10" class="empty">No hay inmuebles con estos filtros.</td></tr>`}</tbody>
+  </table></div>
+  <p class="sub">El % debajo del $/m² compara con la mediana de sus comparables (verde: más barato). Toca una fila para ver la ficha completa, editarla o cambiar el estatus.</p>`;
+}
+
+/* ───────────── Ficha (drawer) ───────────── */
+let D = null; // copia editable
+function abrir(id, nuevo){
+  if(nuevo){ D = nuevo; S.sel = "__nuevo"; }
+  else { const it = S.items.find(i=>i.id===id); if(!it) return; D = JSON.parse(JSON.stringify(it)); S.sel = id; }
+  D._conf = false; pintarDrawer();
+}
+function cerrar(){ S.sel=null; D=null; $("#drawer-root").innerHTML=""; }
+function pintarDrawer(){
+  if(!D) return;
+  const ev = evaluar(D), sp = D.specs||{}, tpl = SPECS[D.tipo]||[];
+  const extraKeys = Object.keys(sp).filter(k=>!tpl.some(([t])=>t===k));
+  const campo = (id,lab,val,type="text",cls="") => `<label class="${cls}">${lab}<input id="${id}" type="${type}" value="${esc(val??"")}"></label>`;
+  const zona = ZONAS.find(z=>z.id===D.zona) || ZONAS[0];
+  $("#drawer-root").innerHTML = `
+  <div class="overlay" id="ov"><aside class="drawer" role="dialog" aria-label="Ficha del inmueble">
+    <div class="dhead"><div><div class="mono muted">${esc(D.id)} · ${esc(zonaNom(D.zona))} · ${esc(tipoNom(D.tipo))}</div><h2>${esc(D.titulo||"Nuevo inmueble")}</h2></div>
+      <button class="btn sm" id="d-close" type="button" aria-label="Cerrar">Cerrar ✕</button></div>
+    <div class="statusbar">${ESTATUS.map(s=>`<button type="button" class="st-${s.id}" data-st="${s.id}" aria-pressed="${D.estatus===s.id}">${s.nombre}</button>`).join("")}
+      <button type="button" data-fav aria-pressed="${!!D.favorito}" style="color:var(--mid)">${D.favorito?"★ Destacado":"☆ Destacar"}</button></div>
+
+    <div class="analysis">${ev.ref?`<b>Alquiler: sirve como referencia de renta</b>`:`
+      <div class="big"><b class="num" style="color:${claseColor[ev.clase]}">${ev.score}</b><div><span class="chip cl-${ev.clase}">Inversión ${claseNom[ev.clase]}</span><div class="sub">Puntaje de 0 a 100 con el perfil general</div></div></div>`}
+      <ul>${analisis(D,ev).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+      ${ev.ref?"":`<div class="breakdown">${CRIT.map(([k,n])=>`<span class="muted">${n} · ${Math.round(PERFILES.general.w[k]*100)}%</span><b class="num">${ev.sub[k]==null?"—":Math.round(ev.sub[k])}</b>`).join("")}</div>`}
+    </div>
+
+    <div class="sec"><h3>Análisis del asesor</h3>
+      <div class="form"><label class="wide">Por qué es buena, media o mala inversión<textarea id="d-nota">${esc(D.nota)}</textarea></label></div></div>
+
+    <div class="sec"><h3>Datos principales</h3><div class="form">
+      ${campo("d-titulo","Título",D.titulo,"text","wide")}
+      <label>Zona<select id="d-zona">${ZONAS.map(z=>`<option value="${z.id}" ${D.zona===z.id?"selected":""}>${z.nombre}</option>`).join("")}</select></label>
+      <label>Tipo<select id="d-tipo">${TIPOS.map(t=>`<option value="${t.id}" ${D.tipo===t.id?"selected":""}>${t.nombre}</option>`).join("")}</select></label>
+      ${campo("d-subtipo","Subtipo",D.subtipo)}
+      <label>Operación<select id="d-op"><option value="venta" ${D.operacion==="venta"?"selected":""}>Venta</option><option value="alquiler" ${D.operacion==="alquiler"?"selected":""}>Alquiler</option></select></label>
+      <label>Sector / urbanización<input id="d-sector" list="dl-sec" value="${esc(D.sector)}"><datalist id="dl-sec">${zona.sectores.map(s=>`<option value="${esc(s)}">`).join("")}</datalist></label>
+      ${campo("d-precio", D.operacion==="alquiler"?"Precio (USD/mes)":"Precio (USD)", D.precio,"number")}
+      ${campo("d-m2c","m² de construcción",D.m2c,"number")}
+      ${campo("d-m2t","m² de terreno",D.m2t,"number")}
+      ${campo("d-hab","Habitaciones",D.hab,"number")}
+      ${campo("d-banos","Baños",D.banos,"number")}
+      ${campo("d-puestos","Puestos",D.puestos,"number")}
+      ${campo("d-agente","Agente / inmobiliaria",D.agente)}
+      ${campo("d-contacto","Contacto",D.contacto)}
+      ${campo("d-fecha","Detectado el",D.fecha_detectada,"date")}
+      ${campo("d-verif","Última verificación",D.ultima_verificacion,"date")}
+      <label class="wide">Descripción<textarea id="d-desc">${esc(D.descripcion)}</textarea></label>
+    </div></div>
+
+    <div class="sec"><h3>Características de ${esc(tipoNom(D.tipo).toLowerCase())}</h3><div class="form">
+      ${tpl.map(([k,n])=>campo("sp-"+k,n,sp[k])).join("")}
+      ${extraKeys.map(k=>campo("sp-"+k,k.replace(/_/g," "),sp[k])).join("")}
+    </div></div>
+
+    <div class="sec"><h3>Calificación del asesor (1 = malo · 5 = excelente)</h3><div class="rates">
+      ${CRIT.slice(1).map(([k,n])=>`<span>${n}</span><span class="rate">${[1,2,3,4,5].map(v=>`<button type="button" data-rate="${k}" data-v="${v}" aria-pressed="${(D.cal||{})[k]===v}">${v}</button>`).join("")}</span>`).join("")}
+    </div></div>
+
+    <div class="sec"><h3>Fuentes y enlaces</h3><div class="src">
+      ${(D.fuentes||[]).map((s,i)=>`<div class="row"><b>${esc(s.nombre)}</b>${s.codigo?`<span class="mono">${esc(s.codigo)}</span>`:""}${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">Abrir publicación ↗</a>`:""}<button class="btn sm danger" type="button" data-delsrc="${i}">Quitar</button></div>`).join("") || `<span class="muted">Sin fuentes.</span>`}
+      <div class="form"><label>Plataforma<input id="ns-nombre" placeholder="MercadoLibre, Instagram…"></label><label>Código<input id="ns-codigo"></label><label class="wide">Enlace<input id="ns-url" placeholder="https://…"></label></div>
+      <div><button class="btn sm" type="button" id="d-addsrc">Añadir fuente</button></div>
+    </div></div>
+
+    <div class="sec"><h3>Historial</h3><div class="hist">
+      ${(D.historial||[]).slice().reverse().map(h=>`<div><b class="num">${esc(h.fecha)}</b> · ${esc(h.evento)}${h.precio!=null?` · ${usd(h.precio)}`:""}</div>`).join("") || `<span class="muted">Sin eventos.</span>`}
+    </div></div>
+
+    <div class="dfoot">
+      <div>${S.sel==="__nuevo"?"":(D._conf?`<span class="confirm">¿Eliminar este inmueble para siempre? <button class="btn sm danger" type="button" id="d-del2">Sí, eliminar</button><button class="btn sm" type="button" id="d-del0">No</button></span>`:`<button class="btn danger" type="button" id="d-del">Eliminar</button>`)}</div>
+      <div style="display:flex;gap:8px"><button class="btn" type="button" id="d-cancel">Cancelar</button><button class="btn primary" type="button" id="d-save">Guardar cambios</button></div>
+    </div>
+  </aside></div>`;
+}
+function leerForm(){
+  const v = id => { const el=$("#"+id); return el? el.value.trim() : undefined; };
+  const n = id => { const x=v(id); return x===""||x==null? null : Number(x); };
+  D.titulo=v("d-titulo"); D.zona=v("d-zona"); D.tipo=v("d-tipo"); D.subtipo=v("d-subtipo"); D.operacion=v("d-op"); D.sector=v("d-sector");
+  D.precio=n("d-precio"); D.m2c=n("d-m2c"); D.m2t=n("d-m2t"); D.hab=n("d-hab"); D.banos=n("d-banos"); D.puestos=n("d-puestos");
+  D.agente=v("d-agente"); D.contacto=v("d-contacto"); D.fecha_detectada=v("d-fecha")||D.fecha_detectada; D.ultima_verificacion=v("d-verif")||D.ultima_verificacion;
+  D.descripcion=v("d-desc"); D.nota=v("d-nota");
+  const sp = {...(D.specs||{})};
+  document.querySelectorAll("[id^='sp-']").forEach(el=>{ const k=el.id.slice(3); if(el.value.trim()) sp[k]=el.value.trim(); else delete sp[k]; });
+  D.specs = sp;
+}
+async function guardarDrawer(){
+  leerForm();
+  if(!D.titulo){ toast("Escribe un título para el inmueble"); return; }
+  const prev = S.items.find(i=>i.id===D.id);
+  D.historial = D.historial || [];
+  if(!prev) D.historial.push({fecha:hoy(), evento:"Agregado manualmente", precio:D.precio, estatus:D.estatus});
+  else {
+    if(prev.precio!==D.precio) D.historial.push({fecha:hoy(), evento:`Cambio de precio (antes ${usd(prev.precio)})`, precio:D.precio});
+    if(prev.estatus!==D.estatus) D.historial.push({fecha:hoy(), evento:`Estatus: ${stNom(prev.estatus)} → ${stNom(D.estatus)}`});
+  }
+  const it = {...D}; delete it._conf;
+  if(await guardar(it)){ toast("Cambios guardados"); cerrar(); }
+}
+function nuevoId(zona){
+  const p = (ZONAS.find(z=>z.id===zona)||ZONAS[0]).pref;
+  const n = S.items.filter(i=>i.id.startsWith(p+"-")).map(i=>parseInt(i.id.split("-")[1])||0);
+  return p + "-" + String((n.length?Math.max(...n):0)+1).padStart(3,"0");
+}
+function plantilla(){
+  const zona = ZONAS.some(z=>z.id===S.tab) ? S.tab : "guatire";
+  return {id:nuevoId(zona), zona, tipo:S.tipo, subtipo:"", operacion:"venta", sector:"", titulo:"", precio:null, m2c:null, m2t:null,
+    hab:null, banos:null, puestos:null, specs:{}, descripcion:"", fuentes:[], cal:{ubicacion:3,estado:3,rentabilidad:3,liquidez:3,documentacion:3},
+    nota:"", estatus:"disponible", fecha_detectada:hoy(), ultima_verificacion:hoy(), historial:[], agente:"", contacto:"", favorito:false};
+}
+
+/* ───────────── Clientes e inversionistas ───────────── */
+function coincidencias(c){
+  const perfil = PERFILES[c.perfil] ? c.perfil : "general";
+  return S.items.filter(i =>
+    ACTIVOS.includes(i.estatus) &&
+    (!c.operacion || c.operacion==="todas" || i.operacion===c.operacion) &&
+    (!c.zonas?.length || c.zonas.includes(i.zona)) &&
+    (!c.tipos?.length || c.tipos.includes(i.tipo)) &&
+    (c.min==null || c.min==="" || (i.precio!=null && i.precio>=c.min)) &&
+    (c.max==null || c.max==="" || (i.precio!=null && i.precio<=c.max)) &&
+    (!c.hab || i.tipo!=="residencial" || (i.hab||0)>=c.hab) &&
+    (!c.m2 || (area(i)||0)>=c.m2)
+  ).map(it=>({it, ev:evaluar(it, perfil)})).sort((a,b)=>(b.ev.score??-1)-(a.ev.score??-1));
+}
+function vistaClientes(){
+  const c = S.clientes.find(x=>x.id===S.cliente) || null;
+  const form = c || {nombre:"",perfil:"general",operacion:"venta",zonas:[],tipos:[],min:20000,max:"",hab:"",m2:"",notas:""};
+  const ms = c ? coincidencias(c) : [];
+  return `<div class="clients">
+    <div>
+      <div class="card"><h2>Clientes</h2>
+        <div class="clist">${S.clientes.map(x=>`<button type="button" data-cli="${esc(x.id)}" aria-selected="${S.cliente===x.id}"><b>${esc(x.nombre)}</b><div class="sub">${esc(PERFILES[x.perfil]?.nombre||"")} · ${x.max?"hasta "+usd(x.max):"sin tope"}</div></button>`).join("") || `<span class="muted">Todavía no hay clientes. Crea el primero abajo.</span>`}</div>
+        <button class="btn sm" type="button" id="c-new">+ Nuevo cliente</button>
+      </div>
+      <div class="card" style="margin-top:12px"><h2>${c?"Perfil de "+esc(c.nombre):"Nuevo cliente"}</h2>
+        <div class="form">
+          <label class="wide">Nombre<input id="c-nombre" value="${esc(form.nombre)}"></label>
+          <label class="wide">Perfil de inversionista<select id="c-perfil">${Object.entries(PERFILES).map(([k,p])=>`<option value="${k}" ${form.perfil===k?"selected":""}>${p.nombre}</option>`).join("")}</select></label>
+          <label>Operación<select id="c-op">${[["venta","Compra"],["alquiler","Alquiler"],["todas","Ambas"]].map(([v,n])=>`<option value="${v}" ${form.operacion===v?"selected":""}>${n}</option>`).join("")}</select></label>
+          <label>Hab. mínimas<input id="c-hab" type="number" value="${esc(form.hab)}"></label>
+          <label>Presupuesto mín.<input id="c-min" type="number" value="${esc(form.min)}"></label>
+          <label>Presupuesto máx.<input id="c-max" type="number" value="${esc(form.max)}"></label>
+          <label>m² mínimos<input id="c-m2" type="number" value="${esc(form.m2)}"></label>
+          <label class="wide">Zonas<span class="checks">${ZONAS.map(z=>`<label><input type="checkbox" name="c-z" value="${z.id}" ${form.zonas?.includes(z.id)?"checked":""}>${z.nombre}</label>`).join("")}</span></label>
+          <label class="wide">Tipos<span class="checks">${TIPOS.map(t=>`<label><input type="checkbox" name="c-t" value="${t.id}" ${form.tipos?.includes(t.id)?"checked":""}>${t.nombre}</label>`).join("")}</span></label>
+          <label class="wide">Qué busca (notas)<textarea id="c-notas">${esc(form.notas)}</textarea></label>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn primary" type="button" id="c-save">${c?"Guardar perfil":"Crear cliente"}</button>${c?`<button class="btn danger" type="button" id="c-del">Eliminar cliente</button>`:""}</div>
+      </div>
+    </div>
+    <div class="card"><h2>${c?`Inmuebles para ${esc(c.nombre)}`:"Coincidencias"}</h2>
+      ${c?`<p class="sub">Ordenados con los pesos del perfil <b>${esc(PERFILES[c.perfil]?.nombre)}</b>. Marca los que quieras enviarle y copia la ficha para el cliente: solo incluye datos publicables, sin tus notas internas.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><button class="btn primary sm" type="button" id="c-copy">Copiar ficha para el cliente (${[...S.pick].filter(id=>ms.some(m=>m.it.id===id)).length})</button></div>
+      <div class="tablebox"><table style="min-width:640px"><thead><tr><th></th><th>Inmueble</th><th class="r">Precio</th><th class="r">m²</th><th>Estatus</th><th class="r">Puntaje</th></tr></thead><tbody>
+      ${ms.map(({it,ev})=>`<tr data-open="${esc(it.id)}"><td><input type="checkbox" data-pick="${esc(it.id)}" ${S.pick.has(it.id)?"checked":""} aria-label="Seleccionar ${esc(it.id)}"></td>
+        <td><div class="tt">${esc(it.titulo)}</div><div class="sub">${esc(zonaNom(it.zona))} · ${esc(it.sector)} · <span class="mono">${esc(it.id)}</span></div></td>
+        <td class="r num"><b>${usd(it.precio)}</b></td><td class="r num">${fmt(area(it))}</td>
+        <td><span class="chip st-${it.estatus}">${stNom(it.estatus)}</span></td>
+        <td>${ev.ref?'<span class="chip cl-ref">Ref.</span>':`<div class="score"><b class="num">${ev.score}</b><span class="chip cl-${ev.clase}">${claseNom[ev.clase]}</span></div>`}</td></tr>`).join("") || `<tr><td colspan="6" class="empty">Ningún inmueble activo cumple estos criterios.</td></tr>`}
+      </tbody></table></div>`:`<p class="muted">Crea o elige un cliente: cuando dices "llegó un inversionista que busca esto", aquí aparecen los inmuebles del estudio que le sirven, ordenados según su perfil.</p>`}
+    </div></div>`;
+}
+function leerCliente(){
+  const v = id => $("#"+id).value.trim(), n = id => v(id)===""? "" : Number(v(id));
+  return {nombre:v("c-nombre"), perfil:v("c-perfil"), operacion:v("c-op"), hab:n("c-hab"), min:n("c-min"), max:n("c-max"), m2:n("c-m2"), notas:v("c-notas"),
+    zonas:[...document.querySelectorAll("input[name=c-z]:checked")].map(x=>x.value), tipos:[...document.querySelectorAll("input[name=c-t]:checked")].map(x=>x.value)};
+}
+function fichaCliente(c){
+  const sel = coincidencias(c).filter(m=>S.pick.has(m.it.id));
+  const lines = [`Hola ${c.nombre}, te comparto inmuebles seleccionados según lo que buscas:`, ""];
+  sel.forEach(({it},i)=>{
+    const sp = it.specs||{};
+    const det = [it.hab?`${it.hab} hab.`:"", it.banos?`${it.banos} baños`:"", it.puestos?`${it.puestos} puestos`:"", area(it)?`${fmt(area(it))} m²`:""].filter(Boolean).join(" · ");
+    const dest = Object.values(sp).slice(0,3).join(" · ");
+    lines.push(`${i+1}. ${it.titulo}`, `   📍 ${it.sector}, ${zonaNom(it.zona)}`, `   💵 ${usd(it.precio)}${it.operacion==="alquiler"?" al mes":""}${det?"  |  "+det:""}`);
+    if(dest) lines.push(`   ✔ ${dest}`);
+    lines.push("");
+  });
+  lines.push("¿Te gustaría agendar una visita a alguno?", "", FIRMA);
+  return lines.join("\n");
+}
+
+/* ───────────── Exportar a Excel ───────────── */
+async function exportar(){
+  if(!window.XLSX){ toast("No se pudo cargar el generador de Excel"); return; }
+  if(!S.dl){ toast("Esta vista no permite descargar archivos"); return; }
+  const wb = XLSX.utils.book_new();
+  const fila = it => { const ev=evaluar(it); return {
+    "Código":it.id, "Tipo":tipoNom(it.tipo), "Subtipo":it.subtipo, "Operación":it.operacion, "Sector":it.sector, "Título":it.titulo,
+    "Precio USD":it.precio, "m² construcción":it.m2c, "m² terreno":it.m2t, "$/m²":ppm2(it)?Math.round(ppm2(it)):null,
+    "Habitaciones":it.hab, "Baños":it.banos, "Puestos":it.puestos, "Estatus":stNom(it.estatus),
+    "Puntaje":ev.ref?"":ev.score, "Calificación":ev.ref?"Referencia":claseNom[ev.clase], "Análisis":it.nota,
+    "Características":Object.entries(it.specs||{}).map(([k,v])=>k.replace(/_/g," ")+": "+v).join(" | "),
+    "Fuente":(it.fuentes||[]).map(s=>s.nombre+(s.codigo?" "+s.codigo:"")).join(" | "), "Enlace":(it.fuentes||[])[0]?.url||"",
+    "Detectado":it.fecha_detectada, "Últ. verificación":it.ultima_verificacion, "Días en mercado":dias(it.fecha_detectada) }; };
+  const res = [];
+  for(const z of ZONAS) for(const t of TIPOS){ const g=S.items.filter(i=>i.zona===z.id&&i.tipo===t.id&&ACTIVOS.includes(i.estatus));
+    const pm=g.map(ppm2).filter(x=>x!=null); res.push({"Zona":z.nombre,"Tipo":t.nombre,"Activos":g.length,"Mediana $/m²":pm.length?Math.round(median(pm)):null,
+      "Excelentes":g.map(i=>evaluar(i)).filter(e=>e.clase==="exc").length}); }
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(res), "Resumen");
+  for(const z of ZONAS){
+    const rows = S.items.filter(i=>i.zona===z.id).sort((a,b)=>a.tipo.localeCompare(b.tipo)||a.id.localeCompare(b.id)).map(fila);
+    const ws = XLSX.utils.json_to_sheet(rows); ws["!cols"] = Object.keys(rows[0]||{}).map(k=>({wch:Math.min(40,Math.max(10,k.length+2))}));
+    XLSX.utils.book_append_sheet(wb, ws, z.nombre);
+  }
+  const buf = XLSX.write(wb, {type:"array", bookType:"xlsx"});
+  try{ await S.dl.save({filename:`Estudio de Mercado ${hoy()}.xlsx`, data:new Blob([buf])}); toast("Excel descargado"); }
+  catch(e){ if(e.code!=="declined") toast("No se pudo descargar: " + e.code); }
+}
+
+/* ───────────── Eventos ───────────── */
+document.addEventListener("click", async e => {
+  const t = e.target.closest("button,[data-open],[data-go],input[type=checkbox]");
+  if(!t) { if(e.target.id==="ov") cerrar(); return; }
+  if(t.dataset.tab){ S.tab=t.dataset.tab; S.f.sector=""; try{localStorage.setItem("em-tab",S.tab)}catch(_){ } render(); return; }
+  if(t.dataset.tipo){ S.tipo=t.dataset.tipo; S.f.sector=""; try{localStorage.setItem("em-tipo",S.tipo)}catch(_){ } render(); return; }
+  if(t.dataset.go){ const [z,ti]=t.dataset.go.split("|"); S.tab=z; S.tipo=ti; render(); return; }
+  if(t.dataset.pick){ t.checked?S.pick.add(t.dataset.pick):S.pick.delete(t.dataset.pick); e.stopPropagation(); render(); return; }
+  if(t.matches("input[type=checkbox]")) return;
+  if(t.dataset.open){ abrir(t.dataset.open); return; }
+  if(t.dataset.cli){ S.cliente=t.dataset.cli; S.pick.clear(); render(); return; }
+  switch(t.id){
+    case "btn-add": abrir(null, plantilla()); return;
+    case "btn-export": exportar(); return;
+    case "d-close": case "d-cancel": cerrar(); return;
+    case "d-save": guardarDrawer(); return;
+    case "d-del": leerForm(); D._conf=true; pintarDrawer(); return;
+    case "d-del0": D._conf=false; pintarDrawer(); return;
+    case "d-del2": if(S.db){ try{ await S.db.collection("inmuebles").doc(D.id).delete(); toast("Inmueble eliminado"); cerrar(); }catch(err){ toast("No se pudo eliminar: "+err.code); } } return;
+    case "d-addsrc": { leerForm(); const nombre=$("#ns-nombre").value.trim(), url=$("#ns-url").value.trim(), codigo=$("#ns-codigo").value.trim();
+      if(!nombre && !url){ toast("Escribe la plataforma o el enlace"); return; }
+      D.fuentes=[...(D.fuentes||[]), {nombre:nombre||"Enlace", codigo, url}]; pintarDrawer(); return; }
+    case "c-new": S.cliente=null; S.pick.clear(); render(); return;
+    case "c-save": { const data=leerCliente(); if(!data.nombre){ toast("Escribe el nombre del cliente"); return; }
+      if(!S.db){ toast("No hay base de datos"); return; }
+      const ref = S.cliente ? S.db.collection("clientes").doc(S.cliente) : S.db.collection("clientes").doc();
+      try{ await ref.set({...data, actualizado:hoy()}); S.cliente=ref.id; toast("Perfil guardado"); render(); }catch(err){ toast("No se pudo guardar: "+err.code); } return; }
+    case "c-del": if(S.db && S.cliente){ try{ await S.db.collection("clientes").doc(S.cliente).delete(); S.cliente=null; toast("Cliente eliminado"); render(); }catch(err){ toast("No se pudo eliminar: "+err.code); } } return;
+    case "c-copy": { const c=S.clientes.find(x=>x.id===S.cliente); if(!c) return; if(![...S.pick].length){ toast("Marca al menos un inmueble"); return; }
+      const txt=fichaCliente(c);
+      try{ await navigator.clipboard.writeText(txt); toast("Ficha copiada: pégala en WhatsApp o en un correo"); }
+      catch(_){ abrirTexto(txt); } return; }
+  }
+  if(t.dataset.st){ leerForm(); D.estatus=t.dataset.st; if(D.estatus!=="por_verificar") D.ultima_verificacion=hoy(); pintarDrawer(); return; }
+  if(t.hasAttribute("data-fav")){ leerForm(); D.favorito=!D.favorito; pintarDrawer(); return; }
+  if(t.dataset.rate){ leerForm(); D.cal={...(D.cal||{}), [t.dataset.rate]:+t.dataset.v}; pintarDrawer(); return; }
+  if(t.dataset.delsrc){ leerForm(); D.fuentes=D.fuentes.filter((_,i)=>i!==+t.dataset.delsrc); pintarDrawer(); return; }
+});
+function abrirTexto(txt){
+  $("#drawer-root").innerHTML = `<div class="overlay" id="ov"><aside class="drawer"><div class="dhead"><h2>Ficha para el cliente</h2><button class="btn sm" id="d-close" type="button">Cerrar ✕</button></div>
+  <p class="sub">No se pudo copiar automáticamente. Selecciona el texto y cópialo.</p><div class="form"><label class="wide"><textarea id="txt-ficha" style="min-height:60vh">${esc(txt)}</textarea></label></div></aside></div>`;
+  const ta=$("#txt-ficha"); ta.focus(); ta.select();
+}
+document.addEventListener("input", e => {
+  const id = e.target.id; const map = {"f-q":"q","f-min":"min","f-max":"max"};
+  if(map[id]){ S.f[map[id]] = e.target.value; clearTimeout(S._deb); S._deb=setTimeout(()=>{ const pos=e.target.selectionStart; render(); const el=$("#"+id); if(el){ el.focus(); try{el.setSelectionRange(pos,pos)}catch(_){} } }, 250); }
+});
+document.addEventListener("change", e => {
+  const id = e.target.id; const map = {"f-op":"op","f-st":"st","f-sector":"sector","f-orden":"orden"};
+  if(map[id]){ S.f[map[id]] = e.target.value; render(); }
+  if((id==="d-tipo"||id==="d-op"||id==="d-zona") && D){ leerForm(); if(id==="d-zona" && S.sel==="__nuevo") D.id=nuevoId(D.zona); pintarDrawer(); }
+});
+document.addEventListener("keydown", e => { if(e.key==="Escape" && S.sel) cerrar(); });
+iniciar();
+</script>
