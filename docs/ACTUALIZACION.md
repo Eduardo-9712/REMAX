@@ -44,5 +44,5 @@ Por cada zona y tipo (venta y alquiler):
 - `meta/estado`: `ultima_actualizacion` ("DD-MM-AAAA · Actualización semanal"), `resumen`
   (nuevos, bajas de precio, retirados y las 3 mejores oportunidades nuevas con su código) y `proxima`.
 - `reportes/<AAAA-MM-DD>`: el mismo resumen con las listas de IDs.
-- Exportar la base a `data/inmuebles.json` (lista con `id`), hacer commit y push a la rama de trabajo.
+- Exportar la base a `data/inmuebles.json` (lista con `id`) **sin `captacion.propietario`** (los datos de los propietarios no van al repositorio), hacer commit y push a la rama de trabajo.
 - Terminar con un mensaje corto en español para Eduardo con el resumen y el enlace a la aplicación.
