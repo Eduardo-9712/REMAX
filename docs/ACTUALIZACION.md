@@ -33,6 +33,8 @@ Por cada zona y tipo (venta y alquiler):
 - **Cambios de precio:** actualizar `precio` y agregar al historial "Cambio de precio (antes $X)".
 - **Ya no aparece** (la publicación da 404 o dice finalizada o pausada): estatus `retirado` y al historial
   "Publicación no encontrada: posible venta". **Nunca marcar `vendido`**: eso lo confirma Eduardo.
+- **Nunca tocar las captaciones de Eduardo** (`propia: true`, códigos `CAP-…`): ni datos, ni estatus, ni propietario.
+  Sí cuentan como comparables.
 - **No tocar** los inmuebles en `negociacion` o `vendido`, ni los que tengan `verificado = true`
   (salvo precio y estatus), ni la `nota` o `cal` que Eduardo haya editado.
 - Escribir en lotes (`batch`, máximo 50) con `if_version`.

@@ -29,6 +29,7 @@
   --gray:#A0A8B5; --gray-soft:#1C2536; --info:#8DB0FF; --info-soft:#17264A; --shadow:0 10px 40px rgba(0,0,0,.5);
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;padding-inline:16px;padding-block:0 48px}
 .wrap{max-width:1280px;margin:0 auto}
 h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
@@ -115,6 +116,17 @@ td.mono{white-space:nowrap}
 .delta.dn{color:var(--good)} .delta.up{color:var(--low)}
 .star{color:var(--mid)}
 .ok{font-family:var(--f-body);font-size:11.5px;font-weight:700;color:var(--good)}
+.mine{font-family:var(--f-body);font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--red);text-transform:uppercase}
+.capbox{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;padding:12px 14px;margin-bottom:14px}
+.docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px}
+.docs label{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--ink);font-weight:500}
+.docs input{width:auto}
+.acm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-block:8px}
+.acm div{background:var(--surface);padding:8px 10px}
+.acm b{font-family:var(--f-display);font-size:18px;display:block}
+.complist{font-size:13.5px;display:flex;flex-direction:column;gap:4px}
+.complist button{all:unset;cursor:pointer;color:var(--blue)}
+.complist button:focus-visible{outline:2px solid var(--blue)}
 
 /* Panel */
 .grid2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;margin-top:16px}
@@ -235,6 +247,25 @@ const PERFILES = {
   desarrollo:{nombre:"Desarrollador / constructor",   w:{precio:.40,ubicacion:.30,estado:0,rentabilidad:.05,liquidez:.10,documentacion:.15}},
 };
 const FIRMA = "Eduardo León · Asesor Inmobiliario RE/MAX";
+/* Mis captaciones: inmuebles que Eduardo tiene en cartera. Viven en la misma colección
+   (propia: true) para que cuenten como comparables y aparezcan a los clientes. */
+const EST_CAP = [
+  {id:"preparacion", nombre:"En preparación", st:"disponible", c:"por_verificar"},
+  {id:"publicada",   nombre:"Publicada",      st:"disponible", c:"disponible"},
+  {id:"ofertas",     nombre:"Con ofertas",    st:"disponible", c:"negociacion"},
+  {id:"negociacion", nombre:"En negociación", st:"negociacion", c:"negociacion"},
+  {id:"cerrada",     nombre:"Vendida / Alquilada", st:"vendido", c:"vendido"},
+  {id:"vencida",     nombre:"Vencida / Retirada",  st:"retirado", c:"retirado"},
+];
+const CAP_ACTIVAS = ["preparacion","publicada","ofertas","negociacion"];
+const DOCS = [
+  ["contrato","Contrato de captación firmado"],["propiedad","Documento de propiedad"],["cedula","Cédula del propietario"],
+  ["catastral","Cédula / ficha catastral"],["solvencias","Solvencias (municipal, servicios)"],["condominio","Solvencia de condominio"],
+  ["planos","Planos o croquis"],["fotos","Fotos profesionales"],
+];
+const ACTIVIDAD = ["Visita","Llamada","Oferta","Publicación","Rebaja de precio","Otro"];
+const capNom = id => (EST_CAP.find(e=>e.id===id)||{}).nombre || id;
+const capClase = id => (EST_CAP.find(e=>e.id===id)||{}).c || "por_verificar";
 
 /* ───────────── Estado ───────────── */
 const S = {
@@ -255,6 +286,7 @@ const zonaNom = id => (ZONAS.find(z=>z.id===id)||{}).nombre || id;
 const tipoNom = id => (TIPOS.find(t=>t.id===id)||{}).nombre || id;
 const stNom = id => (ESTATUS.find(s=>s.id===id)||{}).nombre || id;
 const dias = f => f ? Math.max(0, Math.round((Date.now() - new Date(f+"T00:00:00").getTime())/864e5)) : null;
+const diasHasta = f => f ? Math.round((new Date(f+"T00:00:00").getTime() - Date.now())/864e5) : null;
 const median = a => { if(!a.length) return null; const s=[...a].sort((x,y)=>x-y); const m=s.length>>1; return s.length%2?s[m]:(s[m-1]+s[m])/2; };
 function toast(msg){ const t=$("#toast"); t.textContent=msg; t.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(()=>t.hidden=true,2600); }
 
@@ -278,6 +310,19 @@ function comparables(it){
   return null;
 }
 
+/* Análisis comparativo para fijar precio: $/m² de inmuebles parecidos (sin contar el propio). */
+function acm(it){
+  const a = area(it); if(!a || it.operacion!=="venta") return null;
+  const base = S.items.filter(o => o.id!==it.id && o.operacion==="venta" && o.tipo===it.tipo && ppm2(o)!=null && (it.tipo!=="residencial" || familia(o)===familia(it)));
+  let g = base.filter(o=>o.zona===it.zona && o.sector===it.sector), amb = "su sector";
+  if(g.length<3){ g = base.filter(o=>o.zona===it.zona); amb = zonaNom(it.zona); }
+  if(g.length<3){ g = base; amb = "las 3 zonas"; }
+  if(g.length<2) return {pocos:true, n:g.length};
+  const v = g.map(ppm2).sort((x,y)=>x-y), q = f => { const i=(v.length-1)*f, lo=Math.floor(i), hi=Math.ceil(i); return v[lo]+(v[hi]-v[lo])*(i-lo); };
+  const med = q(.5);
+  const lista = g.slice().sort((x,y)=>(y.sector===it.sector)-(x.sector===it.sector) || Math.abs(ppm2(x)-med)-Math.abs(ppm2(y)-med)).slice(0,5);
+  return {n:g.length, amb, area:a, p25:q(.25), med, p75:q(.75), sugerido:med*a, lo:q(.25)*a, hi:q(.75)*a, lista};
+}
 function evaluar(it, perfil="general"){
   if(it.operacion!=="venta") return {ref:true};
   if(it.precio==null || it.precio==="") return {falta:true};
@@ -338,9 +383,10 @@ async function guardar(it){
 
 /* ───────────── Render principal ───────────── */
 function render(){
-  const tabs = [{id:"panel",nombre:"Panel general"}, ...ZONAS.map(z=>({id:z.id,nombre:z.nombre})), {id:"clientes",nombre:"Clientes e inversionistas"}];
+  const tabs = [{id:"panel",nombre:"Panel general"}, ...ZONAS.map(z=>({id:z.id,nombre:z.nombre})), {id:"captaciones",nombre:"Mis captaciones"}, {id:"clientes",nombre:"Clientes e inversionistas"}];
   $("#zones").innerHTML = tabs.map(t => {
-    const n = ZONAS.some(z=>z.id===t.id) ? S.items.filter(i=>i.zona===t.id && ACTIVOS.includes(i.estatus)).length : null;
+    const n = ZONAS.some(z=>z.id===t.id) ? S.items.filter(i=>i.zona===t.id && !i.propia && ACTIVOS.includes(i.estatus)).length
+      : t.id==="captaciones" ? S.items.filter(i=>i.propia && CAP_ACTIVAS.includes(i.captacion?.estado)).length : null;
     return `<button role="tab" aria-selected="${S.tab===t.id}" data-tab="${t.id}">${esc(t.nombre)}${n!=null?`<span class="count">${n}</span>`:""}</button>`;
   }).join("");
   const v = $("#view");
@@ -348,6 +394,7 @@ function render(){
   if(!S.db && !S.items.length){ v.innerHTML = `<div class="notice">Esta vista no tiene acceso a la base de datos del estudio. Abre la página desde tu cuenta de claude.ai para ver y editar los inmuebles.</div>`; return; }
   if(S.tab==="panel") v.innerHTML = vistaPanel();
   else if(S.tab==="clientes") v.innerHTML = vistaClientes();
+  else if(S.tab==="captaciones") v.innerHTML = vistaCaptaciones();
   else v.innerHTML = vistaZona();
 }
 
@@ -459,7 +506,7 @@ function vistaZona(){
     <tbody>${rows.map(({it,ev})=>{
       const d = ev.ratio!=null ? Math.round((ev.ratio-1)*100) : null;
       return `<tr data-open="${esc(it.id)}">
-      <td class="mono">${it.favorito?'<span class="star">★</span> ':""}${esc(it.id)}${it.verificado?'<div class="ok" title="Datos confirmados en la publicación">✓ Confirmado</div>':""}</td>
+      <td class="mono">${it.favorito?'<span class="star">★</span> ':""}${esc(it.id)}${it.propia?'<div class="mine">Mi captación</div>':it.verificado?'<div class="ok" title="Datos confirmados en la publicación">✓ Confirmado</div>':""}</td>
       <td><div class="tt">${esc(it.titulo)}</div><div class="sub">${esc(it.sector)} · ${esc(it.subtipo)}</div></td>
       <td><span class="op ${it.operacion}">${it.operacion==="venta"?"Venta":"Alquiler"}</span></td>
       <td class="r num">${it.precio==null?'<span class="sub">Por confirmar</span>':`<b>${usd(it.precio)}</b>`}${it.operacion==="alquiler"&&it.precio!=null?'<div class="sub">al mes</div>':""}</td>
@@ -490,12 +537,13 @@ function pintarDrawer(){
   const zona = ZONAS.find(z=>z.id===D.zona) || ZONAS[0];
   $("#drawer-root").innerHTML = `
   <div class="overlay" id="ov"><aside class="drawer" role="dialog" aria-label="Ficha del inmueble">
-    <div class="dhead"><div><div class="mono muted">${esc(D.id)} · ${esc(zonaNom(D.zona))} · ${esc(tipoNom(D.tipo))}</div><h2>${esc(D.titulo||"Nuevo inmueble")}</h2></div>
+    <div class="dhead"><div><div class="mono muted">${D.propia?'<span class="mine">Mi captación</span> · ':""}${esc(D.id)} · ${esc(zonaNom(D.zona))} · ${esc(tipoNom(D.tipo))}</div><h2>${esc(D.titulo||"Nuevo inmueble")}</h2></div>
       <button class="btn sm" id="d-close" type="button" aria-label="Cerrar">Cerrar ✕</button></div>
-    <div class="statusbar">${ESTATUS.map(s=>`<button type="button" class="st-${s.id}" data-st="${s.id}" aria-pressed="${D.estatus===s.id}">${s.nombre}</button>`).join("")}
+    <div class="statusbar" ${D.propia?"hidden":""}>${ESTATUS.map(s=>`<button type="button" class="st-${s.id}" data-st="${s.id}" aria-pressed="${D.estatus===s.id}">${s.nombre}</button>`).join("")}
       <button type="button" data-fav aria-pressed="${!!D.favorito}" style="color:var(--mid)">${D.favorito?"★ Destacado":"☆ Destacar"}</button>
       <button type="button" data-verif aria-pressed="${!!D.verificado}" style="color:var(--good)">${D.verificado?"✓ Confirmado en la publicación":"Marcar datos como confirmados"}</button></div>
-    ${D.verificado?"":`<p class="sub" style="margin:-6px 0 12px">Los datos de esta ficha vienen del buscador y todavía no se han comparado con la publicación. Abre el enlace, revisa habitaciones, baños, m² y precio, y márcala como confirmada.</p>`}
+    ${D.propia?bloqueCaptacion():""}
+    ${D.verificado||D.propia?"":`<p class="sub" style="margin:-6px 0 12px">Los datos de esta ficha vienen del buscador y todavía no se han comparado con la publicación. Abre el enlace, revisa habitaciones, baños, m² y precio, y márcala como confirmada.</p>`}
 
     <div class="analysis">${ev.ref?`<b>Alquiler: sirve como referencia de renta</b>`:ev.falta?`<b>Sin puntaje todavía: falta el precio</b>`:`
       <div class="big"><b class="num" style="color:${claseColor[ev.clase]}">${ev.score}</b><div><span class="chip cl-${ev.clase}">Inversión ${claseNom[ev.clase]}</span><div class="sub">Puntaje de 0 a 100 con el perfil general</div></div></div>`}
@@ -551,6 +599,47 @@ function pintarDrawer(){
     </div>
   </aside></div>`;
 }
+function bloqueCaptacion(){
+  const c = D.captacion || {}, pr = c.propietario || {}, docs = c.docs || {}, a = acm(D);
+  const hechos = DOCS.filter(([k])=>docs[k]).length;
+  const f = (id,lab,val,type="text",cls="") => `<label class="${cls}">${lab}<input id="${id}" type="${type}" value="${esc(val??"")}"></label>`;
+  let acmHtml;
+  if(D.operacion!=="venta") acmHtml = `<p class="sub">El precio sugerido se calcula solo para ventas.</p>`;
+  else if(!area(D)) acmHtml = `<p class="sub">Escribe los m² para calcular el precio sugerido.</p>`;
+  else if(!a || a.pocos) acmHtml = `<p class="sub">Todavía no hay suficientes comparables con m² y precio en el estudio.</p>`;
+  else {
+    const dif = D.precio ? Math.round((D.precio/a.sugerido-1)*100) : null;
+    acmHtml = `<div class="acm"><div><span class="lbl">Mínimo sugerido</span><b class="num">${usd(a.lo)}</b></div><div><span class="lbl">Precio sugerido</span><b class="num" style="color:var(--blue)">${usd(a.sugerido)}</b></div><div><span class="lbl">Máximo sugerido</span><b class="num">${usd(a.hi)}</b></div></div>
+      <p class="sub">Según ${a.n} comparables de ${esc(a.amb)}: ${usd(a.p25)} – ${usd(a.p75)} por m² (mediana ${usd(a.med)}/m²) × ${fmt(a.area)} m².${dif!=null?` Tu precio está <b>${dif>0?dif+"% por encima":dif<0?Math.abs(dif)+"% por debajo":"en"}</b> del sugerido.`:""}</p>
+      <div class="complist">${a.lista.map(o=>`<button type="button" data-open-cmp="${esc(o.id)}">${esc(o.id)} · ${esc(o.titulo)} · ${usd(o.precio)} · ${usd(ppm2(o))}/m²</button>`).join("")}</div>`;
+  }
+  return `<div class="capbox">
+    <h3 style="font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-bottom:8px">Mi captación</h3>
+    <div class="statusbar" style="margin-top:0">${EST_CAP.map(e=>`<button type="button" class="st-${e.c}" data-cap="${e.id}" aria-pressed="${c.estado===e.id}">${e.nombre}</button>`).join("")}</div>
+    <div class="form">
+      <label>Tipo de contrato<select id="cp-excl"><option value="si" ${c.exclusiva!==false?"selected":""}>Exclusiva</option><option value="no" ${c.exclusiva===false?"selected":""}>No exclusiva</option></select></label>
+      ${f("cp-fecha","Fecha de captación",c.fecha_captacion,"date")}
+      ${f("cp-vence","Vence el contrato",c.vencimiento,"date")}
+      ${f("cp-com","Comisión (%)",c.comision,"number")}
+      ${f("cp-min","Precio mínimo aceptable",c.precio_minimo,"number")}
+      ${f("cp-pnom","Propietario",pr.nombre)}
+      ${f("cp-ptel","Teléfono del propietario",pr.telefono,"tel")}
+      ${f("cp-pmail","Correo del propietario",pr.correo,"email")}
+    </div>
+    <div class="sec"><h3>Análisis comparativo (precio sugerido)</h3>${acmHtml}</div>
+    <div class="sec"><h3>Documentos · ${hechos} de ${DOCS.length}</h3><div class="docs">${DOCS.map(([k,n])=>`<label><input type="checkbox" id="cd-${k}" ${docs[k]?"checked":""}>${n}</label>`).join("")}</div></div>
+    <div class="sec"><h3>Actividad (visitas, llamadas, ofertas)</h3>
+      <div class="hist">${(c.actividad||[]).slice().reverse().map((x,i)=>`<div><b class="num">${esc(x.fecha)}</b> · ${esc(x.tipo)}${x.monto?` · ${usd(x.monto)}`:""}${x.detalle?` · ${esc(x.detalle)}`:""}</div>`).join("") || `<span class="muted">Sin actividad registrada.</span>`}</div>
+      <div class="form" style="margin-top:10px">
+        <label>Tipo<select id="ca-tipo">${ACTIVIDAD.map(t=>`<option>${t}</option>`).join("")}</select></label>
+        ${f("ca-fecha","Fecha",hoy(),"date")}
+        ${f("ca-monto","Monto de la oferta (USD)","","number")}
+        <label class="wide">Detalle<input id="ca-det" placeholder="Quién, qué dijo, próximo paso…"></label>
+      </div>
+      <div style="margin-top:8px"><button class="btn sm" type="button" id="ca-add">Registrar actividad</button></div>
+    </div>
+  </div>`;
+}
 function leerForm(){
   const v = id => { const el=$("#"+id); return el? el.value.trim() : undefined; };
   const n = id => { const x=v(id); return x===""||x==null? null : Number(x); };
@@ -561,16 +650,24 @@ function leerForm(){
   const sp = {...(D.specs||{})};
   document.querySelectorAll("[id^='sp-']").forEach(el=>{ const k=el.id.slice(3); if(el.value.trim()) sp[k]=el.value.trim(); else delete sp[k]; });
   D.specs = sp;
+  if(D.propia){
+    const c = D.captacion = {...(D.captacion||{})};
+    c.exclusiva = v("cp-excl")!=="no"; c.fecha_captacion=v("cp-fecha"); c.vencimiento=v("cp-vence"); c.comision=n("cp-com"); c.precio_minimo=n("cp-min");
+    c.propietario = {nombre:v("cp-pnom"), telefono:v("cp-ptel"), correo:v("cp-pmail")};
+    const docs = {}; DOCS.forEach(([k])=>{ const el=$("#cd-"+k); if(el?.checked) docs[k]=true; }); c.docs = docs;
+    D.estatus = (EST_CAP.find(e=>e.id===c.estado)||EST_CAP[0]).st;
+  }
 }
 async function guardarDrawer(){
   leerForm();
   if(!D.titulo){ toast("Escribe un título para el inmueble"); return; }
   const prev = S.items.find(i=>i.id===D.id);
   D.historial = D.historial || [];
-  if(!prev) D.historial.push({fecha:hoy(), evento:"Agregado manualmente", precio:D.precio, estatus:D.estatus});
+  if(!prev) D.historial.push({fecha:hoy(), evento:D.propia?"Nueva captación":"Agregado manualmente", precio:D.precio, estatus:D.estatus});
   else {
     if(prev.precio!==D.precio) D.historial.push({fecha:hoy(), evento:`Cambio de precio (antes ${usd(prev.precio)})`, precio:D.precio});
     if(prev.estatus!==D.estatus) D.historial.push({fecha:hoy(), evento:`Estatus: ${stNom(prev.estatus)} → ${stNom(D.estatus)}`});
+    if(D.propia && prev.captacion?.estado!==D.captacion?.estado) D.historial.push({fecha:hoy(), evento:`Captación: ${capNom(prev.captacion?.estado)} → ${capNom(D.captacion?.estado)}`});
     if(!prev.verificado && D.verificado) D.historial.push({fecha:hoy(), evento:"Datos confirmados en la publicación"});
   }
   const it = {...D}; delete it._conf;
@@ -581,11 +678,60 @@ function nuevoId(zona){
   const n = S.items.filter(i=>i.id.startsWith(p+"-")).map(i=>parseInt(i.id.split("-")[1])||0);
   return p + "-" + String((n.length?Math.max(...n):0)+1).padStart(3,"0");
 }
+function nuevoCapId(){
+  const n = S.items.filter(i=>i.id.startsWith("CAP-")).map(i=>parseInt(i.id.split("-")[1])||0);
+  return "CAP-" + String((n.length?Math.max(...n):0)+1).padStart(3,"0");
+}
+function plantillaCaptacion(){
+  return {...plantilla(), id:nuevoCapId(), zona:"guatire", tipo:"residencial", propia:true, verificado:true, estatus:"disponible",
+    agente:"Eduardo León (RE/MAX)", captacion:{estado:"preparacion", exclusiva:true, fecha_captacion:hoy(), vencimiento:"", comision:null,
+    precio_minimo:null, propietario:{nombre:"",telefono:"",correo:""}, docs:{}, actividad:[]}};
+}
 function plantilla(){
   const zona = ZONAS.some(z=>z.id===S.tab) ? S.tab : "guatire";
   return {id:nuevoId(zona), zona, tipo:S.tipo, subtipo:"", operacion:"venta", sector:"", titulo:"", precio:null, m2c:null, m2t:null,
     hab:null, banos:null, puestos:null, specs:{}, descripcion:"", fuentes:[], cal:{ubicacion:3,estado:3,rentabilidad:3,liquidez:3,documentacion:3},
     nota:"", estatus:"disponible", fecha_detectada:hoy(), ultima_verificacion:hoy(), historial:[], agente:"", contacto:"", favorito:false, verificado:false};
+}
+
+/* ───────────── Mis captaciones ───────────── */
+function vistaCaptaciones(){
+  const mias = S.items.filter(i=>i.propia);
+  const act = mias.filter(i=>CAP_ACTIVAS.includes(i.captacion?.estado));
+  const ventas = act.filter(i=>i.operacion==="venta" && i.precio);
+  const cartera = ventas.reduce((t,i)=>t+i.precio,0);
+  const comision = ventas.reduce((t,i)=>t+i.precio*((i.captacion?.comision||0)/100),0);
+  const vencen = act.filter(i=>{ const r=diasHasta(i.captacion?.vencimiento); return r!=null && r>=0 && r<=30; });
+  const cuenta = (i,t) => (i.captacion?.actividad||[]).filter(x=>x.tipo===t).length;
+  const orden = mias.slice().sort((a,b)=>CAP_ACTIVAS.includes(b.captacion?.estado)-CAP_ACTIVAS.includes(a.captacion?.estado) || String(b.captacion?.fecha_captacion).localeCompare(String(a.captacion?.fecha_captacion)));
+  return `
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px">
+    <p class="sub" style="margin:0;max-width:62ch">Tu cartera de inmuebles captados. Cada captación también cuenta en el estudio de su zona y aparece a los clientes que buscan algo parecido.</p>
+    <button class="btn primary" type="button" id="cap-new">+ Nueva captación</button></div>
+  <div class="kpis">
+    <div class="kpi"><span class="lbl">Captaciones activas</span><b class="num">${act.length}</b><small>${act.filter(i=>i.captacion?.exclusiva!==false).length} en exclusiva</small></div>
+    <div class="kpi"><span class="lbl">Valor de la cartera</span><b class="num">${usd(cartera)}</b><small>ventas activas con precio</small></div>
+    <div class="kpi"><span class="lbl">Comisión potencial</span><b class="num" style="color:var(--good)">${usd(comision)}</b><small>según el % de cada contrato</small></div>
+    <div class="kpi"><span class="lbl">Vencen en 30 días</span><b class="num" style="color:${vencen.length?"var(--red)":"inherit"}">${vencen.length}</b><small>contratos por renovar</small></div>
+    <div class="kpi"><span class="lbl">Cerradas</span><b class="num">${mias.filter(i=>i.captacion?.estado==="cerrada").length}</b><small>vendidas o alquiladas</small></div>
+  </div>
+  <div class="tablebox"><table>
+    <thead><tr><th>Código</th><th>Inmueble</th><th>Captación</th><th class="r">Precio</th><th class="r">Sugerido (ACM)</th><th class="r">Días</th><th class="r">Visitas</th><th class="r">Ofertas</th><th>Vence</th><th class="r">Docs</th></tr></thead>
+    <tbody>${orden.map(it=>{ const c=it.captacion||{}, a=acm(it), dif=a&&!a.pocos&&it.precio?Math.round((it.precio/a.sugerido-1)*100):null;
+      const rv = diasHasta(c.vencimiento);
+      return `<tr data-open="${esc(it.id)}">
+      <td class="mono">${esc(it.id)}</td>
+      <td><div class="tt">${esc(it.titulo)}</div><div class="sub">${esc(zonaNom(it.zona))} · ${esc(it.sector)} · ${c.exclusiva===false?"No exclusiva":"Exclusiva"}</div></td>
+      <td><span class="chip st-${capClase(c.estado)}">${esc(capNom(c.estado))}</span></td>
+      <td class="r num">${it.precio==null?'<span class="sub">Sin precio</span>':`<b>${usd(it.precio)}</b>`}</td>
+      <td class="r num">${a&&!a.pocos?usd(a.sugerido):"—"}${dif!=null?`<div class="delta ${dif<=0?"dn":"up"}">${dif>0?"+":""}${dif}%</div>`:""}</td>
+      <td class="r num">${c.fecha_captacion?dias(c.fecha_captacion):"—"}</td>
+      <td class="r num">${cuenta(it,"Visita")}</td>
+      <td class="r num">${cuenta(it,"Oferta")}</td>
+      <td class="num">${c.vencimiento?`${esc(c.vencimiento)}${rv!=null&&rv>=0&&rv<=30?'<div class="delta up">Vence pronto</div>':rv!=null&&rv<0?'<div class="delta up">Vencido</div>':""}`:"—"}</td>
+      <td class="r num">${DOCS.filter(([k])=>c.docs?.[k]).length}/${DOCS.length}</td></tr>`; }).join("") || `<tr><td colspan="10" class="empty">Todavía no tienes captaciones. Toca "+ Nueva captación" para registrar la primera.</td></tr>`}</tbody>
+  </table></div>
+  <p class="sub">"Sugerido (ACM)" es el precio que resulta de comparar con el $/m² de inmuebles parecidos del estudio. En verde, tu precio está por debajo del sugerido; en rojo, por encima.</p>`;
 }
 
 /* ───────────── Clientes e inversionistas ───────────── */
@@ -600,7 +746,7 @@ function coincidencias(c){
     (c.max==null || c.max==="" || (i.precio!=null && i.precio<=c.max)) &&
     (!c.hab || i.tipo!=="residencial" || (i.hab||0)>=c.hab) &&
     (!c.m2 || (area(i)||0)>=c.m2)
-  ).map(it=>({it, ev:evaluar(it, perfil)})).sort((a,b)=>(b.ev.score??-1)-(a.ev.score??-1));
+  ).map(it=>({it, ev:evaluar(it, perfil)})).sort((a,b)=>(!!b.it.propia-!!a.it.propia) || (b.ev.score??-1)-(a.ev.score??-1));
 }
 function vistaClientes(){
   const c = S.clientes.find(x=>x.id===S.cliente) || null;
@@ -633,7 +779,7 @@ function vistaClientes(){
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><button class="btn primary sm" type="button" id="c-copy">Copiar ficha para el cliente (${[...S.pick].filter(id=>ms.some(m=>m.it.id===id)).length})</button></div>
       <div class="tablebox"><table style="min-width:640px"><thead><tr><th></th><th>Inmueble</th><th class="r">Precio</th><th class="r">m²</th><th>Estatus</th><th class="r">Puntaje</th></tr></thead><tbody>
       ${ms.map(({it,ev})=>`<tr data-open="${esc(it.id)}"><td><input type="checkbox" data-pick="${esc(it.id)}" ${S.pick.has(it.id)?"checked":""} aria-label="Seleccionar ${esc(it.id)}"></td>
-        <td><div class="tt">${esc(it.titulo)}</div><div class="sub">${esc(zonaNom(it.zona))} · ${esc(it.sector)} · <span class="mono">${esc(it.id)}</span></div></td>
+        <td><div class="tt">${it.propia?'<span class="mine">Mi captación · </span>':""}${esc(it.titulo)}</div><div class="sub">${esc(zonaNom(it.zona))} · ${esc(it.sector)} · <span class="mono">${esc(it.id)}</span></div></td>
         <td class="r num"><b>${usd(it.precio)}</b></td><td class="r num">${fmt(area(it))}</td>
         <td><span class="chip st-${it.estatus}">${stNom(it.estatus)}</span></td>
         <td>${ev.ref?'<span class="chip cl-ref">Ref.</span>':ev.falta?'<span class="chip cl-ref">Falta precio</span>':`<div class="score"><b class="num">${ev.score}</b><span class="chip cl-${ev.clase}">${claseNom[ev.clase]}</span></div>`}</td></tr>`).join("") || `<tr><td colspan="6" class="empty">Ningún inmueble activo cumple estos criterios.</td></tr>`}
@@ -683,6 +829,15 @@ async function exportar(){
     const ws = XLSX.utils.json_to_sheet(rows); ws["!cols"] = Object.keys(rows[0]||{}).map(k=>({wch:Math.min(40,Math.max(10,k.length+2))}));
     XLSX.utils.book_append_sheet(wb, ws, z.nombre);
   }
+  const caps = S.items.filter(i=>i.propia).map(it=>{ const c=it.captacion||{}, a=acm(it); return {
+    "Código":it.id, "Zona":zonaNom(it.zona), "Tipo":tipoNom(it.tipo), "Operación":it.operacion, "Sector":it.sector, "Título":it.titulo,
+    "Estado":capNom(c.estado), "Contrato":c.exclusiva===false?"No exclusiva":"Exclusiva", "Captado el":c.fecha_captacion, "Vence":c.vencimiento,
+    "Precio USD":it.precio, "Precio mínimo":c.precio_minimo, "Sugerido ACM":a&&!a.pocos?Math.round(a.sugerido):null, "Comisión %":c.comision,
+    "m² construcción":it.m2c, "m² terreno":it.m2t, "Habitaciones":it.hab, "Baños":it.banos, "Puestos":it.puestos,
+    "Propietario":c.propietario?.nombre, "Teléfono":c.propietario?.telefono, "Correo":c.propietario?.correo,
+    "Documentos":DOCS.filter(([k])=>c.docs?.[k]).map(([,n])=>n).join(" | "),
+    "Visitas":(c.actividad||[]).filter(x=>x.tipo==="Visita").length, "Ofertas":(c.actividad||[]).filter(x=>x.tipo==="Oferta").length, "Notas":it.nota }; });
+  if(caps.length) XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(caps), "Mis captaciones");
   const buf = XLSX.write(wb, {type:"array", bookType:"xlsx"});
   try{ await S.dl.save({filename:`Estudio de Mercado ${hoy()}.xlsx`, data:new Blob([buf])}); toast("Excel descargado"); }
   catch(e){ if(e.code!=="declined") toast("No se pudo descargar: " + e.code); }
@@ -700,7 +855,10 @@ document.addEventListener("click", async e => {
   if(t.dataset.open){ abrir(t.dataset.open); return; }
   if(t.dataset.cli){ S.cliente=t.dataset.cli; S.pick.clear(); render(); return; }
   switch(t.id){
-    case "btn-add": abrir(null, plantilla()); return;
+    case "btn-add": abrir(null, S.tab==="captaciones" ? plantillaCaptacion() : plantilla()); return;
+    case "cap-new": abrir(null, plantillaCaptacion()); return;
+    case "ca-add": { leerForm(); const tipo=$("#ca-tipo").value, fecha=$("#ca-fecha").value||hoy(), det=$("#ca-det").value.trim(), m=$("#ca-monto").value;
+      D.captacion.actividad=[...(D.captacion.actividad||[]), {fecha, tipo, detalle:det, monto:m===""?null:Number(m)}]; pintarDrawer(); toast("Actividad agregada: guarda los cambios"); return; }
     case "btn-export": exportar(); return;
     case "d-close": case "d-cancel": cerrar(); return;
     case "d-save": guardarDrawer(); return;
@@ -721,6 +879,8 @@ document.addEventListener("click", async e => {
       try{ await navigator.clipboard.writeText(txt); toast("Ficha copiada: pégala en WhatsApp o en un correo"); }
       catch(_){ abrirTexto(txt); } return; }
   }
+  if(t.dataset.cap){ leerForm(); D.captacion.estado=t.dataset.cap; D.estatus=(EST_CAP.find(e=>e.id===t.dataset.cap)||EST_CAP[0]).st; pintarDrawer(); return; }
+  if(t.dataset.openCmp){ abrir(t.dataset.openCmp); return; }
   if(t.dataset.st){ leerForm(); D.estatus=t.dataset.st; if(D.estatus!=="por_verificar") D.ultima_verificacion=hoy(); pintarDrawer(); return; }
   if(t.hasAttribute("data-fav")){ leerForm(); D.favorito=!D.favorito; pintarDrawer(); return; }
   if(t.hasAttribute("data-verif")){ leerForm(); D.verificado=!D.verificado; if(D.verificado) D.ultima_verificacion=hoy(); pintarDrawer(); return; }
@@ -739,7 +899,7 @@ document.addEventListener("input", e => {
 document.addEventListener("change", e => {
   const id = e.target.id; const map = {"f-op":"op","f-st":"st","f-sector":"sector","f-orden":"orden"};
   if(map[id]){ S.f[map[id]] = e.target.value; render(); }
-  if((id==="d-tipo"||id==="d-op"||id==="d-zona") && D){ leerForm(); if(id==="d-zona" && S.sel==="__nuevo") D.id=nuevoId(D.zona); pintarDrawer(); }
+  if((id==="d-tipo"||id==="d-op"||id==="d-zona") && D){ leerForm(); if(id==="d-zona" && S.sel==="__nuevo" && !D.propia) D.id=nuevoId(D.zona); pintarDrawer(); }
 });
 document.addEventListener("keydown", e => { if(e.key==="Escape" && S.sel) cerrar(); });
 iniciar();

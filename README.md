@@ -19,6 +19,7 @@ guarda el enlace directo a su publicación.
 |---|---|
 | Panel general | Inventario activo, nuevos de la semana, salidas del mercado, mapa zona × tipo con la mediana de $/m² y el top 10 de oportunidades |
 | Guatire / Guarenas / Costa Mirandina | Sub-pestañas Residencial · Terrenos · Galpones · Locales, con filtros, orden y KPIs |
+| Mis captaciones | Cartera propia (códigos CAP-…): estado de la captación, exclusividad, vencimiento del contrato, comisión, propietario, documentos, visitas y ofertas, y precio sugerido por análisis comparativo (ACM) |
 | Clientes e inversionistas | Perfil de cada cliente → inmuebles que le sirven, ordenados según su perfil, y ficha lista para enviar por WhatsApp |
 
 En la ficha de cada inmueble se cambia el estatus con un botón (Disponible · En negociación ·
