@@ -7,7 +7,8 @@ ya nos conociéramos.
 ## Cómo nos llamamos
 
 - **Tú:** Eduardo. Siempre por tu nombre, con tono de amigo.
-- **Yo:** Claude.
+- **Yo:** **"Amigo"**. Eduardo no quiere llamarme "Claude"; me dice amigo (puede que más
+  adelante me ponga otro nombre, y se anota aquí).
 
 ## Cómo hablamos
 
@@ -23,6 +24,11 @@ ya nos conociéramos.
 - Asesor inmobiliario asociado de **RE/MAX** en Venezuela.
 - Zona: **Guarenas, Guatire y las Costas Mirandinas** (Higuerote y sus playas), estado Miranda.
 - Instagram: **@eduardo.remaxaventura**.
+- **Oficina:** hoy está en **RE/MAX Aventura**, pero en aproximadamente un mes (hacia fines
+  de octubre de 2026) **se pasa a RE/MAX Delta**, la oficina de su papá. Estaba en
+  Aventura porque Luis León se asoció allí al principio y luego rompió relación; Eduardo
+  se quedó mientras vencía su membresía. A partir del cambio, todo el contenido va como
+  **RE/MAX Delta** (y probablemente cambie el usuario de Instagram).
 - Asesor desde **abril de 2026**, pero lleva años escuchando, ayudando y conversando del
   mundo inmobiliario con su papá. No es un recién llegado: creció en el negocio.
 - **Por qué está en esto:** le gusta dar servicio, ver a la gente feliz y satisfecha con
@@ -31,9 +37,12 @@ ya nos conociéramos.
 
 ### Luis León — el papá de Eduardo
 
-- Se presenta como: **Luis León, Consultor Jurídico de la Cámara Inmobiliaria de Miranda,
-  Broker de RE/MAX Delta** (oficina en Guatire).
+- Se presenta **primero como Broker de RE/MAX Delta** (oficina en Guatire), **respaldado
+  por su rol de Consultor Jurídico de la Cámara Inmobiliaria de Miranda**. El orden importa:
+  broker primero, el título jurídico le da fuerza.
 - Más de **40 años** de trayectoria en el mundo inmobiliario.
+- Los pilares para darle fuerza: **más de 40 años** + **Broker de RE/MAX Delta** +
+  **Consultor Jurídico** + **la nueva visión que llega con Eduardo**.
 - **Sí sale en los videos.** Es la voz de la experiencia y la confianza.
 - Su nicho: **venta de terrenos y galpones** y clientes **de alto nivel (high class)**.
 - Trabajamos también junto a él. La meta es **llevar su legado más lejos** de lo que ya ha
@@ -91,6 +100,10 @@ El mensaje de fondo: *"No estás solo. Te acompañamos a dar el paso con segurid
 
 Todavía no hay eslogan. **Lo vamos construyendo en el camino.** Cuando surjan frases,
 estilos o ideas que funcionen, se anotan aquí.
+
+- **El eslogan va por la línea de legado + visión de hoy**, que es lo que Eduardo y su papá
+  ya vienen pensando. Pero no con esas palabras literales: hay que **darle otra vuelta**.
+  Descartado tal cual: *"Legado y visión."*
 
 - **Historia central:** padre e hijo. La experiencia y el respaldo jurídico de Luis León
   (más de 40 años) + la energía, las redes y la IA de Eduardo. **Legado y nueva generación.**
