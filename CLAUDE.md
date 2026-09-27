@@ -48,6 +48,13 @@ ya nos conociéramos.
 - Trabajamos también junto a él. La meta es **llevar su legado más lejos** de lo que ya ha
   llegado: darle visibilidad, contenido y herramientas modernas a esa experiencia.
 
+### Alejandra — la secretaria de la oficina (RE/MAX Delta)
+
+- Lleva **más de 10 años** trabajando con Luis León. Conoce la oficina y tiene acceso a los
+  documentos.
+- Puede apoyar **verificando las propiedades** que saquemos de RE/MAX Venezuela y
+  MercadoLibre (pasar de *por confirmar* a *confirmado*) y facilitando documentos.
+
 ## La misión
 
 Llevar el mundo inmobiliario en Venezuela, sobre todo en Guarenas, Guatire y las Costas
@@ -131,8 +138,12 @@ estilos o ideas que funcionen, se anotan aquí.
 - Con enfoque **profesional inmobiliario** y **exclusivo** en todo.
 - **Siempre superándonos:** cada entrega debe ser mejor que la anterior. Si veo una forma
   de subir el nivel, la propongo.
-- **No invento datos**: precios, metros, leyes, trámites o cifras del mercado se confirman
-  con Eduardo antes de publicarlos.
+- **No invento datos. Mejor un dato en blanco que un dato inventado.** Precios, metros,
+  leyes, trámites o cifras del mercado se marcan **"por confirmar"** hasta que Eduardo o
+  Luis León los confirmen.
+- **Cada propiedad lleva su enlace exacto** al anuncio original (el de esa propiedad, no
+  el de una búsqueda general).
+- **Práctico y rápido:** todo lo que armemos debe ser fácil y rápido de usar y de editar.
 - Antes de gastar créditos en Higgsfield, propongo la idea y el prompt, y espero el visto bueno.
 - Commits claros y en español.
 - Te pregunto antes de hacer cambios grandes o difíciles de deshacer.
@@ -152,6 +163,50 @@ Las dudas y miedos que más se repiten. Son la base del contenido educativo:
 garantizar (ni el futuro político ni rentabilidades fijas). La respuesta fuerte es el
 **respaldo**: RE/MAX, la trayectoria de Luis León, su rol como consultor jurídico de la
 Cámara Inmobiliaria de Miranda, y el acompañamiento cercano de Eduardo en todo el proceso.
+
+## Análisis Comparativo Maestro (en construcción)
+
+La base de datos maestra entre Eduardo, Luis León y Amigo. La idea: *"Amigo, necesito
+esto"* y sale al instante.
+
+- **Fuentes principales:** **MercadoLibre Venezuela** y **RE/MAX Venezuela**. Las demás
+  (BienesOnline, ZonaVen, Bolsa Inmobiliaria Caracas, etc.) solo sirven para **confirmar**
+  precios e información.
+- **Cobertura:** todas las propiedades posibles, de cualquier precio, en las 3 zonas y en
+  todos los tipos (terrenos, galpones, residencial, apartamentos, locales, industrial).
+- **Estados de cada dato:** *por confirmar* → *confirmado* (con un botón para pasarlo).
+  Todo editable.
+- **Actualización semanal:** qué propiedades entran y cuáles salen de los portales (una
+  salida puede indicar un cierre, aunque no se sepa el precio final).
+- **Cierres reales:** Eduardo y Luis León cargan los cierres (empezando por los últimos
+  3 meses) para seguir el movimiento del mercado en el tiempo.
+- **Uso a futuro:** cuando llegue un cliente (por chat o por el agente de WhatsApp), se
+  cruzan sus necesidades con esta base para enviarle opciones.
+- Preguntas pendientes para Luis León: `analisis/preguntas-luis-leon.md`.
+
+### Sectores clave
+
+- **Guatire:** Castillejo y alrededores, Palo Alto, El Ingenio, Villa Ávila, Villa Heroica,
+  Las Rosas, Araira, Valle Arriba, casco central, zona industrial. Y todas las demás.
+- **Guarenas:** Nueva Casarapa, Ciudad Casarapa, El Torreón, La Vaquera, casco central.
+  Y todas las demás.
+- **Costas Mirandinas:** Higuerote y alrededores (sectores por definir con Luis León).
+
+### Contexto del mercado (septiembre 2026)
+
+- Tras los **terremotos** (La Guaira), lo que más piden es **casas**; también apartamentos,
+  terrenos y locales. Gente de La Guaira busca mudarse o tener casa de playa.
+- **Crédito "Venezuela Renace"** para damnificados: muchos propietarios tienen miedo y dudas
+  (moneda de pago, tiempos de aprobación y desembolso). Eduardo ya tiene clientes
+  interesados y todavía no se conocen cierres. Guía completa (por confirmar con Luis León):
+  https://claude.ai/code/artifact/8f7a27b0-637c-46cf-8c92-47324a8b4991
+- **Lo que más cuesta vender:** propiedades con sobreprecio (por valor sentimental del
+  dueño). Además, la gente tiene poco poder adquisitivo.
+- **Galpones en Guatire:** los compran inversionistas con metas grandes (zona industrial).
+  Luis León tiene una cartera importante de inversionistas en galpones y terrenos.
+- **Higuerote:** compran venezolanos en el exterior, inversionistas y familias que quieren
+  playa.
+- **Regla de inversión de Luis León:** _pendiente, hay que pedírsela y anotarla aquí._
 
 ## Notas y cosas que vamos aprendiendo
 
