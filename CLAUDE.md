@@ -48,10 +48,10 @@ ya nos conociéramos.
 - Trabajamos también junto a él. La meta es **llevar su legado más lejos** de lo que ya ha
   llegado: darle visibilidad, contenido y herramientas modernas a esa experiencia.
 
-### La secretaria de la oficina (RE/MAX Delta)
+### Alejandra — la secretaria de la oficina (RE/MAX Delta)
 
 - Lleva **más de 10 años** trabajando con Luis León. Conoce la oficina y tiene acceso a los
-  documentos. _(Nombre: pendiente.)_
+  documentos.
 - Puede apoyar **verificando las propiedades** que saquemos de RE/MAX Venezuela y
   MercadoLibre (pasar de *por confirmar* a *confirmado*) y facilitando documentos.
 
