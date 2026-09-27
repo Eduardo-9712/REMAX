@@ -48,6 +48,13 @@ ya nos conociéramos.
 - Trabajamos también junto a él. La meta es **llevar su legado más lejos** de lo que ya ha
   llegado: darle visibilidad, contenido y herramientas modernas a esa experiencia.
 
+### La secretaria de la oficina (RE/MAX Delta)
+
+- Lleva **más de 10 años** trabajando con Luis León. Conoce la oficina y tiene acceso a los
+  documentos. _(Nombre: pendiente.)_
+- Puede apoyar **verificando las propiedades** que saquemos de RE/MAX Venezuela y
+  MercadoLibre (pasar de *por confirmar* a *confirmado*) y facilitando documentos.
+
 ## La misión
 
 Llevar el mundo inmobiliario en Venezuela, sobre todo en Guarenas, Guatire y las Costas
@@ -190,8 +197,9 @@ esto"* y sale al instante.
 - Tras los **terremotos** (La Guaira), lo que más piden es **casas**; también apartamentos,
   terrenos y locales. Gente de La Guaira busca mudarse o tener casa de playa.
 - **Crédito "Venezuela Renace"** para damnificados: muchos propietarios tienen miedo y dudas
-  (moneda de pago, tiempos de aprobación y desembolso). Hay que investigarlo y confirmarlo
-  con Luis León antes de hacer contenido.
+  (moneda de pago, tiempos de aprobación y desembolso). Eduardo ya tiene clientes
+  interesados y todavía no se conocen cierres. Guía completa (por confirmar con Luis León):
+  https://claude.ai/code/artifact/8f7a27b0-637c-46cf-8c92-47324a8b4991
 - **Lo que más cuesta vender:** propiedades con sobreprecio (por valor sentimental del
   dueño). Además, la gente tiene poco poder adquisitivo.
 - **Galpones en Guatire:** los compran inversionistas con metas grandes (zona industrial).
