@@ -23,11 +23,18 @@ ya nos conociéramos.
 - Asesor inmobiliario asociado de **RE/MAX** en Venezuela.
 - Zona: **Guarenas, Guatire y las Costas Mirandinas** (Higuerote y sus playas), estado Miranda.
 - Instagram: **@eduardo.remaxaventura**.
+- Asesor desde **abril de 2026**, pero lleva años escuchando, ayudando y conversando del
+  mundo inmobiliario con su papá. No es un recién llegado: creció en el negocio.
+- **Por qué está en esto:** le gusta dar servicio, ver a la gente feliz y satisfecha con
+  las metas que logra, y aportar para que eso pase. Quiere que la gente **se quede con
+  Eduardo más allá de un negocio o un cierre**: relaciones, no transacciones.
 
-### El papá de Eduardo — el broker
+### Luis León — el papá de Eduardo
 
-- **Broker de una oficina RE/MAX en Guatire**, con **más de 40 años** de trayectoria en el
-  mundo inmobiliario.
+- Se presenta como: **Luis León, Consultor Jurídico de la Cámara Inmobiliaria de Miranda,
+  Broker de RE/MAX Delta** (oficina en Guatire).
+- Más de **40 años** de trayectoria en el mundo inmobiliario.
+- **Sí sale en los videos.** Es la voz de la experiencia y la confianza.
 - Su nicho: **venta de terrenos y galpones** y clientes **de alto nivel (high class)**.
 - Trabajamos también junto a él. La meta es **llevar su legado más lejos** de lo que ya ha
   llegado: darle visibilidad, contenido y herramientas modernas a esa experiencia.
@@ -82,8 +89,16 @@ El mensaje de fondo: *"No estás solo. Te acompañamos a dar el paso con segurid
 
 ## Marca personal
 
-Aún no hay eslogan ni identidad definida. **La vamos construyendo en el camino.**
-Cuando surjan frases, colores, estilos o ideas que funcionen, se anotan aquí.
+Todavía no hay eslogan. **Lo vamos construyendo en el camino.** Cuando surjan frases,
+estilos o ideas que funcionen, se anotan aquí.
+
+- **Historia central:** padre e hijo. La experiencia y el respaldo jurídico de Luis León
+  (más de 40 años) + la energía, las redes y la IA de Eduardo. **Legado y nueva generación.**
+- **Colores:** los de RE/MAX (**azul, rojo y blanco**), con **el negro como protagonista**
+  (el favorito de Eduardo). Estética elegante, oscura y premium, con acentos azul y rojo.
+- **Música:** afrobeat, y temas emocionales, inspiracionales y emotivos.
+- **Referentes de creadores:** Ryan Serhant, Alessandro Guzmán, Adrián Sáenz, Agustín
+  Medina, entre otros. Energía, storytelling, lujo accesible y educación con personalidad.
 
 ## Lo que hacemos juntos
 
@@ -95,7 +110,7 @@ Cuando surjan frases, colores, estilos o ideas que funcionen, se anotan aquí.
 - **Optimizar WhatsApp**: mensajes, respuestas rápidas, catálogos y **filtros para
   calificar clientes** (qué busca, presupuesto, zona, plazo). La meta a futuro es que la
   IA ayude a gestionar el WhatsApp.
-- **Contenido para el papá de Eduardo**: terrenos, galpones y clientes de alto nivel,
+- **Contenido para Luis León**: terrenos, galpones y clientes de alto nivel,
   apoyándonos en sus más de 40 años de experiencia.
 
 ## Cómo trabajamos
@@ -108,6 +123,22 @@ Cuando surjan frases, colores, estilos o ideas que funcionen, se anotan aquí.
 - Antes de gastar créditos en Higgsfield, propongo la idea y el prompt, y espero el visto bueno.
 - Commits claros y en español.
 - Te pregunto antes de hacer cambios grandes o difíciles de deshacer.
+
+## Lo que preguntan los inversionistas
+
+Las dudas y miedos que más se repiten. Son la base del contenido educativo:
+
+- ¿Venezuela ya se arregló? ¿Cómo está la política?
+- ¿Qué respaldo y qué seguridad jurídica tengo?
+- ¿Puedo confiar? ¿En quién?
+- ¿Es el momento de dar el paso?
+- ¿Hay algo mejor en otro lado?
+- ¿Cuál es el retorno económico?
+
+**Cómo las respondemos:** con honestidad y datos, sin prometer lo que no se puede
+garantizar (ni el futuro político ni rentabilidades fijas). La respuesta fuerte es el
+**respaldo**: RE/MAX, la trayectoria de Luis León, su rol como consultor jurídico de la
+Cámara Inmobiliaria de Miranda, y el acompañamiento cercano de Eduardo en todo el proceso.
 
 ## Notas y cosas que vamos aprendiendo
 
