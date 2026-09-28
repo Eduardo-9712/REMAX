@@ -71,22 +71,31 @@ cifras agregadas, nunca el detalle de una operación ni de un agente.
 **2026**
 
 - **Tres cierres de marzo con fecha de 2025:** C.C. Vista Place, Los Cardenales (El Marqués) y el galpón
-  del Centro Industrial Cloris.
+  del Centro Industrial Cloris. *Eduardo: si está en el Excel de 2026, es de 2026 (corregido en la base).*
 - **Precios distintos entre la reserva y la venta:**
   - Canaima II: reservado en 28.000, vendido en 27.000.
   - Terreno de Calle Zamora: reservado en 46.000, vendido en 50.000.
   - Los dos apartamentos de Ciudad Casarapa (parcela 6): los precios están cruzados entre las dos hojas.
   - Local del C.C. Compro: 1.600 en *Ventas*, 800 en *Puntas*.
 - **Parque Habitat B:** aparece como casa en *Reservas* y como TH en *Ventas*.
-- **Galpón de El Desvío:** el agente figura como "Enrique Castillejo". ¿Es Enrique Oliveri?
+- **Galpón de El Desvío:** el agente figura como "Enrique Castillejo". *Eduardo: es Enrique Oliveri (corregido).*
 - **Jardines de Pacairigua:** la reserva quedó con fecha un día antes de la captación.
-- **Reservas aún sin cierre:** casa en La Esperanza (Castillejo, USD 100.000), casa en El Torreón
-  (USD 65.000, en alianza con Luis León) y apartamento en La Sabana (USD 42.000).
+- **Reservas sin cierre en el Excel:** según Eduardo, la casa de La Esperanza (Castillejo, USD 100.000) y la de
+  El Torreón (USD 65.000, en alianza con Luis León) ya se cerraron. Falta la fecha exacta. El apartamento de
+  La Sabana (USD 42.000) sigue por confirmar.
 
 ## Para qué lo vamos a usar
 
-1. **Cargar los cierres en la base maestra**, en la parte de *cierres reales*, para tener precios
-   finales y no solo precios de publicación. *Pendiente: con el visto bueno de Eduardo.*
+1. **Cargados en la base maestra (29-09-2026):** 101 cierres en la colección `cierres` (pestaña Cierres), con
+   `python3 analisis/scripts/cierres_a_base.py`, que genera los lotes en `datos/cierres_base/`. Se aplicaron
+   las correcciones de Eduardo:
+   - Si un cierre está en el Excel de 2026, es de 2026.
+   - Enrique Castillejo es Enrique Oliveri.
+   - La Esperanza (USD 100.000) y El Torreón (USD 65.000) están cerradas.
+   - La Sabana (USD 42.000) sigue por confirmar.
+   Contando solo ventas cerradas y cruzadas con su reserva, la base da: rebaja mediana de 4,6 % en 2025 y de
+   0 % en 2026, y 75 y 57 días desde la captación hasta el cierre. Los números de arriba salen de la hoja
+   *Reservas*, que incluye reservas que no llegaron a cierre.
 2. **Reel del sobreprecio** (`contenido/reels.md`): *"Este año, más de la mitad de las ventas de nuestra
    oficina se cerró al precio publicado… cuando el precio es el correcto."*
 3. **Captación:** mostrarle al propietario cuánto se tarda en vender y cuánto se negocia en su zona.

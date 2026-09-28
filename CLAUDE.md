@@ -161,6 +161,12 @@ estilos o ideas que funcionen, se anotan aquí.
 - Resumen, diferencias y observaciones para Luis León: `documentos/README.md`. Mensaje de recaudos para
   WhatsApp: `documentos/recaudos-whatsapp.md`.
 
+## Pendientes
+
+- **La lista única de pendientes está en `PENDIENTES.md`:** preguntas para Eduardo, lo que tiene que mandar,
+  lo que se le pide a Alejandra y a Luis León, lo que falta del asistente y la campaña de la casa captada.
+  Hay que mantenerla al día: lo resuelto se marca y se pasa a su lugar.
+
 ## Cómo trabajamos
 
 - Con enfoque **profesional inmobiliario** y **exclusivo** en todo.
@@ -208,12 +214,20 @@ esto"* y sale al instante.
   salida puede indicar un cierre, aunque no se sepa el precio final).
 - **Cierres reales:** Eduardo y Luis León cargan los cierres (empezando por los últimos
   3 meses) para seguir el movimiento del mercado en el tiempo.
-- **Cierres reales de Delta** (de los Excel internos de productividad 2025 y 2026): `analisis/cierres-delta.md`.
-  2025: 55 cierres, rebaja mediana de 3,5 % y 70 días hasta la reserva. De enero a agosto de 2026: 44 cierres,
-  rebaja mediana de 0 % y 48 días. Son datos internos: en público, solo cifras agregadas.
+- **Cierres reales de Delta** (de los Excel internos de productividad 2025 y 2026): análisis en
+  `analisis/cierres-delta.md`. **101 cierres cargados en la base** (colección `cierres`, pestaña Cierres) con
+  `analisis/scripts/cierres_a_base.py`. En ventas, la rebaja mediana fue de 4,6 % en 2025 y de 0 % de enero a
+  agosto de 2026, y los días hasta el cierre, 75 y 57. Faltan los m² para el USD/m² de cierre (se los pedimos
+  a Alejandra). Son datos internos: en público, solo cifras agregadas. Las correcciones de Eduardo están en el
+  script.
+- **Cada propiedad de la base** puede llevar, además de las notas, el **contacto del anunciante** y el **valor
+  estimado por el equipo**. La actualización semanal no los pisa.
+- **Base duplicada:** existe otra base anterior, *Estudio de Mercado* (https://claude.ai/artifact/PA1onp1SF72ZFpKKgjhyYY),
+  con su rutina de los domingos y la rama `claude/ecstatic-archimedes-i87900`. Falta decidir si se apaga
+  (ver `PENDIENTES.md`).
 - **Uso a futuro:** cuando llegue un cliente (por chat o por el agente de WhatsApp), se
   cruzan sus necesidades con esta base para enviarle opciones.
-- Preguntas pendientes para Luis León: `analisis/preguntas-luis-leon.md`.
+- Preguntas de fondo para Luis León: `analisis/preguntas-luis-leon.md`. El resto de los pendientes está en `PENDIENTES.md`.
 - **La base en vivo:** https://claude.ai/artifact/JnuELprRV41EFNRx6xXr46 (página
   `analisis/base-maestra.html`, datos en la colección `inmuebles` de la base del artifact).
   Para que Alejandra confirme, hay que compartirle la página con acceso de **Colaborador**.
