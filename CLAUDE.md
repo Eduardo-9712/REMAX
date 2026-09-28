@@ -192,10 +192,20 @@ esto"* y sale al instante.
   La primera extracción (28-09-2026) dio 65 propiedades: 56 en venta, 9 en alquiler, todas de
   las oficinas Aventura y Delta.
 - **Actualización semanal (lunes temprano, hora de Venezuela):** una rutina abre una sesión
-  nueva, corre el extractor, exporta la colección `inmuebles` y ejecuta
+  nueva, corre los dos extractores (RE/MAX y portales), exporta la colección `inmuebles` y ejecuta
   `analisis/scripts/actualizar_base.py`, que marca nuevas, salidas del portal (posibles
   cierres) y cambios de precio sin pisar lo que el equipo ya confirmó. El resumen de cada
   semana queda en la colección `extracciones`.
+- **Otras fuentes (`analisis/scripts/portales_scraper.py`):** Century 21 (su robots.txt permite
+  asistentes de IA), ZonaVen, BienesOnline y la inmobiliaria local **Inversiones Admyser**
+  (Higuerote y Guarenas-Guatire). Guarda `analisis/datos/portales_<fecha>.json`. Cada propiedad
+  lleva su fuente (etiqueta de color en la página) y su enlace exacto.
+- **Fuentes descartadas:** inmobiliaria.com (bloqueo anti-robots de Cloudflare), TuInmueble (es
+  MercadoLibre), Encuentra24 (bloquea). No se saltan bloqueos: si un sitio no se deja leer, se
+  agrega a mano o con ayuda de Alejandra.
+- **Duplicados:** la misma propiedad puede estar en varios portales. La página marca "posible
+  duplicado" (misma zona, tipo y operación, precio a ±2 % y metros a ±5 %) y los excluye de las
+  estadísticas.
 - **MercadoLibre:** bloquea el acceso automático y el portal de desarrolladores dio error al
   crear la aplicación (código PSC01-RBJAGGUMCM3C). Por ahora se agregan a mano desde la página.
 

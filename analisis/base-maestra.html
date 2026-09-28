@@ -8,6 +8,7 @@
   --paper:#F3F5F9; --card:#FFFFFF; --ink:#141A24; --mute:#5B6475; --line:#DCE1EA;
   --blue:#1A4FA3; --blue-soft:#E3ECFA; --red:#C8202F;
   --pend:#9A6200; --pend-bg:#FFF3D6; --ok:#17784A; --ok-bg:#DDF3E7;
+  --good:#17784A; --good-bg:#DDF3E7; --fair:#44506A; --fair-bg:#E8ECF3; --high:#9A6200; --high-bg:#FFF3D6; --over:#B41D2A; --over-bg:#FCE3E5;
   --focus:#1A4FA3;
   --display:"Archivo","Arial Narrow",system-ui,sans-serif;
   --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -19,7 +20,9 @@
     --band:#07090C; --band-ink:#F3F5F8; --band-mute:#8B94A5;
     --paper:#11151C; --card:#181D26; --ink:#E8ECF2; --mute:#9AA3B4; --line:#2A313D;
     --blue:#6D9BEA; --blue-soft:#1C2A44; --red:#F0606B;
-    --pend:#F2B84B; --pend-bg:#3A2C0E; --ok:#5DD39A; --ok-bg:#12362A; --focus:#6D9BEA;
+    --pend:#F2B84B; --pend-bg:#3A2C0E; --ok:#5DD39A; --ok-bg:#12362A;
+    --good:#5DD39A; --good-bg:#12362A; --fair:#B4BDCC; --fair-bg:#252C38; --high:#F2B84B; --high-bg:#3A2C0E; --over:#FF8A93; --over-bg:#3F1A1F;
+    --focus:#6D9BEA;
   }
 }
 :root[data-theme="dark"]{
@@ -27,46 +30,61 @@
   --band:#07090C; --band-ink:#F3F5F8; --band-mute:#8B94A5;
   --paper:#11151C; --card:#181D26; --ink:#E8ECF2; --mute:#9AA3B4; --line:#2A313D;
   --blue:#6D9BEA; --blue-soft:#1C2A44; --red:#F0606B;
-  --pend:#F2B84B; --pend-bg:#3A2C0E; --ok:#5DD39A; --ok-bg:#12362A; --focus:#6D9BEA;
+  --pend:#F2B84B; --pend-bg:#3A2C0E; --ok:#5DD39A; --ok-bg:#12362A;
+  --good:#5DD39A; --good-bg:#12362A; --fair:#B4BDCC; --fair-bg:#252C38; --high:#F2B84B; --high-bg:#3A2C0E; --over:#FF8A93; --over-bg:#3F1A1F;
+  --focus:#6D9BEA;
 }
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font:15px/1.5 var(--body);}
+body{background:var(--paper);color:var(--ink);font:15px/1.5 var(--body)}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:16px}
-header.band{background:var(--band);color:var(--band-ink);padding-block:28px 22px;border-bottom:4px solid var(--red)}
+header.band{background:var(--band);color:var(--band-ink);padding-block:26px 0;border-bottom:4px solid var(--red)}
 .eyebrow{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--band-mute)}
 h1{font:800 clamp(28px,5vw,44px)/1.05 var(--display);letter-spacing:-.01em;margin:10px 0 8px;text-wrap:balance}
 h1 .rule{display:inline-block;width:.5em;height:.12em;background:var(--blue);vertical-align:middle;margin-right:.25em;box-shadow:0 .2em 0 var(--red)}
-.lede{color:var(--band-mute);max-width:65ch;margin:0}
-.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font:500 13px/1.3 var(--mono);color:var(--band-ink)}
+.lede{color:var(--band-mute);max-width:70ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font:500 13px/1.3 var(--mono);color:var(--band-ink)}
 .meta b{color:var(--band-mute);font-weight:400}
-main{padding-block:24px 64px;display:grid;gap:28px}
-main>*,.list>*,.row>*{min-width:0}
-.top span{overflow-wrap:anywhere}
-h2{font:700 20px/1.2 var(--display);margin:0 0 12px;text-wrap:balance}
-.note{color:var(--mute);font-size:13px;margin:6px 0 0}
+nav.tabs{display:flex;gap:2px;margin-top:18px;overflow-x:auto;scrollbar-width:none}
+nav.tabs button{all:unset;cursor:pointer;padding:12px 14px;font:600 14px/1 var(--body);color:var(--band-mute);border-radius:6px 6px 0 0;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{background:var(--paper);color:var(--ink)}
+nav.tabs button:focus-visible{outline:2px solid var(--focus)}
+main{padding-block:24px 64px}
+main>section{display:grid;gap:26px}
+main>section>*,.list>*,.row>*{min-width:0}
+h2{font:700 20px/1.2 var(--display);margin:0 0 10px;text-wrap:balance}
+h3{font:700 16px/1.25 var(--display);margin:0 0 8px}
+.note{color:var(--mute);font-size:13px;margin:6px 0 0;max-width:80ch}
 .status{padding:12px 14px;border:1px solid var(--line);background:var(--card);border-radius:8px}
 .status[data-kind="warn"]{border-color:var(--pend);background:var(--pend-bg)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.kpi b{display:block;font:700 22px/1.1 var(--display);font-variant-numeric:tabular-nums}
+.kpi span{font:500 12px/1.3 var(--mono);color:var(--mute)}
 
-/* Matriz */
-.matrix-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card)}
-table.matrix{border-collapse:collapse;width:100%;min-width:640px;font-variant-numeric:tabular-nums}
-.matrix th,.matrix td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-.matrix thead th{font:600 12px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--mute);background:var(--paper)}
-.matrix tbody th{font:600 14px/1.3 var(--body);white-space:nowrap}
-.matrix td button{all:unset;cursor:pointer;display:block;border-radius:6px;padding:2px 4px;margin:-2px -4px}
-.matrix td button:hover{background:var(--blue-soft)}
-.matrix td button:focus-visible{outline:2px solid var(--focus)}
+/* Tablas */
+.tscroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table.t{border-collapse:collapse;width:100%;min-width:560px;font-variant-numeric:tabular-nums}
+.t th,.t td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.t thead th{font:600 11px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--mute);background:var(--paper);white-space:nowrap}
+.t tbody th{font:600 14px/1.3 var(--body);white-space:nowrap}
+.t td.num,.t th.num{text-align:right;font-family:var(--mono);font-size:13px;white-space:nowrap}
+.t td button{all:unset;cursor:pointer;display:block;border-radius:6px;padding:2px 4px;margin:-2px -4px}
+.t td button:hover{background:var(--blue-soft)}
+.t td button:focus-visible{outline:2px solid var(--focus)}
 .cnt{font:700 18px/1 var(--display)}
 .sub{display:block;font:400 12px/1.4 var(--mono);color:var(--mute);margin-top:4px}
-.empty{color:var(--line)}
+.empty{color:var(--mute);opacity:.5}
+.thin{font:500 11px/1 var(--mono);color:var(--pend)}
 
-/* Filtros */
+/* Controles */
 .filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding-block:10px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .seg{display:flex;flex-wrap:wrap;gap:6px}
 .chip{font:500 13px/1 var(--body);padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.chip:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
-select,input,textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:7px 10px}
+.chip:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+select,input,textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:7px 10px;max-width:100%}
 .filters input[type=search]{flex:1 1 200px;min-width:0}
 .count{font:500 13px/1 var(--mono);color:var(--mute);margin-left:auto}
 
@@ -74,38 +92,59 @@ select,input,textarea{font:inherit;color:var(--ink);background:var(--card);borde
 .list{display:grid;gap:10px}
 .item{background:var(--card);border:1px solid var(--line);border-radius:8px;border-left:4px solid var(--pend)}
 .item[data-estado="confirmado"]{border-left-color:var(--ok)}
+.item[data-out="1"]{opacity:.8}
 .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:14px 16px}
 .top{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font:500 12px/1.2 var(--mono);color:var(--mute)}
-.pill{font:600 11px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:5px 8px;border-radius:999px}
+.top span{overflow-wrap:anywhere}
+.pill{font:600 11px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:5px 8px;border-radius:999px;white-space:nowrap}
 .pill.pend{background:var(--pend-bg);color:var(--pend)}
 .pill.ok{background:var(--ok-bg);color:var(--ok)}
 .pill.zone{background:var(--blue-soft);color:var(--blue)}
 .pill.out{background:var(--ink);color:var(--paper)}
 .pill.new{background:var(--red);color:#fff}
-.price .chg{color:var(--red)}
+.pill.dup{background:var(--fair-bg);color:var(--fair)}
+.src{font:700 11px/1 var(--body);letter-spacing:.02em;padding:5px 9px;border-radius:4px;color:#fff;background:#5B6475;white-space:nowrap}
+.src[data-src="remax"]{background:#003DA5}
+.src[data-src="delta"]{background:#101318;box-shadow:inset 0 -3px 0 #DC1C2E}
+.src[data-src="c21"]{background:#252526;color:#BEAF87}
+.src[data-src="zv"]{background:#0F7B6C}
+.src[data-src="bo"]{background:#6A3FB5}
+.src[data-src="ml"]{background:#FFE600;color:#2D3277}
+.src[data-src="inm"]{background:#C2410C}
+.v{font:600 12px/1.2 var(--mono);padding:5px 8px;border-radius:6px;display:inline-block}
+.v.good{background:var(--good-bg);color:var(--good)} .v.fair{background:var(--fair-bg);color:var(--fair)}
+.v.high{background:var(--high-bg);color:var(--high)} .v.over{background:var(--over-bg);color:var(--over)}
+.v.na{background:transparent;color:var(--mute);padding-inline:0;font-weight:400}
 .title{font:600 16px/1.35 var(--body);margin:6px 0 4px;overflow-wrap:anywhere}
 .where{color:var(--mute);font-size:13px;overflow-wrap:anywhere}
 .facts{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font:400 13px/1.3 var(--mono);font-variant-numeric:tabular-nums}
-.facts span b{font-weight:500}
+.facts b{font-weight:500}
 .price{text-align:right;font:700 20px/1.1 var(--display);font-variant-numeric:tabular-nums;white-space:nowrap}
 .price small{display:block;font:400 12px/1.4 var(--mono);color:var(--mute);margin-top:4px}
+.price .chg{color:var(--red)}
 .actions{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 14px;align-items:center}
-.btn{font:600 13px/1 var(--body);padding:9px 12px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;text-decoration:none}
+.btn{font:600 13px/1 var(--body);padding:9px 12px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
 .btn.primary{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn.dark{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 :root[data-theme="dark"] .btn.primary{color:#07130D}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#07130D}}
 .btn[disabled]{opacity:.5;cursor:not-allowed}
 .who{font-size:12px;color:var(--mute)}
 details.edit{border-top:1px solid var(--line)}
 details.edit summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body);color:var(--blue)}
-.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:4px 16px 16px}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+details.edit .form{padding:4px 16px 16px}
 .form label{display:grid;gap:4px;font:500 12px/1.2 var(--mono);color:var(--mute)}
 .form .wide{grid-column:1/-1}
 .form textarea{min-height:64px;resize:vertical}
 .more{display:flex;justify-content:center}
 .add{background:var(--card);border:1px solid var(--line);border-radius:8px}
 .add summary{cursor:pointer;padding:14px 16px;font:700 16px/1.2 var(--display)}
-.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 14px;border-radius:8px;font-size:14px}
+.add .form{padding:0 16px 16px}
+.wa{font:400 13px/1.5 var(--mono);white-space:pre-wrap;background:var(--paper);border:1px dashed var(--line);border-radius:8px;padding:12px;max-height:340px;overflow:auto}
+.check{display:flex;gap:10px;align-items:flex-start}
+.check input{margin-top:5px;width:18px;height:18px;flex:none}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 14px;border-radius:8px;font-size:14px;z-index:20}
 @media (max-width:560px){.row{grid-template-columns:1fr}.price{text-align:left}}
 @media (prefers-reduced-motion:no-preference){.item{transition:border-color .2s}}
 </style>
@@ -114,71 +153,177 @@ details.edit summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body
   <div class="wrap">
     <div class="eyebrow">RE/MAX Delta · Guatire · Guarenas · Costas Mirandinas</div>
     <h1><span class="rule" aria-hidden="true"></span>Análisis Comparativo Maestro</h1>
-    <p class="lede">Todas las propiedades publicadas en nuestras zonas, con su enlace exacto. Cada dato nace <strong>por confirmar</strong> y pasa a <strong>confirmado</strong> cuando alguien del equipo lo verifica.</p>
+    <p class="lede">El mercado de nuestras zonas en un solo lugar: RE/MAX, Century 21, ZonaVen, BienesOnline y lo que el equipo agrega a mano. Cada propiedad con su enlace exacto; cada dato nace <strong>por confirmar</strong>.</p>
     <div class="meta" id="meta"><span><b>Cargando…</b></span></div>
+    <nav class="tabs" role="tablist" aria-label="Secciones">
+      <button role="tab" id="tab-mercado" aria-selected="true" data-tab="mercado">Mercado</button>
+      <button role="tab" id="tab-props" aria-selected="false" data-tab="props">Propiedades</button>
+      <button role="tab" id="tab-cliente" aria-selected="false" data-tab="cliente">Para un cliente</button>
+      <button role="tab" id="tab-renta" aria-selected="false" data-tab="renta">Rentabilidad</button>
+      <button role="tab" id="tab-sectores" aria-selected="false" data-tab="sectores">Sectores</button>
+      <button role="tab" id="tab-mov" aria-selected="false" data-tab="mov">Movimiento</button>
+      <button role="tab" id="tab-cierres" aria-selected="false" data-tab="cierres">Cierres</button>
+    </nav>
   </div>
 </header>
 
 <div class="wrap">
 <main>
-  <div id="status" class="status" hidden></div>
+  <div id="status" class="status" hidden style="margin-bottom:20px"></div>
 
-  <section aria-labelledby="h-matriz">
-    <h2 id="h-matriz">Matriz por zona y tipo</h2>
-    <div class="matrix-scroll"><table class="matrix" id="matrix"></table></div>
-    <p class="note">Cada celda: cantidad en venta · mediana del precio · mediana USD/m². Toca una celda para filtrar. Son precios de oferta, no de cierre.</p>
-  </section>
-
-  <section aria-labelledby="h-lista">
-    <h2 id="h-lista">Propiedades</h2>
-    <div class="filters" role="group" aria-label="Filtros">
-      <div class="seg" id="zonas"></div>
-      <select id="f-tipo" aria-label="Tipo de inmueble"></select>
-      <select id="f-pub" aria-label="Publicación">
-        <option value="activas">Publicadas</option>
-        <option value="salieron">Salieron del portal</option>
-        <option value="todas">Todas</option>
-      </select>
-      <select id="f-op" aria-label="Operación">
-        <option value="">Venta y alquiler</option>
-        <option value="Venta">Venta</option>
-        <option value="Alquiler">Alquiler</option>
-      </select>
-      <select id="f-estado" aria-label="Estado">
-        <option value="">Todos los estados</option>
-        <option value="por_confirmar">Por confirmar</option>
-        <option value="confirmado">Confirmado</option>
-      </select>
-      <select id="f-orden" aria-label="Ordenar">
-        <option value="precio_asc">Precio: menor a mayor</option>
-        <option value="precio_desc">Precio: mayor a menor</option>
-        <option value="m2_asc">USD/m²: menor a mayor</option>
-        <option value="reciente">Más recientes primero</option>
-      </select>
-      <input type="search" id="f-q" placeholder="Buscar sector, título, código…" aria-label="Buscar">
-      <span class="count" id="count"></span>
+  <!-- MERCADO -->
+  <section id="p-mercado" role="tabpanel" aria-labelledby="tab-mercado">
+    <div class="kpis" id="kpis"></div>
+    <div>
+      <h2>Matriz por zona y tipo · en venta</h2>
+      <div class="tscroll"><table class="t" id="matrix"></table></div>
+      <p class="note">Cada celda: cantidad · mediana del precio · mediana USD/m². Precios de oferta, sin duplicados entre portales. <span class="thin">Menos de 4 propiedades = muestra chica</span>. Toca una celda para ver esas propiedades.</p>
     </div>
-    <div class="list" id="list" style="margin-top:12px"></div>
-    <div class="more"><button class="btn" id="more" hidden>Mostrar más</button></div>
+    <div>
+      <h2>Mejores oportunidades por precio/m²</h2>
+      <div class="list" id="top-ops"></div>
+      <p class="note">Propiedades publicadas con su USD/m² al menos 15% por debajo de la mediana de sus comparables (misma zona, tipo y operación; mínimo 4 comparables). Hay que verificar estado, documentos y metros antes de ofrecerlas.</p>
+    </div>
+    <div>
+      <h2>Quién tiene el inventario</h2>
+      <div class="tscroll"><table class="t" id="share"></table></div>
+    </div>
   </section>
 
-  <details class="add" id="add-box">
-    <summary>Agregar propiedad a mano (MercadoLibre u otro portal)</summary>
-    <form class="form" id="add-form">
-      <label class="wide">Enlace exacto del anuncio<input id="a-enlace" type="url" required placeholder="https://…"></label>
-      <label>Fuente<select id="a-fuente"><option>MercadoLibre</option><option>RE/MAX Venezuela</option><option>Otro portal</option><option>Cartera propia</option></select></label>
-      <label>Zona<select id="a-zona"><option>Guatire</option><option>Guarenas</option><option>Costas Mirandinas</option></select></label>
-      <label>Operación<select id="a-op"><option>Venta</option><option>Alquiler</option></select></label>
-      <label>Tipo<select id="a-tipo"></select></label>
-      <label>Sector<input id="a-sector" placeholder="Ej. Castillejo"></label>
-      <label>Precio (USD)<input id="a-precio" type="number" min="0" step="1"></label>
-      <label>m² construcción<input id="a-m2c" type="number" min="0" step="0.01"></label>
-      <label>m² terreno<input id="a-m2t" type="number" min="0" step="0.01"></label>
-      <label class="wide">Título<input id="a-titulo" required></label>
-      <label class="wide">Notas<textarea id="a-notas"></textarea></label>
-      <div class="wide"><button class="btn primary" type="submit" id="a-save">Agregar como por confirmar</button></div>
-    </form>
-  </details>
+  <!-- PROPIEDADES -->
+  <section id="p-props" role="tabpanel" aria-labelledby="tab-props" hidden>
+    <div>
+      <div class="filters" role="group" aria-label="Filtros">
+        <div class="seg" id="zonas"></div>
+        <select id="f-tipo" aria-label="Tipo de inmueble"></select>
+        <select id="f-op" aria-label="Operación"><option value="">Venta y alquiler</option><option value="Venta">Venta</option><option value="Alquiler">Alquiler</option></select>
+        <select id="f-ver" aria-label="Veredicto de precio"><option value="">Todos los precios</option><option value="good">Oportunidad</option><option value="fair">En mercado</option><option value="high">Por encima</option><option value="over">Sobreprecio</option></select>
+        <select id="f-fuente" aria-label="Fuente"></select>
+        <select id="f-estado" aria-label="Estado"><option value="">Todos los estados</option><option value="por_confirmar">Por confirmar</option><option value="confirmado">Confirmado</option></select>
+        <select id="f-pub" aria-label="Publicación"><option value="activas">Publicadas</option><option value="salieron">Salieron del portal</option><option value="todas">Todas</option></select>
+        <select id="f-orden" aria-label="Ordenar"><option value="ver">Mejor precio/m² vs. mercado</option><option value="precio_asc">Precio: menor a mayor</option><option value="precio_desc">Precio: mayor a menor</option><option value="dias">Más tiempo publicadas</option><option value="reciente">Más recientes</option></select>
+        <input type="search" id="f-q" placeholder="Sector, título, código…" aria-label="Buscar">
+        <label class="who"><input type="checkbox" id="f-dup"> Ocultar duplicados</label>
+        <span class="count" id="count"></span>
+      </div>
+      <div class="list" id="list" style="margin-top:12px"></div>
+      <div class="more" style="margin-top:12px"><button class="btn" id="more" hidden>Mostrar más</button></div>
+    </div>
+    <details class="add">
+      <summary>Agregar propiedad a mano (MercadoLibre, cartera propia, otro portal)</summary>
+      <form class="form" id="add-form">
+        <label class="wide">Enlace exacto del anuncio<input id="a-enlace" type="url" required placeholder="https://…"></label>
+        <label>Fuente<select id="a-fuente"><option>MercadoLibre</option><option>Cartera RE/MAX Delta</option><option>Otro portal</option><option>Referido</option></select></label>
+        <label>Zona<select id="a-zona"><option>Guatire</option><option>Guarenas</option><option>Costas Mirandinas</option></select></label>
+        <label>Operación<select id="a-op"><option>Venta</option><option>Alquiler</option></select></label>
+        <label>Tipo<select id="a-tipo"></select></label>
+        <label>Sector<input id="a-sector" placeholder="Ej. Castillejo"></label>
+        <label>Precio (USD)<input id="a-precio" type="number" min="0" step="1"></label>
+        <label>m² construcción<input id="a-m2c" type="number" min="0" step="0.01"></label>
+        <label>m² terreno<input id="a-m2t" type="number" min="0" step="0.01"></label>
+        <label>Habitaciones<input id="a-hab" type="number" min="0" step="1"></label>
+        <label class="wide">Título<input id="a-titulo" required></label>
+        <label class="wide">Notas<textarea id="a-notas"></textarea></label>
+        <div class="wide"><button class="btn primary" type="submit">Agregar como por confirmar</button></div>
+      </form>
+    </details>
+  </section>
+
+  <!-- CLIENTE -->
+  <section id="p-cliente" role="tabpanel" aria-labelledby="tab-cliente" hidden>
+    <div class="panel">
+      <h2>¿Qué busca el cliente?</h2>
+      <form class="form" id="c-form">
+        <label>Nombre del cliente<input id="c-nombre" placeholder="Opcional"></label>
+        <label>Operación<select id="c-op"><option>Venta</option><option>Alquiler</option></select></label>
+        <label>Zona<select id="c-zona"><option value="">Cualquiera</option><option>Guatire</option><option>Guarenas</option><option>Costas Mirandinas</option></select></label>
+        <label>Tipo<select id="c-tipo"></select></label>
+        <label>Presupuesto máximo (USD)<input id="c-max" type="number" min="0" step="1000"></label>
+        <label>Presupuesto mínimo (USD)<input id="c-min" type="number" min="0" step="1000"></label>
+        <label>Habitaciones mínimas<input id="c-hab" type="number" min="0" step="1"></label>
+        <label>m² mínimos<input id="c-m2" type="number" min="0" step="1"></label>
+        <label class="wide">Palabras clave (sector, piscina, vista…)<input id="c-q"></label>
+      </form>
+      <p class="note">Ordena primero lo que mejor precio/m² tiene frente al mercado. Marca las que quieras enviar y copia el mensaje.</p>
+    </div>
+    <div class="grid2">
+      <div><h3 id="c-count">Opciones</h3><div class="list" id="c-list"></div></div>
+      <div>
+        <h3>Mensaje para WhatsApp</h3>
+        <div class="wa" id="c-msg">Marca propiedades a la izquierda para armar el mensaje.</div>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn dark" id="c-copy">Copiar mensaje</button></div>
+        <p class="note">Revisa que cada propiedad siga disponible antes de enviarla.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTABILIDAD -->
+  <section id="p-renta" role="tabpanel" aria-labelledby="tab-renta" hidden>
+    <div>
+      <h2>Rentabilidad bruta estimada</h2>
+      <div class="tscroll"><table class="t" id="renta"></table></div>
+      <p class="note">Renta bruta anual = alquiler mensual mediano × 12 ÷ precio de venta mediano, en la misma zona y tipo. No descuenta condominio, impuestos, mantenimiento ni meses vacíos. Se supone que los alquileres publicados son mensuales en USD. Con pocos alquileres el número es solo una referencia: por confirmar con Luis León.</p>
+    </div>
+    <div class="panel">
+      <h3>Regla de inversión de Luis León</h3>
+      <p class="note" style="margin:0">Pendiente. Cuando la tengamos, se aplica aquí a cada propiedad.</p>
+    </div>
+  </section>
+
+  <!-- SECTORES -->
+  <section id="p-sectores" role="tabpanel" aria-labelledby="tab-sectores" hidden>
+    <div>
+      <h2>Sectores · en venta</h2>
+      <div class="seg" id="s-zonas" style="margin-bottom:10px"></div>
+      <div class="tscroll"><table class="t" id="sectores"></table></div>
+      <p class="note">Agrupado por el sector que trae cada anuncio; los nombres pueden variar entre portales. Toca un sector para ver sus propiedades.</p>
+    </div>
+  </section>
+
+  <!-- MOVIMIENTO -->
+  <section id="p-mov" role="tabpanel" aria-labelledby="tab-mov" hidden>
+    <div>
+      <h2>Semana a semana</h2>
+      <div class="tscroll"><table class="t" id="semanas"></table></div>
+      <p class="note">Se llena cada lunes con la actualización automática.</p>
+    </div>
+    <div class="grid2">
+      <div><h3>Tiempo publicadas (mediana de días)</h3><div class="tscroll"><table class="t" id="dias"></table></div>
+      <p class="note">Días desde la fecha de publicación que da el portal; si no la da, desde que la vimos por primera vez.</p></div>
+      <div><h3>Cambios de precio recientes</h3><div class="list" id="cambios"></div></div>
+    </div>
+    <div><h3>Salieron del portal (posibles cierres)</h3><div class="list" id="salidas"></div></div>
+  </section>
+
+  <!-- CIERRES -->
+  <section id="p-cierres" role="tabpanel" aria-labelledby="tab-cierres" hidden>
+    <div class="kpis" id="c-kpis"></div>
+    <div>
+      <h2>Margen de negociación por zona</h2>
+      <div class="tscroll"><table class="t" id="margen"></table></div>
+      <p class="note">Margen = 1 − precio de cierre ÷ precio publicado. Es el dato que ningún portal tiene.</p>
+    </div>
+    <details class="add" id="cierre-box">
+      <summary>Registrar un cierre</summary>
+      <form class="form" id="k-form">
+        <label>Fecha de cierre<input id="k-fecha" type="date" required></label>
+        <label>Salió al mercado<input id="k-pub" type="date"></label>
+        <label>Zona<select id="k-zona"><option>Guatire</option><option>Guarenas</option><option>Costas Mirandinas</option></select></label>
+        <label>Sector<input id="k-sector"></label>
+        <label>Tipo<select id="k-tipo"></select></label>
+        <label>Operación<select id="k-op"><option>Venta</option><option>Alquiler</option></select></label>
+        <label>m² construcción<input id="k-m2c" type="number" min="0" step="0.01"></label>
+        <label>m² terreno<input id="k-m2t" type="number" min="0" step="0.01"></label>
+        <label>Precio publicado (USD)<input id="k-pp" type="number" min="0" step="1" required></label>
+        <label>Precio de cierre (USD)<input id="k-pc" type="number" min="0" step="1" required></label>
+        <label>Oficina<select id="k-of"><option>RE/MAX Delta</option><option>RE/MAX Aventura</option><option>Otra</option></select></label>
+        <label>Forma de pago<input id="k-pago" placeholder="Contado, crédito…"></label>
+        <label class="wide">Notas (sin datos personales de clientes)<textarea id="k-notas"></textarea></label>
+        <div class="wide"><button class="btn primary" type="submit">Guardar cierre</button></div>
+      </form>
+    </details>
+    <div><h3>Cierres registrados</h3><div class="tscroll"><table class="t" id="cierres"></table></div></div>
+  </section>
 </main>
 </div>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -186,126 +331,285 @@ details.edit summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body
 <script>
 const TIPOS = ["Terreno y Parcela","Local Industrial y Galpón","Local Comercial","Casa o TownHouse","Apartamento","Oficina","Edificio","Hacienda y Finca","Negocio","Otro"];
 const ZONAS = ["Guatire","Guarenas","Costas Mirandinas"];
-const PAGE = 40;
-const state = {rows:[], pub:"activas", op:"", zona:"", tipo:"", estado:"", orden:"precio_asc", q:"", shown:PAGE, canWrite:true, uid:null, names:{}};
+const PRIORIDAD = {"RE/MAX Venezuela":0,"Century 21":1,"BienesOnline":2,"ZonaVen":3};
+const MIN_COMP = 4, PAGE = 40;
+const V = {good:"Oportunidad", fair:"En mercado", high:"Por encima", over:"Sobreprecio"};
+const state = {rows:[], cierres:[], semanas:[], tab:"mercado", pub:"activas", op:"", zona:"", tipo:"", ver:"", fuente:"", estado:"", orden:"ver", q:"", dup:false, sZona:"", shown:PAGE, canWrite:true, uid:null, names:{}, sel:new Set()};
 let db = null, user = null;
 const $ = id => document.getElementById(id);
-const usd = n => n == null || n === "" || isNaN(n) ? "—" : "$" + Math.round(n).toLocaleString("es-VE");
 const num = n => n == null || n === "" || isNaN(n) ? null : Number(n);
+const usd = n => num(n) == null ? "—" : "$" + Math.round(n).toLocaleString("es-VE");
+const pct = n => n == null ? "—" : (n > 0 ? "+" : "") + Math.round(n * 100) + "%";
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-function area(r){ // m² que manda: terreno para terrenos, construcción para lo demás
-  const t = /terreno|hacienda/i.test(r.tipo||"");
-  return num(t ? (r.m2_terreno || r.m2_construccion) : (r.m2_construccion || r.m2_terreno));
-}
-function ppm(r){ const a = area(r), p = num(r.precio_usd); return a && p ? p / a : null; }
-function median(a){ a = a.filter(x => x != null).sort((x,y)=>x-y); if(!a.length) return null; const m = a.length>>1; return a.length%2 ? a[m] : (a[m-1]+a[m])/2; }
+const norm = s => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/\s+/g," ").trim();
+const hoy = () => new Date().toISOString().slice(0,10);
+const dias = (a, b) => a ? Math.max(0, Math.round((Date.parse(b || hoy()) - Date.parse(a)) / 864e5)) : null;
+function median(a){ a = a.filter(x => x != null && !isNaN(x)).sort((x,y)=>x-y); if(!a.length) return null; const m = a.length>>1; return a.length%2 ? a[m] : (a[m-1]+a[m])/2; }
+function area(r){ const t = /terreno|hacienda|finca/i.test(r.tipo||""); return num(t ? (r.m2_terreno || r.m2_construccion) : (r.m2_construccion || r.m2_terreno)); }
+function ppm(r){ const a = area(r), p = num(r.precio_usd); return a && p && a > 5 ? p / a : null; }
 function toast(msg){ const t=$("toast"); t.textContent=msg; t.hidden=false; clearTimeout(toast.h); toast.h=setTimeout(()=>t.hidden=true,2600); }
 function status(msg, kind){ const s=$("status"); s.hidden=!msg; s.textContent=msg||""; s.dataset.kind=kind||""; }
+const op = r => r.operacion || "Venta";
+const tipo = r => r.tipo || "Otro";
 
-function activos(){ return state.rows.filter(r => r.activo !== false); }
-function renderMeta(){
-  const r = activos(), fuera = state.rows.length - r.length, ok = r.filter(x=>x.estado==="confirmado").length;
-  const fechas = state.rows.map(x=>x.visto_ultima).filter(Boolean).sort();
-  $("meta").innerHTML = `<span><b>Propiedades</b> ${r.length}</span><span><b>Confirmadas</b> ${ok}</span><span><b>Por confirmar</b> ${r.length-ok}</span><span><b>Salieron del portal</b> ${fuera}</span><span><b>Última extracción</b> ${esc(fechas.at(-1)||"—")}</span>`;
+/* ---------- Derivados: duplicados, comparables, veredicto ---------- */
+function derive(){
+  const rows = state.rows;
+  // Duplicados entre portales: misma zona, tipo y operación, precio a ±2% y área a ±5%
+  const sorted = [...rows].sort((a,b)=>(PRIORIDAD[a.fuente]??9)-(PRIORIDAD[b.fuente]??9));
+  const kept = [];
+  for (const r of sorted){
+    r._dup = null;
+    if (r.activo === false){ continue; }
+    const p = num(r.precio_usd), a = area(r);
+    const twin = p && a ? kept.find(k => k.zona===r.zona && tipo(k)===tipo(r) && op(k)===op(r) && k.fuente!==r.fuente &&
+      Math.abs(num(k.precio_usd)-p)/p <= .02 && area(k) && Math.abs(area(k)-a)/a <= .05) : null;
+    if (twin) r._dup = twin; else kept.push(r);
+  }
+  // Comparables y veredicto
+  const groups = {};
+  for (const r of rows) if (r.activo !== false && !r._dup && ppm(r)) (groups[r.zona+"|"+tipo(r)+"|"+op(r)] ||= []).push(ppm(r));
+  const med = {}; for (const k in groups) med[k] = {m: median(groups[k]), n: groups[k].length};
+  for (const r of rows){
+    const g = med[r.zona+"|"+tipo(r)+"|"+op(r)], v = ppm(r);
+    r._n = g?.n || 0; r._diff = null; r._ver = null;
+    if (g && g.n >= MIN_COMP && v){ r._diff = v / g.m - 1; r._ver = r._diff <= -.15 ? "good" : r._diff <= .10 ? "fair" : r._diff <= .25 ? "high" : "over"; }
+    r._dias = dias(r.fecha_publicacion || r.visto_primera);
+  }
 }
-function renderMatrix(){
-  const tipos = TIPOS.filter(t => activos().some(r => (r.tipo||"Otro")===t && (r.operacion||"Venta")==="Venta"));
+const activos = () => state.rows.filter(r => r.activo !== false);
+const unicos = () => activos().filter(r => !r._dup);
+
+/* ---------- Render: encabezado ---------- */
+function renderMeta(){
+  const a = activos(), u = unicos(), ok = a.filter(x=>x.estado==="confirmado").length;
+  const fuentes = [...new Set(a.map(r=>r.fuente).filter(Boolean))].length;
+  const f = state.rows.map(x=>x.visto_ultima).filter(Boolean).sort().at(-1);
+  $("meta").innerHTML = `<span><b>Publicadas</b> ${a.length}</span><span><b>Sin duplicados</b> ${u.length}</span><span><b>Fuentes</b> ${fuentes}</span><span><b>Confirmadas</b> ${ok}</span><span><b>Cierres</b> ${state.cierres.length}</span><span><b>Última extracción</b> ${esc(f||"—")}</span>`;
+}
+
+/* ---------- Mercado ---------- */
+function renderMercado(){
+  const u = unicos(), venta = u.filter(r=>op(r)==="Venta");
+  const k = [
+    ["En venta", venta.length],
+    ["Precio mediano", usd(median(venta.map(r=>num(r.precio_usd))))],
+    ["USD/m² mediano (apartamentos)", usd(median(venta.filter(r=>tipo(r)==="Apartamento").map(ppm)))],
+    ["Oportunidades", venta.filter(r=>r._ver==="good").length],
+    ["Con sobreprecio", venta.filter(r=>r._ver==="over").length],
+    ["En alquiler", u.filter(r=>op(r)==="Alquiler").length],
+  ];
+  $("kpis").innerHTML = k.map(([l,v])=>`<div class="kpi"><b>${v}</b><span>${l}</span></div>`).join("");
+  const tipos = TIPOS.filter(t => venta.some(r => tipo(r)===t));
   let h = `<thead><tr><th scope="col">Tipo</th>${ZONAS.map(z=>`<th scope="col">${z}</th>`).join("")}</tr></thead><tbody>`;
   for (const t of tipos){
     h += `<tr><th scope="row">${esc(t)}</th>`;
     for (const z of ZONAS){
-      const g = activos().filter(r => r.zona===z && (r.tipo||"Otro")===t && (r.operacion||"Venta")==="Venta");
+      const g = venta.filter(r => r.zona===z && tipo(r)===t);
       if (!g.length){ h += `<td><span class="empty">—</span></td>`; continue; }
-      h += `<td><button data-z="${esc(z)}" data-t="${esc(t)}" aria-label="Filtrar ${esc(t)} en ${esc(z)}"><span class="cnt">${g.length}</span><span class="sub">${usd(median(g.map(r=>num(r.precio_usd))))} · ${usd(median(g.map(ppm)))}/m²</span></button></td>`;
+      h += `<td><button data-go-z="${esc(z)}" data-go-t="${esc(t)}"><span class="cnt">${g.length}</span>${g.length<MIN_COMP?' <span class="thin">muestra chica</span>':''}<span class="sub">${usd(median(g.map(r=>num(r.precio_usd))))} · ${usd(median(g.map(ppm)))}/m²</span></button></td>`;
     }
     h += `</tr>`;
   }
   $("matrix").innerHTML = h + `</tbody>`;
+  const ops = u.filter(r=>r._ver==="good").sort((a,b)=>a._diff-b._diff).slice(0,6);
+  $("top-ops").innerHTML = ops.map(r=>card(r,{mini:true})).join("") || `<p class="status">Todavía no hay propiedades con suficientes comparables para marcar oportunidades.</p>`;
+  const by = {}; for (const r of activos()){ const k = (r.oficina||"—")+"|"+(r.fuente||"—"); (by[k] ||= []).push(r); }
+  const rows = Object.entries(by).map(([k,v])=>{ const [of,f]=k.split("|"); return {of,f,n:v.length,z:ZONAS.map(z=>v.filter(r=>r.zona===z).length)}; }).sort((a,b)=>b.n-a.n).slice(0,15);
+  $("share").innerHTML = `<thead><tr><th>Oficina / anunciante</th><th>Fuente</th><th class="num">Total</th>${ZONAS.map(z=>`<th class="num">${z}</th>`).join("")}</tr></thead><tbody>${rows.map(x=>`<tr><th scope="row">${esc(x.of)}</th><td>${esc(x.f)}</td><td class="num">${x.n}</td>${x.z.map(n=>`<td class="num">${n||'<span class="empty">—</span>'}</td>`).join("")}</tr>`).join("")}</tbody>`;
 }
-function filtered(){
-  const q = state.q.trim().toLowerCase();
-  let a = state.rows.filter(r =>
-    (state.pub==="todas" || (state.pub==="salieron") === (r.activo===false)) &&
-    (!state.zona || r.zona===state.zona) && (!state.tipo || (r.tipo||"Otro")===state.tipo) &&
-    (!state.estado || r.estado===state.estado) && (!state.op || (r.operacion||"Venta")===state.op) &&
-    (!q || [r.titulo,r.sector,r.direccion,r.codigo,r.oficina,r.localidad].join(" ").toLowerCase().includes(q)));
-  const key = {precio_asc:r=>num(r.precio_usd)??Infinity, precio_desc:r=>-(num(r.precio_usd)??-Infinity), m2_asc:r=>ppm(r)??Infinity, reciente:r=>-(Date.parse(r.visto_primera||0)||0)}[state.orden];
-  return a.sort((x,y)=>key(x)-key(y));
+
+/* ---------- Fichas ---------- */
+const SRC = {"RE/MAX Venezuela":"remax","Century 21":"c21","ZonaVen":"zv","BienesOnline":"bo","MercadoLibre":"ml","Inmobiliaria.com":"inm","Cartera RE/MAX Delta":"delta"};
+function srcBadge(r){ const f = r.fuente || "Sin fuente"; return `<span class="src" data-src="${SRC[f]||"otro"}">${esc(f)}</span>`; }
+function verdict(r){
+  if (!r._ver) return `<span class="v na">${ppm(r) ? `Sin comparables suficientes (${r._n})` : "Sin m² para comparar"}</span>`;
+  return `<span class="v ${r._ver}" title="Frente a la mediana de ${r._n} comparables">${V[r._ver]} ${pct(r._diff)} vs ${r._n} comp.</span>`;
 }
-function card(r){
-  const ok = r.estado==="confirmado", p = ppm(r);
-  const who = ok ? `Confirmado${r.confirmado_por && state.names[r.confirmado_por] ? " por " + esc(state.names[r.confirmado_por]) : ""}${r.confirmado_en ? " el " + esc(r.confirmado_en.slice(0,10)) : ""}` : "";
+function card(r, o = {}){
+  const ok = r.estado==="confirmado", p = ppm(r), out = r.activo===false;
+  const nueva = !out && r.visto_primera && r.visto_primera===state.ultima && r.visto_primera!==state.primera;
+  const who = ok ? `Confirmado${r.confirmado_por && state.names[r.confirmado_por] ? " por " + esc(state.names[r.confirmado_por]) : ""}${r.confirmado_en ? " el " + esc(String(r.confirmado_en).slice(0,10)) : ""}` : "";
   const dis = state.canWrite ? "" : "disabled";
-  const f = (k,label,type="number",step="1") => `<label>${label}<input id="e-${esc(r._id)}-${k}" type="${type}" step="${step}" min="0" value="${esc(r[k]??"")}" ${dis}></label>`;
-  return `<article class="item" data-estado="${ok?"confirmado":"por_confirmar"}" data-id="${esc(r._id)}">
-    <div class="row"><div>
-      <div class="top"><span class="pill ${ok?"ok":"pend"}">${ok?"Confirmado":"Por confirmar"}</span><span class="pill zone">${esc(r.zona)}</span>${r.activo===false?`<span class="pill out">Salió del portal ${esc(r.salio_en||"")}</span>`:""}${r.activo!==false && r.visto_primera && r.visto_primera===state.ultima && r.visto_primera!==state.primera?`<span class="pill new">Nueva</span>`:""}<span>${esc(r.tipo||"Otro")} · ${esc(r.operacion||"Venta")}</span><span>${esc(r.fuente||"")}${r.codigo?" #"+esc(r.codigo):""}</span>${r.oficina?`<span>Oficina ${esc(r.oficina)}</span>`:""}</div>
+  const f = (k,label,step="1") => `<label>${label}<input id="e-${esc(r._id)}-${k}" type="number" step="${step}" min="0" value="${esc(r[k]??"")}" ${dis}></label>`;
+  const sel = o.select ? `<input type="checkbox" data-sel="${esc(r._id)}" aria-label="Incluir en el mensaje" ${state.sel.has(r._id)?"checked":""}>` : "";
+  return `<article class="item" data-estado="${ok?"confirmado":"por_confirmar"}" data-out="${out?1:0}" data-id="${esc(r._id)}">
+    <div class="row"><div class="${o.select?"check":""}">${sel}<div style="min-width:0">
+      <div class="top"><span class="pill ${ok?"ok":"pend"}">${ok?"Confirmado":"Por confirmar"}</span><span class="pill zone">${esc(r.zona)}</span>${out?`<span class="pill out">Salió ${esc(r.salio_en||"")}</span>`:""}${nueva?`<span class="pill new">Nueva</span>`:""}${r._dup?`<span class="pill dup">Posible duplicado de ${esc(r._dup.fuente)}</span>`:""}<span>${esc(tipo(r))} · ${esc(op(r))}</span></div>
+      <div class="top" style="margin-top:6px">${srcBadge(r)}${r.oficina?`<span>${esc(r.oficina)}</span>`:""}${r.codigo?`<span>Cód. ${esc(String(r.codigo).replace(/^(c21|zv|bo|remax)-/,""))}</span>`:""}</div>
       <div class="title">${esc(r.titulo||"Sin título")}</div>
       <div class="where">${esc([r.sector,r.localidad,r.municipio].filter(Boolean).join(" · ") || r.direccion || "")}</div>
-      <div class="facts">
-        ${r.m2_construccion?`<span><b>${r.m2_construccion}</b> m² const.</span>`:""}${r.m2_terreno?`<span><b>${r.m2_terreno}</b> m² terreno</span>`:""}
-        ${r.habitaciones?`<span><b>${r.habitaciones}</b> hab.</span>`:""}${r.banos?`<span><b>${r.banos}</b> baños</span>`:""}${r.estacionamientos?`<span><b>${r.estacionamientos}</b> puestos</span>`:""}
-      </div>
-    </div>
-    <div class="price">${usd(num(r.precio_usd))}<small>${p?usd(p)+"/m²":"sin m²"}</small>${r.cambio_precio?`<small class="chg">Portal: ${usd(r.cambio_precio.de)} → ${usd(r.cambio_precio.a)} (${esc(r.cambio_precio.fecha)})</small>`:""}</div></div>
+      <div class="facts">${r.m2_construccion?`<span><b>${r.m2_construccion}</b> m² const.</span>`:""}${r.m2_terreno?`<span><b>${r.m2_terreno}</b> m² terreno</span>`:""}${r.habitaciones?`<span><b>${r.habitaciones}</b> hab.</span>`:""}${r.banos?`<span><b>${r.banos}</b> baños</span>`:""}${r._dias!=null?`<span><b>${r._dias}</b> días publicada</span>`:""}</div>
+      <div style="margin-top:8px">${verdict(r)}</div>
+    </div></div>
+    <div class="price">${usd(r.precio_usd)}<small>${p?usd(p)+"/m²":"sin m²"}</small>${r.cambio_precio?`<small class="chg">Portal: ${usd(r.cambio_precio.de)} → ${usd(r.cambio_precio.a)}</small>`:""}</div></div>
     <div class="actions">
       ${r.enlace?`<a class="btn" href="${esc(r.enlace)}" target="_blank" rel="noopener">Ver anuncio</a>`:""}
-      ${ok?`<button class="btn" data-act="unconfirm" ${dis}>Volver a por confirmar</button>`:`<button class="btn primary" data-act="confirm" ${dis}>Confirmar</button>`}
+      ${o.mini||o.select?"":(ok?`<button class="btn" data-act="unconfirm" ${dis}>Volver a por confirmar</button>`:`<button class="btn primary" data-act="confirm" ${dis}>Confirmar</button>`)}
       <span class="who">${who}</span>
     </div>
-    <details class="edit"><summary>Editar datos</summary>
+    ${o.mini||o.select?"":`<details class="edit"><summary>Editar datos</summary>
       <div class="form">
-        ${f("precio_usd","Precio (USD)")}${f("m2_construccion","m² construcción","number","0.01")}${f("m2_terreno","m² terreno","number","0.01")}
-        ${f("habitaciones","Habitaciones")}${f("banos","Baños")}
+        ${f("precio_usd","Precio (USD)")}${f("m2_construccion","m² construcción","0.01")}${f("m2_terreno","m² terreno","0.01")}${f("habitaciones","Habitaciones")}${f("banos","Baños")}
         <label>Sector<input id="e-${esc(r._id)}-sector" value="${esc(r.sector??"")}" ${dis}></label>
         <label class="wide">Notas (precio de cierre, estado real, contacto…)<textarea id="e-${esc(r._id)}-notas" ${dis}>${esc(r.notas??"")}</textarea></label>
         <div class="wide" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="save" ${dis}>Guardar</button><button class="btn primary" data-act="save-confirm" ${dis}>Guardar y confirmar</button></div>
-      </div>
-    </details>
+      </div></details>`}
   </article>`;
+}
+function filtered(){
+  const q = norm(state.q);
+  const a = state.rows.filter(r =>
+    (state.pub==="todas" || (state.pub==="salieron") === (r.activo===false)) &&
+    (!state.zona || r.zona===state.zona) && (!state.tipo || tipo(r)===state.tipo) && (!state.op || op(r)===state.op) &&
+    (!state.ver || r._ver===state.ver) && (!state.fuente || r.fuente===state.fuente) && (!state.estado || r.estado===state.estado) &&
+    (!state.dup || !r._dup) &&
+    (!q || norm([r.titulo,r.sector,r.direccion,r.codigo,r.oficina,r.localidad].join(" ")).includes(q)));
+  const key = {ver:r=>r._diff??9, precio_asc:r=>num(r.precio_usd)??Infinity, precio_desc:r=>-(num(r.precio_usd)??-Infinity), dias:r=>-(r._dias??-1), reciente:r=>(r._dias??1e9)}[state.orden];
+  return a.sort((x,y)=>key(x)-key(y));
 }
 function renderList(){
   const a = filtered();
   $("count").textContent = `${a.length} de ${state.rows.length}`;
-  // Conserva los formularios abiertos (y lo escrito) cuando llegan cambios de otros
-  const open = [...document.querySelectorAll("details.edit[open]")].map(d => d.closest(".item").dataset.id);
-  const typed = {}; document.querySelectorAll("details.edit[open] input, details.edit[open] textarea").forEach(i => typed[i.id] = i.value);
-  $("list").innerHTML = a.slice(0, state.shown).map(card).join("") || `<p class="status">No hay propiedades con estos filtros.</p>`;
-  open.forEach(id => { const d = document.querySelector(`.item[data-id="${CSS.escape(id)}"] details.edit`); if (d) d.open = true; });
+  const open = [...document.querySelectorAll("#list details.edit[open]")].map(d => d.closest(".item").dataset.id);
+  const typed = {}; document.querySelectorAll("#list details.edit[open] input, #list details.edit[open] textarea").forEach(i => typed[i.id] = i.value);
+  $("list").innerHTML = a.slice(0, state.shown).map(r=>card(r)).join("") || `<p class="status">No hay propiedades con estos filtros.</p>`;
+  open.forEach(id => { const d = document.querySelector(`#list .item[data-id="${CSS.escape(id)}"] details.edit`); if (d) d.open = true; });
   Object.entries(typed).forEach(([k,v]) => { const i = document.getElementById(k); if (i) i.value = v; });
   $("more").hidden = a.length <= state.shown;
 }
 function renderFilters(){
   $("zonas").innerHTML = ["", ...ZONAS].map(z => `<button class="chip" aria-pressed="${state.zona===z}" data-zona="${esc(z)}">${z||"Todas"}</button>`).join("");
-  const tipos = TIPOS.filter(t => state.rows.some(r => (r.tipo||"Otro")===t));
+  const tipos = TIPOS.filter(t => state.rows.some(r => tipo(r)===t));
   $("f-tipo").innerHTML = `<option value="">Todos los tipos</option>` + tipos.map(t=>`<option ${state.tipo===t?"selected":""}>${esc(t)}</option>`).join("");
+  const fu = [...new Set(state.rows.map(r=>r.fuente).filter(Boolean))].sort();
+  $("f-fuente").innerHTML = `<option value="">Todas las fuentes</option>` + fu.map(f=>`<option ${state.fuente===f?"selected":""}>${esc(f)}</option>`).join("");
+  ["f-op","f-ver","f-estado","f-pub","f-orden"].forEach(id => $(id).value = {"f-op":state.op,"f-ver":state.ver,"f-estado":state.estado,"f-pub":state.pub,"f-orden":state.orden}[id]);
 }
-function render(){ renderMeta(); renderMatrix(); renderFilters(); renderList(); }
 
+/* ---------- Para un cliente ---------- */
+function clienteRows(){
+  const g = id => $(id).value, n = id => num($(id).value);
+  const q = norm(g("c-q")).split(" ").filter(Boolean);
+  return unicos().filter(r => op(r)===g("c-op") && (!g("c-zona") || r.zona===g("c-zona")) && (!g("c-tipo") || tipo(r)===g("c-tipo")) &&
+    (n("c-max")==null || (num(r.precio_usd)!=null && num(r.precio_usd) <= n("c-max"))) && (n("c-min")==null || num(r.precio_usd) >= n("c-min")) &&
+    (n("c-hab")==null || (num(r.habitaciones)||0) >= n("c-hab")) && (n("c-m2")==null || (area(r)||0) >= n("c-m2")) &&
+    q.every(w => norm([r.titulo,r.sector,r.direccion,r.localidad].join(" ")).includes(w)))
+    .sort((a,b)=>(a._diff??9)-(b._diff??9) || (num(a.precio_usd)??1e12)-(num(b.precio_usd)??1e12));
+}
+function renderCliente(){
+  const a = clienteRows();
+  $("c-count").textContent = `${a.length} opciones`;
+  $("c-list").innerHTML = a.slice(0,30).map(r=>card(r,{select:true})).join("") || `<p class="status">Nada con esos criterios. Prueba ampliando el presupuesto o la zona.</p>`;
+  renderMsg();
+}
+function renderMsg(){
+  const sel = state.rows.filter(r => state.sel.has(r._id));
+  if (!sel.length){ $("c-msg").textContent = "Marca propiedades a la izquierda para armar el mensaje."; return; }
+  const nombre = $("c-nombre").value.trim();
+  let t = `Hola${nombre?" "+nombre:""}, te saluda Eduardo León de RE/MAX. Según lo que me comentaste, te comparto estas opciones:\n\n`;
+  sel.forEach((r,i) => {
+    t += `${i+1}. ${r.titulo}\n   ${[r.sector, r.localidad || r.zona].filter(Boolean).join(", ")}\n   ${usd(r.precio_usd)}${area(r)?` · ${area(r)} m²`:""}${r.habitaciones?` · ${r.habitaciones} hab.`:""}\n   ${r.enlace||""}\n\n`;
+  });
+  t += `¿Cuál te llama más la atención? Coordinamos una visita y te acompaño en todo el proceso.`;
+  $("c-msg").textContent = t;
+}
+
+/* ---------- Rentabilidad ---------- */
+function renderRenta(){
+  const u = unicos(); let h = `<thead><tr><th>Zona</th><th>Tipo</th><th class="num">Alquiler mediano/mes</th><th class="num">Precio venta mediano</th><th class="num">Renta bruta anual</th><th class="num">Muestras (alq. / venta)</th></tr></thead><tbody>`, any = false;
+  for (const z of ZONAS) for (const t of ["Apartamento","Casa o TownHouse","Local Comercial","Local Industrial y Galpón","Oficina"]){
+    const al = u.filter(r=>r.zona===z && tipo(r)===t && op(r)==="Alquiler").map(r=>num(r.precio_usd));
+    const ve = u.filter(r=>r.zona===z && tipo(r)===t && op(r)==="Venta").map(r=>num(r.precio_usd));
+    if (!al.length || !ve.length) continue; any = true;
+    const ma = median(al), mv = median(ve), y = ma && mv ? ma*12/mv : null, thin = al.length < 3 || ve.length < MIN_COMP;
+    h += `<tr><th scope="row">${z}</th><td>${esc(t)}</td><td class="num">${usd(ma)}</td><td class="num">${usd(mv)}</td><td class="num"><b>${y!=null?(y*100).toFixed(1)+"%":"—"}</b>${thin?' <span class="thin">muestra chica</span>':''}</td><td class="num">${al.length} / ${ve.length}</td></tr>`;
+  }
+  $("renta").innerHTML = h + (any ? "" : `<tr><td colspan="6">Todavía no hay alquileres y ventas del mismo tipo en la misma zona para comparar.</td></tr>`) + `</tbody>`;
+}
+
+/* ---------- Sectores ---------- */
+function renderSectores(){
+  $("s-zonas").innerHTML = ["", ...ZONAS].map(z => `<button class="chip" aria-pressed="${state.sZona===z}" data-szona="${esc(z)}">${z||"Todas"}</button>`).join("");
+  const by = {};
+  for (const r of unicos()) if (op(r)==="Venta" && (!state.sZona || r.zona===state.sZona)){
+    const s = (r.sector || "").trim() || "Sin sector"; const k = r.zona + "|" + norm(s);
+    (by[k] ||= {z:r.zona, s, rows:[]}).rows.push(r);
+  }
+  const list = Object.values(by).sort((a,b)=>b.rows.length-a.rows.length);
+  $("sectores").innerHTML = `<thead><tr><th>Sector</th><th>Zona</th><th class="num">En venta</th><th class="num">Precio mediano</th><th class="num">USD/m² mediano</th><th>Tipos</th></tr></thead><tbody>${list.map(x=>{
+    const tipos = [...new Set(x.rows.map(tipo))].join(", ");
+    return `<tr><th scope="row"><button data-go-s="${esc(x.s)}" data-go-z="${esc(x.z)}">${esc(x.s)}</button></th><td>${esc(x.z)}</td><td class="num">${x.rows.length}</td><td class="num">${usd(median(x.rows.map(r=>num(r.precio_usd))))}</td><td class="num">${usd(median(x.rows.map(ppm)))}</td><td>${esc(tipos)}</td></tr>`;}).join("")}</tbody>`;
+}
+
+/* ---------- Movimiento ---------- */
+function renderMov(){
+  const s = [...state.semanas].sort((a,b)=>String(b.fecha).localeCompare(String(a.fecha)));
+  $("semanas").innerHTML = `<thead><tr><th>Semana</th><th class="num">Extraídas</th><th class="num">Siguen</th><th class="num">Nuevas</th><th class="num">Salieron</th><th class="num">Cambios de precio</th></tr></thead><tbody>${s.map(x=>`<tr><th scope="row">${esc(x.fecha)}</th><td class="num">${x.total_extraidas??"—"}</td><td class="num">${x.siguen??"—"}</td><td class="num">${(x.nuevas||[]).length}</td><td class="num">${(x.salieron||[]).length}</td><td class="num">${(x.cambios_precio||[]).length}</td></tr>`).join("") || `<tr><td colspan="6">La primera actualización semanal aparecerá aquí.</td></tr>`}</tbody>`;
+  const u = unicos();
+  let h = `<thead><tr><th>Tipo</th>${ZONAS.map(z=>`<th class="num">${z}</th>`).join("")}</tr></thead><tbody>`;
+  for (const t of TIPOS.filter(t=>u.some(r=>tipo(r)===t && op(r)==="Venta"))){
+    h += `<tr><th scope="row">${esc(t)}</th>${ZONAS.map(z=>{ const d = u.filter(r=>r.zona===z && tipo(r)===t && op(r)==="Venta").map(r=>r._dias); const m = median(d); return `<td class="num">${m!=null?Math.round(m):'<span class="empty">—</span>'}</td>`; }).join("")}</tr>`;
+  }
+  $("dias").innerHTML = h + `</tbody>`;
+  const ch = state.rows.filter(r=>r.cambio_precio).sort((a,b)=>String(b.cambio_precio.fecha).localeCompare(String(a.cambio_precio.fecha))).slice(0,10);
+  $("cambios").innerHTML = ch.map(r=>card(r,{mini:true})).join("") || `<p class="status">Sin cambios de precio todavía.</p>`;
+  const out = state.rows.filter(r=>r.activo===false).sort((a,b)=>String(b.salio_en).localeCompare(String(a.salio_en))).slice(0,20);
+  $("salidas").innerHTML = out.map(r=>card(r,{mini:true})).join("") || `<p class="status">Ninguna propiedad ha salido del portal todavía.</p>`;
+}
+
+/* ---------- Cierres ---------- */
+function renderCierres(){
+  const c = state.cierres.map(x => ({...x, _m: num(x.precio_publicado) && num(x.precio_cierre) ? 1 - x.precio_cierre / x.precio_publicado : null, _d: dias(x.fecha_publicacion, x.fecha_cierre)}));
+  const v = c.filter(x=>(x.operacion||"Venta")==="Venta");
+  $("c-kpis").innerHTML = [["Cierres registrados", c.length],["Margen mediano", v.length?(Math.round((median(v.map(x=>x._m))||0)*1000)/10)+"%":"—"],["Días medianos para cerrar", median(v.map(x=>x._d))!=null?Math.round(median(v.map(x=>x._d))):"—"],["Precio de cierre mediano", usd(median(v.map(x=>num(x.precio_cierre))))]].map(([l,x])=>`<div class="kpi"><b>${x}</b><span>${l}</span></div>`).join("");
+  let h = `<thead><tr><th>Zona</th><th>Tipo</th><th class="num">Cierres</th><th class="num">Margen mediano</th><th class="num">Días medianos</th><th class="num">USD/m² de cierre</th></tr></thead><tbody>`;
+  const by = {}; for (const x of v) (by[x.zona+"|"+(x.tipo||"Otro")] ||= []).push(x);
+  for (const k of Object.keys(by).sort()){ const g = by[k], [z,t] = k.split("|"); const m2 = g.map(x=>{ const a = num(/terreno/i.test(t)?(x.m2_terreno||x.m2_construccion):(x.m2_construccion||x.m2_terreno)); return a && num(x.precio_cierre) ? x.precio_cierre/a : null; });
+    h += `<tr><th scope="row">${esc(z)}</th><td>${esc(t)}</td><td class="num">${g.length}</td><td class="num">${median(g.map(x=>x._m))!=null?(median(g.map(x=>x._m))*100).toFixed(1)+"%":"—"}</td><td class="num">${median(g.map(x=>x._d))!=null?Math.round(median(g.map(x=>x._d))):"—"}</td><td class="num">${usd(median(m2))}</td></tr>`; }
+  $("margen").innerHTML = h + (v.length ? "" : `<tr><td colspan="6">Registra cierres (o pásale a Amigo los documentos) para ver el margen real.</td></tr>`) + `</tbody>`;
+  $("cierres").innerHTML = `<thead><tr><th>Cierre</th><th>Zona / sector</th><th>Tipo</th><th class="num">Publicado</th><th class="num">Cierre</th><th class="num">Margen</th><th class="num">Días</th><th>Oficina</th></tr></thead><tbody>${[...c].sort((a,b)=>String(b.fecha_cierre).localeCompare(String(a.fecha_cierre))).map(x=>`<tr><th scope="row">${esc(x.fecha_cierre||"—")}</th><td>${esc([x.zona,x.sector].filter(Boolean).join(" · "))}</td><td>${esc(x.tipo||"")}</td><td class="num">${usd(x.precio_publicado)}</td><td class="num">${usd(x.precio_cierre)}</td><td class="num">${x._m!=null?(x._m*100).toFixed(1)+"%":"—"}</td><td class="num">${x._d??"—"}</td><td>${esc(x.oficina||"")}</td></tr>`).join("") || `<tr><td colspan="8">Aún no hay cierres.</td></tr>`}</tbody>`;
+}
+
+/* ---------- Render general y pestañas ---------- */
+function render(){
+  derive(); renderMeta(); renderFilters();
+  ({mercado:renderMercado, props:renderList, cliente:renderCliente, renta:renderRenta, sectores:renderSectores, mov:renderMov, cierres:renderCierres})[state.tab]();
+}
+function setTab(t){
+  state.tab = t;
+  document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab===t));
+  document.querySelectorAll("main>section").forEach(s => s.hidden = s.id !== "p-"+t);
+  try { localStorage.setItem("acm-tab", t); } catch(e) {}
+  render();
+}
+
+/* ---------- Escrituras ---------- */
 async function resolveNames(){
   if (!user) return;
   const ids = [...new Set(state.rows.map(r=>r.confirmado_por).filter(Boolean))].filter(id=>!(id in state.names));
   if (!ids.length) return;
-  try { const ps = await user.profiles(ids); for (const id of ids) state.names[id] = ps?.[id]?.name || "alguien del equipo"; renderList(); } catch(e) {}
+  try { const ps = await user.profiles(ids); for (const id of ids) state.names[id] = ps?.[id]?.name || "alguien del equipo"; if (state.tab==="props") renderList(); } catch(e) {}
 }
+function denied(){ state.canWrite = false; render(); status("No tienes permiso para editar esta base. Pide acceso de Colaborador.", "warn"); }
 async function write(id, patch, msg){
   if (!db) return;
   try { await db.collection("inmuebles").doc(id).update(patch); toast(msg); }
-  catch(e){
-    if (e?.code === "invalid_argument"){ state.canWrite = false; renderList(); status("No tienes permiso para editar esta base. Pide al dueño que te dé acceso de Colaborador.", "warn"); }
-    else toast("No se pudo guardar. Intenta de nuevo.");
-  }
+  catch(e){ if (e?.code === "invalid_argument") denied(); else toast("No se pudo guardar. Intenta de nuevo."); }
 }
 function readForm(id){
-  const g = k => $(`e-${id}-${k}`)?.value;
-  const n = k => { const v = g(k); return v === "" || v == null ? null : Number(v); };
+  const g = k => $(`e-${id}-${k}`)?.value, n = k => { const v = g(k); return v === "" || v == null ? null : Number(v); };
   return {precio_usd:n("precio_usd"), m2_construccion:n("m2_construccion"), m2_terreno:n("m2_terreno"), habitaciones:n("habitaciones"), banos:n("banos"), sector:g("sector")||null, notas:g("notas")||""};
 }
 const confirmPatch = () => ({estado:"confirmado", confirmado_por: state.uid, confirmado_en: new Date().toISOString()});
 
+/* ---------- Eventos ---------- */
 document.addEventListener("click", e => {
+  const tb = e.target.closest("nav.tabs button"); if (tb){ setTab(tb.dataset.tab); return; }
   const z = e.target.closest("[data-zona]"); if (z){ state.zona = z.dataset.zona; state.shown = PAGE; renderFilters(); renderList(); return; }
-  const m = e.target.closest(".matrix button"); if (m){ state.zona = m.dataset.z; state.tipo = m.dataset.t; state.op = "Venta"; $("f-op").value = "Venta"; state.shown = PAGE; renderFilters(); renderList(); $("h-lista").scrollIntoView({behavior:"smooth"}); return; }
+  const sz = e.target.closest("[data-szona]"); if (sz){ state.sZona = sz.dataset.szona; renderSectores(); return; }
+  const go = e.target.closest("[data-go-z]");
+  if (go){ Object.assign(state, {zona:go.dataset.goZ, tipo:go.dataset.goT||"", op:"Venta", q:go.dataset.goS||"", ver:"", fuente:"", estado:"", pub:"activas", shown:PAGE}); $("f-q").value = state.q; setTab("props"); window.scrollTo({top:0}); return; }
   const b = e.target.closest("[data-act]"); if (!b) return;
   const id = b.closest(".item").dataset.id, act = b.dataset.act;
   if (act==="confirm") write(id, confirmPatch(), "Confirmado");
@@ -313,38 +617,59 @@ document.addEventListener("click", e => {
   if (act==="save") write(id, readForm(id), "Guardado");
   if (act==="save-confirm") write(id, {...readForm(id), ...confirmPatch()}, "Guardado y confirmado");
 });
-$("f-tipo").onchange = e => { state.tipo = e.target.value; state.shown = PAGE; renderList(); };
-$("f-pub").onchange = e => { state.pub = e.target.value; state.shown = PAGE; renderList(); };
-$("f-op").onchange = e => { state.op = e.target.value; state.shown = PAGE; renderList(); };
-$("f-estado").onchange = e => { state.estado = e.target.value; state.shown = PAGE; renderList(); };
-$("f-orden").onchange = e => { state.orden = e.target.value; renderList(); };
+document.addEventListener("change", e => {
+  const s = e.target.closest("[data-sel]"); if (!s) return;
+  s.checked ? state.sel.add(s.dataset.sel) : state.sel.delete(s.dataset.sel); renderMsg();
+});
+const bind = (id, key) => $(id).onchange = e => { state[key] = e.target.value; state.shown = PAGE; renderList(); };
+bind("f-tipo","tipo"); bind("f-op","op"); bind("f-ver","ver"); bind("f-fuente","fuente"); bind("f-estado","estado"); bind("f-pub","pub"); bind("f-orden","orden");
+$("f-dup").onchange = e => { state.dup = e.target.checked; renderList(); };
 let qh; $("f-q").oninput = e => { clearTimeout(qh); qh = setTimeout(()=>{ state.q = e.target.value; state.shown = PAGE; renderList(); }, 200); };
 $("more").onclick = () => { state.shown += PAGE; renderList(); };
-$("a-tipo").innerHTML = TIPOS.map(t=>`<option>${t}</option>`).join("");
+let ch; $("c-form").addEventListener("input", () => { clearTimeout(ch); ch = setTimeout(renderCliente, 250); });
+$("c-form").addEventListener("submit", e => e.preventDefault());
+$("c-copy").onclick = async () => {
+  const t = $("c-msg").textContent;
+  try { await navigator.clipboard.writeText(t); toast("Mensaje copiado"); }
+  catch(e){ const r = document.createRange(); r.selectNodeContents($("c-msg")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Selecciona y copia el texto marcado"); }
+};
+["a-tipo","c-tipo","k-tipo"].forEach(id => $(id).innerHTML = (id==="c-tipo"?`<option value="">Cualquiera</option>`:"") + TIPOS.map(t=>`<option>${t}</option>`).join(""));
 $("add-form").addEventListener("submit", async e => {
-  e.preventDefault();
-  if (!db){ toast("La base no está disponible en esta vista."); return; }
+  e.preventDefault(); if (!db){ toast("La base no está disponible en esta vista."); return; }
   const n = id => $(id).value === "" ? null : Number($(id).value);
-  const hoy = new Date().toISOString().slice(0,10);
-  const doc = {fuente:$("a-fuente").value, zona:$("a-zona").value, tipo:$("a-tipo").value, sector:$("a-sector").value||null,
-    precio_usd:n("a-precio"), m2_construccion:n("a-m2c"), m2_terreno:n("a-m2t"), titulo:$("a-titulo").value.trim(),
-    enlace:$("a-enlace").value.trim(), notas:$("a-notas").value, operacion:$("a-op").value, estado:"por_confirmar",
-    manual:true, activo:true, visto_primera:hoy, visto_ultima:hoy, agregado_por:state.uid};
+  const doc = {fuente:$("a-fuente").value, zona:$("a-zona").value, tipo:$("a-tipo").value, operacion:$("a-op").value, sector:$("a-sector").value||null,
+    precio_usd:n("a-precio"), m2_construccion:n("a-m2c"), m2_terreno:n("a-m2t"), habitaciones:n("a-hab"), titulo:$("a-titulo").value.trim(),
+    enlace:$("a-enlace").value.trim(), notas:$("a-notas").value, estado:"por_confirmar", manual:true, activo:true, visto_primera:hoy(), visto_ultima:hoy(), agregado_por:state.uid};
   try { await db.collection("inmuebles").add(doc); e.target.reset(); toast("Agregada como por confirmar"); }
-  catch(err){ toast(err?.code==="quota_exceeded" ? "La base llegó a su límite de documentos." : "No se pudo agregar. Revisa tu acceso."); }
+  catch(err){ if (err?.code==="invalid_argument") denied(); else toast(err?.code==="quota_exceeded" ? "La base llegó a su límite de documentos." : "No se pudo agregar."); }
+});
+$("k-form").addEventListener("submit", async e => {
+  e.preventDefault(); if (!db){ toast("La base no está disponible en esta vista."); return; }
+  const n = id => $(id).value === "" ? null : Number($(id).value);
+  const doc = {fecha_cierre:$("k-fecha").value, fecha_publicacion:$("k-pub").value||null, zona:$("k-zona").value, sector:$("k-sector").value||null, tipo:$("k-tipo").value,
+    operacion:$("k-op").value, m2_construccion:n("k-m2c"), m2_terreno:n("k-m2t"), precio_publicado:n("k-pp"), precio_cierre:n("k-pc"), oficina:$("k-of").value,
+    forma_pago:$("k-pago").value||null, notas:$("k-notas").value, registrado_por:state.uid, registrado_en:new Date().toISOString()};
+  try { await db.collection("cierres").add(doc); e.target.reset(); toast("Cierre guardado"); }
+  catch(err){ if (err?.code==="invalid_argument") denied(); else toast("No se pudo guardar el cierre."); }
 });
 
+/* ---------- Arranque ---------- */
 (async () => {
-  render();
+  let t = "mercado"; try { t = localStorage.getItem("acm-tab") || t; } catch(e) {}
+  if (location.hash && $("tab-"+location.hash.slice(1))) t = location.hash.slice(1);
+  setTab(t);
   db = window.claude ? await claude.use("db") : null;
-  if (!db){ status("La base de datos se abre dentro de claude.ai. Abre este enlace con tu cuenta para ver y confirmar propiedades.", "warn"); return; }
+  if (!db){ status("La base de datos se abre dentro de claude.ai. Abre este enlace con tu cuenta.", "warn"); return; }
   user = await window.claude.use("user");
-  if (user){ try { state.uid = await user.id(); } catch(e) {} try { const c = await user.can("data.write"); if (c === false){ state.canWrite = false; status("Estás en modo lectura. Para confirmar propiedades necesitas acceso de Colaborador.", "warn"); } } catch(e) {} }
+  if (user){ try { state.uid = await user.id(); } catch(e) {} try { if (await user.can("data.write") === false){ state.canWrite = false; status("Estás en modo lectura. Para confirmar o registrar cierres necesitas acceso de Colaborador.", "warn"); } } catch(e) {} }
+  const lost = () => status("Se perdió la conexión con la base. Recarga la página.", "warn");
   db.collection("inmuebles").onSnapshot(snap => {
     state.rows = snap.docs.map(d => ({_id:d.id, ...d.data()}));
     state.ultima = state.rows.map(r=>r.visto_ultima).filter(Boolean).sort().at(-1) || "";
     state.primera = state.rows.map(r=>r.visto_primera).filter(Boolean).sort()[0] || "";
     render(); resolveNames();
-  }, err => status("Se perdió la conexión con la base. Recarga la página.", "warn"));
+  }, lost);
+  db.collection("cierres").onSnapshot(snap => { state.cierres = snap.docs.map(d => ({_id:d.id, ...d.data()})); render(); }, lost);
+  db.collection("extracciones").onSnapshot(snap => { state.semanas = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="mov") renderMov(); }, lost);
 })();
 </script>

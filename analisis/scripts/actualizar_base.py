@@ -6,14 +6,15 @@ Reglas:
 - Propiedad que sigue publicada: se actualiza "visto_ultima". Si cambió el precio del
   portal se guarda en "cambio_precio"; el precio de la ficha solo se reemplaza si
   todavía está "por_confirmar" (lo confirmado por el equipo no se pisa).
-- Propiedad de RE/MAX que ya no aparece: se marca "activo: false" con "salio_en"
-  (puede ser un cierre). Las agregadas a mano no se tocan.
+- Propiedad de una fuente extraída que ya no aparece: se marca "activo: false" con
+  "salio_en" (puede ser un cierre). Solo se revisan las fuentes presentes en las
+  extracciones nuevas; las agregadas a mano no se tocan.
 - Se escribe un resumen en la colección "extracciones" (doc = fecha).
 
 Uso:
     python3 analisis/scripts/actualizar_base.py \
         --actual <carpeta exportada de la colección inmuebles> \
-        --nuevo analisis/datos/remax_<fecha>.json \
+        --nuevo analisis/datos/remax_<fecha>.json analisis/datos/portales_<fecha>.json \
         --salida <carpeta de trabajo>
 Genera en <salida>: docs/*.json (un archivo por escritura), lote_1.json, lote_2.json…
 (listas de escrituras de hasta 50 para ArtifactData "batch") y resumen.json.
@@ -40,13 +41,15 @@ def cargar_actual(carpeta):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--actual", required=True)
-    ap.add_argument("--nuevo", required=True)
+    ap.add_argument("--nuevo", required=True, nargs="+")
     ap.add_argument("--salida", required=True)
     a = ap.parse_args()
 
     actual = cargar_actual(a.actual)
-    nuevo = json.loads(pathlib.Path(a.nuevo).read_text())
-    fecha = nuevo["fecha"]
+    archivos = [json.loads(pathlib.Path(f).read_text()) for f in a.nuevo]
+    fecha = max(x["fecha"] for x in archivos)
+    nuevo = {"fecha": fecha, "inmuebles": [i for x in archivos for i in x["inmuebles"]]}
+    fuentes = {i.get("fuente") for i in nuevo["inmuebles"]}
     salida = pathlib.Path(a.salida)
     (salida / "docs").mkdir(parents=True, exist_ok=True)
 
@@ -59,7 +62,8 @@ def main():
 
     vistos = set()
     for x in nuevo["inmuebles"]:
-        doc_id = f"remax-{x['codigo']}"
+        codigo = str(x["codigo"])
+        doc_id = codigo if not codigo.isdigit() else f"remax-{codigo}"
         vistos.add(doc_id)
         fila = {k: v for k, v in x.items() if k != "foto"}
         for k in ("m2_construccion", "m2_terreno", "habitaciones", "banos", "estacionamientos"):
@@ -85,13 +89,13 @@ def main():
         escribir("update", doc_id, cambio)
 
     for doc_id, previo in actual.items():
-        if doc_id in vistos or previo.get("manual") or previo.get("fuente") != "RE/MAX Venezuela":
+        if doc_id in vistos or previo.get("manual") or previo.get("fuente") not in fuentes:
             continue
         if previo.get("activo") is not False:
             escribir("update", doc_id, {"activo": False, "salio_en": fecha})
             salieron.append(doc_id)
 
-    resumen = {"fecha": fecha, "total_extraidas": len(nuevo["inmuebles"]), "siguen": siguen,
+    resumen = {"fecha": fecha, "fuentes": sorted(f for f in fuentes if f), "total_extraidas": len(nuevo["inmuebles"]), "siguen": siguen,
                "nuevas": nuevas, "salieron": salieron, "cambios_precio": cambios}
     escribir("set", fecha, resumen, coleccion="extracciones")
 
