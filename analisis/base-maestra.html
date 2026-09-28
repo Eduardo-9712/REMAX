@@ -421,6 +421,9 @@ const op = r => r.operacion || "Venta";
 const tipo = r => r.tipo || "Otro";
 
 /* ---------- Derivados: duplicados, comparables, veredicto ---------- */
+const VACIAS = new Set("en de la el los las y a con para venta alquiler se vende apartamento casa terreno local galpon edo estado miranda usd m2 mts".split(" "));
+function palabras(r){ return new Set(norm([r.titulo, r.sector].join(" ")).replace(/[^a-z0-9 ]/g," ").split(" ").filter(x=>x.length>2 && !VACIAS.has(x))); }
+function parecido(a, b){ if (!a.size || !b.size) return 0; let n = 0; a.forEach(x => { if (b.has(x)) n++; }); return n / Math.min(a.size, b.size); }
 function derive(){
   const rows = state.rows;
   // Duplicados entre portales: misma zona, tipo y operación, precio a ±2% y área a ±5%
@@ -429,9 +432,11 @@ function derive(){
   for (const r of sorted){
     r._dup = null;
     if (r.activo === false){ continue; }
-    const p = num(r.precio_usd), a = area(r);
-    const twin = p && a ? kept.find(k => k.zona===r.zona && tipo(k)===tipo(r) && op(k)===op(r) && k.fuente!==r.fuente &&
-      Math.abs(num(k.precio_usd)-p)/p <= .02 && area(k) && Math.abs(area(k)-a)/a <= .05) : null;
+    const p = num(r.precio_usd), a = area(r), w = palabras(r);
+    // Con metros: precio a ±2 % y área a ±5 %. Sin metros: precio a ±1 % y títulos parecidos.
+    const twin = p ? kept.find(k => k.zona===r.zona && tipo(k)===tipo(r) && op(k)===op(r) && k.fuente!==r.fuente && num(k.precio_usd) &&
+      ((a && area(k)) ? (Math.abs(num(k.precio_usd)-p)/p <= .02 && Math.abs(area(k)-a)/a <= .05)
+                      : (Math.abs(num(k.precio_usd)-p)/p <= .01 && parecido(w, palabras(k)) >= .4))) : null;
     if (twin) r._dup = twin; else kept.push(r);
   }
   // Comparables y veredicto

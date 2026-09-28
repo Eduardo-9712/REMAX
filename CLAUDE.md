@@ -142,7 +142,15 @@ estilos o ideas que funcionen, se anotan aquí.
   una **ficha** con la temperatura del cliente (🔥 / 🌤️ / ❄️) por su WhatsApp personal y a una pestaña
   "Clientes" en la base maestra.
 - Mismo número de WhatsApp Business de Eduardo (proveedor con **coexistencia**).
-- Fases: 1) diseño ✅, 2) copiloto de prueba sin tocar WhatsApp, 3) conexión con la API de WhatsApp.
+- Fases: 1) diseño ✅, 2) copiloto de prueba sin tocar WhatsApp ✅ construido (pestañas Copiloto, Clientes y
+  Conocimiento en la base maestra), 3) conexión con la API de WhatsApp. Plan: `whatsapp/plan-agente.md`.
+- El conocimiento del asistente vive en la colección `conocimiento`; solo se usa lo **aprobado**.
+
+## Contenido
+
+- Ideas de reels con medio guion: `contenido/reels.md` (Pregúntale al Broker, precios reales con datos
+  de la base, el sobreprecio). Eduardo tiene grabados: un video sobre un tema (por definir) y su paso por el
+  curso de la Cámara; faltan edición y estructura. También hay 2–3 videos de una propiedad captada para Higgsfield.
 
 ## Cómo trabajamos
 
