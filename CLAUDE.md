@@ -183,6 +183,21 @@ esto"* y sale al instante.
 - **Uso a futuro:** cuando llegue un cliente (por chat o por el agente de WhatsApp), se
   cruzan sus necesidades con esta base para enviarle opciones.
 - Preguntas pendientes para Luis León: `analisis/preguntas-luis-leon.md`.
+- **La base en vivo:** https://claude.ai/artifact/JnuELprRV41EFNRx6xXr46 (página
+  `analisis/base-maestra.html`, datos en la colección `inmuebles` de la base del artifact).
+  Para que Alejandra confirme, hay que compartirle la página con acceso de **Colaborador**.
+- **Cómo se extrae RE/MAX:** `python3 analisis/scripts/remax_scraper.py` recorre las páginas de
+  todas las oficinas RE/MAX (el buscador público no responde a consultas automáticas) y guarda
+  `analisis/datos/remax_<fecha>.json`. Respeta 1 s entre páginas; tarda ~30 min.
+  La primera extracción (28-09-2026) dio 65 propiedades: 56 en venta, 9 en alquiler, todas de
+  las oficinas Aventura y Delta.
+- **Actualización semanal (lunes temprano, hora de Venezuela):** una rutina abre una sesión
+  nueva, corre el extractor, exporta la colección `inmuebles` y ejecuta
+  `analisis/scripts/actualizar_base.py`, que marca nuevas, salidas del portal (posibles
+  cierres) y cambios de precio sin pisar lo que el equipo ya confirmó. El resumen de cada
+  semana queda en la colección `extracciones`.
+- **MercadoLibre:** bloquea el acceso automático y el portal de desarrolladores dio error al
+  crear la aplicación (código PSC01-RBJAGGUMCM3C). Por ahora se agregan a mano desde la página.
 
 ### Sectores clave
 
