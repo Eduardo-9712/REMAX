@@ -152,6 +152,13 @@ estilos o ideas que funcionen, se anotan aquí.
   de la base, el sobreprecio). Eduardo tiene grabados: un video sobre un tema (por definir) y su paso por el
   curso de la Cámara; faltan edición y estructura. También hay 2–3 videos de una propiedad captada para Higgsfield.
 
+## Documentos de la oficina
+
+- Los modelos de RE/MAX Delta están en `documentos/`: autorización de venta **con** y **sin** exclusividad
+  (90 días, honorarios del 5 % + IVA, protección de 120 días) y la carta de solicitud de recaudos.
+- Resumen, diferencias y observaciones para Luis León: `documentos/README.md`. Mensaje de recaudos para
+  WhatsApp: `documentos/recaudos-whatsapp.md`.
+
 ## Cómo trabajamos
 
 - Con enfoque **profesional inmobiliario** y **exclusivo** en todo.
