@@ -96,6 +96,6 @@ Son detalles que vi al leerlos. No toqué los originales, así que la decisión 
 **Para confirmar**
 
 - **Comisión mínima de USD 1.000:** el Excel de productividad muestra que en la práctica se cobra así
-  (ver `analisis/cierres-delta-2025.md`), pero los contratos solo dicen 5 %.
+  (ver `analisis/cierres-delta.md`), pero los contratos solo dicen 5 %.
 
 - El depósito tope es 5 % **con** IVA y los honorarios son 5 % **más** IVA. Si se cierra, ¿el resto se cobra aparte?

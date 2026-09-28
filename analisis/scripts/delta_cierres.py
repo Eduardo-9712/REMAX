@@ -1,67 +1,132 @@
-"""Lee el Excel de productividad de RE/MAX Delta (2024-2025), calcula rebajas y tiempos
-de venta, y exporta reservas, ventas, puntas y captaciones a analisis/datos/delta_cierres_2025.json.
-Uso: python3 analisis/scripts/delta_cierres.py  (necesita openpyxl)"""
-import openpyxl,datetime,statistics as st,collections,json
-wb=openpyxl.load_workbook('analisis/datos/originales/delta-productividad-captaciones-2025.xlsx',data_only=True)
-def rows(name,hdr_row=3):
-    ws=wb[name]; out=[]; mes=None
-    for r in ws.iter_rows(min_row=hdr_row+1,values_only=True):
-        if isinstance(r[0],str) and r[0].strip() and not r[1]: mes=r[0].strip(); continue
-        if r[1]: out.append((mes,r))
-    return out
-def d(x):
-    if isinstance(x,datetime.datetime): return x.date()
-    if isinstance(x,str):
-        try: return datetime.datetime.strptime(x.strip(),'%d/%m/%Y').date()
-        except: return None
+"""Lee los Excel de productividad de RE/MAX Delta (uno por año), calcula rebajas y tiempos
+de venta, y exporta reservas, ventas, puntas y captaciones a analisis/datos/delta_cierres_<año>.json.
+Uso: python3 analisis/scripts/delta_cierres.py  (necesita openpyxl)
+
+Las columnas se buscan por su título, porque cambian de un año a otro (en 2026 la hoja de ventas
+ya no trae la columna A / V). Si falta, un cierre de menos de USD 3.000 se toma como alquiler."""
+import collections
+import datetime
+import json
+import statistics as st
+from pathlib import Path
+
+import openpyxl
+
+RAIZ = Path(__file__).resolve().parents[1]
+ARCHIVOS = {
+    2025: RAIZ / 'datos/originales/delta-productividad-captaciones-2025.xlsx',
+    2026: RAIZ / 'datos/originales/delta-productividad-captaciones-2026.xlsx',
+}
+TOPE_ALQUILER = 3000  # por debajo de esto, sin columna A / V, es un canon
+
+
+def fecha(x):
+    if isinstance(x, datetime.datetime):
+        return x.date()
+    if isinstance(x, str):
+        try:
+            return datetime.datetime.strptime(x.strip(), '%d/%m/%Y').date()
+        except ValueError:
+            return None
+
+
 def num(x):
-    return float(x) if isinstance(x,(int,float)) else None
-# Reservas
-res=[]
-for mes,r in rows('Reservas'):
-    res.append(dict(mes=mes,agente=r[1],cod=r[2],tipo=(r[4] or '').strip(),urb=r[5],exclu=r[6],op=r[7],listada=d(r[8]),pini=num(r[9]),freserva=d(r[10]),pfin=num(r[11]),reserva=num(r[12]),obs=r[15]))
-ventas=[]
-for mes,r in rows('Ventas - Alquileres'):
-    ventas.append(dict(mes=mes,agente=r[1],cod=r[2],tipo=(r[4] or '').strip(),urb=r[5],exclu=r[6],op=r[7],fecha=d(r[8]),pfin=num(r[9]),referido=r[10],obs=r[11]))
-puntas=[]
-for mes,r in rows('Puntas'):
-    puntas.append(dict(cod=r[2],tipo=(r[4] or '').strip(),urb=r[5],fecha=d(r[6]),pfin=num(r[7]),comision=num(r[8])))
-print("reservas",len(res),"ventas",len(ventas),"puntas",len(puntas))
-# descuento
-desc=[];dias=[]
-for x in res:
-    if x['op']=='V' and x['pini'] and x['pfin']:
-        p=(x['pfin']-x['pini'])/x['pini']*100; desc.append((p,x))
-    if x['listada'] and x['freserva'] and x['freserva']>=x['listada']:
-        dias.append(((x['freserva']-x['listada']).days,x))
-ps=[p for p,_ in desc]
-print(f"Ventas con precio inicial y final: {len(ps)}; mediana {st.median(ps):.1f}%, promedio {st.mean(ps):.1f}%; sin rebaja {sum(1 for p in ps if p>=0)}; min {min(ps):.1f}")
-for p,x in sorted(desc,key=lambda t:t[0])[:8]: print(f"  {p:.1f}% {x['tipo']} {x['urb']} {x['pini']}->{x['pfin']}")
-ds=[a for a,_ in dias]
-print(f"Días hasta reserva: n={len(ds)} mediana {st.median(ds)} prom {st.mean(ds):.0f} min {min(ds)} max {max(ds)}")
-bad=[x for x in res if x['listada'] and x['freserva'] and x['freserva']<x['listada']]
-print("fechas incoherentes:",[(x['urb'],str(x['listada']),str(x['freserva'])) for x in bad])
-# ventas 2025
-v=[x for x in ventas if x['op']!='A' and x['pfin'] and x['pfin']>2000]
-a=[x for x in ventas if x['op']=='A']
-print("ventas 2025:",len(v),"alquileres:",len(a),"total registros:",len(ventas))
-print("mediana precio venta:",st.median([x['pfin'] for x in v]), "rango",min(x['pfin'] for x in v),max(x['pfin'] for x in v))
-bt=collections.defaultdict(list)
-for x in v: bt[x['tipo'].replace('Apartamento ','Apartamento')].append(x['pfin'])
-for k,l in bt.items(): print(f"  {k}: {len(l)} ventas, mediana {st.median(l)}")
-print("alquileres:",[(x['tipo'],x['urb'],x['pfin']) for x in a])
-print("con referido de otra oficina:",sum(1 for x in ventas if x['referido']), "alianzas:",sum(1 for x in ventas if x['obs'] and 'lianza' in str(x['obs'])))
-print("raros ventas <2000 V:",[(x['tipo'],x['urb'],x['pfin'],x['op']) for x in ventas if x['op']!='A' and x['pfin'] and x['pfin']<=2000])
-# comisiones
-for x in puntas:
-    if x['pfin'] and x['comision'] and x['pfin']>2000:
-        pct=x['comision']/x['pfin']*100
-        if abs(pct-5)>0.3: print("  comision no 5%:",x['urb'],x['pfin'],x['comision'],f"{pct:.1f}%")
-# captaciones 2025
-cap=[]
-for mes,r in rows('Captaciones Año 2025'):
-    cap.append(dict(mes=mes,tipo=(r[4] or '').strip(),urb=r[5],exclu=r[6],op=r[7],p=num(r[10])))
-print("captaciones 2025:",len(cap),"exclusivas:",sum(1 for c in cap if c['exclu']=='S'),"venta:",sum(1 for c in cap if c['op']=='V'),"alquiler:",sum(1 for c in cap if c['op']=='A'))
-print(collections.Counter(c['tipo'] for c in cap).most_common())
-cap24=rows('Captaciones Año 2024'); print("captaciones 2024:",len(cap24))
-json.dump(dict(reservas=res,ventas=ventas,puntas=puntas,captaciones_2025=cap),open('analisis/datos/delta_cierres_2025.json','w'),default=str,ensure_ascii=False,indent=1)
+    return float(x) if isinstance(x, (int, float)) else None
+
+
+def filas(wb, hoja):
+    """Devuelve dicts {titulo_columna: valor} con el mes al que pertenece cada fila."""
+    ws = wb[hoja]
+    todas = list(ws.iter_rows(values_only=True))
+    i = next(i for i, r in enumerate(todas) if r and any(str(c).strip() == 'Agente' for c in r if c))
+    cab = [str(c).strip() if c else '' for c in todas[i]]
+    out, mes = [], None
+    for r in todas[i + 1:]:
+        if isinstance(r[0], str) and r[0].strip() and not r[1]:
+            mes = r[0].strip()
+            continue
+        if r[1]:
+            d = {cab[j]: r[j] for j in range(len(cab)) if cab[j]}
+            d['mes'] = mes
+            out.append(d)
+    return out
+
+
+def col(d, *nombres):
+    for k, v in d.items():
+        if any(k.startswith(n) for n in nombres):
+            return v
+
+
+def operacion(d, precio):
+    op = col(d, 'A / V')
+    if op in ('A', 'V'):
+        return op
+    return 'A' if precio is not None and precio < TOPE_ALQUILER else 'V'
+
+
+def procesar(anio, ruta):
+    wb = openpyxl.load_workbook(ruta, data_only=True)
+    res = []
+    for d in filas(wb, 'Reservas'):
+        pfin = num(col(d, 'Precio Final'))
+        res.append(dict(mes=d['mes'], agente=d['Agente'], cod=d['Código Oficina'],
+                        tipo=(d['Tipo de Inmueble'] or '').strip(), urb=d['Urbanización'],
+                        exclu=col(d, 'Exclu'), op=operacion(d, pfin), listada=fecha(col(d, 'Fecha Listada')),
+                        pini=num(col(d, 'Precio Inicial')), freserva=fecha(col(d, 'Fecha de Reserva')),
+                        pfin=pfin, reserva=num(col(d, 'Monto de la Reserva')), obs=col(d, 'Observaciones')))
+    ventas = []
+    for d in filas(wb, 'Ventas - Alquileres'):
+        pfin = num(col(d, 'Precio Final'))
+        ventas.append(dict(mes=d['mes'], agente=d['Agente'], cod=d['Código Oficina'],
+                           tipo=(d['Tipo de Inmueble'] or '').strip(), urb=d['Urbanización'],
+                           op=operacion(d, pfin), fecha=fecha(col(d, 'Fecha de Venta')), pfin=pfin,
+                           referido=col(d, 'REFERIDO', 'Referido'), obs=col(d, 'Observaciones')))
+    puntas = [dict(cod=d['Código Oficina'], tipo=(d['Tipo de Inmueble'] or '').strip(), urb=d['Urbanización'],
+                   fecha=fecha(col(d, 'Fecha de Venta')), pfin=num(col(d, 'Precio Final')),
+                   comision=num(col(d, 'Comisión')))
+              for d in filas(wb, 'Puntas')]
+    cap = [dict(mes=d['mes'], tipo=(d['Tipo de Inmueble'] or '').strip(), urb=d['Urbanización'],
+                exclu=col(d, 'Exclu'), op=col(d, 'A / V'), p=num(col(d, 'Precio Inicial')))
+           for d in filas(wb, f'Captaciones Año {anio}') if d.get('Tipo de Inmueble') != 'Tipo de Inmueble']
+
+    print(f'\n===== {anio}: reservas {len(res)}, cierres {len(ventas)}, puntas {len(puntas)}, captaciones {len(cap)}')
+    desc = [((x['pfin'] - x['pini']) / x['pini'] * 100, x) for x in res
+            if x['op'] == 'V' and x['pini'] and x['pfin'] and x['pini'] > TOPE_ALQUILER]
+    ps = [p for p, _ in desc]
+    if ps:
+        print(f'Rebaja (n={len(ps)}): mediana {st.median(ps):.1f} %, promedio {st.mean(ps):.1f} %, '
+              f'sin rebaja {sum(p >= 0 for p in ps)}, por encima {sum(p > 0 for p in ps)}')
+        for p, x in sorted(desc, key=lambda t: t[0])[:5]:
+            print(f"  {p:.1f} % {x['tipo']} {x['urb']} {x['pini']:.0f} -> {x['pfin']:.0f}")
+    ds = [(x['freserva'] - x['listada']).days for x in res
+          if x['listada'] and x['freserva'] and x['freserva'] >= x['listada']]
+    if ds:
+        print(f'Días hasta reserva (n={len(ds)}): mediana {st.median(ds)}, promedio {st.mean(ds):.0f}')
+    malas = [(x['urb'], str(x['listada']), str(x['freserva'])) for x in res
+             if x['listada'] and x['freserva'] and x['freserva'] < x['listada']]
+    print('Reserva antes que la captación:', malas)
+    v = [x for x in ventas if x['op'] == 'V' and x['pfin']]
+    a = [x for x in ventas if x['op'] == 'A']
+    print(f'Ventas {len(v)}, alquileres {len(a)}; mediana venta {st.median(x["pfin"] for x in v):.0f}, '
+          f'rango {min(x["pfin"] for x in v):.0f}-{max(x["pfin"] for x in v):.0f}, '
+          f'monto total {sum(x["pfin"] for x in v):.0f}')
+    por_tipo = collections.defaultdict(list)
+    for x in v:
+        por_tipo[x['tipo'].title()].append(x['pfin'])
+    for k, l in sorted(por_tipo.items(), key=lambda t: -len(t[1])):
+        print(f'  {k}: {len(l)}, mediana {st.median(l):.0f}')
+    print('Alianzas:', sum(1 for x in ventas if x['obs'] and 'lianza' in str(x['obs'])))
+    fuera = [(x['urb'], str(x['fecha'])) for x in ventas if x['fecha'] and x['fecha'].year != anio]
+    print('Fecha de cierre de otro año:', fuera)
+    print(f"Captaciones: exclusivas {sum(c['exclu'] == 'S' for c in cap)}, venta {sum(c['op'] == 'V' for c in cap)}, "
+          f"alquiler {sum(c['op'] == 'A' for c in cap)}")
+    print(collections.Counter(c['tipo'].title() for c in cap).most_common(12))
+    salida = RAIZ / f'datos/delta_cierres_{anio}.json'
+    json.dump(dict(reservas=res, ventas=ventas, puntas=puntas, **{f'captaciones_{anio}': cap}),
+              open(salida, 'w'), default=str, ensure_ascii=False, indent=1)
+
+
+if __name__ == '__main__':
+    for anio, ruta in ARCHIVOS.items():
+        procesar(anio, ruta)

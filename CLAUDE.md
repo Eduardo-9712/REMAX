@@ -208,9 +208,9 @@ esto"* y sale al instante.
   salida puede indicar un cierre, aunque no se sepa el precio final).
 - **Cierres reales:** Eduardo y Luis León cargan los cierres (empezando por los últimos
   3 meses) para seguir el movimiento del mercado en el tiempo.
-- **Cierres reales de Delta 2025** (del Excel interno de productividad): `analisis/cierres-delta-2025.md`.
-  56 cierres. La mediana de rebaja sobre el precio publicado es 3,5 % y la mediana hasta la reserva, 70 días.
-  Son datos internos: en público, solo cifras agregadas.
+- **Cierres reales de Delta** (de los Excel internos de productividad 2025 y 2026): `analisis/cierres-delta.md`.
+  2025: 55 cierres, rebaja mediana de 3,5 % y 70 días hasta la reserva. De enero a agosto de 2026: 44 cierres,
+  rebaja mediana de 0 % y 48 días. Son datos internos: en público, solo cifras agregadas.
 - **Uso a futuro:** cuando llegue un cliente (por chat o por el agente de WhatsApp), se
   cruzan sus necesidades con esta base para enviarle opciones.
 - Preguntas pendientes para Luis León: `analisis/preguntas-luis-leon.md`.
