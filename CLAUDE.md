@@ -156,6 +156,8 @@ estilos o ideas que funcionen, se anotan aquí.
 
 - Los modelos de RE/MAX Delta están en `documentos/`: autorización de venta **con** y **sin** exclusividad
   (90 días, honorarios del 5 % + IVA, protección de 120 días) y la carta de solicitud de recaudos.
+- También está la autorización de **alquiler** con exclusividad (1 mes de canon + IVA), pero es el modelo de
+  **Aventura**: falta la versión de Delta.
 - Resumen, diferencias y observaciones para Luis León: `documentos/README.md`. Mensaje de recaudos para
   WhatsApp: `documentos/recaudos-whatsapp.md`.
 
@@ -206,6 +208,9 @@ esto"* y sale al instante.
   salida puede indicar un cierre, aunque no se sepa el precio final).
 - **Cierres reales:** Eduardo y Luis León cargan los cierres (empezando por los últimos
   3 meses) para seguir el movimiento del mercado en el tiempo.
+- **Cierres reales de Delta 2025** (del Excel interno de productividad): `analisis/cierres-delta-2025.md`.
+  56 cierres. La mediana de rebaja sobre el precio publicado es 3,5 % y la mediana hasta la reserva, 70 días.
+  Son datos internos: en público, solo cifras agregadas.
 - **Uso a futuro:** cuando llegue un cliente (por chat o por el agente de WhatsApp), se
   cruzan sus necesidades con esta base para enviarle opciones.
 - Preguntas pendientes para Luis León: `analisis/preguntas-luis-leon.md`.

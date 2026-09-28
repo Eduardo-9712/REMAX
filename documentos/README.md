@@ -7,6 +7,7 @@ Todos salen a nombre de **RE/MAX Delta** (Plato Inmobiliario, C.A., RIF J-298576
 |---|---|
 | `originales/autorizacion-venta-con-exclusiva.docx` | Contrato de captación con exclusividad |
 | `originales/autorizacion-venta-sin-exclusiva.docx` | Contrato de captación sin exclusividad |
+| `originales/autorizacion-alquiler-con-exclusiva-aventura.docx` | Contrato de alquiler con exclusividad (**modelo de Aventura**) |
 | `originales/solicitud-documentos-inmueble.doc` | Carta al propietario pidiéndole los recaudos |
 | `recaudos-whatsapp.md` | La lista de recaudos lista para mandar por WhatsApp |
 
@@ -34,6 +35,21 @@ Lo que cambia:
 |---|---|---|
 | ¿Puede ofrecerlo por su cuenta o con otros? | No. Solo por la red RE/MAX | Sí. Solo declara que ninguna otra oficina RE/MAX lo tiene |
 | Si vende por su cuenta durante la vigencia | Paga los honorarios completos igual | Solo paga si la venta la concreta el agente |
+
+## Autorización de alquiler con exclusividad
+
+Ojo: este modelo es de **RE/MAX Aventura** (Aventura Grupo Inmobiliario, C.A., representada por José Alirio
+Araque), no de Delta. Para Delta hay que sacar la versión con los datos de Plato Inmobiliario y Luis León.
+
+Es igual que la de venta con exclusividad, con estos cambios:
+
+- **Precio:** un canon mensual estimado en USD.
+- **Honorarios:** **un mes de canon + IVA**, que paga el propietario al firmar el contrato de arrendamiento.
+- **Depósito en garantía:** hasta un mes de canon + IVA. Aquí sí cuadra con los honorarios, al revés que en la venta.
+- **Impuestos:** solo el IVA de los honorarios. No aplica la Forma 33.
+- **No tiene** la cláusula de disposiciones finales (pagos directos entre las partes, bancos recomendados y
+  exención de responsabilidad). Solo queda la frase de que los demás pagos van directo entre las partes.
+- Trae **líneas de firma con cédula** para cada parte, cosa que las de venta no tienen.
 
 ## Carta de solicitud de documentos
 
@@ -74,9 +90,12 @@ Son detalles que vi al leerlos. No toqué los originales, así que la decisión 
 - **Propietario empresa** (muy común en galpones y terrenos): faltan la razón social, el RIF J y el
   representante legal. La carta tampoco pide el acta constitutiva ni la cédula del representante.
 - **Extranjeros:** dice "venezolano" y "V-" fijos. Convendría dejarlo como venezolano(a)/extranjero(a), V/E o pasaporte.
-- **Alquiler:** la carta habla de venta o alquiler, pero solo hay autorizaciones de venta. ¿Existe una de alquiler?
+- **Alquiler:** solo tenemos el modelo de Aventura. Falta la versión de Delta y una de alquiler sin exclusividad, si existe.
 - **Hoja de recaudos:** la carta la menciona. ¿La tenemos?
 
 **Para confirmar**
+
+- **Comisión mínima de USD 1.000:** el Excel de productividad muestra que en la práctica se cobra así
+  (ver `analisis/cierres-delta-2025.md`), pero los contratos solo dicen 5 %.
 
 - El depósito tope es 5 % **con** IVA y los honorarios son 5 % **más** IVA. Si se cierra, ¿el resto se cobra aparte?
