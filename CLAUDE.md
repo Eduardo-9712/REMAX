@@ -133,6 +133,17 @@ estilos o ideas que funcionen, se anotan aquí.
 - **Contenido para Luis León**: terrenos, galpones y clientes de alto nivel,
   apoyándonos en sus más de 40 años de experiencia.
 
+## Asistente de WhatsApp (en diseño)
+
+- Diseño completo: `whatsapp/agente-diseno.md`.
+- Se presenta con nombre propio (**"Valeria"**, provisional), del equipo de Eduardo. Trato humano y
+  cercano, pero **nunca dice ser una persona**: si le preguntan, dice que es la asistente virtual.
+- Califica (qué quiere, tipo, zona, presupuesto, forma de pago, plazo, dónde está) y le pasa a Eduardo
+  una **ficha** con la temperatura del cliente (🔥 / 🌤️ / ❄️) por su WhatsApp personal y a una pestaña
+  "Clientes" en la base maestra.
+- Mismo número de WhatsApp Business de Eduardo (proveedor con **coexistencia**).
+- Fases: 1) diseño ✅, 2) copiloto de prueba sin tocar WhatsApp, 3) conexión con la API de WhatsApp.
+
 ## Cómo trabajamos
 
 - Con enfoque **profesional inmobiliario** y **exclusivo** en todo.
