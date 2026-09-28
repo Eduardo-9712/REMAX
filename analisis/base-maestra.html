@@ -80,6 +80,9 @@ select,input,textarea{font:inherit;color:var(--ink);background:var(--card);borde
 .pill.pend{background:var(--pend-bg);color:var(--pend)}
 .pill.ok{background:var(--ok-bg);color:var(--ok)}
 .pill.zone{background:var(--blue-soft);color:var(--blue)}
+.pill.out{background:var(--ink);color:var(--paper)}
+.pill.new{background:var(--red);color:#fff}
+.price .chg{color:var(--red)}
 .title{font:600 16px/1.35 var(--body);margin:6px 0 4px;overflow-wrap:anywhere}
 .where{color:var(--mute);font-size:13px;overflow-wrap:anywhere}
 .facts{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font:400 13px/1.3 var(--mono);font-variant-numeric:tabular-nums}
@@ -131,6 +134,11 @@ details.edit summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body
     <div class="filters" role="group" aria-label="Filtros">
       <div class="seg" id="zonas"></div>
       <select id="f-tipo" aria-label="Tipo de inmueble"></select>
+      <select id="f-pub" aria-label="Publicación">
+        <option value="activas">Publicadas</option>
+        <option value="salieron">Salieron del portal</option>
+        <option value="todas">Todas</option>
+      </select>
       <select id="f-op" aria-label="Operación">
         <option value="">Venta y alquiler</option>
         <option value="Venta">Venta</option>
@@ -179,7 +187,7 @@ details.edit summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body
 const TIPOS = ["Terreno y Parcela","Local Industrial y Galpón","Local Comercial","Casa o TownHouse","Apartamento","Oficina","Edificio","Hacienda y Finca","Negocio","Otro"];
 const ZONAS = ["Guatire","Guarenas","Costas Mirandinas"];
 const PAGE = 40;
-const state = {rows:[], op:"", zona:"", tipo:"", estado:"", orden:"precio_asc", q:"", shown:PAGE, canWrite:true, uid:null, names:{}};
+const state = {rows:[], pub:"activas", op:"", zona:"", tipo:"", estado:"", orden:"precio_asc", q:"", shown:PAGE, canWrite:true, uid:null, names:{}};
 let db = null, user = null;
 const $ = id => document.getElementById(id);
 const usd = n => n == null || n === "" || isNaN(n) ? "—" : "$" + Math.round(n).toLocaleString("es-VE");
@@ -194,18 +202,19 @@ function median(a){ a = a.filter(x => x != null).sort((x,y)=>x-y); if(!a.length)
 function toast(msg){ const t=$("toast"); t.textContent=msg; t.hidden=false; clearTimeout(toast.h); toast.h=setTimeout(()=>t.hidden=true,2600); }
 function status(msg, kind){ const s=$("status"); s.hidden=!msg; s.textContent=msg||""; s.dataset.kind=kind||""; }
 
+function activos(){ return state.rows.filter(r => r.activo !== false); }
 function renderMeta(){
-  const r = state.rows, ok = r.filter(x=>x.estado==="confirmado").length;
-  const fechas = r.map(x=>x.visto_ultima).filter(Boolean).sort();
-  $("meta").innerHTML = `<span><b>Propiedades</b> ${r.length}</span><span><b>Confirmadas</b> ${ok}</span><span><b>Por confirmar</b> ${r.length-ok}</span><span><b>Última extracción</b> ${esc(fechas.at(-1)||"—")}</span>`;
+  const r = activos(), fuera = state.rows.length - r.length, ok = r.filter(x=>x.estado==="confirmado").length;
+  const fechas = state.rows.map(x=>x.visto_ultima).filter(Boolean).sort();
+  $("meta").innerHTML = `<span><b>Propiedades</b> ${r.length}</span><span><b>Confirmadas</b> ${ok}</span><span><b>Por confirmar</b> ${r.length-ok}</span><span><b>Salieron del portal</b> ${fuera}</span><span><b>Última extracción</b> ${esc(fechas.at(-1)||"—")}</span>`;
 }
 function renderMatrix(){
-  const tipos = TIPOS.filter(t => state.rows.some(r => (r.tipo||"Otro")===t && (r.operacion||"Venta")==="Venta"));
+  const tipos = TIPOS.filter(t => activos().some(r => (r.tipo||"Otro")===t && (r.operacion||"Venta")==="Venta"));
   let h = `<thead><tr><th scope="col">Tipo</th>${ZONAS.map(z=>`<th scope="col">${z}</th>`).join("")}</tr></thead><tbody>`;
   for (const t of tipos){
     h += `<tr><th scope="row">${esc(t)}</th>`;
     for (const z of ZONAS){
-      const g = state.rows.filter(r => r.zona===z && (r.tipo||"Otro")===t && (r.operacion||"Venta")==="Venta");
+      const g = activos().filter(r => r.zona===z && (r.tipo||"Otro")===t && (r.operacion||"Venta")==="Venta");
       if (!g.length){ h += `<td><span class="empty">—</span></td>`; continue; }
       h += `<td><button data-z="${esc(z)}" data-t="${esc(t)}" aria-label="Filtrar ${esc(t)} en ${esc(z)}"><span class="cnt">${g.length}</span><span class="sub">${usd(median(g.map(r=>num(r.precio_usd))))} · ${usd(median(g.map(ppm)))}/m²</span></button></td>`;
     }
@@ -216,6 +225,7 @@ function renderMatrix(){
 function filtered(){
   const q = state.q.trim().toLowerCase();
   let a = state.rows.filter(r =>
+    (state.pub==="todas" || (state.pub==="salieron") === (r.activo===false)) &&
     (!state.zona || r.zona===state.zona) && (!state.tipo || (r.tipo||"Otro")===state.tipo) &&
     (!state.estado || r.estado===state.estado) && (!state.op || (r.operacion||"Venta")===state.op) &&
     (!q || [r.titulo,r.sector,r.direccion,r.codigo,r.oficina,r.localidad].join(" ").toLowerCase().includes(q)));
@@ -229,7 +239,7 @@ function card(r){
   const f = (k,label,type="number",step="1") => `<label>${label}<input id="e-${esc(r._id)}-${k}" type="${type}" step="${step}" min="0" value="${esc(r[k]??"")}" ${dis}></label>`;
   return `<article class="item" data-estado="${ok?"confirmado":"por_confirmar"}" data-id="${esc(r._id)}">
     <div class="row"><div>
-      <div class="top"><span class="pill ${ok?"ok":"pend"}">${ok?"Confirmado":"Por confirmar"}</span><span class="pill zone">${esc(r.zona)}</span><span>${esc(r.tipo||"Otro")} · ${esc(r.operacion||"Venta")}</span><span>${esc(r.fuente||"")}${r.codigo?" #"+esc(r.codigo):""}</span>${r.oficina?`<span>Oficina ${esc(r.oficina)}</span>`:""}</div>
+      <div class="top"><span class="pill ${ok?"ok":"pend"}">${ok?"Confirmado":"Por confirmar"}</span><span class="pill zone">${esc(r.zona)}</span>${r.activo===false?`<span class="pill out">Salió del portal ${esc(r.salio_en||"")}</span>`:""}${r.activo!==false && r.visto_primera && r.visto_primera===state.ultima && r.visto_primera!==state.primera?`<span class="pill new">Nueva</span>`:""}<span>${esc(r.tipo||"Otro")} · ${esc(r.operacion||"Venta")}</span><span>${esc(r.fuente||"")}${r.codigo?" #"+esc(r.codigo):""}</span>${r.oficina?`<span>Oficina ${esc(r.oficina)}</span>`:""}</div>
       <div class="title">${esc(r.titulo||"Sin título")}</div>
       <div class="where">${esc([r.sector,r.localidad,r.municipio].filter(Boolean).join(" · ") || r.direccion || "")}</div>
       <div class="facts">
@@ -237,7 +247,7 @@ function card(r){
         ${r.habitaciones?`<span><b>${r.habitaciones}</b> hab.</span>`:""}${r.banos?`<span><b>${r.banos}</b> baños</span>`:""}${r.estacionamientos?`<span><b>${r.estacionamientos}</b> puestos</span>`:""}
       </div>
     </div>
-    <div class="price">${usd(num(r.precio_usd))}<small>${p?usd(p)+"/m²":"sin m²"}</small></div></div>
+    <div class="price">${usd(num(r.precio_usd))}<small>${p?usd(p)+"/m²":"sin m²"}</small>${r.cambio_precio?`<small class="chg">Portal: ${usd(r.cambio_precio.de)} → ${usd(r.cambio_precio.a)} (${esc(r.cambio_precio.fecha)})</small>`:""}</div></div>
     <div class="actions">
       ${r.enlace?`<a class="btn" href="${esc(r.enlace)}" target="_blank" rel="noopener">Ver anuncio</a>`:""}
       ${ok?`<button class="btn" data-act="unconfirm" ${dis}>Volver a por confirmar</button>`:`<button class="btn primary" data-act="confirm" ${dis}>Confirmar</button>`}
@@ -304,6 +314,7 @@ document.addEventListener("click", e => {
   if (act==="save-confirm") write(id, {...readForm(id), ...confirmPatch()}, "Guardado y confirmado");
 });
 $("f-tipo").onchange = e => { state.tipo = e.target.value; state.shown = PAGE; renderList(); };
+$("f-pub").onchange = e => { state.pub = e.target.value; state.shown = PAGE; renderList(); };
 $("f-op").onchange = e => { state.op = e.target.value; state.shown = PAGE; renderList(); };
 $("f-estado").onchange = e => { state.estado = e.target.value; state.shown = PAGE; renderList(); };
 $("f-orden").onchange = e => { state.orden = e.target.value; renderList(); };
@@ -330,7 +341,9 @@ $("add-form").addEventListener("submit", async e => {
   user = await window.claude.use("user");
   if (user){ try { state.uid = await user.id(); } catch(e) {} try { const c = await user.can("data.write"); if (c === false){ state.canWrite = false; status("Estás en modo lectura. Para confirmar propiedades necesitas acceso de Colaborador.", "warn"); } } catch(e) {} }
   db.collection("inmuebles").onSnapshot(snap => {
-    state.rows = snap.docs.map(d => ({_id:d.id, ...d.data()})).filter(r => r.activo !== false);
+    state.rows = snap.docs.map(d => ({_id:d.id, ...d.data()}));
+    state.ultima = state.rows.map(r=>r.visto_ultima).filter(Boolean).sort().at(-1) || "";
+    state.primera = state.rows.map(r=>r.visto_primera).filter(Boolean).sort()[0] || "";
     render(); resolveNames();
   }, err => status("Se perdió la conexión con la base. Recarga la página.", "warn"));
 })();

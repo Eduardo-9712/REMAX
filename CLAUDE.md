@@ -191,6 +191,11 @@ esto"* y sale al instante.
   `analisis/datos/remax_<fecha>.json`. Respeta 1 s entre páginas; tarda ~30 min.
   La primera extracción (28-09-2026) dio 65 propiedades: 56 en venta, 9 en alquiler, todas de
   las oficinas Aventura y Delta.
+- **Actualización semanal (lunes temprano, hora de Venezuela):** una rutina abre una sesión
+  nueva, corre el extractor, exporta la colección `inmuebles` y ejecuta
+  `analisis/scripts/actualizar_base.py`, que marca nuevas, salidas del portal (posibles
+  cierres) y cambios de precio sin pisar lo que el equipo ya confirmó. El resumen de cada
+  semana queda en la colección `extracciones`.
 - **MercadoLibre:** bloquea el acceso automático y el portal de desarrolladores dio error al
   crear la aplicación (código PSC01-RBJAGGUMCM3C). Por ahora se agregan a mano desde la página.
 
