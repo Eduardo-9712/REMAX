@@ -328,7 +328,7 @@ def admyser():
         m_ciudad = re.search(r"Edo\.?\s*Miranda\s*,\s*(.+?)\s+(?:Baños|Habitaciones|Estacionamiento|Vigilancia|\(0)", t)
         if not m_precio or not m_ciudad:
             continue
-        ciudad = m_ciudad.group(1).strip()
+        ciudad = re.sub(r"\s*\d+(?:[.,]\d+)?\s*mts?.*$", "", m_ciudad.group(1)).strip()  # "Higuerote 218 mts2" -> "Higuerote"
         titulo = re.search(r"<title>(.*?)(?:\s*[-–|]\s*Admyser)?</title>", s, re.S)
         titulo = html.unescape(titulo.group(1)).strip() if titulo else u.rstrip("/").rsplit("/", 1)[-1]
         z = zona_de(ciudad, titulo)
