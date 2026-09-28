@@ -24,6 +24,7 @@ import sys
 import time
 import unicodedata
 import urllib.error
+import urllib.parse
 import urllib.request
 
 PAUSA = 2.0
@@ -54,6 +55,7 @@ def zona_de(*textos):
 
 def bajar(url):
     time.sleep(PAUSA)
+    url = urllib.parse.quote(url, safe=":/?=&%#+,;@")  # direcciones con ñ o acentos
     req = urllib.request.Request(url, headers=UA)
     with urllib.request.urlopen(req, timeout=60) as r:
         return r.read().decode("utf-8", "replace")

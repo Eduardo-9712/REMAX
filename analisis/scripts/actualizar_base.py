@@ -48,7 +48,11 @@ def main():
     actual = cargar_actual(a.actual)
     archivos = [json.loads(pathlib.Path(f).read_text()) for f in a.nuevo]
     fecha = max(x["fecha"] for x in archivos)
-    nuevo = {"fecha": fecha, "inmuebles": [i for x in archivos for i in x["inmuebles"]]}
+    unicos = {}  # si una propiedad viene en dos archivos, gana el último
+    for x in archivos:
+        for i in x["inmuebles"]:
+            unicos[str(i["codigo"])] = i
+    nuevo = {"fecha": fecha, "inmuebles": list(unicos.values())}
     fuentes = {i.get("fuente") for i in nuevo["inmuebles"]}
     salida = pathlib.Path(a.salida)
     (salida / "docs").mkdir(parents=True, exist_ok=True)
