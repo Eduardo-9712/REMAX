@@ -136,8 +136,9 @@ estilos o ideas que funcionen, se anotan aquí.
 ## Asistente de WhatsApp (en diseño)
 
 - Diseño completo: `whatsapp/agente-diseno.md`.
-- Se presenta con nombre propio (**"Valeria"**, provisional), del equipo de Eduardo. Trato humano y
-  cercano, pero **nunca dice ser una persona**: si le preguntan, dice que es la asistente virtual.
+- Nombre **interno: "Kira"** (así la llamamos entre nosotros). **Con los clientes no usa ningún nombre**: se
+  presenta como "el equipo de Eduardo León". Trato humano y cercano, pero **nunca dice ser una persona**: si le
+  preguntan, dice que es la asistente virtual del equipo.
 - Califica (qué quiere, tipo, zona, presupuesto, forma de pago, plazo, dónde está) y le pasa a Eduardo
   una **ficha** con la temperatura del cliente (🔥 / 🌤️ / ❄️) por su WhatsApp personal y a una pestaña
   "Clientes" en la base maestra.
@@ -222,9 +223,9 @@ esto"* y sale al instante.
   script.
 - **Cada propiedad de la base** puede llevar, además de las notas, el **contacto del anunciante** y el **valor
   estimado por el equipo**. La actualización semanal no los pisa.
-- **Base duplicada:** existe otra base anterior, *Estudio de Mercado* (https://claude.ai/artifact/PA1onp1SF72ZFpKKgjhyYY),
-  con su rutina de los domingos y la rama `claude/ecstatic-archimedes-i87900`. Falta decidir si se apaga
-  (ver `PENDIENTES.md`).
+- **Base vieja apagada:** la base anterior *Estudio de Mercado* (https://claude.ai/artifact/PA1onp1SF72ZFpKKgjhyYY,
+  rama `claude/ecstatic-archimedes-i87900`) ya no se usa: su rutina de los domingos se desactivó el 29-09-2026.
+  Solo se trabaja con la base maestra.
 - **Uso a futuro:** cuando llegue un cliente (por chat o por el agente de WhatsApp), se
   cruzan sus necesidades con esta base para enviarle opciones.
 - Preguntas de fondo para Luis León: `analisis/preguntas-luis-leon.md`. El resto de los pendientes está en `PENDIENTES.md`.

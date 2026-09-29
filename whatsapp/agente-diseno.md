@@ -5,7 +5,7 @@ una persona cercana, califica al cliente y le pasa a Eduardo una ficha para que 
 cómo atacarlo. **No cierra negocios ni negocia: prepara el terreno.**
 
 Decisiones tomadas (28-09-2026):
-- Se presenta **sin nombre propio**: "del equipo de Eduardo León".
+- Nombre **interno: Kira** (solo para el equipo). Con los clientes se presenta **sin nombre propio**: "del equipo de Eduardo León".
 - **Lee toda la conversación antes de responder**: nunca se presenta de nuevo ni pregunta algo que el
   cliente ya dijo (aunque lo haya dicho en su primer mensaje o días antes).
 - Usa **el mismo número** de WhatsApp Business de Eduardo (proveedor con coexistencia).
@@ -147,7 +147,7 @@ Siguiente paso sugerido: llamada con Luis León sobre el tema legal + enviar las
 
 ## 11. Pendientes
 
-- [x] Nombre: sin nombre propio, "del equipo de Eduardo León".
+- [x] Nombre: interno "Kira"; con los clientes, sin nombre propio ("del equipo de Eduardo León").
 - [ ] Probar con clientes reales en el **copiloto** (fase 2) antes de conectarlo a WhatsApp.
 - [ ] Elegir proveedor con **coexistencia** que funcione con números de Venezuela (fase 3).
 - [ ] Confirmar con el proveedor las políticas vigentes de Meta para asistentes con IA.

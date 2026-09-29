@@ -34,11 +34,8 @@ pedimos a Alejandra.
 
 ## 1. Preguntas para ti, Eduardo
 
-- [ ] **1. Dos bases haciendo lo mismo.** Hay una base anterior, *Estudio de Mercado*
-  (https://claude.ai/artifact/PA1onp1SF72ZFpKKgjhyYY), con su propia rutina de los domingos, que usa otra
-  rama del repo. Mi recomendación: quedarnos solo con la base maestra y apagar esa rutina. ¿Te parece?
-- [ ] **2. Nombre del asistente.** En CLAUDE.md dice "Valeria", pero el diseño y el copiloto dicen "sin nombre
-  propio, del equipo de Eduardo León". ¿Cuál queda?
+- [x] **1. Dos bases haciendo lo mismo.** Resuelto (29-09): nos quedamos con la base maestra y la rutina de *Estudio de Mercado* quedó apagada.
+- [x] **2. Nombre del asistente.** Resuelto (29-09): se llama **Kira**, solo de uso interno. Con los clientes no usa nombre: es "el equipo de Eduardo León".
 - [ ] **3. Cómo te presentas en los mensajes.** Hoy dice "Eduardo León de RE/MAX". ¿Pongo "RE/MAX Delta"
   desde ya o esperamos al cambio de fines de octubre?
 - [ ] **4. Captaciones de octubre.** Las que hagas antes del cambio, ¿van por Aventura o ya por Delta? (Define
@@ -54,8 +51,7 @@ pedimos a Alejandra.
   Bello y Buroz. ¿Sumamos Acevedo (Caucagua) u otro?
 - [ ] **9. Sectores con dos nombres** (por ejemplo "Castillejo" y "El Castillejo"). Dime cuáles son el mismo
   para unirlos.
-- [ ] **10. Guardar en main.** Todo lo de hoy está en la rama `claude/kind-dirac-j0sa1d`. ¿Abro el pull
-  request para pasarlo a main?
+- [x] **10. Guardar en main.** Resuelto (29-09): se abre el pull request.
 
 ## 2. Lo que me tienes que mandar
 
@@ -141,7 +137,7 @@ por zona, los sectores, los terrenos y galpones, lo legal y el mercado. Además:
 **Fase 2, probar con el copiloto (ahora).** Está construido pero no se ha usado. Falta:
 1. Aprobar el conocimiento (sección 3). Sin eso, el copiloto solo puede preguntar.
 2. Probarlo con conversaciones reales y anotar qué respuestas cambias y por qué. Con eso afino el tono.
-3. Decidir el nombre (pregunta 2) y revisar el banco de preguntas.
+3. Revisar el banco de preguntas (el nombre ya está: Kira, solo interno).
 
 **Fase 3, conectarlo a WhatsApp.** Hace falta:
 1. Una **cuenta de Meta Business verificada** (la pide cualquier proveedor).
