@@ -44,3 +44,16 @@ El conocimiento aprobado era **0**, así que Kira solo podía preguntar.
 1. Aplicar los arreglos 1 a 5 en el copiloto (página de la base).
 2. Redactar las fichas de conocimiento, dejarlas **por aprobar** y que Luis León las revise.
 3. Probar con los 3 chats de nuevo y **guardarlos** en Clientes.
+
+## Aplicado (29-09-2026, de noche)
+
+- ✅ **1. Una sola pregunta:** la regla quedó reforzada y la página avisa en amarillo si la respuesta trae más de un "?".
+- ✅ **2. Trato:** Kira usa el mismo trato que Eduardo en el chat (usted o tú).
+- ✅ **3. Audios:** casilla nueva "Lo que dije en audios o llamadas", que se guarda con el cliente.
+- ✅ **4. Etapas:** Kira decide si toca calificar, enviar opciones, agendar visita, dar seguimiento o pasar a Eduardo.
+  Cuando toca **enviar opciones**, la página agrega sola las 3 mejores propiedades de la base, con enlace.
+- ✅ **5. Origen:** campo "¿De dónde vino?" que se guarda y se ve en Clientes.
+- ✅ **Tipos:** si el cliente acepta varios tipos ("apto o casa"), Kira busca solo en esos tipos.
+- ✅ **Conocimiento:** 5 fichas nuevas *por aprobar*: formas de pago, proceso de compra, quién paga qué, visitas y
+  plantillas de mensajes. Lo no confirmado va marcado POR CONFIRMAR.
+- ⏳ **Pendiente de Eduardo:** aprobar las fichas, volver a probar con los 3 chats y guardarlos en Clientes.

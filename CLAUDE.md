@@ -146,12 +146,19 @@ estilos o ideas que funcionen, se anotan aquí.
 - Fases: 1) diseño ✅, 2) copiloto de prueba sin tocar WhatsApp ✅ construido (pestañas Copiloto, Clientes y
   Conocimiento en la base maestra), 3) conexión con la API de WhatsApp. Plan: `whatsapp/plan-agente.md`.
 - El conocimiento del asistente vive en la colección `conocimiento`; solo se usa lo **aprobado**.
+- Copiloto (29-09): detecta la **etapa** del chat, agrega opciones de la base cuando toca enviarlas, sigue el trato de
+  Eduardo, avisa si hay más de una pregunta y guarda las **notas de audios** y el **origen** del cliente. Revisión y
+  arreglos: `whatsapp/revision-copiloto.md`.
 
 ## Contenido
 
 - Ideas de reels con medio guion: `contenido/reels.md` (Pregúntale al Broker, precios reales con datos
   de la base, el sobreprecio). Eduardo tiene grabados: un video sobre un tema (por definir) y su paso por el
-  curso de la Cámara; faltan edición y estructura. También hay 2–3 videos de una propiedad captada para Higgsfield.
+  curso de la Cámara; faltan edición y estructura.
+- **Casa comercial de la Calle Miranda N.º 51** (casco central de Guatire, captación de Eduardo): ficha, mapa de tomas
+  del material de Drive, 3 propuestas de campaña y prompts de Higgsfield en borrador en `contenido/casa-calle-miranda.md`.
+  Terreno 295,41 m² y construcción 419,86 m² (catastro). El anuncio de RE/MAX tiene mal el terreno.
+- **Proceso de videos con Higgsfield** (borrador del "skill"): `contenido/higgsfield/proceso-video-propiedad.md`.
 
 ## Documentos de la oficina
 
