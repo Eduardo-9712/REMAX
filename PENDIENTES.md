@@ -148,7 +148,7 @@ por zona, los sectores, los terrenos y galpones, lo legal y el mercado. Además:
 5. Decidir cómo lee el servidor la base de propiedades. Lo más simple: que la rutina de los lunes publique
    una copia.
 
-Plan completo: `whatsapp/plan-agente.md`.
+Plan completo: `whatsapp/plan-agente.md`. Primera prueba del copiloto, con lo que hay que corregir y el conocimiento que falta: `whatsapp/revision-copiloto.md`.
 
 ## 7. TikTok y campaña de la casa captada (esta semana)
 
