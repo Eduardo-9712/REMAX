@@ -1,0 +1,2171 @@
+{
+ "reservas": [
+  {
+   "mes": "AÑO 2025",
+   "agente": "Elsa Perez",
+   "cod": "0156-0745",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 1",
+   "exclu": "N",
+   "op": "V",
+   "listada": "2025-07-21",
+   "pini": 20500.0,
+   "freserva": "2025-11-03",
+   "pfin": 20000.0,
+   "reserva": 1000.0,
+   "obs": null
+  },
+  {
+   "mes": "AÑO 2025",
+   "agente": "Elsa Perez",
+   "cod": "0156-0789",
+   "tipo": "Apartamento",
+   "urb": "Buenaventura Suites",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2025-11-14",
+   "pini": 48000.0,
+   "freserva": "2025-11-15",
+   "pfin": 48000.0,
+   "reserva": 2400.0,
+   "obs": null
+  },
+  {
+   "mes": "AÑO 2025",
+   "agente": "Enrique Oliveri",
+   "cod": "0156-0752",
+   "tipo": "Apartamento",
+   "urb": "Terrazas de San Pedro I",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2025-07-29",
+   "pini": 35000.0,
+   "freserva": "2025-11-20",
+   "pfin": 33500.0,
+   "reserva": 1675.0,
+   "obs": null
+  },
+  {
+   "mes": "AÑO 2025",
+   "agente": "Enrique Oliveri",
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Concor Plaza, Montalban - Caracas",
+   "exclu": "-",
+   "op": "V",
+   "listada": null,
+   "pini": null,
+   "freserva": "2025-11-20",
+   "pfin": 40000.0,
+   "reserva": 2000.0,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0681",
+   "tipo": "Casa",
+   "urb": "Castillejo, Parque Habitat B",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2025-03-28",
+   "pini": 55000.0,
+   "freserva": "2026-01-07",
+   "pfin": 50000.0,
+   "reserva": 2500.0,
+   "obs": "Alianza con Jeanmanuela"
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0796",
+   "tipo": "Apartamento",
+   "urb": "Las Rosa, El Istmo",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2025-11-14",
+   "pini": 18000.0,
+   "freserva": "2026-01-13",
+   "pfin": 18000.0,
+   "reserva": 1000.0,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0796",
+   "tipo": "Casa",
+   "urb": "Canaima II",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2025-12-05",
+   "pini": 27000.0,
+   "freserva": "2026-01-13",
+   "pfin": 28000.0,
+   "reserva": 1400.0,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0766",
+   "tipo": "Casa",
+   "urb": "Puerta del Bosque, Las Rosas",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2025-08-29",
+   "pini": 28000.0,
+   "freserva": "2026-01-19",
+   "pfin": 28000.0,
+   "reserva": 1400.0,
+   "obs": "Alianza con Jacqueline España"
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0802",
+   "tipo": "TH",
+   "urb": "El Encantado II",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2025-08-12",
+   "pini": 45000.0,
+   "freserva": "2026-01-24",
+   "pfin": 45000.0,
+   "reserva": 2250.0,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Jose Castellanos",
+   "cod": "0156-801",
+   "tipo": "Casa",
+   "urb": "El Torreon, Castillejo",
+   "exclu": "N",
+   "op": "V",
+   "listada": "2026-01-23",
+   "pini": 35000.0,
+   "freserva": "2026-01-26",
+   "pfin": 32000.0,
+   "reserva": 1600.0,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "José Castellanos",
+   "cod": "0156-0665",
+   "tipo": "Terreno",
+   "urb": "Guatire, Calle Zamora",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2025-03-05",
+   "pini": 46000.0,
+   "freserva": "2026-01-30",
+   "pfin": 46000.0,
+   "reserva": 2300.0,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0780",
+   "tipo": "Apartamento",
+   "urb": "Eiffel, Castillejo",
+   "exclu": "N",
+   "op": "V",
+   "listada": "2025-12-12",
+   "pini": 24000.0,
+   "freserva": "2026-01-31",
+   "pfin": 22500.0,
+   "reserva": 1125.0,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Ferling Oliveros",
+   "cod": "0156-0809",
+   "tipo": "TH",
+   "urb": "Canaima II",
+   "exclu": "N",
+   "op": "V",
+   "listada": "2026-02-04",
+   "pini": 62500.0,
+   "freserva": "2026-02-04",
+   "pfin": 62500.0,
+   "reserva": 3125.0,
+   "obs": "Alianza con Enrique Oliveri"
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0804",
+   "tipo": "Local",
+   "urb": "C.C. Oasis",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-01-29",
+   "pini": 25000.0,
+   "freserva": "2026-02-04",
+   "pfin": 23000.0,
+   "reserva": 1150.0,
+   "obs": "Alianza con Century 21"
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "José Castellanos",
+   "cod": "0156-0787",
+   "tipo": "Casa",
+   "urb": "Muralla Arriba, El Ingenio",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2025-11-04",
+   "pini": 45000.0,
+   "freserva": "2026-02-07",
+   "pfin": 45000.0,
+   "reserva": 2250.0,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0834",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 6",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-03-17",
+   "pini": 27000.0,
+   "freserva": "2026-03-30",
+   "pfin": 26000.0,
+   "reserva": 5200.0,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Jose Castellanos",
+   "cod": "0156-0847",
+   "tipo": "Apartamento",
+   "urb": "Valle Arriba, Jardines de Pacairigua",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-03-31",
+   "pini": 24600.0,
+   "freserva": "2026-03-30",
+   "pfin": 24600.0,
+   "reserva": 4000.0,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0845",
+   "tipo": "Apartamento",
+   "urb": "Las Rosas, El Istmo",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-03-30",
+   "pini": 29000.0,
+   "freserva": "2026-03-31",
+   "pfin": 29000.0,
+   "reserva": 5800.0,
+   "obs": null
+  },
+  {
+   "mes": "ABRIL",
+   "agente": "Ferling Oliveros",
+   "cod": "0156-0832",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Oasis Center",
+   "exclu": "N",
+   "op": "V",
+   "listada": "2026-03-12",
+   "pini": 33000.0,
+   "freserva": "2026-04-06",
+   "pfin": 33000.0,
+   "reserva": 6600.0,
+   "obs": null
+  },
+  {
+   "mes": "ABRIL",
+   "agente": "Elsa Perez",
+   "cod": "0156-0853",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa, Parcela 6",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-04-10",
+   "pini": 25000.0,
+   "freserva": "2026-04-10",
+   "pfin": 25000.0,
+   "reserva": 1250.0,
+   "obs": null
+  },
+  {
+   "mes": "MAYO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-856",
+   "tipo": "Apartamento",
+   "urb": "Buena Vista",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-04-22",
+   "pini": 19000.0,
+   "freserva": "2026-05-19",
+   "pfin": 17500.0,
+   "reserva": 1000.0,
+   "obs": null
+  },
+  {
+   "mes": "JUNIO",
+   "agente": "Bronson Ruiz",
+   "cod": "0156-0870",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa, El Trapiche",
+   "exclu": "N",
+   "op": "V",
+   "listada": "2026-05-21",
+   "pini": 34000.0,
+   "freserva": "2026-06-04",
+   "pfin": 33800.0,
+   "reserva": 1690.0,
+   "obs": "Alianza con Eduardo Sanoja"
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0889",
+   "tipo": "Apartamento",
+   "urb": "Valle Arriba, Valle Grande",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-07-31",
+   "pini": 43000.0,
+   "freserva": "2026-08-07",
+   "pfin": 38000.0,
+   "reserva": 1900.0,
+   "obs": null
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Enrique Oliveri",
+   "cod": "0156-0864",
+   "tipo": "Casa",
+   "urb": "Castillejo, El Torreón",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-05-11",
+   "pini": 63000.0,
+   "freserva": "2026-08-12",
+   "pfin": 65000.0,
+   "reserva": 3250.0,
+   "obs": "Alianza con Luis León"
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Doris Cornejo",
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Villas de Fuente Mar",
+   "exclu": "-",
+   "op": "V",
+   "listada": null,
+   "pini": null,
+   "freserva": "2026-08-15",
+   "pfin": 46000.0,
+   "reserva": 2300.0,
+   "obs": "Alianza con Naileth Hernandez "
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Jose Castellanos",
+   "cod": "-",
+   "tipo": "Local Comercial",
+   "urb": "Centro Comercial Castillejo",
+   "exclu": null,
+   "op": "A",
+   "listada": null,
+   "pini": null,
+   "freserva": "2026-08-14",
+   "pfin": 140.0,
+   "reserva": 280.0,
+   "obs": "Alianza con Maria Faris"
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Jose Castellanos",
+   "cod": "0156-0866",
+   "tipo": "Casa",
+   "urb": "Castillejo, La Esperanza ",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-05-13",
+   "pini": 120000.0,
+   "freserva": "2026-08-18",
+   "pfin": 100000.0,
+   "reserva": 5000.0,
+   "obs": null
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "José Castellanos",
+   "cod": "0156-0797",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Buenaventura, Expoventura",
+   "exclu": "N",
+   "op": "A",
+   "listada": "2025-12-08",
+   "pini": 850.0,
+   "freserva": "2026-08-18",
+   "pfin": 800.0,
+   "reserva": 800.0,
+   "obs": "Alianza con Ismael"
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Enrique Oliveri",
+   "cod": "-",
+   "tipo": "Galpon",
+   "urb": "Hacienda Sojo",
+   "exclu": "-",
+   "op": "A",
+   "listada": null,
+   "pini": null,
+   "freserva": "2026-08-19",
+   "pfin": 1100.0,
+   "reserva": 1100.0,
+   "obs": "Alianza con Carlos Urbaez"
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Enrique Oliveri",
+   "cod": "0156-0886",
+   "tipo": "Casa",
+   "urb": "Muralla Arriba",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-07-07",
+   "pini": 38000.0,
+   "freserva": "2026-08-21",
+   "pfin": 38000.0,
+   "reserva": 1900.0,
+   "obs": null
+  },
+  {
+   "mes": "SEPTIEMBRE",
+   "agente": "Elsa Perez",
+   "cod": "0156-0831",
+   "tipo": "Apartamento",
+   "urb": "El Marques, La Sabana",
+   "exclu": "S",
+   "op": "V",
+   "listada": "2026-03-10",
+   "pini": 42000.0,
+   "freserva": "2026-09-08",
+   "pfin": 42000.0,
+   "reserva": 2100.0,
+   "obs": null
+  }
+ ],
+ "ventas": [
+  {
+   "mes": "ENERO",
+   "agente": "Enrique Oliveri",
+   "cod": "0156-0752",
+   "tipo": "Apartamento",
+   "urb": "Terrazas de San Pedro I",
+   "op": "V",
+   "fecha": "2026-01-14",
+   "pfin": 33500.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Enrique Oliveri",
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Concor Plaza, Montalban - Caracas",
+   "op": "V",
+   "fecha": "2026-01-14",
+   "pfin": 40000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0745",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 1",
+   "op": "V",
+   "fecha": "2026-01-21",
+   "pfin": 20000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0789",
+   "tipo": "Apartamento",
+   "urb": "Buenaventura Suites",
+   "op": "V",
+   "fecha": "2026-01-22",
+   "pfin": 48000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0766",
+   "tipo": "Casa",
+   "urb": "Puerta del Bosque, Las Rosas",
+   "op": "V",
+   "fecha": "2026-01-27",
+   "pfin": 28000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "ENERO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0796",
+   "tipo": "Casa",
+   "urb": "Canaima II",
+   "op": "V",
+   "fecha": "2026-01-27",
+   "pfin": 27000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0796",
+   "tipo": "Apartamento",
+   "urb": "Las Rosa, El Istmo",
+   "op": "V",
+   "fecha": "2026-02-03",
+   "pfin": 18000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Jose Castellanos",
+   "cod": "0156-801",
+   "tipo": "Casa",
+   "urb": "El Torreon, Castillejo",
+   "op": "V",
+   "fecha": "2026-02-11",
+   "pfin": 32000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0779",
+   "tipo": "Apartamento",
+   "urb": "Jardin de Higuerote, Brion",
+   "op": "V",
+   "fecha": "2026-02-13",
+   "pfin": 25000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0802",
+   "tipo": "TH",
+   "urb": "El Encantado II",
+   "op": "V",
+   "fecha": "2026-02-25",
+   "pfin": 45000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "José Castellanos",
+   "cod": "0156-0795",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Buenaventura",
+   "op": "A",
+   "fecha": "2026-02-25",
+   "pfin": 650.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Jose Castellanos",
+   "cod": "0156-0820",
+   "tipo": "Quiosco",
+   "urb": "C.C. Castillejo",
+   "op": "A",
+   "fecha": "2026-02-25",
+   "pfin": 100.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0804",
+   "tipo": "Local",
+   "urb": "C.C. Oasis",
+   "op": "V",
+   "fecha": "2026-02-25",
+   "pfin": 23000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0823",
+   "tipo": "Local",
+   "urb": "C.C. Compro, Las Barrancas",
+   "op": "A",
+   "fecha": "2026-02-28",
+   "pfin": 175.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0824",
+   "tipo": "Local",
+   "urb": "C.C. Compro, Las Barrancas",
+   "op": "A",
+   "fecha": "2026-02-28",
+   "pfin": 175.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "FEBRERO",
+   "agente": "Ferling Oliveros",
+   "cod": "0156-0809",
+   "tipo": "TH",
+   "urb": "Canaima II",
+   "op": "V",
+   "fecha": "2026-02-28",
+   "pfin": 62500.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Jose Castellanos",
+   "cod": "0156-0665",
+   "tipo": "Terreno",
+   "urb": "Calle Zamora",
+   "op": "V",
+   "fecha": "2026-03-06",
+   "pfin": 50000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0780",
+   "tipo": "Apartamento",
+   "urb": "Castillejo, El Eiffel",
+   "op": "V",
+   "fecha": "2026-03-16",
+   "pfin": 22500.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0681",
+   "tipo": "TH",
+   "urb": "Castillejo, Parque Habitat B",
+   "op": "V",
+   "fecha": "2026-03-16",
+   "pfin": 50000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Jose Castellanos",
+   "cod": "0156-0787",
+   "tipo": "TH",
+   "urb": "Muralla Arriba",
+   "op": "V",
+   "fecha": "2026-03-17",
+   "pfin": 45000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Jose Castellanos",
+   "cod": "0156-0778",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Vista Place",
+   "op": "V",
+   "fecha": "2025-03-18",
+   "pfin": 21000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Bronson Ruiz",
+   "cod": "0156-0829",
+   "tipo": "Apartamento",
+   "urb": "El Marques, Los Cardenales",
+   "op": "V",
+   "fecha": "2025-03-19",
+   "pfin": 19000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MARZO",
+   "agente": "Elsa Perez",
+   "cod": "-",
+   "tipo": "Galpón",
+   "urb": "Centro Industrial Cloris",
+   "op": "V",
+   "fecha": "2025-03-20",
+   "pfin": 280000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "ABRIL",
+   "agente": "Ferling Oliveros",
+   "cod": "0156-0832",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Oasis Center",
+   "op": "V",
+   "fecha": "2026-04-15",
+   "pfin": 33000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "ABRIL",
+   "agente": "Bronson Ruiz",
+   "cod": "0156-0827",
+   "tipo": "Apartamento",
+   "urb": "Rio Chico, Los Jobos",
+   "op": "V",
+   "fecha": "2026-04-21",
+   "pfin": 17000.0,
+   "referido": "Habitat - Norevy Cortez",
+   "obs": null
+  },
+  {
+   "mes": "ABRIL",
+   "agente": "Jose Castellanos",
+   "cod": "0156-0847",
+   "tipo": "Apartamento",
+   "urb": "Valle Arriba, Jardines de Pacairigua",
+   "op": "V",
+   "fecha": "2026-04-22",
+   "pfin": 24600.0,
+   "referido": "Delta - Luis Leon (2da Punta)",
+   "obs": null
+  },
+  {
+   "mes": "ABRIL",
+   "agente": "Elsa Perez",
+   "cod": "0156-0845",
+   "tipo": "Apartamento",
+   "urb": "Las Rosas, El Istmo",
+   "op": "V",
+   "fecha": "2026-04-24",
+   "pfin": 29000.0,
+   "referido": null,
+   "obs": "Alianza Jacqueline Centuri 21"
+  },
+  {
+   "mes": "ABRIL",
+   "agente": "Enrique Oliveri",
+   "cod": "0156-0855",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa La Molienda",
+   "op": "A",
+   "fecha": "2026-04-20",
+   "pfin": 500.0,
+   "referido": "Terra Gold - Veronica Guillen",
+   "obs": null
+  },
+  {
+   "mes": "MAYO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0853",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa, Parcela 6",
+   "op": "V",
+   "fecha": "2026-05-05",
+   "pfin": 26000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MAYO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0834",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 6",
+   "op": "V",
+   "fecha": "2026-05-05",
+   "pfin": 25000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MAYO",
+   "agente": "Jose Castellanos",
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Castillejo, La Casona",
+   "op": "A",
+   "fecha": "2026-05-15",
+   "pfin": 300.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "MAYO",
+   "agente": "Enrique Castillejo",
+   "cod": "0156-0865",
+   "tipo": "Galpón",
+   "urb": "El Desvio",
+   "op": "A",
+   "fecha": "2026-05-20",
+   "pfin": 1500.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "JUNIO",
+   "agente": "Bronson Ruiz",
+   "cod": "0156-0870",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa, El Trapiche",
+   "op": "V",
+   "fecha": "2026-06-06",
+   "pfin": 33800.0,
+   "referido": null,
+   "obs": "Alianza con Eduardo Jose Sanoja"
+  },
+  {
+   "mes": "JUNIO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0856",
+   "tipo": "Apartamento",
+   "urb": "Buena Vista",
+   "op": "V",
+   "fecha": "2026-06-11",
+   "pfin": 17500.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "JUNIO",
+   "agente": "Doris Cornejo",
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa El Arado",
+   "op": "V",
+   "fecha": "2026-06-15",
+   "pfin": 38000.0,
+   "referido": null,
+   "obs": "Alianza con Jeanmanuela"
+  },
+  {
+   "mes": "JULIO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0798",
+   "tipo": "Terreno",
+   "urb": "Las Margaritas, El Ingenio",
+   "op": "V",
+   "fecha": "2026-07-03",
+   "pfin": 18000.0,
+   "referido": null,
+   "obs": "Alianza con Aiskel"
+  },
+  {
+   "mes": "JULIO",
+   "agente": "Elsa Perez",
+   "cod": "0156-0861",
+   "tipo": "Apartamento",
+   "urb": "La Sabana, El Marques",
+   "op": "V",
+   "fecha": "2026-07-03",
+   "pfin": 27000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "JULIO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0883",
+   "tipo": "Local comercial",
+   "urb": "C.C. Compro",
+   "op": "A",
+   "fecha": "2026-07-07",
+   "pfin": 1600.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Doris Cornejo",
+   "cod": "0156-0889",
+   "tipo": "Apartamento",
+   "urb": "Valle Arriba, Valle Grande",
+   "op": "V",
+   "fecha": "2026-08-13",
+   "pfin": 38000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Jose Castellanos",
+   "cod": "-",
+   "tipo": "Local Comercial",
+   "urb": "Centro Comercial Castillejo",
+   "op": "A",
+   "fecha": "2026-08-14",
+   "pfin": 140.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "José Castellanos",
+   "cod": "0156-0797",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Buenaventura, Expoventura",
+   "op": "A",
+   "fecha": "2026-08-18",
+   "pfin": 800.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Enrique Oliveri",
+   "cod": "-",
+   "tipo": "Galpon",
+   "urb": "Hacienda Sojo",
+   "op": "A",
+   "fecha": "2026-08-19",
+   "pfin": 1100.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Enrique Oliveri",
+   "cod": "0156-0886",
+   "tipo": "Casa",
+   "urb": "Muralla Arriba",
+   "op": "V",
+   "fecha": "2026-08-21",
+   "pfin": 38000.0,
+   "referido": null,
+   "obs": null
+  },
+  {
+   "mes": "AGOSTO",
+   "agente": "Doris Cornejo",
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Villas de Fuente Mar",
+   "op": "V",
+   "fecha": "2026-08-25",
+   "pfin": 46000.0,
+   "referido": null,
+   "obs": "Alianza Con Naileth Inversiones Ataff"
+  }
+ ],
+ "puntas": [
+  {
+   "cod": "0156-0752",
+   "tipo": "Apartamento",
+   "urb": "Terrazas de San Pedro I",
+   "fecha": "2026-01-14",
+   "pfin": 33500.0,
+   "comision": 1675.0
+  },
+  {
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Concor Plaza, Montalban - Caracas",
+   "fecha": "2026-01-14",
+   "pfin": 40000.0,
+   "comision": 2000.0
+  },
+  {
+   "cod": "0156-0745",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 1",
+   "fecha": "2026-01-21",
+   "pfin": 20000.0,
+   "comision": 1000.0
+  },
+  {
+   "cod": "0156-0789",
+   "tipo": "Apartamento",
+   "urb": "Buenaventura Suites",
+   "fecha": "2026-01-22",
+   "pfin": 48000.0,
+   "comision": 2400.0
+  },
+  {
+   "cod": "0156-0766",
+   "tipo": "Casa",
+   "urb": "Puerta del Bosque, Las Rosas",
+   "fecha": "2026-01-27",
+   "pfin": 28000.0,
+   "comision": 1400.0
+  },
+  {
+   "cod": "0156-0796",
+   "tipo": "Casa",
+   "urb": "Canaima II",
+   "fecha": "2026-01-27",
+   "pfin": 27000.0,
+   "comision": 1350.0
+  },
+  {
+   "cod": "0156-0796",
+   "tipo": "Apartamento",
+   "urb": "Las Rosa, El Istmo",
+   "fecha": "2026-02-03",
+   "pfin": 18000.0,
+   "comision": 1000.0
+  },
+  {
+   "cod": "0156-801",
+   "tipo": "Casa",
+   "urb": "El Torreon, Castillejo",
+   "fecha": "2026-02-11",
+   "pfin": 32000.0,
+   "comision": 1600.0
+  },
+  {
+   "cod": "0156-0779",
+   "tipo": "Apartamento",
+   "urb": "Jardin de Higuerote, Brion",
+   "fecha": "2026-02-13",
+   "pfin": 25000.0,
+   "comision": 1250.0
+  },
+  {
+   "cod": "0156-0802",
+   "tipo": "TH",
+   "urb": "El Encantado II",
+   "fecha": "2026-02-25",
+   "pfin": 45000.0,
+   "comision": 2250.0
+  },
+  {
+   "cod": "0156-0795",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Buenaventura",
+   "fecha": "2026-02-25",
+   "pfin": 650.0,
+   "comision": 1300.0
+  },
+  {
+   "cod": "0156-0820",
+   "tipo": "Quiosco",
+   "urb": "C.C. Castillejo",
+   "fecha": "2026-02-25",
+   "pfin": 100.0,
+   "comision": 200.0
+  },
+  {
+   "cod": "0156-0804",
+   "tipo": "Local",
+   "urb": "C.C. Oasis",
+   "fecha": "2026-02-25",
+   "pfin": 23000.0,
+   "comision": 1150.0
+  },
+  {
+   "cod": "0156-0823",
+   "tipo": "Local",
+   "urb": "C.C. Compro, Las Barrancas",
+   "fecha": "2026-02-28",
+   "pfin": 175.0,
+   "comision": 350.0
+  },
+  {
+   "cod": "0156-0824",
+   "tipo": "Local",
+   "urb": "C.C. Compro, Las Barrancas",
+   "fecha": "2026-02-28",
+   "pfin": 175.0,
+   "comision": 350.0
+  },
+  {
+   "cod": "0156-0809",
+   "tipo": "TH",
+   "urb": "Canaima II",
+   "fecha": "2026-02-28",
+   "pfin": 62500.0,
+   "comision": 3125.0
+  },
+  {
+   "cod": "0156-0665",
+   "tipo": "Terreno",
+   "urb": "Calle Zamora",
+   "fecha": "2026-03-06",
+   "pfin": 50000.0,
+   "comision": 2500.0
+  },
+  {
+   "cod": "0156-0780",
+   "tipo": "Apartamento",
+   "urb": "Castillejo, El Eiffel",
+   "fecha": "2026-03-16",
+   "pfin": 22500.0,
+   "comision": 1125.0
+  },
+  {
+   "cod": "0156-0681",
+   "tipo": "TH",
+   "urb": "Castillejo, Parque Habitat B",
+   "fecha": "2026-03-16",
+   "pfin": 50000.0,
+   "comision": 2500.0
+  },
+  {
+   "cod": "0156-0787",
+   "tipo": "TH",
+   "urb": "Muralla Arriba",
+   "fecha": "2026-03-17",
+   "pfin": 45000.0,
+   "comision": 2250.0
+  },
+  {
+   "cod": "0156-0778",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Vista Place",
+   "fecha": "2025-03-18",
+   "pfin": 21000.0,
+   "comision": 1050.0
+  },
+  {
+   "cod": "0156-0829",
+   "tipo": "Apartamento",
+   "urb": "El Marques, Los Cardenales",
+   "fecha": "2025-03-19",
+   "pfin": 19000.0,
+   "comision": 950.0
+  },
+  {
+   "cod": "-",
+   "tipo": "Galpón",
+   "urb": "Centro Industrial Cloris",
+   "fecha": "2025-03-20",
+   "pfin": 280000.0,
+   "comision": 14000.0
+  },
+  {
+   "cod": "0156-0832",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Oasis Center",
+   "fecha": "2026-04-15",
+   "pfin": 33000.0,
+   "comision": 1480.0
+  },
+  {
+   "cod": "0156-0827",
+   "tipo": "Apartamento",
+   "urb": "Rio Chico, Los Jobos",
+   "fecha": "2026-04-21",
+   "pfin": 17000.0,
+   "comision": 1000.0
+  },
+  {
+   "cod": "0156-0847",
+   "tipo": "Apartamento",
+   "urb": "Valle Arriba, Jardines de Pacairigua",
+   "fecha": "2026-04-22",
+   "pfin": 24600.0,
+   "comision": 1200.0
+  },
+  {
+   "cod": "0156-0845",
+   "tipo": "Apartamento",
+   "urb": "Las Rosas, El Istmo",
+   "fecha": "2026-04-24",
+   "pfin": 29000.0,
+   "comision": 1450.0
+  },
+  {
+   "cod": "0156-0855",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa La Molienda",
+   "fecha": "2026-04-30",
+   "pfin": 500.0,
+   "comision": 500.0
+  },
+  {
+   "cod": "0156-0853",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa, Parcela 6",
+   "fecha": "2026-05-05",
+   "pfin": 26000.0,
+   "comision": 1300.0
+  },
+  {
+   "cod": "0156-0834",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 6",
+   "fecha": "2026-05-05",
+   "pfin": 25000.0,
+   "comision": 1250.0
+  },
+  {
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Castillejo, La Casona",
+   "fecha": "2026-05-15",
+   "pfin": 300.0,
+   "comision": 600.0
+  },
+  {
+   "cod": "0156-0865",
+   "tipo": "Galpón",
+   "urb": "El Desvio",
+   "fecha": "2026-05-20",
+   "pfin": 1500.0,
+   "comision": 750.0
+  },
+  {
+   "cod": "0156-0870",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa, El Trapiche",
+   "fecha": "2026-06-06",
+   "pfin": 33800.0,
+   "comision": 1690.0
+  },
+  {
+   "cod": "0156-0856",
+   "tipo": "Apartamento",
+   "urb": "Buena Vista",
+   "fecha": "2026-06-11",
+   "pfin": 17500.0,
+   "comision": 1000.0
+  },
+  {
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa El Arado",
+   "fecha": "2026-06-15",
+   "pfin": 38000.0,
+   "comision": 1900.0
+  },
+  {
+   "cod": "0156-0798",
+   "tipo": "Terreno",
+   "urb": "Las Margaritas, El Ingenio",
+   "fecha": "2026-07-03",
+   "pfin": 18000.0,
+   "comision": 1000.0
+  },
+  {
+   "cod": "0156-0861",
+   "tipo": "Apartamento",
+   "urb": "La Sabana, El Marques",
+   "fecha": "2026-07-03",
+   "pfin": 27000.0,
+   "comision": 1350.0
+  },
+  {
+   "cod": "0156-0883",
+   "tipo": "Local comercial",
+   "urb": "C.C. Compro",
+   "fecha": "2026-07-07",
+   "pfin": 800.0,
+   "comision": 1600.0
+  },
+  {
+   "cod": "0156-0889",
+   "tipo": "Apartamento",
+   "urb": "Valle Arriba, Valle Grande",
+   "fecha": "2026-08-13",
+   "pfin": 38000.0,
+   "comision": 1900.0
+  },
+  {
+   "cod": "-",
+   "tipo": "Local Comercial",
+   "urb": "Centro Comercial Castillejo",
+   "fecha": "2026-08-14",
+   "pfin": 140.0,
+   "comision": 280.0
+  },
+  {
+   "cod": "0156-0797",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Buenaventura, Expoventura",
+   "fecha": "2026-08-18",
+   "pfin": 800.0,
+   "comision": 1600.0
+  },
+  {
+   "cod": "-",
+   "tipo": "Galpon",
+   "urb": "Hacienda Sojo",
+   "fecha": "2026-08-19",
+   "pfin": 1100.0,
+   "comision": 2200.0
+  },
+  {
+   "cod": "0156-0886",
+   "tipo": "Casa",
+   "urb": "Muralla Arriba",
+   "fecha": "2026-08-21",
+   "pfin": 38000.0,
+   "comision": 1900.0
+  },
+  {
+   "cod": "-",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Villas de Fuente Mar",
+   "fecha": "2026-08-25",
+   "pfin": 46000.0,
+   "comision": 2300.0
+  }
+ ],
+ "captaciones_2026": [
+  {
+   "mes": "ENERO",
+   "tipo": "Casa",
+   "urb": "El Torreon, Castillejo",
+   "exclu": "N",
+   "op": "V",
+   "p": 35000.0
+  },
+  {
+   "mes": "ENERO",
+   "tipo": "TH",
+   "urb": "El Encantado II",
+   "exclu": "S",
+   "op": "V",
+   "p": 45000.0
+  },
+  {
+   "mes": "ENERO",
+   "tipo": "TH",
+   "urb": "Muralla Arriba",
+   "exclu": "S",
+   "op": "V",
+   "p": 40000.0
+  },
+  {
+   "mes": "ENERO",
+   "tipo": "Local",
+   "urb": "Oasis Center",
+   "exclu": "S",
+   "op": "V",
+   "p": 25000.0
+  },
+  {
+   "mes": "ENERO",
+   "tipo": "Local",
+   "urb": "C.C. Macaira Plaza, Guatire",
+   "exclu": "N",
+   "op": "V",
+   "p": 95000.0
+  },
+  {
+   "mes": "ENERO",
+   "tipo": "Local",
+   "urb": "C.C. Macaira Plaza, Guatire",
+   "exclu": "N",
+   "op": "A",
+   "p": 750.0
+  },
+  {
+   "mes": "ENERO",
+   "tipo": "TH",
+   "urb": "Fuenteventura, Castillejo",
+   "exclu": "S",
+   "op": "V",
+   "p": 68000.0
+  },
+  {
+   "mes": "ENERO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Parque Mar",
+   "exclu": "S",
+   "op": "V",
+   "p": 20000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "TH",
+   "urb": "Canaima II",
+   "exclu": "N",
+   "op": "V",
+   "p": 62500.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Terreno",
+   "urb": "Tacarigua de Mamporal",
+   "exclu": "N",
+   "op": "V",
+   "p": 15000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "TH",
+   "urb": "Country Club Buena Ventura",
+   "exclu": "N",
+   "op": "V",
+   "p": 85000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, La Playa Aguasal",
+   "exclu": "N",
+   "op": "V",
+   "p": 28500.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Casa",
+   "urb": "Higuerote, Alcaravanes III",
+   "exclu": "N",
+   "op": "V",
+   "p": 48000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Casa",
+   "urb": "Castillejo, Castejón",
+   "exclu": "N",
+   "op": "V",
+   "p": 75000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Parque Costanera",
+   "exclu": "N",
+   "op": "V",
+   "p": 40000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Las Palmeras",
+   "exclu": "N",
+   "op": "V",
+   "p": 60000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Conj Res La Tortuga",
+   "exclu": "S",
+   "op": "V",
+   "p": 48000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Local",
+   "urb": "Villa Avila, Guatire",
+   "exclu": "S",
+   "op": "V",
+   "p": 35000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "PH",
+   "urb": "Rio Chico, Puerto Plata",
+   "exclu": "S",
+   "op": "V",
+   "p": 25000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Quiosco",
+   "urb": "C.C. Castillejo",
+   "exclu": "S",
+   "op": "A",
+   "p": 100.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "TH",
+   "urb": "Los Portales II",
+   "exclu": null,
+   "op": null,
+   "p": 39700.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Apartamento",
+   "urb": "Frutas Condominio",
+   "exclu": "N",
+   "op": "V",
+   "p": 115000.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Local",
+   "urb": "C.C. Compro, Las Barrancas",
+   "exclu": "N",
+   "op": "A",
+   "p": 175.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Local",
+   "urb": "C.C. Compro, Las Barrancas",
+   "exclu": "N",
+   "op": "A",
+   "p": 175.0
+  },
+  {
+   "mes": "FEBRERO",
+   "tipo": "Apartamento",
+   "urb": "Camino Real, La Moncloa",
+   "exclu": "S",
+   "op": "V",
+   "p": 30000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "Castillejo, La Trinidad",
+   "exclu": "N",
+   "op": "A",
+   "p": 330.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "Rio Chico, Los Canales",
+   "exclu": "N",
+   "op": "V",
+   "p": 18000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "El Ingenio, Las Lomas",
+   "exclu": "N",
+   "op": "V",
+   "p": 25000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "El Marques, Los Cardenales",
+   "exclu": "S",
+   "op": "V",
+   "p": 19000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Casa",
+   "urb": "Villa Heroica",
+   "exclu": "S",
+   "op": "V",
+   "p": 55000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "La Sabana",
+   "exclu": "S",
+   "op": "V",
+   "p": 42000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Oasis Center",
+   "exclu": "N",
+   "op": "V",
+   "p": 33000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Casa",
+   "urb": "Castillejo, Parque Habitat B",
+   "exclu": "N",
+   "op": "V",
+   "p": 63000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 6",
+   "exclu": "S",
+   "op": "V",
+   "p": 27000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 25",
+   "exclu": "S",
+   "op": "V",
+   "p": 32000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Compro",
+   "exclu": "N",
+   "op": "A",
+   "p": 240.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Compro",
+   "exclu": "N",
+   "op": "A",
+   "p": 350.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Compro",
+   "exclu": "N",
+   "op": "A",
+   "p": 300.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Compro",
+   "exclu": "N",
+   "op": "A",
+   "p": 300.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Compro",
+   "exclu": "N",
+   "op": "A",
+   "p": 300.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Casa",
+   "urb": "Higuerote, Ciudad Balneario",
+   "exclu": "N",
+   "op": "V",
+   "p": 180000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Agua Sal, Caracolito",
+   "exclu": "N",
+   "op": "V",
+   "p": 32000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Casa",
+   "urb": "Muralla Arriba",
+   "exclu": "N",
+   "op": "V",
+   "p": 68000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Local",
+   "urb": "Edif IPASME",
+   "exclu": "S",
+   "op": "A",
+   "p": 300.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "Las Rosas, El Istmo",
+   "exclu": "S",
+   "op": "V",
+   "p": 29000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Local",
+   "urb": "Guatire, Calle Zamora",
+   "exclu": "S",
+   "op": "V",
+   "p": 105000.0
+  },
+  {
+   "mes": "MARZO",
+   "tipo": "Apartamento",
+   "urb": "Valle Arriba, Jardines de Pacairigua",
+   "exclu": "S",
+   "op": "V",
+   "p": 24600.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa, El Trapiche",
+   "exclu": "N",
+   "op": "V",
+   "p": 42000.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Apartamento",
+   "urb": "Guarenas, Los Naranjos",
+   "exclu": "N",
+   "op": "V",
+   "p": 37000.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Casa",
+   "urb": "Rio Chico, El Jobo",
+   "exclu": "N",
+   "op": "V",
+   "p": 75000.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa, El Fortin",
+   "exclu": "N",
+   "op": "V",
+   "p": 55000.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Casa",
+   "urb": "Valle Arriba, San Antonio",
+   "exclu": "S",
+   "op": "V",
+   "p": 46000.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa, Parcela 6",
+   "exclu": "S",
+   "op": "V",
+   "p": 25000.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Villas Partenope",
+   "exclu": "S",
+   "op": "A",
+   "p": 300.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa, La Molienda",
+   "exclu": "S",
+   "op": "A",
+   "p": 250.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Apartamento",
+   "urb": "Buena Vista",
+   "exclu": "S",
+   "op": "V",
+   "p": 19000.0
+  },
+  {
+   "mes": "ABRIL",
+   "tipo": "Apartamento",
+   "urb": "Parque Alto",
+   "exclu": "N",
+   "op": "V",
+   "p": 22000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Casa",
+   "urb": "Valle Arriba, Ginebra",
+   "exclu": "N",
+   "op": "V",
+   "p": 95000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Galpón",
+   "urb": "Guarenas (5 de Julio)",
+   "exclu": "N",
+   "op": "V",
+   "p": 100000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Apartamento",
+   "urb": "Las Rosas, El Mirador",
+   "exclu": "N",
+   "op": "V",
+   "p": 29000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Apartamento",
+   "urb": "La Sabana, El Marques",
+   "exclu": "S",
+   "op": "V",
+   "p": 30000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Apartamento",
+   "urb": "Altos Terrazas de San Pedro",
+   "exclu": "S",
+   "op": "V",
+   "p": 64000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Local Comercial",
+   "urb": "C.C. Oasis Center",
+   "exclu": "S",
+   "op": "A",
+   "p": 80.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Casa",
+   "urb": "Castillejo, El Torreón",
+   "exclu": "S",
+   "op": "V",
+   "p": 63000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Galpón",
+   "urb": "El Desvio",
+   "exclu": "S",
+   "op": "A",
+   "p": 1500.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Casa",
+   "urb": "Castillejo, La Esperanza ",
+   "exclu": "S",
+   "op": "V",
+   "p": 120000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Apartamento",
+   "urb": "Castillejo, Jardines de Castillejo",
+   "exclu": "S",
+   "op": "V",
+   "p": 52000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Oficina",
+   "urb": "C.C. Castillejo",
+   "exclu": "S",
+   "op": "A",
+   "p": 400.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Parque Costanera",
+   "exclu": "N",
+   "op": "V",
+   "p": 55000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa, El Trapiche",
+   "exclu": "N",
+   "op": "V",
+   "p": 34000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Parque Mar",
+   "exclu": "N",
+   "op": "V",
+   "p": 25000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Casa",
+   "urb": "Canaima II",
+   "exclu": "N",
+   "op": "V",
+   "p": 55000.0
+  },
+  {
+   "mes": "MAYO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Las Palmeras Aguasal",
+   "exclu": "N",
+   "op": "A",
+   "p": 350.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa, Las Panelas",
+   "exclu": "N",
+   "op": "V",
+   "p": 35000.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Apartamento",
+   "urb": "Residencias Oasis Suite",
+   "exclu": "N",
+   "op": "V",
+   "p": 105000.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Jardin Higuerote",
+   "exclu": "S",
+   "op": "V",
+   "p": 40000.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 14",
+   "exclu": "s",
+   "op": "v",
+   "p": 42500.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Local comercial",
+   "urb": "Oasis Center",
+   "exclu": "S",
+   "op": "V",
+   "p": 12000.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Apartamento",
+   "urb": "Solanas del Avila 2",
+   "exclu": "S",
+   "op": "V",
+   "p": 35000.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Apartamento",
+   "urb": "Nueva Casarapa, El Trapiche",
+   "exclu": "N",
+   "op": "V",
+   "p": 42000.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Quinta",
+   "urb": "Segundo Boulevard, Guatire",
+   "exclu": "N",
+   "op": "V",
+   "p": 63000.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Terreno",
+   "urb": "Calle Comercio, Guarenas",
+   "exclu": "S",
+   "op": "V",
+   "p": 250000.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Local comercial",
+   "urb": "C.C. Compro",
+   "exclu": "N",
+   "op": "A",
+   "p": 800.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Apartamento",
+   "urb": "Terrazas Altos de San Pedro",
+   "exclu": "N",
+   "op": "V",
+   "p": 55000.0
+  },
+  {
+   "mes": "JUNIO",
+   "tipo": "Apartamento",
+   "urb": "La Hacienda, Guatire",
+   "exclu": "S",
+   "op": "V",
+   "p": 35000.0
+  },
+  {
+   "mes": "JULIO",
+   "tipo": "Casa",
+   "urb": "Muralla Arriba",
+   "exclu": "S",
+   "op": "V",
+   "p": 38000.0
+  },
+  {
+   "mes": "JULIO",
+   "tipo": "Apartamento",
+   "urb": "Higuerote, Parque Palma II",
+   "exclu": "N",
+   "op": "V",
+   "p": 35000.0
+  },
+  {
+   "mes": "JULIO",
+   "tipo": "Apartamento",
+   "urb": "Valle Arriba, Capri",
+   "exclu": "N",
+   "op": "V",
+   "p": 42000.0
+  },
+  {
+   "mes": "AGOSTO",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa",
+   "exclu": "S",
+   "op": "V",
+   "p": 36000.0
+  },
+  {
+   "mes": "AGOSTO",
+   "tipo": "Galpon",
+   "urb": "Guarenas, Zona Ind. Del Este",
+   "exclu": "N",
+   "op": "A",
+   "p": 4000.0
+  },
+  {
+   "mes": "AGOSTO",
+   "tipo": "Terreno",
+   "urb": "Higuerote, Asocibal ",
+   "exclu": "N",
+   "op": "V",
+   "p": 120000.0
+  },
+  {
+   "mes": "AGOSTO",
+   "tipo": "Casa",
+   "urb": "Higuerote, Ciudad Balneario",
+   "exclu": "N",
+   "op": "V",
+   "p": 160000.0
+  },
+  {
+   "mes": "AGOSTO",
+   "tipo": "Apartamento",
+   "urb": "Castillejo, Jardines de Castillejo",
+   "exclu": "S",
+   "op": "A",
+   "p": 300.0
+  },
+  {
+   "mes": "AGOSTO",
+   "tipo": "Local Comercial",
+   "urb": "Centro Comercial Castillejo",
+   "exclu": "S",
+   "op": "V",
+   "p": 70000.0
+  },
+  {
+   "mes": "SEPTIEMBRE",
+   "tipo": "Apartamento",
+   "urb": "Guarenas, Terrazas del Este",
+   "exclu": "S",
+   "op": "V",
+   "p": 37500.0
+  },
+  {
+   "mes": "SEPTIEMBRE",
+   "tipo": "Apartamento",
+   "urb": "Guarenas, Terrazas de San Pedro II",
+   "exclu": "S",
+   "op": "V",
+   "p": 70000.0
+  },
+  {
+   "mes": "SEPTIEMBRE",
+   "tipo": "TH",
+   "urb": "Nueva Casarapa, Los Tejados",
+   "exclu": "N",
+   "op": "V",
+   "p": 60000.0
+  },
+  {
+   "mes": "SEPTIEMBRE",
+   "tipo": "Fondo de Comercio",
+   "urb": "Guarenas, C.C. Palma Real",
+   "exclu": "N",
+   "op": "V",
+   "p": 90000.0
+  },
+  {
+   "mes": "SEPTIEMBRE",
+   "tipo": "Casa",
+   "urb": "Guarenas, Oropeza Castillo",
+   "exclu": "N",
+   "op": "V",
+   "p": 48000.0
+  },
+  {
+   "mes": "SEPTIEMBRE",
+   "tipo": "Local",
+   "urb": "Guarenas, El Calvario",
+   "exclu": "S",
+   "op": "V",
+   "p": 60000.0
+  },
+  {
+   "mes": "SEPTIEMBRE",
+   "tipo": "Local",
+   "urb": "C.C. Daymar",
+   "exclu": "S",
+   "op": "V",
+   "p": 24000.0
+  },
+  {
+   "mes": "SEPTIEMBRE",
+   "tipo": "Apartamento",
+   "urb": "Ciudad Casarapa Parcela 25",
+   "exclu": "S",
+   "op": "V",
+   "p": 41000.0
+  }
+ ]
+}

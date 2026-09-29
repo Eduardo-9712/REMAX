@@ -136,8 +136,9 @@ estilos o ideas que funcionen, se anotan aquí.
 ## Asistente de WhatsApp (en diseño)
 
 - Diseño completo: `whatsapp/agente-diseno.md`.
-- Se presenta con nombre propio (**"Valeria"**, provisional), del equipo de Eduardo. Trato humano y
-  cercano, pero **nunca dice ser una persona**: si le preguntan, dice que es la asistente virtual.
+- Nombre **interno: "Kira"** (así la llamamos entre nosotros). **Con los clientes no usa ningún nombre**: se
+  presenta como "el equipo de Eduardo León". Trato humano y cercano, pero **nunca dice ser una persona**: si le
+  preguntan, dice que es la asistente virtual del equipo.
 - Califica (qué quiere, tipo, zona, presupuesto, forma de pago, plazo, dónde está) y le pasa a Eduardo
   una **ficha** con la temperatura del cliente (🔥 / 🌤️ / ❄️) por su WhatsApp personal y a una pestaña
   "Clientes" en la base maestra.
@@ -145,12 +146,34 @@ estilos o ideas que funcionen, se anotan aquí.
 - Fases: 1) diseño ✅, 2) copiloto de prueba sin tocar WhatsApp ✅ construido (pestañas Copiloto, Clientes y
   Conocimiento en la base maestra), 3) conexión con la API de WhatsApp. Plan: `whatsapp/plan-agente.md`.
 - El conocimiento del asistente vive en la colección `conocimiento`; solo se usa lo **aprobado**.
+- Copiloto (29-09): detecta la **etapa** del chat, agrega opciones de la base cuando toca enviarlas, sigue el trato de
+  Eduardo, avisa si hay más de una pregunta y guarda las **notas de audios** y el **origen** del cliente. Revisión y
+  arreglos: `whatsapp/revision-copiloto.md`.
 
 ## Contenido
 
 - Ideas de reels con medio guion: `contenido/reels.md` (Pregúntale al Broker, precios reales con datos
   de la base, el sobreprecio). Eduardo tiene grabados: un video sobre un tema (por definir) y su paso por el
-  curso de la Cámara; faltan edición y estructura. También hay 2–3 videos de una propiedad captada para Higgsfield.
+  curso de la Cámara; faltan edición y estructura.
+- **Casa comercial de la Calle Miranda N.º 51** (casco central de Guatire, captación de Eduardo): ficha, mapa de tomas
+  del material de Drive, 3 propuestas de campaña y prompts de Higgsfield en borrador en `contenido/casa-calle-miranda.md`.
+  Terreno 295,41 m² y construcción 419,86 m² (catastro). El anuncio de RE/MAX tiene mal el terreno.
+- **Proceso de videos con Higgsfield** (borrador del "skill"): `contenido/higgsfield/proceso-video-propiedad.md`.
+
+## Documentos de la oficina
+
+- Los modelos de RE/MAX Delta están en `documentos/`: autorización de venta **con** y **sin** exclusividad
+  (90 días, honorarios del 5 % + IVA, protección de 120 días) y la carta de solicitud de recaudos.
+- También está la autorización de **alquiler** con exclusividad (1 mes de canon + IVA), pero es el modelo de
+  **Aventura**: falta la versión de Delta.
+- Resumen, diferencias y observaciones para Luis León: `documentos/README.md`. Mensaje de recaudos para
+  WhatsApp: `documentos/recaudos-whatsapp.md`.
+
+## Pendientes
+
+- **La lista única de pendientes está en `PENDIENTES.md`:** preguntas para Eduardo, lo que tiene que mandar,
+  lo que se le pide a Alejandra y a Luis León, lo que falta del asistente y la campaña de la casa captada.
+  Hay que mantenerla al día: lo resuelto se marca y se pasa a su lugar.
 
 ## Cómo trabajamos
 
@@ -199,9 +222,20 @@ esto"* y sale al instante.
   salida puede indicar un cierre, aunque no se sepa el precio final).
 - **Cierres reales:** Eduardo y Luis León cargan los cierres (empezando por los últimos
   3 meses) para seguir el movimiento del mercado en el tiempo.
+- **Cierres reales de Delta** (de los Excel internos de productividad 2025 y 2026): análisis en
+  `analisis/cierres-delta.md`. **101 cierres cargados en la base** (colección `cierres`, pestaña Cierres) con
+  `analisis/scripts/cierres_a_base.py`. En ventas, la rebaja mediana fue de 4,6 % en 2025 y de 0 % de enero a
+  agosto de 2026, y los días hasta el cierre, 75 y 57. Faltan los m² para el USD/m² de cierre (se los pedimos
+  a Alejandra). Son datos internos: en público, solo cifras agregadas. Las correcciones de Eduardo están en el
+  script.
+- **Cada propiedad de la base** puede llevar, además de las notas, el **contacto del anunciante** y el **valor
+  estimado por el equipo**. La actualización semanal no los pisa.
+- **Base vieja apagada:** la base anterior *Estudio de Mercado* (https://claude.ai/artifact/PA1onp1SF72ZFpKKgjhyYY,
+  rama `claude/ecstatic-archimedes-i87900`) ya no se usa: su rutina de los domingos se desactivó el 29-09-2026.
+  Solo se trabaja con la base maestra.
 - **Uso a futuro:** cuando llegue un cliente (por chat o por el agente de WhatsApp), se
   cruzan sus necesidades con esta base para enviarle opciones.
-- Preguntas pendientes para Luis León: `analisis/preguntas-luis-leon.md`.
+- Preguntas de fondo para Luis León: `analisis/preguntas-luis-leon.md`. El resto de los pendientes está en `PENDIENTES.md`.
 - **La base en vivo:** https://claude.ai/artifact/JnuELprRV41EFNRx6xXr46 (página
   `analisis/base-maestra.html`, datos en la colección `inmuebles` de la base del artifact).
   Para que Alejandra confirme, hay que compartirle la página con acceso de **Colaborador**.

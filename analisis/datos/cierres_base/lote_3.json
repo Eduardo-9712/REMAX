@@ -1,0 +1,33 @@
+[
+ {
+  "op": "set",
+  "collection": "cierres",
+  "doc_id": "delta-2026-extra-2",
+  "data": {
+   "fecha_cierre": null,
+   "fecha_reserva": "2026-08-12",
+   "fecha_publicacion": "2026-05-08",
+   "zona": "Guatire",
+   "sector": "Castillejo, El Torreón",
+   "tipo": "Casa o TownHouse",
+   "tipo_original": "Casa",
+   "operacion": "Venta",
+   "m2_construccion": null,
+   "m2_terreno": null,
+   "precio_publicado": 63000.0,
+   "precio_cierre": 65000,
+   "oficina": "RE/MAX Delta",
+   "agente": "Enrique Oliveri",
+   "codigo_oficina": "0156-0864",
+   "alianza_referido": null,
+   "forma_pago": null,
+   "revisar": "Falta la fecha exacta del cierre.",
+   "fuente": "Confirmado por Eduardo (reserva en el Excel 2026)",
+   "estado": "por_confirmar",
+   "anio": 2026,
+   "notas": "Alianza con Luis León. Cierre confirmado por Eduardo. La fecha exacta del cierre está por confirmar: se muestra la de reserva.",
+   "registrado_por": "Amigo",
+   "registrado_en": "2026-09-29"
+  }
+ }
+]
