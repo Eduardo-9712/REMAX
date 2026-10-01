@@ -49,4 +49,4 @@ Antes de generar: `balance` y `models_explore` para el costo; proponer el total 
 ## 6. Entregables
 
 Guardar en `contenido/<propiedad>/`: `material.md` (datos, lo que se ve, lo que falta, privacidad) y
-`guion-y-prompts.md`. Commit claro en español. Cerrar con las preguntas que Eduardo debe responder.
+`ideas-video.md` (3 ideas, cada una con su skill: `video-propiedad-punto`, `video-propiedad-redesarrollo`, `video-propiedad-recorrido`). Commit claro en español. Cerrar con las preguntas que Eduardo debe responder.
