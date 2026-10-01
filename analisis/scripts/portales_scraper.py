@@ -31,10 +31,10 @@ PAUSA = 2.0
 SALIDA = pathlib.Path(__file__).resolve().parents[1] / "datos"
 UA = {"User-Agent": "Mozilla/5.0 (analisis-remax-delta)"}
 
-MUNICIPIOS_COSTA = {"brion", "paez", "pedro gual", "andres bello", "buroz"}
+MUNICIPIOS_COSTA = {"brion", "paez", "pedro gual", "andres bello", "buroz", "acevedo"}
 LOCALIDADES_COSTA = {"higuerote", "rio chico", "carenero", "tacarigua", "tacarigua de brion",
                      "buche", "chirimena", "cupira", "machurucuto", "san jose de barlovento",
-                     "mamporal", "el guapo", "tacarigua de la laguna", "puerto encantado"}
+                     "mamporal", "el guapo", "tacarigua de la laguna", "puerto encantado", "caucagua"}
 
 
 def norm(t):

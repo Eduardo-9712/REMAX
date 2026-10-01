@@ -30,10 +30,10 @@ NO_OFICINAS = {"blog", "contacto", "inmuebles", "quienes-somos", "nuestros-agent
                "solicitar-inmueble", "ofrecer-inmueble", "privacy-policy", "cookie-policy"}
 
 # Municipios de las Costas Mirandinas (Barlovento costero).
-MUNICIPIOS_COSTA = {"brion", "paez", "pedro gual", "andres bello", "buroz"}
+MUNICIPIOS_COSTA = {"brion", "paez", "pedro gual", "andres bello", "buroz", "acevedo"}
 LOCALIDADES_COSTA = {"higuerote", "rio chico", "carenero", "tacarigua", "buche",
                      "chirimena", "cupira", "machurucuto", "san jose de barlovento",
-                     "mamporal", "el guapo", "tacarigua de la laguna"}
+                     "mamporal", "el guapo", "tacarigua de la laguna", "caucagua"}
 
 SALIDA = pathlib.Path(__file__).resolve().parents[1] / "datos"
 

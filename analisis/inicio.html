@@ -1,0 +1,162 @@
+<title>Centro RE/MAX</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: panel de inicio de una columna ancha. Negro protagonista con acentos azul y rojo RE/MAX. Herramientas arriba, accesos y pendientes abajo. */
+:root{color-scheme:dark;--bg:#0a0a0e;--card:#14141b;--fg:#f2f2f6;--mut:#9a9aab;--line:#272733;--blue:#6d95ff;--red:#ff5b66;--ok:#4cd08a;--warn:#f2b84b;--field:#0e0e14;--onaccent:#0a0a0e;
+--display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Source Sans 3",system-ui,sans-serif}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){color-scheme:light;--bg:#f5f5f8;--card:#fff;--fg:#14141a;--mut:#5b5b68;--line:#dcdce4;--blue:#1b4fd8;--red:#c8202f;--ok:#157a43;--warn:#9a6200;--field:#fbfbfd;--onaccent:#fff}}
+:root[data-theme="light"]{color-scheme:light;--bg:#f5f5f8;--card:#fff;--fg:#14141a;--mut:#5b5b68;--line:#dcdce4;--blue:#1b4fd8;--red:#c8202f;--ok:#157a43;--warn:#9a6200;--field:#fbfbfd;--onaccent:#fff}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:28px 72px}
+.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+.wrap>*,.grid>*{min-width:0}
+header{border-bottom:3px solid var(--red);padding-bottom:16px}
+.eyebrow{font:600 12px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+h1{font:800 clamp(30px,6vw,46px)/1.05 var(--display);margin:8px 0 6px;text-wrap:balance}
+h1 span{color:var(--blue)}
+.lead{margin:0;color:var(--mut);max-width:60ch}
+h2{font:700 22px var(--display);margin:0 0 4px}
+.sub{margin:0 0 14px;color:var(--mut);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+a.tool{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;color:inherit;text-decoration:none}
+a.tool:hover{border-color:var(--blue)}
+a.tool b{font:700 17px var(--display)}
+a.tool span{font-size:14px;color:var(--mut)}
+a.tool i{font:600 11px var(--body);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}
+th{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;font:600 11px var(--body);letter-spacing:.05em;text-transform:uppercase;padding:4px 8px;border-radius:999px;border:1px solid currentColor}
+.pill.ok{color:var(--ok)}.pill.warn{color:var(--warn)}.pill.red{color:var(--red)}.pill.mut{color:var(--mut)}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+label{display:grid;gap:4px;font:600 12px var(--body);letter-spacing:.05em;text-transform:uppercase;color:var(--mut)}
+.wide{grid-column:1/-1}
+input,select,textarea{font:400 15px var(--body);color:var(--fg);background:var(--field);border:1px solid var(--line);border-radius:8px;padding:9px 10px;max-width:100%;box-sizing:border-box;width:100%}
+.btn{font:600 14px var(--body);padding:9px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.btn.p{background:var(--blue);border-color:var(--blue);color:var(--onaccent)}
+.btn.s{padding:6px 10px;font-size:13px}
+input:focus-visible,select:focus-visible,textarea:focus-visible,.btn:focus-visible,a.tool:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+details.add{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-top:12px}
+details.add summary{cursor:pointer;padding:12px 16px;font:700 15px var(--display)}
+details.add form{padding:0 16px 16px}
+.todo{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.todo input[type=checkbox]{width:20px;height:20px;margin-top:3px;flex:none}
+.todo.done .tx{text-decoration:line-through;color:var(--mut)}
+.tx{flex:1;min-width:0}.tx b{display:block;font-weight:600}.tx small{color:var(--mut)}
+.col{display:flex;flex-direction:column;gap:8px}
+.empty{color:var(--mut);padding:14px;border:1px dashed var(--line);border-radius:10px;font-size:14px}
+.note{font-size:13px;color:var(--mut);margin:8px 0 0}
+.off{border:1px solid var(--red);border-radius:10px;padding:12px 16px;font-size:14px}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 14px;border-radius:8px;font-size:14px}
+</style>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Eduardo León · Guarenas · Guatire · Costas Mirandinas</div>
+  <h1>Centro <span>RE/MAX</span></h1>
+  <p class="lead">Todo el trabajo en un solo lugar: tus herramientas, a quién le compartiste qué y lo que sigue pendiente.</p>
+</header>
+<div id="off" class="off" hidden>Abre esta página con tu sesión de claude.ai para ver y guardar accesos, pendientes y documentos.</div>
+
+<section>
+  <h2>Herramientas</h2>
+  <p class="sub">Cada una se comparte por separado desde su propio botón Compartir.</p>
+  <div class="grid">
+    <a class="tool" href="https://claude.ai/artifact/JnuELprRV41EFNRx6xXr46" target="_blank" rel="noopener"><i>Datos</i><b>Análisis Comparativo Maestro</b><span>Propiedades de todos los portales, cierres reales, rentabilidad, copiloto de WhatsApp y clientes.</span></a>
+    <a class="tool" href="https://claude.ai/artifact/JnuELprRV41EFNRx6xXr46#guia" target="_blank" rel="noopener"><i>Para Alejandra</i><b>Guía de la base</b><span>Qué hacer: confirmar propiedades, revisar cierres, reglas.</span></a>
+    <a class="tool" href="https://claude.ai/artifact/ABN487JWPTeoKJH6C3L4GU" target="_blank" rel="noopener"><i>Respuestas</i><b>Pendientes RE/MAX</b><span>Tus respuestas y las preguntas para Luis León, con caja de respuesta debajo de cada una.</span></a>
+    <a class="tool" href="https://claude.ai/code/artifact/8f7a27b0-637c-46cf-8c92-47324a8b4991" target="_blank" rel="noopener"><i>Guía</i><b>Crédito Venezuela Renace</b><span>Cómo funciona, por confirmar con Luis León.</span></a>
+  </div>
+</section>
+
+<section>
+  <h2>Accesos compartidos</h2>
+  <p class="sub">Anota a quién le mandaste qué y hasta cuándo. El permiso real se quita en el botón Compartir de cada página; aquí te avisamos cuándo toca.</p>
+  <div class="tw"><table><thead><tr><th>Persona</th><th>Qué puede ver</th><th>Permiso</th><th>Desde</th><th>Vence</th><th>Estado</th><th></th></tr></thead><tbody id="acc"></tbody></table></div>
+  <details class="add"><summary>Registrar un acceso</summary>
+    <form id="f-acc">
+      <label>Persona<input id="a-per" required placeholder="Ej. Alejandra"></label>
+      <label>Qué comparte<select id="a-que"><option>Análisis Comparativo Maestro</option><option>Pendientes RE/MAX</option><option>Centro RE/MAX</option><option>Otra página</option></select></label>
+      <label>Permiso<select id="a-perm"><option>Colaborador</option><option>Solo ver</option><option>Comentar</option></select></label>
+      <label>Vence (opcional)<input id="a-ven" type="date"></label>
+      <label class="wide">Nota<input id="a-nota" placeholder="Para qué se lo compartiste"></label>
+      <div class="wide"><button class="btn p" type="submit">Guardar acceso</button></div>
+    </form>
+  </details>
+</section>
+
+<section>
+  <h2>Pendientes para crecer juntos</h2>
+  <p class="sub">Lo que falta enviar, responder, investigar o decidir. Cualquiera de los dos puede agregar.</p>
+  <div class="col" id="pen"></div>
+  <details class="add"><summary>Agregar pendiente</summary>
+    <form id="f-pen">
+      <label class="wide">Qué es<input id="p-tit" required></label>
+      <label>De quién<select id="p-quien"><option>Eduardo</option><option>Amigo</option><option>Luis León</option><option>Alejandra</option></select></label>
+      <label>Tipo<select id="p-tipo"><option>Enviar documento</option><option>Responder</option><option>Investigar</option><option>Decidir</option><option>Construir</option></select></label>
+      <label class="wide">Detalle<textarea id="p-det" rows="2"></textarea></label>
+      <div class="wide"><button class="btn p" type="submit">Agregar</button></div>
+    </form>
+  </details>
+</section>
+
+<section>
+  <h2>Documentos para Amigo</h2>
+  <p class="sub">Sube aquí los cierres, fichas o cualquier documento (PDF, imagen o CSV) y yo los leo. Los Excel .xlsx guárdalos como CSV o PDF.</p>
+  <div id="docs" class="col"></div>
+  <details class="add" id="docbox"><summary>Subir un documento</summary>
+    <form id="f-doc">
+      <label class="wide">Archivo<input id="d-file" type="file" accept=".pdf,.csv,.txt,.md,.json,image/*" required></label>
+      <label class="wide">¿Qué es?<input id="d-nota" placeholder="Ej. Cierres 2026 de RE/MAX Delta"></label>
+      <div class="wide"><button class="btn p" type="submit" id="d-go">Subir</button></div>
+    </form>
+  </details>
+</section>
+</div>
+<div id="toast" role="status" hidden></div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const hoy=()=>new Date().toISOString().slice(0,10);
+let db=null,assets=null,accs=[],pens=[],docs=[];
+function toast(m){const t=$("toast");t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2600)}
+function estado(a){
+  if(a.revocado) return ['<span class="pill mut">Retirado</span>'];
+  if(a.vence){const d=Math.round((Date.parse(a.vence)-Date.parse(hoy()))/864e5);
+    if(d<0) return ['<span class="pill red">Vencido: quítalo en Compartir</span>'];
+    if(d<=3) return ['<span class="pill warn">Vence en '+d+' d</span>']}
+  return ['<span class="pill ok">Activo</span>'];
+}
+function renderAcc(){
+  const l=[...accs].sort((a,b)=>(a.revocado?1:0)-(b.revocado?1:0)||String(b.desde).localeCompare(String(a.desde)));
+  $("acc").innerHTML=l.map(a=>`<tr><td><b>${esc(a.persona)}</b>${a.nota?`<br><small style="color:var(--mut)">${esc(a.nota)}</small>`:""}</td><td>${esc(a.que)}</td><td>${esc(a.permiso)}</td><td>${esc(a.desde||"")}</td><td>${esc(a.vence||"Sin fecha")}</td><td>${estado(a)[0]}</td><td>${a.revocado?"":`<button class="btn s" data-ret="${esc(a._id)}">Ya lo retiré</button>`}</td></tr>`).join("")||`<tr><td colspan="7"><div class="empty" style="border:0">Todavía no hay accesos anotados. Registra el primero con el botón de abajo.</div></td></tr>`;
+}
+function renderPen(){
+  const l=[...pens].sort((a,b)=>(a.hecho?1:0)-(b.hecho?1:0)||String(b.fecha).localeCompare(String(a.fecha)));
+  $("pen").innerHTML=l.map(p=>`<div class="todo ${p.hecho?"done":""}"><input type="checkbox" data-pen="${esc(p._id)}" ${p.hecho?"checked":""} aria-label="Hecho"><div class="tx"><b>${esc(p.titulo)}</b><small>${esc(p.quien)} · ${esc(p.tipo)}${p.detalle?" · "+esc(p.detalle):""}</small></div></div>`).join("")||`<div class="empty">No hay pendientes anotados todavía.</div>`;
+}
+function renderDocs(){
+  $("docs").innerHTML=[...docs].sort((a,b)=>String(b.fecha).localeCompare(String(a.fecha))).map(d=>`<div class="todo"><div class="tx"><b>${esc(d.nombre)}</b><small>${esc(d.nota||"")} · ${esc(d.fecha)}</small></div><a class="btn s" href="${esc(d.url)}" target="_blank" rel="noopener">Abrir</a></div>`).join("")||`<div class="empty">Todavía no hay documentos subidos.</div>`;
+}
+$("f-acc").addEventListener("submit",async e=>{e.preventDefault();if(!db)return;
+  try{await db.collection("accesos").add({persona:$("a-per").value.trim(),que:$("a-que").value,permiso:$("a-perm").value,vence:$("a-ven").value||null,nota:$("a-nota").value.trim(),desde:hoy(),revocado:false});e.target.reset();toast("Acceso guardado")}catch(x){toast("No se pudo guardar")}});
+$("f-pen").addEventListener("submit",async e=>{e.preventDefault();if(!db)return;
+  try{await db.collection("pendientes").add({titulo:$("p-tit").value.trim(),quien:$("p-quien").value,tipo:$("p-tipo").value,detalle:$("p-det").value.trim(),hecho:false,fecha:hoy()});e.target.reset();toast("Pendiente agregado")}catch(x){toast("No se pudo guardar")}});
+$("f-doc").addEventListener("submit",async e=>{e.preventDefault();
+  if(!db||!assets){toast("Subir documentos solo funciona dentro de claude.ai con permiso de editor");return}
+  const f=$("d-file").files[0];if(!f)return;$("d-go").disabled=true;
+  try{const r=await assets.upload(f);await db.collection("documentos").add({nombre:f.name,nota:$("d-nota").value.trim(),url:r.url,asset_id:r.id,fecha:hoy()});e.target.reset();toast("Documento subido")}
+  catch(x){toast("No se pudo subir: "+(x?.message||x?.code||"error"))}finally{$("d-go").disabled=false}});
+document.addEventListener("click",async e=>{const r=e.target.closest("[data-ret]");if(r&&db){try{await db.collection("accesos").doc(r.dataset.ret).update({revocado:true,retirado_en:hoy()});toast("Anotado como retirado")}catch(x){toast("No se pudo guardar")}}});
+document.addEventListener("change",async e=>{const c=e.target.closest("[data-pen]");if(c&&db){try{await db.collection("pendientes").doc(c.dataset.pen).update({hecho:c.checked})}catch(x){toast("No se pudo guardar")}}});
+renderAcc();renderPen();renderDocs();
+(async()=>{
+  db=window.claude?await claude.use("db"):null;
+  if(!db){$("off").hidden=false;return}
+  try{assets=await claude.use("assets")}catch(e){}
+  if(!assets)$("docbox").hidden=true;
+  const snap=(n,set,fn)=>db.collection(n).onSnapshot(s=>{set(s.docs.map(d=>({_id:d.id,...d.data()})));fn()},()=>{$("off").hidden=false});
+  snap("accesos",v=>accs=v,renderAcc);snap("pendientes",v=>pens=v,renderPen);snap("documentos",v=>docs=v,renderDocs);
+})();
+</script>
