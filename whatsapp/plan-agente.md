@@ -7,7 +7,7 @@ Eduardo León", lee toda la conversación antes de responder, califica al client
 reales de la base maestra y le pasa a Eduardo una ficha por su WhatsApp personal y a la pestaña
 "Clientes". Eduardo puede entrar en cualquier momento y el asistente se aparta.
 
-## Dónde estamos (28-09-2026)
+## Dónde estamos (1-10-2026)
 
 | Pieza | Estado |
 |---|---|
@@ -15,7 +15,11 @@ reales de la base maestra y le pasa a Eduardo una ficha por su WhatsApp personal
 | Copiloto dentro de la base maestra (pegar conversación → respuesta + ficha + propiedades) | ✅ Construido, falta probarlo con clientes reales |
 | Pestañas Clientes y Conocimiento | ✅ Construidas; el conocimiento cargado está "por aprobar" |
 | Base de propiedades (RE/MAX, Century 21, ZonaVen, BienesOnline, Admyser) | ✅ ~380 propiedades, actualización semanal |
-| Rutina semanal de noticias por aprobar | ⏳ Por hacer |
+| Rutina semanal de noticias por aprobar | ✅ Activa (lunes 6:53 a. m., hora de Venezuela); ya cargó 5 noticias por aprobar |
+| Pestañas enlazadas, 📌 propiedades destacadas, notas de voz y filtro de contactos (diseño) | ✅ Construidas en la página (1-10) o diseñadas; la transcripción de audio y el filtro real son de la fase 3 |
+| Banco de preguntas para revisar (`banco-de-preguntas.md`) | ⏳ Eduardo lo revisa |
+| Lista de pendientes para Luis León (`pendientes-luis-leon.md`) | ⏳ Por aprobar |
+| Investigación de proveedor, políticas, servidor y voz (`investigacion-fase3.md`) | ✅ Hecha; faltan respuestas de los proveedores |
 | Conexión real con WhatsApp | ⏳ Fase 3 |
 
 ## Las 3 fases
@@ -53,8 +57,8 @@ Reglas técnicas importantes:
 
 ### Decisiones pendientes para la fase 3
 
-1. **Proveedor de WhatsApp con coexistencia** que funcione con números de Venezuela. Hay que comparar 2 o 3 (costos mensuales, si permiten conectar un servidor propio y si soportan coexistencia) y confirmar las políticas vigentes de Meta para asistentes con IA.
-2. **Dónde vive la base de propiedades para el servidor.** Hoy la base vive dentro de la página del análisis, y un servidor externo no puede leerla directo. Opciones:
+1. **Proveedor de WhatsApp con coexistencia** que funcione con números de Venezuela. Comparación inicial en `whatsapp/investigacion-fase3.md` (360dialog, Dualhook, Twilio, WATI); falta confirmarles que aceptan +58 y cómo se paga desde Venezuela.
+2. **Dónde vive la base de propiedades y las fichas para el servidor.** Hoy todo vive dentro de la página del análisis; un servidor externo no la puede leer ni escribir por su cuenta (y tampoco guardar fichas en la pestaña Clientes). Opciones:
    - a) La rutina semanal también publica una copia de las propiedades en un archivo que el servidor lee (lo más simple).
    - b) Mover la base a una base de datos propia (más trabajo, más flexible).
 3. **Dónde corre el servidor:** un servicio en la nube de bajo costo. Se decide junto con el proveedor.
@@ -65,6 +69,17 @@ Reglas técnicas importantes:
 - Elegir el proveedor y crear la cuenta (lo hacemos juntos, paso a paso).
 - Una cuenta en la **consola de Anthropic** con método de pago y límite de gasto.
 - Su **WhatsApp personal** para recibir las fichas.
+
+### Lo que Eduardo me tiene que mandar o hacer (1-10-2026)
+- [ ] Revisar `whatsapp/banco-de-preguntas.md` y mandarme lo que cambie (vale con notas de voz).
+- [ ] Pasarle a Luis León `whatsapp/pendientes-luis-leon.md` y, cuando responda, aprobar en la pestaña Conocimiento.
+- [ ] Pegar en el copiloto 3 o 4 conversaciones reales con clientes y 2 o 3 con colegas (sin nombres ni teléfonos) y usar "Guardar como ejemplo".
+- [ ] Probar el copiloto con clientes reales y anotar qué cambia de las respuestas.
+- [ ] Destacar 📌 las propiedades que quiere promocionar primero.
+- [ ] Un par de audios reales de clientes (o de él) para probar la transcripción en español venezolano.
+- [ ] Decirme: ¿tiene Meta Business creada y verificada? ¿Qué número y qué versión de WhatsApp Business usa hoy?
+- [ ] Decidir cómo quiere manejar los contactos personales (lista propia o pasarlos a otro número).
+- [ ] Compartir la base con Alejandra (Colaborador) para que confirme propiedades.
 
 ## Riesgos y cuidados
 - **Confianza:** el asistente nunca dice ser una persona. Si lo preguntan, dice que es el asistente virtual del equipo.

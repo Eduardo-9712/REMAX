@@ -136,8 +136,9 @@ estilos o ideas que funcionen, se anotan aquí.
 ## Asistente de WhatsApp (en diseño)
 
 - Diseño completo: `whatsapp/agente-diseno.md`.
-- Se presenta con nombre propio (**"Valeria"**, provisional), del equipo de Eduardo. Trato humano y
-  cercano, pero **nunca dice ser una persona**: si le preguntan, dice que es la asistente virtual.
+- **Sin nombre propio.** Internamente le decimos **"el agente"**. Se presenta como "el equipo de Eduardo
+  León". Trato humano y cercano, pero **nunca dice ser una persona**: si le preguntan, dice que es el
+  asistente virtual del equipo.
 - Califica (qué quiere, tipo, zona, presupuesto, forma de pago, plazo, dónde está) y le pasa a Eduardo
   una **ficha** con la temperatura del cliente (🔥 / 🌤️ / ❄️) por su WhatsApp personal y a una pestaña
   "Clientes" en la base maestra.
@@ -145,6 +146,11 @@ estilos o ideas que funcionen, se anotan aquí.
 - Fases: 1) diseño ✅, 2) copiloto de prueba sin tocar WhatsApp ✅ construido (pestañas Copiloto, Clientes y
   Conocimiento en la base maestra), 3) conexión con la API de WhatsApp. Plan: `whatsapp/plan-agente.md`.
 - El conocimiento del asistente vive en la colección `conocimiento`; solo se usa lo **aprobado**.
+- Mejoras del 1-10-2026: entiende notas de voz (las transcribe), solo atiende contactos nuevos o marcados
+  "Cliente" (nada de contactos personales), ofrece primero las propiedades 📌 destacadas que calcen con lo que
+  busca el cliente, y Copiloto, Clientes y Conocimiento están enlazados. Detalle en `whatsapp/agente-diseno.md`
+  (sección 11); pendientes de revisión en `whatsapp/banco-de-preguntas.md` y `whatsapp/pendientes-luis-leon.md`;
+  proveedor y servidor en `whatsapp/investigacion-fase3.md`.
 
 ## Contenido
 

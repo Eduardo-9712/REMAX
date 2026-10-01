@@ -145,9 +145,47 @@ Siguiente paso sugerido: llamada con Luis León sobre el tema legal + enviar las
 - **Noticias:** rutina semanal que busca noticias (mercado, créditos, leyes; Venezuela y Miranda) y las deja
   **por aprobar**; el agente solo usa las que Eduardo o Luis León aprueben.
 
-## 11. Pendientes
+## 11. Mejoras decididas (1-10-2026)
+
+### A quién atiende (filtro de contactos)
+El asistente **no debe tocar contactos personales**. Reglas:
+- **Atiende:** números **nuevos** (sin chat anterior a la conexión) cuyo primer mensaje parece de negocio,
+  y los contactos que Eduardo marque como **Cliente** en una lista editable.
+- **No atiende:** chats que ya existían al conectar (se consideran personales por defecto), grupos, números
+  marcados "No atender", y cualquier chat donde **Eduardo escriba** (el asistente se calla).
+- **Si un número nuevo resulta ser colega, proveedor o personal**, el copiloto lo clasifica (`tipo_contacto`),
+  **no responde** y le avisa a Eduardo.
+- Nota técnica: la API no ve los nombres de la agenda del teléfono; solo el nombre de perfil del que escribe.
+  Por eso la regla "contactos que digan Cliente" se resuelve con **nuestra propia lista**, no con el nombre guardado.
+  Si el proveedor deja leer las etiquetas de la app Business, se puede usar la etiqueta "Cliente" (por confirmar).
+- Plan B si Eduardo prefiere: pasar los contactos personales a otro número de WhatsApp.
+
+### Notas de voz
+- El asistente transcribe el audio y responde a lo que dijo el cliente (ver `investigacion-fase3.md`, punto 4).
+- En el copiloto de prueba: se pega la transcripción en una línea que empiece con 🎤.
+- Si no se entiende: pide amablemente que lo escriban y avisa a Eduardo.
+
+### Propiedades destacadas 📌
+- En la base maestra, cada propiedad tiene el botón **📌 Destacar**.
+- Las destacadas se ofrecen **primero**, pero **solo si calzan** con lo que busca el cliente (zona, tipo,
+  presupuesto, habitaciones, m²). Nunca se fuerza una propiedad que no encaja.
+- También salen primero en "Para un cliente".
+
+### Pestañas enlazadas (Copiloto, Clientes, Conocimiento)
+- **Copiloto → Conocimiento:** muestra qué conocimiento usó; las preguntas que no supo responder se mandan a
+  Conocimiento como "Preguntas sin respuesta" para que Eduardo o Luis León las contesten.
+- **Copiloto → Conocimiento:** botón "Guardar como ejemplo" para conversaciones con clientes y con colegas;
+  quedan por aprobar y, ya aprobadas, el asistente imita su tono (sin copiar datos).
+- **Clientes → Conocimiento:** las dudas que más se repiten en las fichas se pueden mandar a Conocimiento con un toque.
+- **Clientes ↔ Copiloto:** "Seguir en el copiloto" reabre la conversación y la ficha; el copiloto parte de la ficha anterior.
+- **Base de propiedades ↔ Clientes:** cada cliente muestra las propiedades que le calzan, con su enlace.
+
+## 12. Pendientes
 
 - [x] Nombre: sin nombre propio, "del equipo de Eduardo León".
 - [ ] Probar con clientes reales en el **copiloto** (fase 2) antes de conectarlo a WhatsApp.
-- [ ] Elegir proveedor con **coexistencia** que funcione con números de Venezuela (fase 3).
+- [ ] Revisar el banco de preguntas: `whatsapp/banco-de-preguntas.md`.
+- [ ] Luis León y Eduardo aprueban el conocimiento: `whatsapp/pendientes-luis-leon.md`.
+- [ ] Elegir proveedor con **coexistencia** que funcione con números de Venezuela (fase 3): `whatsapp/investigacion-fase3.md`.
 - [ ] Confirmar con el proveedor las políticas vigentes de Meta para asistentes con IA.
+- [ ] Definir la lista de contactos ("Cliente" / "No atender") y dónde se edita (fase 3).
