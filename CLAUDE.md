@@ -269,4 +269,8 @@ esto"* y sale al instante.
 - **Actualización manual (01-10-2026):** 379 extraídas, 12 nuevas, 12 salidas, 10 cambios de precio. Para escribir en la base, las actualizaciones de documentos existentes necesitan `if_version`; solo se escriben nuevas, salidas y cambios de precio (no hace falta tocar `visto_ultima` de las demás).
 - **MercadoLibre:** la API oficial es para publicar, no para leer anuncios ajenos. Opciones: pegar el anuncio al copiloto, carga manual, escribir a soporte de developers con el código PSC01, o Chrome con la sesión de Eduardo (pendiente que decida).
 
+- **Pestaña Novedades (01-10-2026):** subpestañas Propiedades nuevas, Posibles cierres, Mercado y Leyes y crédito. Las noticias viven en la colección `noticias` (estado *por confirmar* hasta que Eduardo o Luis León las revisen; solo lo que dice la fuente, con enlace). En cada extracción semanal, buscar noticias y leyes nuevas y cargarlas ahí.
+- **MercadoLibre:** el cuadro "Pegar el anuncio" de la pestaña Propiedades rellena el formulario con Claude (revisar antes de agregar). Borrador del mensaje a soporte en `analisis/mercadolibre-soporte.md`.
+- **Cierres ya cargados:** 55 de 2025 y 46 de 2026 (Excel de productividad de RE/MAX Delta), todos *por confirmar*. No hace falta que Eduardo los reenvíe.
+
 _(Aquí iremos agregando lo que sea útil recordar.)_
