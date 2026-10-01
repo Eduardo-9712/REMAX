@@ -81,7 +81,26 @@ const SECS=[
   {id:"ll-17",q:"Después del terremoto, ¿cómo cambió la demanda (casas, gente de La Guaira que se muda)?"},
   {id:"ll-18",q:"¿Qué obras, vías, empresas o proyectos vienen en la zona?"}]},
  {h:"7. Cierres recientes (últimos 3 meses)",note:"Por cada cierre, sin datos personales: tipo, zona/sector, m², precio publicado, precio de cierre, días en venderse, forma de pago.",items:[
-  {id:"ll-cierres",q:"Cierres que conozca"}]}
+  {id:"ll-cierres",q:"Cierres que conozca"}]},
+ {h:"8. Leyes para la biblioteca",note:"Son las leyes que ya cargamos en la plataforma, con su fuente. Para cada una dime si la dejamos, si la quitamos o si la ajustamos, y cuáles faltan. No hace falta leerlas una por una: basta con el título y lo que pondríamos.",items:[
+  {id:"ll-ley-01",q:"Código Civil (1982) — ¿La incluimos?",hint:"Pondríamos en la plataforma: propiedad, compraventa y obligaciones. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-02",q:"Ley de Registros y Notarías (2021) — ¿La incluimos?",hint:"Pondríamos en la plataforma: trámites y aranceles de registro y notaría. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-03",q:"Ley de Propiedad Horizontal (1983) — ¿La incluimos?",hint:"Pondríamos en la plataforma: condominios y cuotas de participación. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-04",q:"Ley de Arrendamientos Inmobiliarios (1999) — ¿La incluimos?",hint:"Pondríamos en la plataforma: alquiler en general. ¿Sigue vigente frente a las leyes nuevas? Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-05",q:"Ley de Arrendamiento para Uso Comercial (2014) — ¿La incluimos?",hint:"Pondríamos en la plataforma: alquiler de locales y uso comercial. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-06",q:"Ley contra el Desalojo y la Desocupación Arbitraria de Viviendas (2011) — ¿La incluimos?",hint:"Pondríamos en la plataforma: protección de inquilinos y aviso de 90 días. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-07",q:"Ley del Régimen Especial de Arrendamiento de Vivienda (2026) — ¿La incluimos?",hint:"Pondríamos en la plataforma: canon libre, depósito máximo de 3 meses, condominio y servicios. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-08",q:"Ley de Promoción y Protección de la Construcción de Viviendas (2026) — ¿La incluimos?",hint:"Pondríamos en la plataforma: compra en preventa y autorización previa. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-09",q:"Ley Especial de Protección al Deudor Hipotecario (2005) — ¿La incluimos?",hint:"Pondríamos en la plataforma: protección en créditos hipotecarios de vivienda. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-10",q:"Ley Orgánica de Ordenación Urbanística (1987) — ¿La incluimos?",hint:"Pondríamos en la plataforma: uso de suelo de terrenos y galpones. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-11",q:"Ley Orgánica para la Ordenación del Territorio (1983) — ¿La incluimos?",hint:"Pondríamos en la plataforma: marco nacional de ordenación del territorio. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-12",q:"Ley de Tierras Urbanas (2009) — ¿La incluimos?",hint:"Pondríamos en la plataforma: terrenos urbanos ociosos. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-13",q:"Ley de Tierras y Desarrollo Agrario (2010) — ¿La incluimos?",hint:"Pondríamos en la plataforma: fincas y terrenos rurales. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-14",q:"Regularización de la Tenencia de la Tierra en Asentamientos Urbanos (2011) — ¿La incluimos?",hint:"Pondríamos en la plataforma: titularidad de terrenos en urbanizaciones populares. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-15",q:"Ley del Impuesto a las Grandes Transacciones Financieras (2022) — ¿La incluimos?",hint:"Pondríamos en la plataforma: 3 % en pagos en divisas y cómo afecta una compra en dólares. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-16",q:"Ley Orgánica de Zonas Económicas Especiales (2022) — ¿La incluimos?",hint:"Pondríamos en la plataforma: incentivos fiscales de las zonas económicas especiales. Responde Sí, No o Ajustar, y cualquier nota."},
+  {id:"ll-ley-faltan",q:"¿Qué otras leyes, reglamentos o decretos deberíamos incluir?",hint:"Pensando sobre todo en lo publicado desde 2010 en adelante."},
+  {id:"ll-ley-quitar",q:"¿Alguna de las anteriores se puede quitar o ya no está vigente?"}]}
 ]}];
 const ALL=SECS.flatMap(s=>s.blocks.flatMap(b=>b.items.map(i=>i.id)));
 const data={};let tab="eduardo",col=null;const timers={};

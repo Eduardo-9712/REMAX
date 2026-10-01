@@ -276,4 +276,8 @@ esto"* y sale al instante.
 - **Pestañas Actualizaciones y Leyes (01-10-2026):** *Actualizaciones* muestra el registro de cada extracción (fecha, hora de Venezuela, conteo por fuente, entradas, salidas y cambios de precio) desde la colección `extracciones`; `actualizar_base.py` ya guarda `hora` y `por_fuente`. *Leyes* es la biblioteca de leyes inmobiliarias (colección `leyes`, 14 cargadas con Gaceta, fecha y enlace, todas *por confirmar* con Luis León). Seguir ampliándola.
 - **MercadoLibre bloquea (403) incluso un listado público:** los enlaces sueltos no se pueden leer. Solo sirve pegar el texto del anuncio. El ticket a soporte va por el portal de Developers (ver `analisis/mercadolibre-soporte.md`).
 
+- **Pestaña Noticias (01-10-2026):** estilo periódico, con filtros Mercado, Expectativas, Crédito y Ley, siempre con enlace a la fuente. Novedades muestra solo las noticias cargadas en los últimos 7 días. Si una semana no hay nada nuevo, no se carga nada (no se rellena).
+- **Leyes:** prioridad **2010 en adelante** (decisión de Eduardo); las anteriores solo si siguen siendo base. Luis León las revisa en la página de respuestas (bloque 8, "Leyes para la biblioteca"): título y qué pondríamos, no ley por ley. 16 cargadas.
+- **Rutinas semanales (lunes, hora de Venezuela):** 5:55 actualización de la base; 6:53 noticias y leyes nuevas (escribe en `conocimiento`, `noticias` y `leyes`). Las rutinas clonan **main**: los cambios de scripts hechos en la rama de trabajo (Acevedo, `hora`, `por_fuente`) no llegan hasta que se unan a main.
+
 _(Aquí iremos agregando lo que sea útil recordar.)_

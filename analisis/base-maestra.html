@@ -158,6 +158,7 @@ details.edit .form{padding:4px 16px 16px}
     <nav class="tabs" role="tablist" aria-label="Secciones">
       <button role="tab" id="tab-guia" aria-selected="false" data-tab="guia">Guía</button>
       <button role="tab" id="tab-nov" aria-selected="false" data-tab="nov">Novedades</button>
+      <button role="tab" id="tab-not" aria-selected="false" data-tab="not">Noticias</button>
       <button role="tab" id="tab-act" aria-selected="false" data-tab="act">Actualizaciones</button>
       <button role="tab" id="tab-leyes" aria-selected="false" data-tab="leyes">Leyes</button>
       <button role="tab" id="tab-mercado" aria-selected="true" data-tab="mercado">Mercado</button>
@@ -232,15 +233,29 @@ details.edit .form{padding:4px 16px 16px}
   <section id="p-nov" role="tabpanel" aria-labelledby="tab-nov" hidden>
     <div>
       <h2>Novedades de la semana</h2>
-      <p class="note" style="margin-top:0">Lo nuevo en un solo lugar: propiedades que entraron, las que salieron del portal (posibles cierres), noticias del mercado y leyes. Se actualiza con cada extracción.</p>
+      <p class="note" style="margin-top:0">Lo nuevo de esta semana en un solo lugar: propiedades que entraron, las que salieron del portal (posibles cierres) y las noticias recientes. Se actualiza con cada extracción.</p>
       <div class="seg" id="n-subs" style="margin-top:12px"></div>
     </div>
     <div id="n-body" class="list"></div>
-    <details class="add" id="n-add">
-      <summary>Agregar noticia, ley o dato del mercado</summary>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section id="p-not" role="tabpanel" aria-labelledby="tab-not" hidden>
+    <div>
+      <h2>Noticias del mundo inmobiliario</h2>
+      <p class="note" style="margin-top:0">Lo que se mueve en el mercado, el crédito, las leyes y las expectativas, siempre con el enlace a la fuente. Solo entra lo que salió publicado: si una semana no hay nada nuevo, no se agrega nada. Quedan por confirmar hasta que Eduardo o Luis León las revisen.</p>
+      <div class="filters" role="group" aria-label="Filtros de noticias" style="margin-top:12px">
+        <div class="seg" id="not-cats"></div>
+        <input type="search" id="not-q" placeholder="Buscar noticia…" aria-label="Buscar noticia">
+        <span class="count" id="not-count"></span>
+      </div>
+    </div>
+    <div class="list" id="not-list"></div>
+    <details class="add">
+      <summary>Agregar una noticia</summary>
       <form class="form" id="n-form">
         <label class="wide">Titular<input id="n-tit" required></label>
-        <label>Tipo<select id="n-cat"><option>Mercado</option><option>Ley</option><option>Crédito</option></select></label>
+        <label>Tipo<select id="n-cat"><option>Mercado</option><option>Expectativas</option><option>Crédito</option><option>Ley</option></select></label>
         <label>Fecha de la noticia<input id="n-fecha" type="date"></label>
         <label>Fuente<input id="n-fuente" placeholder="Ej. El Nacional"></label>
         <label>Enlace<input id="n-enlace" type="url" placeholder="https://…"></label>
@@ -264,7 +279,7 @@ details.edit .form{padding:4px 16px 16px}
   <section id="p-leyes" role="tabpanel" aria-labelledby="tab-leyes" hidden>
     <div>
       <h2>Biblioteca de leyes inmobiliarias</h2>
-      <p class="note" style="margin-top:0">Leyes que tocan propiedad, alquiler, vivienda, crédito, tierras e impuestos, con su Gaceta Oficial, fecha de publicación y enlace a la fuente. Todo entra <strong>por confirmar</strong> hasta que Luis León revise la vigencia. Los resúmenes salen de las fuentes citadas, no son asesoría legal.</p>
+      <p class="note" style="margin-top:0">Leyes que tocan propiedad, alquiler, vivienda, crédito, tierras e impuestos, con su Gaceta Oficial, fecha de publicación y enlace a la fuente. Se prioriza lo publicado desde 2010 en adelante; las anteriores que siguen siendo la base (Código Civil, Propiedad Horizontal, ordenación urbanística) se mantienen. Todo entra <strong>por confirmar</strong> hasta que Luis León revise la vigencia. Los resúmenes salen de las fuentes citadas, no son asesoría legal.</p>
       <div class="filters" role="group" aria-label="Filtros de leyes" style="margin-top:12px">
         <div class="seg" id="l-mats"></div>
         <input type="search" id="l-q" placeholder="Buscar ley, gaceta, tema…" aria-label="Buscar ley">
@@ -1010,9 +1025,8 @@ function nCard(n){
     <div class="actions">${n.enlace?`<a class="btn" href="${esc(n.enlace)}" target="_blank" rel="noopener">Leer la fuente</a>`:""}${ok?`<button class="btn" data-nconf="0" ${dis}>Volver a por confirmar</button>`:`<button class="btn primary" data-nconf="1" ${dis}>Confirmar</button>`}</div></article>`;
 }
 function renderNov(){
-  const subs = [["nuevas","Propiedades nuevas"],["cierres","Posibles cierres"],["mercado","Mercado"],["leyes","Leyes y crédito"]];
+  const subs = [["nuevas","Propiedades nuevas"],["cierres","Posibles cierres"],["noticias","Noticias de la semana"]];
   $("n-subs").innerHTML = subs.map(([k,l]) => `<button class="chip" aria-pressed="${nState.sub===k}" data-nsub="${k}">${l}</button>`).join("");
-  $("n-add").hidden = !(nState.sub==="mercado" || nState.sub==="leyes");
   const box = $("n-body"); let h = "";
   if (nState.sub==="nuevas"){
     const fechas = [...new Set(state.rows.filter(r=>r.activo!==false && r.visto_primera && r.visto_primera!==state.primera).map(r=>r.visto_primera))].sort().reverse();
@@ -1022,12 +1036,23 @@ function renderNov(){
     const out = state.rows.filter(r=>r.activo===false).sort((a,b)=>String(b.salio_en).localeCompare(String(a.salio_en)));
     h = `<p class="note" style="margin-top:0">Salieron del portal en la última extracción. Pudo ser un cierre, un retiro del dueño o un cambio de enlace. Verifícalo con la oficina y, si fue un cierre, regístralo en la pestaña Cierres.</p>` + (out.map(r=>card(r,{mini:true})).join("") || `<p class="status">Ninguna propiedad ha salido todavía.</p>`);
   } else {
-    const cats = nState.sub==="mercado" ? ["Mercado"] : ["Ley","Crédito"];
-    const l = state.noticias.filter(n=>cats.includes(n.categoria)).sort((a,b)=>String(b.fecha||b.agregado_en).localeCompare(String(a.fecha||a.agregado_en)));
-    h = l.map(nCard).join("") || `<p class="status">Todavía no hay noticias en esta sección. Agrega la primera abajo.</p>`;
-    h += `<p class="note">Resúmenes tomados de la fuente. Quedan por confirmar hasta que Eduardo o Luis León los revisen.</p>`;
+    const desde = new Date(Date.now() - 7*864e5).toISOString().slice(0,10);
+    const l = state.noticias.filter(n => String(n.agregado_en||"") >= desde).sort((a,b)=>String(b.fecha||b.agregado_en).localeCompare(String(a.fecha||a.agregado_en)));
+    h = l.map(nCard).join("") || `<p class="status">Esta semana no se ha cargado ninguna noticia nueva. En la pestaña Noticias está todo lo anterior.</p>`;
+    h += `<p class="note">Aquí salen las noticias cargadas en los últimos 7 días.</p>`;
   }
   box.innerHTML = h;
+}
+
+/* ---------- Noticias (periódico) ---------- */
+const noState = {cat:"", q:""};
+function renderNot(){
+  const cats = ["", "Mercado", "Expectativas", "Crédito", "Ley"];
+  $("not-cats").innerHTML = cats.map(c=>`<button class="chip" aria-pressed="${noState.cat===c}" data-ncat="${esc(c)}">${c||"Todas"}</button>`).join("");
+  const q = norm(noState.q);
+  const l = state.noticias.filter(n => (!noState.cat || n.categoria===noState.cat) && (!q || norm([n.titulo,n.resumen,n.fuente].join(" ")).includes(q))).sort((a,b)=>String(b.fecha||b.agregado_en).localeCompare(String(a.fecha||a.agregado_en)));
+  $("not-count").textContent = `${l.length} de ${state.noticias.length}`;
+  $("not-list").innerHTML = l.map(nCard).join("") || `<p class="status">No hay noticias con estos filtros.</p>`;
 }
 
 /* ---------- Actualizaciones ---------- */
@@ -1077,7 +1102,7 @@ function renderLeyes(){
 /* ---------- Render general y pestañas ---------- */
 function render(){
   derive(); renderMeta(); renderFilters();
-  ({guia:()=>{}, nov:renderNov, act:renderAct, leyes:renderLeyes, mercado:renderMercado, props:renderList, cliente:renderCliente, renta:renderRenta, sectores:renderSectores, mov:renderMov, cierres:renderCierres, copiloto:renderCopiloto, clientes:renderClientes, saber:renderSaber})[state.tab]();
+  ({guia:()=>{}, nov:renderNov, not:renderNot, act:renderAct, leyes:renderLeyes, mercado:renderMercado, props:renderList, cliente:renderCliente, renta:renderRenta, sectores:renderSectores, mov:renderMov, cierres:renderCierres, copiloto:renderCopiloto, clientes:renderClientes, saber:renderSaber})[state.tab]();
 }
 function setTab(t){
   state.tab = t;
@@ -1236,6 +1261,9 @@ FIN>>>`;
   finally { $("a-pega-go").disabled = false; }
 };
 
+/* Noticias (filtros) */
+document.addEventListener("click", e => { const c = e.target.closest("[data-ncat]"); if (c){ noState.cat = c.dataset.ncat; renderNot(); } });
+$("not-q").oninput = e => { noState.q = e.target.value; renderNot(); };
 /* Leyes y actualizaciones */
 document.addEventListener("click", async e => {
   const m = e.target.closest("[data-lmat]"); if (m){ lState.mat = m.dataset.lmat; renderLeyes(); return; }
@@ -1271,7 +1299,7 @@ $("l-form").addEventListener("submit", async e => {
   db.collection("cierres").onSnapshot(snap => { state.cierres = snap.docs.map(d => ({_id:d.id, ...d.data()})); render(); }, lost);
   db.collection("clientes").onSnapshot(snap => { state.clientes = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (["clientes","copiloto"].includes(state.tab)) render(); renderMeta(); }, lost);
   db.collection("conocimiento").onSnapshot(snap => { state.saber = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="saber") renderSaber(); }, lost);
-  db.collection("noticias").onSnapshot(snap => { state.noticias = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="nov") renderNov(); }, lost);
+  db.collection("noticias").onSnapshot(snap => { state.noticias = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="nov") renderNov(); if (state.tab==="not") renderNot(); }, lost);
   db.collection("leyes").onSnapshot(snap => { state.leyes = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="leyes") renderLeyes(); }, lost);
   db.collection("extracciones").onSnapshot(snap => { state.semanas = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="mov") renderMov(); if (state.tab==="act") renderAct(); }, lost);
 })();
