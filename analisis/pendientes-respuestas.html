@@ -1,0 +1,113 @@
+<title>Pendientes RE/MAX</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: columna única de lectura, pestañas arriba, cada pregunta con su caja "Respuesta" debajo. Negro protagonista, acentos azul y rojo RE/MAX. */
+:root{--bg:#f6f6f8;--card:#fff;--fg:#14141a;--mut:#5b5b68;--line:#dcdce4;--blue:#1b4fd8;--red:#d6202e;--ok:#157a43;--field:#fbfbfd;
+--display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Source Sans 3",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0f;--card:#14141b;--fg:#f1f1f5;--mut:#9b9bab;--line:#272733;--blue:#6d95ff;--red:#ff5b66;--ok:#4cd08a;--field:#0f0f15;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0b0f;--card:#14141b;--fg:#f1f1f5;--mut:#9b9bab;--line:#272733;--blue:#6d95ff;--red:#ff5b66;--ok:#4cd08a;--field:#0f0f15;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:24px 64px}
+.wrap{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1{font-family:var(--display);font-size:clamp(26px,6vw,36px);line-height:1.1;margin:0;text-wrap:balance}
+h1 span{color:var(--red)}
+.lead{color:var(--mut);margin:0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding-block:8px;z-index:2}
+.tab{font:600 14px var(--body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.prog{margin-left:auto;align-self:center;font-size:13px;color:var(--mut);font-variant-numeric:tabular-nums}
+h2{font-family:var(--display);font-size:20px;margin:12px 0 0}
+.note{color:var(--mut);font-size:14px;margin:0}
+.item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.q{margin:0;font-weight:600}
+.hint{margin:0;font-size:14px;color:var(--mut)}
+label{font:600 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+textarea{width:100%;box-sizing:border-box;min-height:84px;resize:vertical;font:inherit;color:var(--fg);background:var(--field);border:1px solid var(--line);border-radius:8px;padding:10px}
+textarea:focus-visible,.tab:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.st{font-size:12px;color:var(--mut);min-height:16px}
+.st.ok{color:var(--ok)}.st.err{color:var(--red)}
+.off{background:var(--card);border:1px solid var(--red);border-radius:10px;padding:12px 16px;font-size:14px}
+</style>
+<div class="wrap">
+  <h1>Pendientes <span>RE/MAX</span></h1>
+  <p class="lead">Escribe tu respuesta debajo de cada pregunta. Se guarda sola al escribir; yo la leo desde mi lado. Lo que no sepas, déjalo en blanco.</p>
+  <div id="off" class="off" hidden>No se pudo conectar para guardar. Abre esta página con tu sesión de claude.ai para que las respuestas se guarden.</div>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div id="view" style="display:flex;flex-direction:column;gap:14px"></div>
+</div>
+<script>
+const SECS=[
+{id:"eduardo",tab:"Para Eduardo",blocks:[
+ {h:"Cierres de 2025 y 2026",note:"Escríbelos como quieras o pégalos de una lista. Sin nombres, cédulas ni teléfonos. Ideal: fecha de salida y de cierre, zona y sector, tipo, venta/alquiler, precio publicado y de cierre, m², habitaciones y baños, oficina, forma de pago, rebajas.",items:[
+  {id:"ed-cierres-2026",q:"Cierres 2026",hint:"Si prefieres mandarme Excel, PDF o fotos, dime aquí que los envías por otro lado."},
+  {id:"ed-cierres-2025",q:"Cierres 2025"}]},
+ {h:"Preguntas rápidas",items:[
+  {id:"ed-alquileres",q:"¿Los alquileres de RE/MAX y los portales son mensuales en USD?",hint:"Lo asumí así para calcular la rentabilidad."},
+  {id:"ed-margen",q:"¿Te parece el margen de \"precio justo\"?",hint:"Hoy: Oportunidad si el USD/m² está 15 % o más bajo la mediana de sus comparables; En mercado hasta +10 %; Por encima hasta +25 %; Sobreprecio más allá de eso."},
+  {id:"ed-costas",q:"¿Qué sectores cuentan como Costas Mirandinas?",hint:"Hoy: Brión (Higuerote), Páez (Río Chico), Pedro Gual (Cúpira), Andrés Bello y Buroz. ¿Sumamos Acevedo (Caucagua) u otro?"},
+  {id:"ed-sectores",q:"¿Hay sectores que se llamen distinto según quién publique?",hint:"Por ejemplo \"Castillejo\" y \"El Castillejo\". Dime cuáles son el mismo para unirlos."},
+  {id:"ed-presentacion",q:"En el WhatsApp para clientes, ¿cómo te presentas?",hint:"Hoy dice \"Eduardo León de RE/MAX\". ¿Pongo \"RE/MAX Delta\" desde ya o esperamos al cambio?"}]},
+ {h:"Para tu papá y accesos",items:[
+  {id:"ed-regla",q:"La regla de inversión de Luis León",hint:"Para aplicarla a cada propiedad en la pestaña Rentabilidad."},
+  {id:"ed-cartera",q:"¿Se puede compartir la cartera de terrenos y galpones de RE/MAX Delta que no esté en portales?"},
+  {id:"ed-alejandra",q:"¿Ya compartiste la base con Alejandra como Colaborador?"},
+  {id:"ed-mls",q:"¿Tienes usuario en algún otro portal o MLS (sistema interno de RE/MAX) donde se vean más propiedades o cierres?"}]}
+]},
+{id:"luis",tab:"Preguntas de Luis León",blocks:[
+ {h:"1. La regla de inversión",items:[
+  {id:"ll-01",q:"¿Cuál es su regla para calcular si una inversión vale la pena?"},
+  {id:"ll-02",q:"¿Cómo calcula el retorno de un alquiler? ¿Qué porcentaje anual es bueno, regular y malo?"},
+  {id:"ll-03",q:"¿Qué gastos hay que restar siempre?",hint:"Condominio, impuestos, mantenimiento, comisión, meses vacíos."}]},
+ {h:"2. Precios reales por zona",note:"Rango aproximado de cierre (no de oferta), en USD, por zona y tipo: terrenos ($/m²), galpones ($/m²), casas, apartamentos y locales.",items:[
+  {id:"ll-p-guatire",q:"Guatire",hint:"Terrenos, galpones, casas, apartamentos, locales."},
+  {id:"ll-p-guarenas",q:"Guarenas"},
+  {id:"ll-p-costas",q:"Higuerote / Costas"},
+  {id:"ll-04",q:"¿Cuánto se negocia normalmente por debajo del precio publicado? (¿5 %, 10 %, 20 %?)"},
+  {id:"ll-05",q:"¿Cuánto tarda en venderse una propiedad bien puesta de precio? ¿Y una con sobreprecio?"}]},
+ {h:"3. Sectores",items:[
+  {id:"ll-06",q:"Guatire: ¿cuáles son los de mayor valor, cuáles crecen y cuáles tienen problemas?",hint:"Castillejo, Palo Alto, El Ingenio, Villa Ávila, Villa Heroica, Las Rosas, Araira, Valle Arriba, casco central, zona industrial. Problemas: agua, vialidad, seguridad."},
+  {id:"ll-07",q:"Guarenas: lo mismo.",hint:"Nueva Casarapa, Ciudad Casarapa, El Torreón, La Vaquera, casco central."},
+  {id:"ll-08",q:"Costas Mirandinas: ¿qué sectores de Higuerote, Río Chico, Carenero u otros recomienda para inversión y para renta vacacional?"}]},
+ {h:"4. Terrenos y galpones",items:[
+  {id:"ll-09",q:"¿Qué busca el inversionista de galpones y terrenos?",hint:"Metros, ubicación, servicios, uso de suelo."},
+  {id:"ll-10",q:"¿Qué hace que un galpón o terreno se venda rápido, y qué lo frena?"},
+  {id:"ll-11",q:"¿Cómo trabajamos con su cartera de clientes de alto nivel, sin exponer datos, para ofrecerles oportunidades de forma exclusiva?"}]},
+ {h:"5. Lo legal",items:[
+  {id:"ll-12",q:"¿Qué documentos debe tener en regla una propiedad para venderse sin problemas?"},
+  {id:"ll-13",q:"¿Cuáles son los problemas legales más comunes que tumban una negociación?"},
+  {id:"ll-14",q:"¿Qué debe revisar un venezolano en el exterior que quiere comprar desde afuera?",hint:"Poderes, apostillas, pagos."},
+  {id:"ll-15",q:"¿Cómo verificar la zonificación y el uso de suelo de un terreno o galpón?"}]},
+ {h:"6. El mercado ahora mismo",items:[
+  {id:"ll-16",q:"Crédito \"Venezuela Renace\": ¿cómo funciona en la práctica?",hint:"¿Qué temen los propietarios? ¿En qué moneda y en cuánto tiempo pagan realmente? ¿Recomienda aceptar compradores con ese crédito, y con qué cuidados?"},
+  {id:"ll-17",q:"Después del terremoto, ¿cómo cambió la demanda (casas, gente de La Guaira que se muda)?"},
+  {id:"ll-18",q:"¿Qué obras, vías, empresas o proyectos vienen en la zona?"}]},
+ {h:"7. Cierres recientes (últimos 3 meses)",note:"Por cada cierre, sin datos personales: tipo, zona/sector, m², precio publicado, precio de cierre, días en venderse, forma de pago.",items:[
+  {id:"ll-cierres",q:"Cierres que conozca"}]}
+]}];
+const ALL=SECS.flatMap(s=>s.blocks.flatMap(b=>b.items.map(i=>i.id)));
+const data={};let tab="eduardo",col=null;const timers={};
+const $=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+function secCount(s){const ids=s.blocks.flatMap(b=>b.items.map(i=>i.id));return ids.filter(i=>(data[i]||"").trim()).length+"/"+ids.length}
+function tabs(){const t=document.getElementById("tabs");t.replaceChildren();
+ SECS.forEach(s=>{const b=$("button","tab",s.tab+" · "+secCount(s));b.setAttribute("role","tab");b.setAttribute("aria-selected",s.id===tab);b.onclick=()=>{tab=s.id;try{localStorage.tab=tab}catch(e){}tabs();render()};t.append(b)})}
+function render(){const v=document.getElementById("view");v.replaceChildren();
+ const s=SECS.find(x=>x.id===tab);
+ s.blocks.forEach(b=>{v.append($("h2",0,b.h));if(b.note)v.append($("p","note",b.note));
+  b.items.forEach(i=>{const d=$("div","item");d.append($("p","q",i.q));if(i.hint)d.append($("p","hint",i.hint));
+   const l=$("label",0,"Respuesta");l.htmlFor="t-"+i.id;const ta=document.createElement("textarea");ta.id="t-"+i.id;ta.value=data[i.id]||"";
+   const st=$("div","st");st.id="s-"+i.id;
+   ta.oninput=()=>{data[i.id]=ta.value;st.className="st";st.textContent="Escribiendo…";clearTimeout(timers[i.id]);timers[i.id]=setTimeout(()=>save(i.id),700)};
+   ta.onblur=()=>{clearTimeout(timers[i.id]);if(st.textContent==="Escribiendo…")save(i.id)};
+   d.append(l,ta,st);v.append(d)})})}
+async function save(id){const st=document.getElementById("s-"+id);
+ if(!col){if(st){st.className="st err";st.textContent="Sin conexión: no se guardó"}return}
+ try{await col.doc(id).set({id,text:data[id]||"",updatedAt:new Date().toISOString()});const e=document.getElementById("s-"+id);if(e){e.className="st ok";e.textContent="Guardado"}tabs()}
+ catch(e){const x=document.getElementById("s-"+id);if(x){x.className="st err";x.textContent="No se guardó: "+(e.message||e.code)}}}
+try{tab=localStorage.tab||tab}catch(e){}
+if(!SECS.some(s=>s.id===tab))tab="eduardo";
+tabs();render();
+(async()=>{const db=window.claude&&await claude.use("db");
+ if(!db){document.getElementById("off").hidden=false;return}
+ col=db.collection("respuestas");
+ col.onSnapshot(snap=>{snap.docs.forEach(d=>{const x=d.data()||{};const a=document.activeElement;
+   if(a&&a.id==="t-"+d.id)return;data[d.id]=x.text||"";const t=document.getElementById("t-"+d.id);if(t)t.value=data[d.id]});tabs()},()=>{document.getElementById("off").hidden=false})})();
+</script>
