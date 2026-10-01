@@ -234,7 +234,7 @@ esto"* y sale al instante.
   Las Rosas, Araira, Valle Arriba, casco central, zona industrial. Y todas las demás.
 - **Guarenas:** Nueva Casarapa, Ciudad Casarapa, El Torreón, La Vaquera, casco central.
   Y todas las demás.
-- **Costas Mirandinas:** Higuerote y alrededores (sectores por definir con Luis León).
+- **Costas Mirandinas:** Higuerote y alrededores, y también el municipio **Acevedo (Caucagua)** (sectores por definir con Luis León).
 
 ### Contexto del mercado (septiembre 2026)
 
@@ -263,4 +263,10 @@ esto"* y sale al instante.
   a esta sesión), y la plataforma con usuarios y permisos.
 - **Página de respuestas:** https://claude.ai/artifact/ABN487JWPTeoKJH6C3L4GU (archivo `analisis/pendientes-respuestas.html`,
   respuestas en la colección `respuestas`). Guía para Alejandra: `analisis/guia-alejandra.md`.
+- **Página de inicio:** https://claude.ai/artifact/B9fVNm1rJFx8GKv9Y7Wq3N (`analisis/inicio.html`; colecciones `accesos`, `pendientes`, `documentos`). Ahí están los enlaces a las herramientas, el registro de a quién se le compartió qué (con vencimiento), la lista de pendientes y la subida de documentos (PDF, imagen, CSV).
+- **Guía de Alejandra:** ahora vive dentro de la base, pestaña **Guía** (la primera). Hay que actualizarla cuando cambie el flujo.
+- **Regla de trabajo (Eduardo, 01-10-2026):** mientras el análisis no esté listo, **actualizar la base cada vez que la trabajemos**, no solo los lunes: correr los dos extractores, `actualizar_base.py` y publicar. La base en vivo puede tener cambios del equipo que no están en `analisis/base-maestra.html`: **leer el artifact publicado antes de republicar**.
+- **Actualización manual (01-10-2026):** 379 extraídas, 12 nuevas, 12 salidas, 10 cambios de precio. Para escribir en la base, las actualizaciones de documentos existentes necesitan `if_version`; solo se escriben nuevas, salidas y cambios de precio (no hace falta tocar `visto_ultima` de las demás).
+- **MercadoLibre:** la API oficial es para publicar, no para leer anuncios ajenos. Opciones: pegar el anuncio al copiloto, carga manual, escribir a soporte de developers con el código PSC01, o Chrome con la sesión de Eduardo (pendiente que decida).
+
 _(Aquí iremos agregando lo que sea útil recordar.)_
