@@ -254,4 +254,13 @@ esto"* y sale al instante.
 
 ## Notas y cosas que vamos aprendiendo
 
+- **Respuestas de Eduardo (01-10-2026):** los alquileres van en USD mensuales. **Sobreprecio = más de +20 %**
+  sobre la mediana de comparables (antes +25 %). **Costas Mirandinas incluye Acevedo (Caucagua)** además de
+  Brión, Páez, Pedro Gual, Andrés Bello y Buroz. Nombres de sectores: los asesores a veces usan otro nombre o
+  hasta otra urbanización a propósito; se verifica al confirmar. Presentación en WhatsApp: **"RE/MAX Aventura" hasta
+  el cambio** y luego "RE/MAX Delta". Pendiente por ahora: carga de MercadoLibre (hay que buscar cómo), cartera
+  exclusiva de Luis León (ver qué se puede compartir), cierres 2025/2026 (Eduardo dice que ya los envió; no llegaron
+  a esta sesión), y la plataforma con usuarios y permisos.
+- **Página de respuestas:** https://claude.ai/artifact/ABN487JWPTeoKJH6C3L4GU (archivo `analisis/pendientes-respuestas.html`,
+  respuestas en la colección `respuestas`). Guía para Alejandra: `analisis/guia-alejandra.md`.
 _(Aquí iremos agregando lo que sea útil recordar.)_

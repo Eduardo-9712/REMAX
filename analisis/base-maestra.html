@@ -446,7 +446,7 @@ function derive(){
   for (const r of rows){
     const g = med[r.zona+"|"+tipo(r)+"|"+op(r)], v = ppm(r);
     r._n = g?.n || 0; r._diff = null; r._ver = null;
-    if (g && g.n >= MIN_COMP && v){ r._diff = v / g.m - 1; r._ver = r._diff <= -.15 ? "good" : r._diff <= .10 ? "fair" : r._diff <= .25 ? "high" : "over"; }
+    if (g && g.n >= MIN_COMP && v){ r._diff = v / g.m - 1; r._ver = r._diff <= -.15 ? "good" : r._diff <= .10 ? "fair" : r._diff <= .20 ? "high" : "over"; }
     r._dias = dias(r.fecha_publicacion || r.visto_primera);
   }
 }
