@@ -273,4 +273,7 @@ esto"* y sale al instante.
 - **MercadoLibre:** el cuadro "Pegar el anuncio" de la pestaña Propiedades rellena el formulario con Claude (revisar antes de agregar). Borrador del mensaje a soporte en `analisis/mercadolibre-soporte.md`.
 - **Cierres ya cargados:** 55 de 2025 y 46 de 2026 (Excel de productividad de RE/MAX Delta), todos *por confirmar*. No hace falta que Eduardo los reenvíe.
 
+- **Pestañas Actualizaciones y Leyes (01-10-2026):** *Actualizaciones* muestra el registro de cada extracción (fecha, hora de Venezuela, conteo por fuente, entradas, salidas y cambios de precio) desde la colección `extracciones`; `actualizar_base.py` ya guarda `hora` y `por_fuente`. *Leyes* es la biblioteca de leyes inmobiliarias (colección `leyes`, 14 cargadas con Gaceta, fecha y enlace, todas *por confirmar* con Luis León). Seguir ampliándola.
+- **MercadoLibre bloquea (403) incluso un listado público:** los enlaces sueltos no se pueden leer. Solo sirve pegar el texto del anuncio. El ticket a soporte va por el portal de Developers (ver `analisis/mercadolibre-soporte.md`).
+
 _(Aquí iremos agregando lo que sea útil recordar.)_

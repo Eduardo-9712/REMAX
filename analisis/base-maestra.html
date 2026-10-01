@@ -158,6 +158,8 @@ details.edit .form{padding:4px 16px 16px}
     <nav class="tabs" role="tablist" aria-label="Secciones">
       <button role="tab" id="tab-guia" aria-selected="false" data-tab="guia">Guía</button>
       <button role="tab" id="tab-nov" aria-selected="false" data-tab="nov">Novedades</button>
+      <button role="tab" id="tab-act" aria-selected="false" data-tab="act">Actualizaciones</button>
+      <button role="tab" id="tab-leyes" aria-selected="false" data-tab="leyes">Leyes</button>
       <button role="tab" id="tab-mercado" aria-selected="true" data-tab="mercado">Mercado</button>
       <button role="tab" id="tab-props" aria-selected="false" data-tab="props">Propiedades</button>
       <button role="tab" id="tab-cliente" aria-selected="false" data-tab="cliente">Para un cliente</button>
@@ -243,6 +245,43 @@ details.edit .form{padding:4px 16px 16px}
         <label>Fuente<input id="n-fuente" placeholder="Ej. El Nacional"></label>
         <label>Enlace<input id="n-enlace" type="url" placeholder="https://…"></label>
         <label class="wide">Resumen (solo lo que dice la fuente)<textarea id="n-res" required></textarea></label>
+        <div class="wide"><button class="btn primary" type="submit">Agregar como por confirmar</button></div>
+      </form>
+    </details>
+  </section>
+
+  <!-- ACTUALIZACIONES -->
+  <section id="p-act" role="tabpanel" aria-labelledby="tab-act" hidden>
+    <div>
+      <h2>Registro de actualizaciones</h2>
+      <p class="note" style="margin-top:0">Cada vez que se actualiza la base queda anotado aquí: el día y la hora, cuántas propiedades se revisaron, cuáles entraron, cuáles salieron del portal y qué precios cambiaron. Lo más reciente va arriba.</p>
+    </div>
+    <div class="kpis" id="act-kpis"></div>
+    <div class="list" id="act-list"></div>
+  </section>
+
+  <!-- LEYES -->
+  <section id="p-leyes" role="tabpanel" aria-labelledby="tab-leyes" hidden>
+    <div>
+      <h2>Biblioteca de leyes inmobiliarias</h2>
+      <p class="note" style="margin-top:0">Leyes que tocan propiedad, alquiler, vivienda, crédito, tierras e impuestos, con su Gaceta Oficial, fecha de publicación y enlace a la fuente. Todo entra <strong>por confirmar</strong> hasta que Luis León revise la vigencia. Los resúmenes salen de las fuentes citadas, no son asesoría legal.</p>
+      <div class="filters" role="group" aria-label="Filtros de leyes" style="margin-top:12px">
+        <div class="seg" id="l-mats"></div>
+        <input type="search" id="l-q" placeholder="Buscar ley, gaceta, tema…" aria-label="Buscar ley">
+        <span class="count" id="l-count"></span>
+      </div>
+    </div>
+    <div class="list" id="l-list"></div>
+    <details class="add">
+      <summary>Agregar una ley</summary>
+      <form class="form" id="l-form">
+        <label class="wide">Nombre de la ley<input id="l-nom" required></label>
+        <label>Materia<select id="l-mat"><option>Propiedad y registro</option><option>Arrendamiento</option><option>Vivienda y crédito</option><option>Urbanismo y tierras</option><option>Impuestos</option><option>Otra</option></select></label>
+        <label>Gaceta Oficial<input id="l-gac" placeholder="Ej. N.º 6.668 Extraordinario"></label>
+        <label>Fecha de publicación<input id="l-fecha" type="date"></label>
+        <label>Fuente<input id="l-fuente"></label>
+        <label class="wide">Enlace a la fuente<input id="l-enlace" type="url" placeholder="https://…"></label>
+        <label class="wide">Resumen (solo lo que dice la fuente)<textarea id="l-res" required></textarea></label>
         <div class="wide"><button class="btn primary" type="submit">Agregar como por confirmar</button></div>
       </form>
     </details>
@@ -505,7 +544,7 @@ const ZONAS = ["Guatire","Guarenas","Costas Mirandinas"];
 const PRIORIDAD = {"RE/MAX Venezuela":0,"Century 21":1,"BienesOnline":2,"ZonaVen":3};
 const MIN_COMP = 4, PAGE = 40;
 const V = {good:"Oportunidad", fair:"En mercado", high:"Por encima", over:"Sobreprecio"};
-const state = {rows:[], cierres:[], semanas:[], clientes:[], saber:[], noticias:[], tab:"mercado", pub:"activas", op:"", zona:"", tipo:"", ver:"", fuente:"", estado:"", orden:"ver", q:"", dup:false, sZona:"", shown:PAGE, canWrite:true, uid:null, names:{}, sel:new Set()};
+const state = {rows:[], cierres:[], semanas:[], clientes:[], saber:[], noticias:[], leyes:[], tab:"mercado", pub:"activas", op:"", zona:"", tipo:"", ver:"", fuente:"", estado:"", orden:"ver", q:"", dup:false, sZona:"", shown:PAGE, canWrite:true, uid:null, names:{}, sel:new Set()};
 let db = null, user = null;
 const $ = id => document.getElementById(id);
 const num = n => n == null || n === "" || isNaN(n) ? null : Number(n);
@@ -991,10 +1030,54 @@ function renderNov(){
   box.innerHTML = h;
 }
 
+/* ---------- Actualizaciones ---------- */
+function renderAct(){
+  const s = [...state.semanas].sort((a,b)=>String(b.fecha).localeCompare(String(a.fecha)));
+  const byId = id => state.rows.find(r=>r._id===id);
+  const li = (id, extra="") => { const r = byId(id); return r ? `<li><a href="${esc(r.enlace||"#")}" target="_blank" rel="noopener">${esc(r.titulo||id)}</a> · ${esc(r.zona||"")} · ${usd(r.precio_usd)}${extra}</li>` : `<li>${esc(id)}${extra}</li>`; };
+  const ult = s[0];
+  $("act-kpis").innerHTML = ult ? [["Última actualización" + (ult.hora ? " · " + esc(ult.hora) : ""), esc(ult.fecha)],["Extraídas", ult.total_extraidas ?? "—"],["Nuevas", (ult.nuevas||[]).length],["Salieron", (ult.salieron||[]).length],["Cambios de precio", (ult.cambios_precio||[]).length],["Actualizaciones hechas", s.length]].map(([l,v],i)=>`<div class="kpi"><b${i===0?' style="font-size:18px"':""}>${v}</b><span>${l}</span></div>`).join("") : "";
+  $("act-list").innerHTML = s.map((x,i) => {
+    const nu = x.nuevas||[], sa = x.salieron||[], cp = x.cambios_precio||[];
+    const fu = x.por_fuente ? Object.entries(x.por_fuente).sort((a,b)=>b[1]-a[1]).map(([f,n])=>`<span class="pill zone">${esc(f)} ${n}</span>`).join(" ") : (x.fuentes||[]).map(f=>`<span class="pill zone">${esc(f)}</span>`).join(" ");
+    return `<article class="item" data-estado="confirmado"><div class="row"><div style="min-width:0">
+      <div class="top"><span class="pill ok">${i===0?"Última":"Anterior"}</span><span>${esc(x.fecha)}${x.hora?" · "+esc(x.hora)+" (hora de Venezuela)":""}</span></div>
+      <div class="title">${x.total_extraidas??"—"} propiedades revisadas · ${nu.length} nuevas · ${sa.length} salieron · ${cp.length} cambios de precio</div>
+      <div class="top" style="margin-top:6px">${fu}</div>
+      ${x.hora_nota?`<div class="where" style="margin-top:6px">${esc(x.hora_nota)}</div>`:""}
+      </div></div>
+      <details class="edit"${i===0?" open":""}><summary>Ver el detalle</summary><div style="padding:0 16px 14px;display:grid;gap:12px">
+        <div><h3>Entraron (${nu.length})</h3><ul class="note" style="margin:0;padding-left:18px;display:grid;gap:4px">${nu.map(id=>li(id)).join("")||"<li>Ninguna</li>"}</ul></div>
+        <div><h3>Salieron del portal · posibles cierres (${sa.length})</h3><ul class="note" style="margin:0;padding-left:18px;display:grid;gap:4px">${sa.map(id=>li(id)).join("")||"<li>Ninguna</li>"}</ul></div>
+        <div><h3>Cambios de precio (${cp.length})</h3><ul class="note" style="margin:0;padding-left:18px;display:grid;gap:4px">${cp.map(c=>li(c.id, ` · <b>${usd(c.de)} → ${usd(c.a)}</b>`)).join("")||"<li>Ninguno</li>"}</ul></div>
+      </div></details></article>`; }).join("") || `<p class="status">Todavía no hay actualizaciones registradas.</p>`;
+}
+
+/* ---------- Leyes ---------- */
+const lState = {mat:"", q:""};
+function lCard(l){
+  const ok = l.estado==="confirmado", dis = state.canWrite ? "" : "disabled";
+  return `<article class="item" data-estado="${ok?"confirmado":"por_confirmar"}" data-ley="${esc(l._id)}"><div class="row"><div style="min-width:0">
+    <div class="top"><span class="pill ${ok?"ok":"pend"}">${ok?"Confirmada":"Por confirmar"}</span><span class="pill zone">${esc(l.materia||"")}</span><span>${esc(l.fecha||"Fecha por confirmar")}</span></div>
+    <div class="title">${esc(l.nombre)}</div>
+    <div class="where">${esc(l.gaceta||"Gaceta por confirmar")}</div>
+    <div class="where" style="margin-top:6px">${esc(l.resumen||"")}</div>
+    <div class="where" style="margin-top:6px">Fuente: ${esc(l.fuente||"—")}</div></div></div>
+    <div class="actions">${l.enlace?`<a class="btn" href="${esc(l.enlace)}" target="_blank" rel="noopener">Leer la ley o la fuente</a>`:""}${ok?`<button class="btn" data-lconf="0" ${dis}>Volver a por confirmar</button>`:`<button class="btn primary" data-lconf="1" ${dis}>Confirmar vigencia</button>`}</div></article>`;
+}
+function renderLeyes(){
+  const mats = ["", ...[...new Set(state.leyes.map(l=>l.materia).filter(Boolean))].sort()];
+  $("l-mats").innerHTML = mats.map(m=>`<button class="chip" aria-pressed="${lState.mat===m}" data-lmat="${esc(m)}">${m||"Todas"}</button>`).join("");
+  const q = norm(lState.q);
+  const l = state.leyes.filter(x => (!lState.mat || x.materia===lState.mat) && (!q || norm([x.nombre,x.gaceta,x.resumen,x.materia,x.fuente].join(" ")).includes(q))).sort((a,b)=>String(b.fecha||"").localeCompare(String(a.fecha||"")));
+  $("l-count").textContent = `${l.length} de ${state.leyes.length}`;
+  $("l-list").innerHTML = l.map(lCard).join("") || `<p class="status">No hay leyes con estos filtros.</p>`;
+}
+
 /* ---------- Render general y pestañas ---------- */
 function render(){
   derive(); renderMeta(); renderFilters();
-  ({guia:()=>{}, nov:renderNov, mercado:renderMercado, props:renderList, cliente:renderCliente, renta:renderRenta, sectores:renderSectores, mov:renderMov, cierres:renderCierres, copiloto:renderCopiloto, clientes:renderClientes, saber:renderSaber})[state.tab]();
+  ({guia:()=>{}, nov:renderNov, act:renderAct, leyes:renderLeyes, mercado:renderMercado, props:renderList, cliente:renderCliente, renta:renderRenta, sectores:renderSectores, mov:renderMov, cierres:renderCierres, copiloto:renderCopiloto, clientes:renderClientes, saber:renderSaber})[state.tab]();
 }
 function setTab(t){
   state.tab = t;
@@ -1153,6 +1236,22 @@ FIN>>>`;
   finally { $("a-pega-go").disabled = false; }
 };
 
+/* Leyes y actualizaciones */
+document.addEventListener("click", async e => {
+  const m = e.target.closest("[data-lmat]"); if (m){ lState.mat = m.dataset.lmat; renderLeyes(); return; }
+  const lc = e.target.closest("[data-lconf]");
+  if (lc && db){ const id = lc.closest("[data-ley]").dataset.ley, ok = lc.dataset.lconf==="1";
+    try { await db.collection("leyes").doc(id).update(ok ? {estado:"confirmado", confirmado_por:state.uid, confirmado_en:new Date().toISOString()} : {estado:"por_confirmar", confirmado_por:null, confirmado_en:null}); toast(ok?"Confirmada":"Marcada por confirmar"); }
+    catch(err){ if (err?.code==="invalid_argument") denied(); else toast("No se pudo guardar."); } }
+});
+$("l-q").oninput = e => { lState.q = e.target.value; renderLeyes(); };
+$("l-form").addEventListener("submit", async e => {
+  e.preventDefault(); if (!db){ toast("La base no está disponible en esta vista."); return; }
+  const doc = {nombre:$("l-nom").value.trim(), materia:$("l-mat").value, gaceta:$("l-gac").value.trim()||null, fecha:$("l-fecha").value||null, fuente:$("l-fuente").value.trim()||null, enlace:$("l-enlace").value.trim()||null, resumen:$("l-res").value.trim(), estado:"por_confirmar", agregado_en:hoy(), agregado_por:state.uid};
+  try { await db.collection("leyes").add(doc); e.target.reset(); toast("Ley agregada como por confirmar"); }
+  catch(err){ if (err?.code==="invalid_argument") denied(); else toast("No se pudo agregar."); }
+});
+
 /* ---------- Arranque ---------- */
 (async () => {
   let t = "guia"; try { t = localStorage.getItem("acm-tab") || t; } catch(e) {}
@@ -1173,7 +1272,8 @@ FIN>>>`;
   db.collection("clientes").onSnapshot(snap => { state.clientes = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (["clientes","copiloto"].includes(state.tab)) render(); renderMeta(); }, lost);
   db.collection("conocimiento").onSnapshot(snap => { state.saber = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="saber") renderSaber(); }, lost);
   db.collection("noticias").onSnapshot(snap => { state.noticias = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="nov") renderNov(); }, lost);
-  db.collection("extracciones").onSnapshot(snap => { state.semanas = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="mov") renderMov(); }, lost);
+  db.collection("leyes").onSnapshot(snap => { state.leyes = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="leyes") renderLeyes(); }, lost);
+  db.collection("extracciones").onSnapshot(snap => { state.semanas = snap.docs.map(d => ({_id:d.id, ...d.data()})); if (state.tab==="mov") renderMov(); if (state.tab==="act") renderAct(); }, lost);
 })();
 </script>
 

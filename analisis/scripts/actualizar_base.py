@@ -21,6 +21,8 @@ Genera en <salida>: docs/*.json (un archivo por escritura), lote_1.json, lote_2.
 """
 
 import argparse
+import collections
+import datetime
 import json
 import pathlib
 
@@ -99,7 +101,11 @@ def main():
             escribir("update", doc_id, {"activo": False, "salio_en": fecha})
             salieron.append(doc_id)
 
-    resumen = {"fecha": fecha, "fuentes": sorted(f for f in fuentes if f), "total_extraidas": len(nuevo["inmuebles"]), "siguen": siguen,
+    # Hora de Venezuela (UTC-4) en que se cargó la actualización y conteo por fuente, para la pestaña Actualizaciones.
+    ahora = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+    por_fuente = dict(collections.Counter(i.get("fuente") for i in nuevo["inmuebles"]))
+    resumen = {"fecha": fecha, "hora": ahora.strftime("%H:%M"), "fuentes": sorted(f for f in fuentes if f), "por_fuente": por_fuente,
+               "total_extraidas": len(nuevo["inmuebles"]), "siguen": siguen,
                "nuevas": nuevas, "salieron": salieron, "cambios_precio": cambios}
     escribir("set", fecha, resumen, coleccion="extracciones")
 
