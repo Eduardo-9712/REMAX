@@ -155,6 +155,8 @@ estilos o ideas que funcionen, se anotan aquí.
   redesarrollo (sin dejar de ser casa; uso residencial y comercial, verificable). Material, datos y 3 ideas de video en
   `contenido/calle-miranda-51/` (índice: `ideas-video.md`: 3 ideas × 3 guiones, con prompts de Higgsfield sin ejecutar). Skills:
   `video-propiedad` (leer la carpeta de Drive) y uno por idea (`video-propiedad-punto`, `-redesarrollo`, `-recorrido`).
+  **Las 4 ideas de Eduardo** (voz en off, solo material de la propiedad: el viaje, caída y transformación, la propiedad completa, el delivery) están en
+  `contenido/calle-miranda-51/ideas-eduardo/` con sus skills (`video-propiedad-viaje`, `-caida`, `-fichavideo`, `-delivery`).
   Material de afuera (fachada y alrededores) ya revisado el 02-10-2026. Pendiente: que Eduardo apruebe, grabar las tomas y dar el "dale" para Higgsfield.
 
 ## Cómo trabajamos

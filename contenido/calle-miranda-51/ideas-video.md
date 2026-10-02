@@ -1,4 +1,8 @@
-# Calle Miranda N.º 51 · 3 ideas, 9 guiones (borrador para aprobar)
+# Calle Miranda N.º 51 · Ideas de video
+
+> **Las 4 ideas de Eduardo (voz en off, solo material de la propiedad) están en `ideas-eduardo/README.md`** y son las que mandan. Lo de abajo son las propuestas anteriores (3 ideas × 3 guiones, con Eduardo y Luis León a cámara), en pausa.
+
+## Propuestas anteriores (en pausa)
 
 **Estado (02-10-2026):** material de afuera ya revisado. **Higgsfield: no se ha usado ni gastado nada.**
 **Propiedad:** Calle Miranda N.º 51, casco central de Guatire · **USD 120.000** · 419,86 m² construcción, 295,41 m² terreno (catastro 2023) · uso residencial y comercial (verificable).
