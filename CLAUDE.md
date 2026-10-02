@@ -153,8 +153,9 @@ estilos o ideas que funcionen, se anotan aquí.
   curso de la Cámara; faltan edición y estructura. También hay 2–3 videos de una propiedad captada para Higgsfield.
 - **Propiedad captada: Calle Miranda N.º 51 (casco central de Guatire), USD 120.000.** Enfoque: comercial, inversión y
   redesarrollo (sin dejar de ser casa; uso residencial y comercial, verificable). Material, datos y 3 ideas de video en
-  `contenido/calle-miranda-51/`. Skills: `video-propiedad` (leer la carpeta de Drive) y uno por idea
-  (`video-propiedad-punto`, `-redesarrollo`, `-recorrido`). Pendiente: fachada y alrededores que Eduardo sube a Drive.
+  `contenido/calle-miranda-51/` (índice: `ideas-video.md`: 3 ideas × 3 guiones, con prompts de Higgsfield sin ejecutar). Skills:
+  `video-propiedad` (leer la carpeta de Drive) y uno por idea (`video-propiedad-punto`, `-redesarrollo`, `-recorrido`).
+  Material de afuera (fachada y alrededores) ya revisado el 02-10-2026. Pendiente: que Eduardo apruebe, grabar las tomas y dar el "dale" para Higgsfield.
 
 ## Cómo trabajamos
 
