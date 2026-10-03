@@ -52,11 +52,11 @@ El público **elige qué ver** (terraza, cocina, patio, salón, cuartos…) y, a
 | 3 | Cocina de madera (6 s, 1820 o 1825) | **Encuesta:** "¿Restaurante o vivienda?" | "Una cocina lista para renovar." |
 | 4 | Patio interior (6 s, 1851 o 1849) | **Pregunta** (caja): "¿Taller, jardín o zona de eventos?" | "Un patio con mucho espacio." |
 | 5 | Gran salón o salón de techo de madera (6 s, 1827 o "Terraza") | **Deslizador** con emoji: "¿Cuánto te gusta?" | "Un salón con carácter." |
-| 6 | Los 4 rubros de la idea 2 en destellos (con rótulo IA) · y el **porche con estacionamiento para 2 carros*** | **Encuesta:** "¿Cuál harías? 1·2·3·4" | "Restaurante, concesionario de motos, coworking con estudio o spa." |
+| 6 | Los 4 rubros de la idea 2 en destellos (con rótulo IA) · y el **porche con estacionamiento para 2 carros** | **Encuesta:** "¿Cuál harías? 1·2·3·4" | "Restaurante, concesionario de motos, coworking con estudio o spa." |
 | 7 | Datos y precio | **Cuenta regresiva** o "Recuérdamelo": "Visitas esta semana" (solo si hay fechas) | "USD 120.000. Uso residencial y comercial, verificable." |
 | 8 | Botón al WhatsApp | **Enlace/botón** a WhatsApp | "Escríbeme 'CASA' y te mando el recorrido privado." |
 
-*\*Estacionamiento: según croquis, por confirmar.* Se guarda como Destacado "Calle Miranda 51". Quien responda, recibe el siguiente paso por mensaje directo.*
+Se guarda como Destacado "Calle Miranda 51". Quien responda, recibe el siguiente paso por mensaje directo.*
 
 ## Guion C · Video privado por WhatsApp "La propiedad completa" (≈75 s)
 
@@ -65,14 +65,16 @@ El público **elige qué ver** (terraza, cocina, patio, salón, cuartos…) y, a
 | Tiempo | Plano y cámara | Voz en off (Eduardo) | Texto en pantalla | Origen y archivo |
 |---|---|---|---|---|
 | 0–6 | Fachada al atardecer y luego de día | "Gracias por pedirlo. Este es el recorrido privado de Calle Miranda, número 51." | `RECORRIDO PRIVADO` | REAL/IA · 3339 |
-| 6–14 | Porche con rejas y techo de madera | "Entramos por el porche: techo de madera, piso de mosaico y espacio para estacionar." | `Estacionamiento 2 carros*` | REAL · 3343, 1871, 1882 |
+| 6–14 | Porche con rejas y techo de madera | "Entramos por el porche: techo de madera, piso de mosaico y estacionamiento para dos carros." | `Estacionamiento · 2 carros` | REAL · 3343, 1871, 1882 |
 | 14–22 | Sala principal y escalera | "Una sala principal y la escalera que sube a los demás niveles." | | REAL · 1868, 1869 |
 | 22–32 | Salón corredor, cocina y gran salón | "Una cocina grande con gabinetes de madera, y un gran salón que se abre al patio." | `Cocina · Gran salón` | REAL · 1820, 1822, 1826, 1828 |
-| 32–42 | Patio, y luego cuartos y baños | "Un patio interior, y arriba cuartos luminosos y baños." | `Cuartos y baños · por confirmar cantidad` | REAL · 1851, 1802, 1810 |
+| 32–42 | Patio, y luego cuartos y baños | "Un patio interior, y arriba cuatro cuartos, dos baños y dos salas de estar." | `6 cuartos · baños: por confirmar` | REAL · 1851, 1802, 1810 |
 | 42–48 | Escalera y salón de techo de madera | "Una escalera que sube, y un salón con techo de madera." | | REAL · 1870, "Terraza_3" |
-| 48–56 | Fondo del lote: cuarto, baño y lavandería | "Y al fondo del patio, un cuarto, un baño y una lavandería." | `Fondo del lote` | REAL · 1853–1856 |
+| 48–56 | Fondo del lote: cuarto, baño y lavandería | "Y al fondo del patio, un cuarto de servicio, un baño y una lavandería." | `Fondo del lote` | REAL · 1853–1856 |
 | 56–66 | Terraza panorámica 360° | "Y la terraza, con la cordillera y la ciudad a tus pies." | | REAL · "TERRAZA", 1814–1817 |
 | 66–75 | Datos y cierre | "419 metros de construcción sobre 295 de terreno. Uso residencial y comercial, verificable. USD 120.000. Si quieres verla, dime qué día te queda bien." | `USD 120.000` + `Agenda tu visita` | REAL · 3339 |
+
+**Orden del recorrido privado:** el mismo de la casa (estacionamiento y porche → entrada y escalera → sala comedor → pasillo → cocina → gran salón → patio → fondo → segundo piso → terraza).
 
 **Mensaje de acompañamiento (WhatsApp):** *"Hola, gracias por tu interés en Calle Miranda 51. Aquí está el recorrido privado. Para ayudarte mejor: ¿qué estás buscando (vivienda, negocio o inversión), en qué plazo y desde dónde nos escribes? Con eso te cuento los detalles y coordinamos tu visita."* (Es el filtro del asistente: qué busca, plazo y dónde está.)
 
@@ -87,7 +89,7 @@ El público **elige qué ver** (terraza, cocina, patio, salón, cuartos…) y, a
 
 ## Qué necesito
 1. La palabra clave final (propuesta: **CASA**). (Los clips de cocina, patio, cuartos y el croquis **ya llegaron**.)
-2. Confirmar en visita: estacionamiento (2 carros según croquis), cuartos y baños.
+2. Confirmar si los baños son 3 o 4 (cuartos: 6 y estacionamiento: 2 carros ya están confirmados).
 3. Aprobar **qué es privado** y **cómo respondes** (a mano o con apoyo del asistente de WhatsApp más adelante).
 4. Un **número de WhatsApp** y horario para agendar visitas.
 

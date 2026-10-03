@@ -33,7 +33,7 @@ Más adelante, Eduardo hará **tomas propias** en la propiedad. Las "imaginacion
 | 0–4 | **POV del celular** de Eduardo dentro de la casa (porche o salón): pide un delivery; llega la notificación | Eduardo (off): "Un día cualquiera, pedí algo de comer…" | `Tu pedido llegó` (pantalla genérica sin marcas) | por grabar |
 | 4–10 | La moto llega y frena frente a la fachada; el motorizado se quita el casco y **se queda mirando la casa** | Sonido real de calle y moto | | por grabar |
 | 10–22 | Eduardo sale por la reja; **plano-contraplano** | **Motorizado:** "Epa, ¿esa casa es tuya?"<br>**Eduardo:** "La estoy mostrando. Tiene 419 metros de construcción y 295 de terreno."<br>**Motorizado:** "¿Y aquí se podría montar un negocio?"<br>**Eduardo:** "Tiene uso residencial y comercial, verificable." | | por grabar |
-| 22–40 | **Entramos en su mente** (ojos, destello, whoosh): cuatro imaginaciones rápidas, con obra visible | **Motorizado (pensando):** "Un restaurante con cocina de lujo… ¡un concesionario de motos! … un coworking con estudio… y un spa arriba." | `Recreación con IA · No es un proyecto aprobado` | IA · renders de la idea 2 |
+| 22–40 | **Entramos en su mente** (ojos, destello, whoosh): **el mismo patrón de la idea 2**: la **fachada** se reconstruye en cada rubro (4 s) y un destello del interior (1 s): restaurante → **se quita** → concesionario de motos → coworking con estudio → spa | **Motorizado (pensando):** "Un restaurante con cocina de lujo… no, ¡un concesionario de motos! … un coworking con estudio… un spa arriba." | `Recreación con IA · No es un proyecto aprobado` | IA · transiciones de la idea 2 |
 | 40–46 | **Vuelta a la realidad** (golpe de silencio); el motorizado sonríe | **Motorizado:** "¿Y cuánto piden?"<br>**Eduardo:** "USD 120.000." | `USD 120.000` | por grabar |
 | 46–50 | La moto se aleja; fachada al atardecer | Eduardo (off): "A veces solo hace falta mirar con otros ojos. ¿Qué verías tú aquí? Ven a verla." | `Escríbeme por WhatsApp` + logo | REAL/IA · 3339 |
 
@@ -58,7 +58,7 @@ El motorizado es **un personaje de ficción generado con IA**, de perfil o de es
 |---|---|---|---|---|
 | 0–8 | Calle del barrio con motos pasando, ambiente real | "Los domiciliarios conocen cada calle de Guatire. Y esta tarde, uno se detuvo frente a esta casa." | `Escena de ficción recreada con IA` | REAL · 3350, 3334, fachada 1876–1879 |
 | 8–16 | El motorizado (IA, de perfil) mira la fachada | "No venía a nada. Pero la miró… y se quedó pensando." | | IA · foto 3339 |
-| 16–36 | **Su mente:** destello, cuatro imaginaciones rápidas | "Un restaurante con cocina de lujo… un concesionario de motos… un coworking con estudio de fotografía y video… un spa arriba." | rótulo IA | IA · renders idea 2 |
+| 16–36 | **Su mente:** destello y la **cadena de la idea 2**: la fachada se reconstruye en restaurante, se quita, concesionario de motos, coworking con estudio, spa (4 s c/u, con un destello del interior) | "Un restaurante con cocina de lujo… un concesionario de motos… un coworking con estudio de fotografía y video… un spa arriba." | rótulo IA | IA · transiciones de la idea 2 |
 | 36–42 | Fachada y terraza reales | "Tres niveles. 419 metros de construcción sobre 295 de terreno. Uso residencial y comercial, verificable." | `419,86 m² · 295,41 m²` | REAL · 3339, IMG_1753 |
 | 42–45 | Final | "USD 120.000. ¿Y tú, qué verías aquí? Ven a verla." | `USD 120.000` + `Escríbeme por WhatsApp` | REAL |
 

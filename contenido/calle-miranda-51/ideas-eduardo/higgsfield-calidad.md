@@ -26,6 +26,13 @@ La IA puede **mejorar el grado** (luz, color, calidad, movimiento), pero **no ca
 
 **Negativos útiles:** `no distortion of walls, no melting geometry, no extra windows, no changed roof, no fantasy elements, no oversaturation, no text.`
 
+## Quitar los carros de las fotos de la fachada
+- **Ya hay una foto sin carros: IMG_1881** (la maestra para los renders).
+- Para tomas frontales (IMG_3339, 3335, 3336…): edición de imagen con **Nano Banana Pro** o **FLUX 3**: `Remove the parked cars from the street in front of the building and restore the pavement and the lower wall exactly as they would continue; do not change anything else.` Se compara con IMG_1881 y se descarta si **inventa** puertas, rejas o paredes. (Los videos 1876–1879 llevan el carro adelante: no se limpian; se usan solo como referencia.)
+
+## Caída del cielo: coordenadas reales
+Coordenadas: **10,468938; −66,541720** (Guatire). Si Google Earth Studio no abre, la caída se genera con IA y **termina en la foto real de la calle** (3350) o la fachada (1881); no cambia el guion.
+
 ## Control de calidad (antes de aprobar cualquier toma)
 
 Se compara **lado a lado con la foto real**. Se rechaza si cambia **algo** de esta lista:

@@ -159,6 +159,7 @@ estilos o ideas que funcionen, se anotan aquí.
   `contenido/calle-miranda-51/ideas-eduardo/` con sus skills (`video-propiedad-caida`, `-viaje`, `-interactivo`, `-delivery`; orden de trabajo 2→1→3→4; guía de calidad en `higgsfield-calidad.md`).
   **Revisión completa del Drive el 03-10-2026** (149 archivos + croquis): el inventario por espacio y el croquis están en `material.md`
   (estacionamiento 2 carros, ≈6 cuartos y 3 baños según croquis, por confirmar). **Ojo:** la vista normal de una carpeta de Drive solo muestra 50 archivos; usar `embeddedfolderview`.
+  **Confirmado por Eduardo (03-10):** 2 estacionamientos, 6 cuartos (2 abajo, 4 arriba), lavandería, patio entre la casa y el cuarto de servicio, cocina de madera, 2 balcones, terraza en el tercer piso; coordenadas 10°28'08.2"N 66°32'30.2"W (10,468938; −66,541720). Fachada sin carro: IMG_1881. **Idea 2 = cadena** (fachada → interior → fachada, una transformación a la vez) y la misma ruta real en todos los recorridos. Por confirmar: baños 3 o 4 y dónde queda el salón de techo de madera.
   PDF para revisar todo junto: `contenido/calle-miranda-51/Calle-Miranda-51_Ideas-Guiones-Prompts-Skills.pdf`. Pendiente: que Eduardo apruebe, grabar las tomas y dar el "dale" para Higgsfield.
 
 ## Cómo trabajamos
