@@ -66,6 +66,16 @@ residenciales alrededor, esquina conocida ("Bodegón Las 4 Esquinas" coincide co
 - Hay **negocios con nombre** (Roca Azul, Bodegón Las 4 Esquinas): sirven de referencia, pero no dar a entender que son aliados o que la propiedad los incluye.
 - Nunca mostrar el nombre de la propietaria, la cédula ni los documentos.
 
+## Hallazgos del 03-10-2026 (revisando a fondo los videos largos de la primera carpeta)
+
+- **Cocina:** gabinetes de madera, campana, horno doble y fregadero (video `copy_7183…` 0:22–0:27). Sirve para el restaurante.
+- **Patio interior (trasero):** piso de ladrillo rojo con muros de frisos, y **una construcción de dos pisos al fondo** (ventanales con rejas y puerta a planta baja) (`copy_` 0:45–0:56). **Por confirmar:** cómo se distribuye y si todo es parte del mismo inmueble (el documento histórico habla de 43 m de fondo).
+- **Terraza de arriba:** muy grande, con techo verde sobre parte y el resto a cielo abierto, piso con restos de ladrillo y muros bajos con baranda; **vista a la cordillera y a la ciudad** desde todos lados (IMG_1753, 1755, 1756). Hay escombro y tanques/bases viejas: se limpia en edición o se muestra tal cual.
+- **Salón con ventilador de techo y puerta de rejas** además del salón del techo de madera (`copy_` 0:22).
+- **`copy_7183…` es un video ya editado** (con logo **RE/MAX Aventura** y subtítulos "soy Eduardo León…", "conversemos"). **No usarlo en los videos nuevos**: hay que pedir los **clips originales** de cocina, patio y edificio del fondo.
+- **Coordenadas:** todavía no llegaron (ni como foto ni como texto). Pedir: pin de Google Maps o "latitud, longitud".
+- **Plano / orden de los niveles:** por confirmar (cuántos niveles tiene cada cuerpo y qué hay en cada uno).
+
 ## Qué falta (en orden de importancia)
 
 1. ~~Fachada y calle~~ ya están (fotos y videos del 02-10). Falta, si se puede, una toma de **dron o desde la esquina**, y una de la **terraza con luz de atardecer** (foto y video de día, y si se puede un dron o toma desde la esquina). Sin esto no se ve "el punto".

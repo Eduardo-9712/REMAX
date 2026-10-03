@@ -1,9 +1,9 @@
 ---
-name: video-propiedad-delivery
-description: Idea "El delivery": un motorizado se detiene ante la propiedad y su mente imagina negocios (restaurante, concesionario de motos, coworking + estudio, spa); versión A con motorizado real (grabada) y versión B con ficción IA. Úsalo cuando Eduardo pida un video con humor, personaje o skit del motorizado.
+name: video-propiedad-interactivo
+description: Idea "Elige tu espacio": video interactivo para Instagram (reel gancho, cadena de Stories con encuestas y video privado por WhatsApp) que salta de Instagram al WhatsApp y a portales. Úsalo cuando Eduardo pida un video interactivo, un embudo hacia WhatsApp, Stories con encuestas o el recorrido privado de una propiedad.
 ---
 
-# Idea 4 · "El delivery"
+# Idea 3 · "Elige tu espacio" (interactivo)
 
 ## Reglas fijas (CLAUDE.md)
 - Español, tono de amigo con Eduardo. Eres experto en guiones, cine, marketing digital y profesional inmobiliario.
@@ -17,12 +17,11 @@ description: Idea "El delivery": un motorizado se detiene ante la propiedad y su
 - No usar clips ya editados con logo (p. ej. `copy_7183…`); pedir los originales. Difuminar rostros y placas; nada de la propietaria.
 - Entregar: guion principal (tabla Tiempo | Plano y cámara | Voz en off | Texto en pantalla | Origen y archivo) + 2 variantes, prompts sin ejecutar, qué se necesita, caption y hashtags. Guardar en `contenido/<propiedad>/ideas-eduardo/`. Ejemplo completo: `contenido/calle-miranda-51/ideas-eduardo/`.
 
-## Excepción a la regla de voz en off
-La versión A pide que Eduardo salga a cámara y que actúe un **motorizado real que autorice** (por escrito; sin placa ni logos de apps). La versión B es **ficción generada con IA** (motorizado de perfil o de espaldas, sin rostro reconocible), con solo voz en off, rotulada "Escena de ficción recreada con IA". Se hacen **las dos**.
+## Estructura (tres piezas)
+1) **Reel gancho** (~28 s): "elige tu espacio" y escribe la palabra clave (propuesta: CASA). 2) **Cadena de 8 Stories** con encuesta, caja de preguntas, deslizador y botón al WhatsApp; se guarda como Destacado. 3) **Video privado por WhatsApp** (~75 s) con la ficha completa, solo para quien lo pide, con mensaje de acompañamiento que califica (qué busca, plazo, de dónde escribe) en línea con el asistente de WhatsApp.
 
-## Estructura
-Eduardo pide el delivery (POV del celular) → llega la moto y el motorizado mira la casa → plano-contraplano con preguntas cortas (metros, uso, negocio) → "entramos en su mente": destello, whoosh e imaginaciones con los 4 rubros de la idea 2 → vuelta a la realidad, precio → "¿qué verías tú aquí?".
-Variante C "solo su mente" (30 s). Incluir lista de tomas, tips de grabación y el mensaje de autorización para el motorizado.
+## Qué es público y qué privado
+Público: zona, precio, m², uso verificable, fachada y terraza. Privado (por confirmar con Eduardo, Luis León y la propietaria): dirección exacta, pin del mapa, recorrido completo, ficha técnica resumida, agenda de visita. Nunca: datos de la propietaria.
 
 ## Puntos críticos
-El motorizado es el héroe, no el chiste. Diálogo solo con datos confirmados: 419,86 m² de construcción, 295,41 m² de terreno, uso residencial y comercial verificable, USD 120.000; "podría", no "se puede". Pedido y bolsa sin marcas.
+Al inicio las respuestas son a mano; la automatización (herramienta de mensajes o asistente de WhatsApp, fase 3) se propone y se aprueba aparte, no se da por hecha. Casi todo es REAL; IA mínima (micro-movimientos, atardecer del gancho). Rótulos grandes numerados, hechos en CapCut/Canva.
