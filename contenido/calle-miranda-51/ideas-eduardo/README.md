@@ -15,14 +15,16 @@
 
 Cada archivo trae: análisis, **guion principal con la voz en off palabra por palabra** (borrador), **variantes**, prompts de Higgsfield (sin ejecutar) y qué se necesita.
 
+## Ya revisado (03-10-2026)
+Los **149 archivos** de la carpeta (la vista normal de Drive solo muestra 50; se listó todo), el **croquis** de la casa (3 niveles + terraza), las 15 fotos de afuera, 4 videos de los alrededores y las 4 fotos del patio. Inventario por espacio y plano: `../material.md`.
+
 ## Pendiente de Eduardo
-1. **Coordenadas** (no llegaron: ni foto ni texto): pin de Google Maps o "latitud, longitud".
-2. **Clips originales sin logo** de **cocina, patio y cuerpo trasero** (el video `copy_7183…` ya está editado con RE/MAX Aventura).
-3. **Plano o croquis** de los niveles (qué hay en cada uno).
-4. Foto **recta de la fachada sin carro**.
-5. **Primo/motorizado:** respuesta de autorización y fecha de grabación.
-6. **Palabra clave** de la idea 3 (propuesta: CASA) y qué es público y qué privado.
-7. **Visto bueno** a cada guion y a los pasos de Higgsfield (te digo el costo antes de cada generación).
+1. **Coordenadas** (no han llegado): pin de Google Maps o "latitud, longitud".
+2. **Confirmar en visita:** cuartos (≈6 según croquis), baños (3), **estacionamiento para 2 carros** y el uso del espacio largo con cortina metálica.
+3. Foto **recta de la fachada sin carro**.
+4. **Primo/motorizado:** autorización y fecha de grabación.
+5. **Palabra clave** de la idea 3 (propuesta: CASA) y qué es público y qué privado.
+6. **Visto bueno** a cada guion y a los pasos de Higgsfield (te digo el costo antes de cada generación).
 
 ## Reglas de las 4 ideas
 - Cada toma marcada **REAL** o **IA**. Rótulos: **"Recreación con IA · No es un proyecto aprobado"** (transformaciones) y **"Imagen ilustrativa con IA"** (aéreas y caída).

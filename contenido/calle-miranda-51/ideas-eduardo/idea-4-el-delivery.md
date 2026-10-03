@@ -56,7 +56,7 @@ El motorizado es **un personaje de ficción generado con IA**, de perfil o de es
 
 | Tiempo | Plano y cámara | Voz en off (Eduardo) | Texto en pantalla | Origen |
 |---|---|---|---|---|
-| 0–8 | Calle del barrio con motos pasando, ambiente real | "Los domiciliarios conocen cada calle de Guatire. Y esta tarde, uno se detuvo frente a esta casa." | `Escena de ficción recreada con IA` | REAL · 3350, 3334 |
+| 0–8 | Calle del barrio con motos pasando, ambiente real | "Los domiciliarios conocen cada calle de Guatire. Y esta tarde, uno se detuvo frente a esta casa." | `Escena de ficción recreada con IA` | REAL · 3350, 3334, fachada 1876–1879 |
 | 8–16 | El motorizado (IA, de perfil) mira la fachada | "No venía a nada. Pero la miró… y se quedó pensando." | | IA · foto 3339 |
 | 16–36 | **Su mente:** destello, cuatro imaginaciones rápidas | "Un restaurante con cocina de lujo… un concesionario de motos… un coworking con estudio de fotografía y video… un spa arriba." | rótulo IA | IA · renders idea 2 |
 | 36–42 | Fachada y terraza reales | "Tres niveles. 419 metros de construcción sobre 295 de terreno. Uso residencial y comercial, verificable." | `419,86 m² · 295,41 m²` | REAL · 3339, IMG_1753 |
@@ -80,7 +80,7 @@ El motorizado es **un personaje de ficción generado con IA**, de perfil o de es
 1. **Respuesta del primo** (autorización).
 2. **Fecha y hora** de la grabación (luz de tarde).
 3. Confirmar el diálogo (los textos son borrador; los ajusta con sus palabras).
-4. Si la versión B parece mejor, **foto de la fachada recta sin carro** para el motorizado de ficción.
+4. Si la versión B parece mejor, **foto de la fachada recta sin carro** para el motorizado de ficción. (Tomas reales de la fachada ya hay: 1876–1879, 1880, 1881, aunque con un carro delante.)
 
 ## Caption
 *"A veces solo hace falta mirar con otros ojos. El domiciliario se detuvo a mirar esta casa del casco central de Guatire… y su mente se llenó de ideas: restaurante, concesionario de motos, coworking con estudio, spa. 419 m² de construcción sobre 295 m² de terreno, uso residencial y comercial (verificable). Las escenas de imaginación son recreaciones con IA; no son un proyecto aprobado y todo cambio está sujeto a permisos y factibilidad. USD 120.000. ¿Qué verías tú aquí? Escríbeme por WhatsApp."*

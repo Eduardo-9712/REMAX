@@ -10,7 +10,7 @@ Recorrido de la calle (a pie o en carro) → llegada → **paneo 360 por fuera**
 
 **Por qué funciona:** es una historia en **un solo movimiento** (de la calle al cielo) y termina con una emoción: la **hora dorada sobre la montaña**. El espectador "viaja", no "ve un listado".
 
-**Lo que ya tenemos (REAL) y lo nuevo:** calle a pie y en carro (3342, 3350, 3334, 3333), llegada y porche (3343), salón de techo de madera y salón con ventilador, **cocina**, escalera, cuartos, corredor y balcón, **patio con el cuerpo trasero**, y la **terraza enorme con la cordillera** (IMG_1753/1755/1756).
+**Lo que ya tenemos (REAL):** todo el recorrido. Calle a pie y en carro (3342, 3350, 3334, 3333), llegada (3343, 1876–1879), porche (1871–1875, 1882–1885), sala principal y escalera (1868–1870), salón corredor y **cocina** (1819–1825), **gran salón** (1826–1828), **patio** (1849–1852), fondo (1853–1856), cuartos y baños (1802, 1810, 1830), balcón (1801), salón de techo de madera ("Terraza", "Terraza_3") y la **terraza 360°** ("TERRAZA", 1814–1817). Además, la **azotea del fondo (1857)** da una vista elevada real del patio y la casa, que sirve como "casi aérea".
 
 **Cómo se logra el atardecer "que no se vea ficticio" (3 capas):**
 1. **Etalonaje (color) real en edición:** subir calidez, bajar azules y dar un contraste suave a **todos los clips reales** para que parezcan de la misma tarde. Es lo más natural.
@@ -18,9 +18,9 @@ Recorrido de la calle (a pie o en carro) → llegada → **paneo 360 por fuera**
 3. **Coherencia:** el mismo ángulo de sol y el mismo color de cielo en las tomas IA y en las reales (se fija en el prompt y en el grado).
 Se descarta el "atardecer de postal" saturado: se busca **luz de 17:30–18:00 con polvo suave**.
 
-**El paneo 360 sin inventar los lados:** hoy solo tenemos frente y dos ángulos (3335, 3336, 3339), más el **patio y el cuerpo trasero** visto desde arriba. Con IA: orbitar **±35°** o rotular **"Imagen ilustrativa con IA"** si se gira más; con **dron real**: 360° real.
+**El paneo 360 sin inventar los lados:** hoy tenemos frente y dos ángulos (3335, 3336, 3339, 1880, 1881) y, por la azotea del fondo (1857), la parte trasera de la casa. Con IA: orbitar **±35°** o rotular **"Imagen ilustrativa con IA"** si se gira más; con **dron real**: 360° real.
 
-**El "dron" por dentro:** movimiento estilo dron **sobre clips y fotos reales** (avance suave, giros, speed ramps y **match cuts** por puertas, columnas y la escalera). El orden exacto de los niveles se confirma con el plano de Eduardo.
+**El "dron" por dentro:** movimiento estilo dron **sobre clips y fotos reales** (avance suave, giros, speed ramps y **match cuts** por puertas, columnas y la escalera). El orden de los espacios ya está confirmado con el croquis (ver arriba).
 
 **Riesgos:** la transición **porche oscuro → interior → terraza clara** exige cuidar la exposición; caras y placas en la calle; no decir "alto tráfico".
 
@@ -28,20 +28,27 @@ Se descarta el "atardecer de postal" saturado: se busca **luz de 17:30–18:00 c
 
 ---
 
-## Guion A · "El viaje" (65 s, el principal)
+## Guion A · "El viaje" (75 s, el principal): el recorrido real, en el orden del croquis
+
+**Ruta real de la casa:** calle → porche → sala principal y escalera → salón corredor → cocina → gran salón → patio → (se regresa) escalera → segundo piso (cuartos y balcón) → salón de techo de madera → terraza.
 
 | Tiempo | Plano y cámara | Voz en off (Eduardo) | Texto en pantalla | Origen y archivo |
 |---|---|---|---|---|
-| 0–10 | Camina por la acera comercial, cámara a la altura del pecho; speed ramp al empezar | "Todo empieza en la calle. Casco central de Guatire: comercios, transporte y mucha gente que va y viene." | `GUATIRE · CASCO CENTRAL` | REAL · 3342 (0:40), 3350 (0:05–0:12) |
-| 10–16 | La calle sube hacia la casa; entra la terraza verde al fondo (revelación) | "Y en medio de todo ese movimiento… aparece ella." | | REAL · 3350 (0:23–0:40) |
-| 16–28 | **Paneo 360** con luz de atardecer, cámara orbitando y subiendo un poco | "Calle Miranda, número 51. Tres niveles, una terraza con la montaña de frente y toda la tarde por delante." | `CALLE MIRANDA 51` + `Imagen ilustrativa con IA` | IA · fotos 3339, 3335, 3336 |
-| 28–34 | **El dron entra** por el porche: techo de madera, mosaico | "Ahora, entramos." *(1 s de silencio)* | | REAL · 3343 (0:05–0:11) |
-| 34–48 | **Vuelo interior**: salón → cocina → escalera → cuartos, con speed ramps y giros suaves | "Un salón amplio con techo de madera, una cocina lista para renovar, cuartos luminosos… 419 metros de construcción sobre 295 de terreno." | `419,86 m² · 295,41 m²` + `Catastro 2023` | REAL · 1764/1765, cocina, Escaleras terraza, IMG_1773/1795 |
-| 48–54 | **Patio trasero** (visto desde arriba o desde la puerta), luz cálida | "Un patio interior, y todavía hay más." | | REAL · patio (por pedir el clip original) |
-| 54–60 | **Sube a la terraza** y se abre la imagen, giro hacia la cordillera | "Y arriba… la terraza. Con toda la cordillera de frente." *(silencio de 2 s)* | | REAL · IMG_1753, 1755 |
-| 60–65 | **Elevación sobre el techo verde**; el atardecer lo cubre todo; fundido a la fachada al atardecer | "Uso residencial y comercial, verificable. USD 120.000. Ven a verla." | `USD 120.000` + logo + `Escríbeme por WhatsApp` | IA · IMG_1753, 3339 con luz cálida |
+| 0–8 | Camina por la acera comercial, cámara a la altura del pecho; speed ramp al empezar | "Todo empieza en la calle. Casco central de Guatire: comercios, transporte y mucha gente que va y viene." | `GUATIRE · CASCO CENTRAL` | REAL · 3342 (0:40), 3350 (0:05–0:12) |
+| 8–13 | La calle sube hacia la casa; entra la terraza verde al fondo (revelación) | "Y en medio de todo ese movimiento… aparece ella." | | REAL · 3350 (0:23–0:40) |
+| 13–23 | **Paneo 360** con luz de atardecer, cámara orbitando y subiendo un poco | "Calle Miranda, número 51. Tres niveles, una terraza con la montaña de frente, y toda la tarde por delante." | `CALLE MIRANDA 51` + `Imagen ilustrativa con IA` | IA · fotos 3339, 3335, 3336, 1880, 1881 |
+| 23–29 | **El "dron" entra** por el porche: techo de madera, mosaico, rejas | "Entramos por el porche." *(1 s de silencio)* | `Porche · Estacionamiento 2 carros*` | REAL · 1871, 1872, 1882, 1883 |
+| 29–35 | **Sala principal** y la **escalera** al fondo, lámparas encendidas | "Una sala principal, y desde aquí, la escalera que sube." | | REAL · 1868, 1869, 1860 |
+| 35–45 | **Salón corredor → cocina → gran salón** (la cámara avanza y se abre al salón con el sol sobre el mosaico) | "Un salón corredor, una cocina enorme de madera, y un gran salón que se abre al patio." | `419,86 m² · 295,41 m²` + `Catastro 2023` | REAL · 1819/1820 (cocina), 1826/1827 (gran salón) |
+| 45–50 | **Patio interior** visto desde la puerta del gran salón, luz cálida | "Un patio interior, listo para lo que imagines." | | REAL · 1851/1852, 1849 |
+| 50–58 | **Subimos**: escalera → segundo piso (cuartos luminosos, balcón con vista a la calle) | "Subimos. Cuartos luminosos, balcones, y cada nivel con su historia." | `Cuartos y baños: por confirmar` | REAL · 1870, 1812/1813, 1802, 1801 |
+| 58–64 | **Salón de techo de madera** (la puerta se abre y aparece el techo y la luz) | "Un salón de techo de madera…" | | REAL · "Terraza_3", "Terraza" |
+| 64–70 | **Sale a la terraza** y se abre la imagen: giro 360 hacia la cordillera | "…y arriba, la terraza. Con toda la cordillera de frente." *(silencio de 2 s)* | | REAL · "TERRAZA" (36 s), 1814–1817 |
+| 70–75 | **Elevación sobre el techo verde**; el atardecer lo cubre todo; fundido a la fachada cálida | "Uso residencial y comercial, verificable. USD 120.000. Ven a verla." | `USD 120.000` + logo + `Escríbeme por WhatsApp` | IA · 1814 y 3339 con luz cálida |
 
-**Voz en off completa (≈165 palabras):** tranquila y observadora en la calle, más enérgica en el interior, suave y firme al final.
+*\*Estacionamiento para 2 carros: según el croquis, por confirmar.* Cuartos y baños: el croquis marca ≈6 y 3; se confirman en la visita.
+
+**Voz en off completa (≈120 palabras, ritmo calmado con música):** tranquila y observadora en la calle, más enérgica por dentro, suave y firme al final.
 
 ## Guion B · "Tono inversionista" (45 s)
 Mismas imágenes, voz más directa.
@@ -74,7 +81,7 @@ Aplicar el **mismo grado cálido** (temperatura +, contraste suave, sombras con 
 Se regraban las mismas tomas: **órbita 360** a 15–25 m, **avance al porche**, **vuelo interior despacio**, **elevación sobre la terraza** al atardecer. **No cambia el guion ni la voz en off.** Solo se reemplazan los clips de IA y se quita el rótulo en esas tomas.
 
 ## Qué necesito
-Coordenadas, **plano/croquis** de los niveles, **clips originales** de cocina, patio y cuerpo trasero, y foto de la fachada recta sin carro.
+Coordenadas y una foto de la fachada recta sin carro. (El croquis y los clips de cocina, patio y fondo **ya llegaron**.)
 
 ## Caption
 *"De la calle al cielo, con la hora dorada sobre la cordillera. Casco central de Guatire, 419 m² de construcción sobre 295 m² de terreno, cocina, patio interior y una terraza con vista a la montaña. Uso residencial y comercial (verificable). USD 120.000. Escríbeme por WhatsApp y la vemos juntos. Imágenes ilustrativas con IA en las tomas aéreas. Superficies según ficha catastral del 17/08/2023; todo proyecto sujeto a permisos y factibilidad."*

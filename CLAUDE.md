@@ -157,7 +157,9 @@ estilos o ideas que funcionen, se anotan aquí.
   `video-propiedad` (leer la carpeta de Drive) y uno por idea (`video-propiedad-punto`, `-redesarrollo`, `-recorrido`).
   **Las 4 ideas de Eduardo** (voz en off, solo material de la propiedad: caída y transformación, el viaje, elige tu espacio interactivo, el delivery) están en
   `contenido/calle-miranda-51/ideas-eduardo/` con sus skills (`video-propiedad-caida`, `-viaje`, `-interactivo`, `-delivery`; orden de trabajo 2→1→3→4; guía de calidad en `higgsfield-calidad.md`).
-  Material de afuera (fachada y alrededores) ya revisado el 02-10-2026. Pendiente: que Eduardo apruebe, grabar las tomas y dar el "dale" para Higgsfield.
+  **Revisión completa del Drive el 03-10-2026** (149 archivos + croquis): el inventario por espacio y el croquis están en `material.md`
+  (estacionamiento 2 carros, ≈6 cuartos y 3 baños según croquis, por confirmar). **Ojo:** la vista normal de una carpeta de Drive solo muestra 50 archivos; usar `embeddedfolderview`.
+  PDF para revisar todo junto: `contenido/calle-miranda-51/Calle-Miranda-51_Ideas-Guiones-Prompts-Skills.pdf`. Pendiente: que Eduardo apruebe, grabar las tomas y dar el "dale" para Higgsfield.
 
 ## Cómo trabajamos
 

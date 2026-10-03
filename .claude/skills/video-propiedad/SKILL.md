@@ -10,9 +10,10 @@ cuartos, usos → "por confirmar"), y **no gastar créditos de Higgsfield sin el
 
 ## 1. Leer la carpeta de Drive
 
+- **Cuidado:** la vista normal de una carpeta de Drive solo muestra los **primeros 50 archivos**. Para listar **todos** usar `https://drive.google.com/embeddedfolderview?id=<ID>` (en el HTML: `flip-entry` con id y título) y comparar el total con lo que Eduardo dice. Revisar también subcarpetas, PDFs (planos/croquis: convertir con `pdftoppm`) y archivos sin extensión (pueden ser videos).
 - Los conectores de Drive pueden fallar con "Insufficient scope". Si la carpeta es pública, funciona esto:
   1. `curl -L "https://drive.google.com/drive/folders/<ID>"` y sacar de la tabla HTML (`<tr data-selectable data-id="...">`) el id, nombre y tamaño.
-  2. Descargar con `https://drive.google.com/uc?export=download&id=<ID>`. Los archivos grandes devuelven una página de
+  2. Descargar con `https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t` (funciona también para archivos grandes). Los archivos grandes devuelven una página de
      aviso: leer su `action` y campos ocultos (`id`, `confirm`, `uuid`) y pedir `drive.usercontent.google.com/download?...`.
   3. Las fotos son HEIC: `pip install pillow-heif` (ImageMagick no las abre). Videos: `ffmpeg` para sacar un fotograma central.
   4. Armar hojas de contacto y **mirar todo** antes de escribir.

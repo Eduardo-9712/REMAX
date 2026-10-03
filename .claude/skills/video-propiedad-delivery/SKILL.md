@@ -15,6 +15,7 @@ description: Idea "El delivery": un motorizado se detiene ante la propiedad y su
 - Cada toma marcada **REAL** o **IA**. Rótulos: **"Recreación con IA · No es un proyecto aprobado"** (transformaciones) o **"Imagen ilustrativa con IA"** (aéreas y caída). "Podría", nunca "se puede"; "sujeto a permisos y factibilidad".
 - Precio **USD 120.000 visible** (decisión de Eduardo). Luis León: Broker de RE/MAX Delta primero, luego Consultor Jurídico de la Cámara Inmobiliaria de Miranda. Logo: Aventura hasta el cambio a Delta (fines de oct 2026).
 - No usar clips ya editados con logo (p. ej. `copy_7183…`); pedir los originales. Difuminar rostros y placas; nada de la propietaria.
+- Leer el **croquis** de la casa (en `material.md`) para el orden real del recorrido; estacionamiento, cuartos y baños del croquis van como "por confirmar".
 - Entregar: guion principal (tabla Tiempo | Plano y cámara | Voz en off | Texto en pantalla | Origen y archivo) + 2 variantes, prompts sin ejecutar, qué se necesita, caption y hashtags. Guardar en `contenido/<propiedad>/ideas-eduardo/`. Ejemplo completo: `contenido/calle-miranda-51/ideas-eduardo/`.
 
 ## Excepción a la regla de voz en off
