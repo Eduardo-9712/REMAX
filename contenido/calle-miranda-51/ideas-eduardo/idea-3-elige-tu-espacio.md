@@ -51,7 +51,7 @@ El público **elige qué ver** (terraza, cocina, patio, salón, cuartos…) y, a
 | 2 | Terraza panorámica con la cordillera (6 s, "TERRAZA" 0:10–0:16) | **Pregunta** (caja): "¿Qué harías con esta vista?" | "La terraza. ¿Qué harías aquí?" |
 | 3 | Cocina de madera (6 s, 1820 o 1825) | **Encuesta:** "¿Restaurante o vivienda?" | "Una cocina lista para renovar." |
 | 4 | Patio interior (6 s, 1851 o 1849) | **Pregunta** (caja): "¿Taller, jardín o zona de eventos?" | "Un patio con mucho espacio." |
-| 5 | Gran salón o salón de techo de madera (6 s, 1827 o "Terraza") | **Deslizador** con emoji: "¿Cuánto te gusta?" | "Un salón con carácter." |
+| 5 | **El salón secreto**: la mano abre la puerta de un cuarto y aparece el balcón-salón de techo de madera (6 s, `Cuarto_2_with_terraza` 0:13–0:20) | **Quiz:** "¿Por dónde se entra a este salón?" A) Por la escalera · B) **Por un cuarto** (la respuesta correcta es B) | "Un salón que solo se abre por un cuarto." |
 | 6 | Los 4 rubros de la idea 2 en destellos (con rótulo IA) · y el **porche con estacionamiento para 2 carros** | **Encuesta:** "¿Cuál harías? 1·2·3·4" | "Restaurante, concesionario de motos, coworking con estudio o spa." |
 | 7 | Datos y precio | **Cuenta regresiva** o "Recuérdamelo": "Visitas esta semana" (solo si hay fechas) | "USD 120.000. Uso residencial y comercial, verificable." |
 | 8 | Botón al WhatsApp | **Enlace/botón** a WhatsApp | "Escríbeme 'CASA' y te mando el recorrido privado." |
@@ -68,9 +68,9 @@ Se guarda como Destacado "Calle Miranda 51". Quien responda, recibe el siguiente
 | 6–14 | Porche con rejas y techo de madera | "Entramos por el porche: techo de madera, piso de mosaico y estacionamiento para dos carros." | `Estacionamiento · 2 carros` | REAL · 3343, 1871, 1882 |
 | 14–22 | Sala principal y escalera | "Una sala principal y la escalera que sube a los demás niveles." | | REAL · 1868, 1869 |
 | 22–32 | Salón corredor, cocina y gran salón | "Una cocina grande con gabinetes de madera, y un gran salón que se abre al patio." | `Cocina · Gran salón` | REAL · 1820, 1822, 1826, 1828 |
-| 32–42 | Patio, y luego cuartos y baños | "Un patio interior, y arriba cuatro cuartos, dos baños y dos salas de estar." | `6 cuartos · baños: por confirmar` | REAL · 1851, 1802, 1810 |
-| 42–48 | Escalera y salón de techo de madera | "Una escalera que sube, y un salón con techo de madera." | | REAL · 1870, "Terraza_3" |
-| 48–56 | Fondo del lote: cuarto, baño y lavandería | "Y al fondo del patio, un cuarto de servicio, un baño y una lavandería." | `Fondo del lote` | REAL · 1853–1856 |
+| 32–42 | Patio y fondo del lote | "Un patio grande, y al fondo, un cuarto de servicio, un baño y una lavandería." | `Patio · fondo` | REAL · 1851, 1853–1856 |
+| 42–52 | Escalera, cuarto del frente con su balcón, y **la entrada secreta** al balcón-salón de techo de madera | "Subimos, un cuarto con balcón a la calle, y otro cuarto con un secreto: una puerta que se abre a un salón de techo de madera." | `6 cuartos · 4 baños` | REAL · 1870, `Cuarto_3_with_balcón`, `Cuarto_2_with_terraza` (0:05–0:27) |
+| 52–56 | Baños y cuartos (resumen en pantalla) | "En total: seis cuartos y cuatro baños." | `6 cuartos · 4 baños` | REAL · 1802, 1810, 1830 |
 | 56–66 | Terraza panorámica 360° | "Y la terraza, con la cordillera y la ciudad a tus pies." | | REAL · "TERRAZA", 1814–1817 |
 | 66–75 | Datos y cierre | "419 metros de construcción sobre 295 de terreno. Uso residencial y comercial, verificable. USD 120.000. Si quieres verla, dime qué día te queda bien." | `USD 120.000` + `Agenda tu visita` | REAL · 3339 |
 
@@ -89,7 +89,7 @@ Se guarda como Destacado "Calle Miranda 51". Quien responda, recibe el siguiente
 
 ## Qué necesito
 1. La palabra clave final (propuesta: **CASA**). (Los clips de cocina, patio, cuartos y el croquis **ya llegaron**.)
-2. Confirmar si los baños son 3 o 4 (cuartos: 6 y estacionamiento: 2 carros ya están confirmados).
+2. Nada pendiente de datos: **2 carros, 6 cuartos y 4 baños** ya están confirmados.
 3. Aprobar **qué es privado** y **cómo respondes** (a mano o con apoyo del asistente de WhatsApp más adelante).
 4. Un **número de WhatsApp** y horario para agendar visitas.
 

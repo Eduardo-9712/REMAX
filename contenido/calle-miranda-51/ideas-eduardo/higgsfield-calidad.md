@@ -5,16 +5,32 @@
 ## La regla de Eduardo
 La IA puede **mejorar el grado** (luz, color, calidad, movimiento), pero **no cambia la esencia ni la estructura de la casa**: mismos niveles, mismo frente angosto, misma terraza con techo verde, mismas ventanas y rejas, mismo porche, mismos vecinos. En las transformaciones (idea 2) cambian **acabados, fachada comercial, mobiliario y función**, nunca el volumen del edificio.
 
-## Qué modelo usar para qué (según el catálogo de Higgsfield; sin probar todavía)
+## Qué modelo usar para qué, y cuánto cuesta (costos reales consultados el 03-10-2026, **sin gastar nada**)
 
-| Trabajo | Modelo recomendado | Por qué | Plan B |
+El costo se consultó con la opción de "cotizar sin enviar" de Higgsfield. **Saldo: 801 créditos (plan Plus).**
+
+| Trabajo | Modelo recomendado | Costo por pieza | Plan B |
 |---|---|---|---|
-| **Renders del "después"** (fachada e interiores) a partir de las fotos reales | **Nano Banana Pro** (calidad máxima, hasta 4K, fotorrealista, usa imágenes de referencia) | Es el de "ultimate quality" y soporta referencias | **FLUX 3 Image** (edición con hasta 10 referencias, 4K) · **GPT Image 2.5** calidad alta |
-| **Tomas "héroe" de cine** (atardecer, órbita exterior, "dron" entrando, caída final) | **Veo 3.1** en calidad **ultra** (ultrarrealista, cinematográfico, imagen inicial, 9:16, 4–8 s por clip) | Es el más realista del catálogo | **Kling v3.0** modo **4K** (imagen inicial y final, multi-plano) |
-| **Transformaciones** (foto real → render, con la obra en medio) | **Seedance 2.5** (imagen inicial **y final**, referencias, 1080p, hasta 30 s) o **Kling v3.0** (imagen inicial y final) | Puedes fijar **cómo empieza (real) y cómo termina (render)**, y la IA "rellena" la obra | Veo 3.1 con dos clips |
-| **Mejorar la nitidez** de los clips reales | `upscale_video` | No inventa, solo sube resolución | — |
+| **Renders del "después"** (fachada e interiores) | **Nano Banana Pro**, 4K (calidad máxima, usa fotos de referencia) | **4 créditos** (2K: 2) | FLUX 3 Image 2K: 3 · GPT Image 2.5 |
+| **Transiciones** (foto real → render, con la obra en medio; y rubro → rubro) | **Kling v3.0 modo pro**, imagen inicial y final, 5 s, sin sonido | **8,75 créditos** (modo estándar: 7,5) | Seedance 2.5: 720p 4 s = 28 · 1080p 5 s = 60 · **borrador 480p 4–5 s = 12–15** |
+| **Tomas "héroe" de cine** (caída, paneo, elevación final, apertura con dron) | **Veo 3.1 ultra**, 8 s | **120 créditos** | **Veo 3.1 rápido, 8 s = 32** · Kling v3.0 4K, 5 s = 30 |
+| **Mejorar la nitidez** de los clips reales | `upscale_video` | se cotiza antes | — |
 
-**Ahorro de créditos:** Seedance 2.5 permite hacer **borrador a 480p** y luego **finalizar a 1080p** el que gusta. Se prueba el movimiento barato y solo se paga la versión final de las tomas aprobadas.
+**Cómo gastar bien:** las transiciones y los interiores se hacen con **Kling pro** (baratísimo). Las tomas héroe se **prueban primero con Veo 3.1 rápido (32)** y solo se **repiten en ultra (120)** las 2 o 3 que de verdad lo merecen. Seedance queda como plan B y para los **borradores a 480p**.
+
+### Plan de créditos (aproximado, con ≈30 % de margen para repetir tomas)
+
+| Etapa | Qué se genera | Créditos |
+|---|---|---|
+| **A · Prueba de la cadena del restaurante** (idea 2) | 6 renders (4K) + 6 transiciones (Kling pro) | **≈ 77** (+ margen ≈ 100) |
+| **B · Concesionario, coworking y spa** | 18 renders + 18 transiciones | **≈ 230** (+ margen ≈ 300) |
+| **C · Apertura y paneo** (idea 2 y 1) | 2 tomas héroe: pruebas en Veo rápido (64) + 2 finales en ultra (240) | **≈ 64 a 304** |
+| **D · Idea 1** (calle → atardecer final) | porche "dron" (Kling 8,75) + elevación final (Veo ultra 120) + reutiliza el paneo | **≈ 150** |
+| **E · Idea 3** (interactivo) | fachada al atardecer (Veo rápido 32) + 4 micro-movimientos (Kling estándar 30) | **≈ 70** |
+| **F · Idea 4 versión B** | 1 motorizado de ficción (4) + 3 clips (Kling pro 26) + reutiliza renders de la idea 2 | **≈ 40** |
+| **Total aproximado** | | **≈ 560 a 800** (cabe en los 801 créditos, **ajustado**) |
+
+**Cómo no pasarnos:** se hace **por etapas**; antes de cada una te digo el costo exacto y espero tu «dale». Si hace falta, se baja el número de tomas por rubro (de 5 a 4) o se usa Veo rápido también en las finales.
 
 ## Reglas de prompt (para todas las ideas)
 

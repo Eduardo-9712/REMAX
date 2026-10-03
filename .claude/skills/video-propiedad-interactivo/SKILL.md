@@ -21,6 +21,9 @@ description: Idea "Elige tu espacio": video interactivo para Instagram (reel gan
 ## Estructura (tres piezas)
 1) **Reel gancho** (~28 s): "elige tu espacio" y escribe la palabra clave (propuesta: CASA). 2) **Cadena de 8 Stories** con encuesta, caja de preguntas, deslizador y botón al WhatsApp; se guarda como Destacado. 3) **Video privado por WhatsApp** (~75 s) con la ficha completa, solo para quien lo pide, con mensaje de acompañamiento que califica (qué busca, plazo, de dónde escribe) en línea con el asistente de WhatsApp.
 
+## Gancho de interacción
+Usar detalles curiosos de la casa para quiz y encuestas (p. ej. "¿por dónde se entra a este salón?": solo por un cuarto).
+
 ## Qué es público y qué privado
 Público: zona, precio, m², uso verificable, fachada y terraza. Privado (por confirmar con Eduardo, Luis León y la propietaria): dirección exacta, pin del mapa, recorrido completo, ficha técnica resumida, agenda de visita. Nunca: datos de la propietaria.
 

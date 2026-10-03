@@ -30,7 +30,7 @@ Se descarta el "atardecer de postal" saturado: se busca **luz de 17:30–18:00 c
 
 ## Guion A · "El viaje" (≈85 s, el principal): el recorrido real, en el orden de la casa
 
-**Ruta confirmada por Eduardo:** calle → estacionamiento y porche → entrada (sala pequeña y escalera) → sala comedor → pasillo (cuarto; baño al final) → cocina de madera → gran salón → patio → fondo (cuarto de servicio, baño, lavandería) → **se regresa** → escalera → segundo piso (cuartos, salas de estar, balcón) → escalera a la terraza → terraza (tercer piso).
+**Ruta confirmada por Eduardo:** calle → estacionamiento y porche → entrada (sala pequeña y escalera) → sala comedor → pasillo (cuarto; baño al final) → cocina de madera → gran salón → patio → fondo (cuarto de servicio, baño, lavandería) → **se regresa** → escalera → segundo piso (**cuarto del frente → balcón del frente**; **cuarto trasero → puerta → balcón-salón de techo de madera**) → escalera a la terraza → terraza (tercer piso).
 *(El mismo orden se usa en los recorridos interiores de las ideas 2, 3 y 4.)*
 
 | Tiempo | Plano y cámara | Voz en off (Eduardo) | Texto en pantalla | Origen y archivo |
@@ -44,12 +44,12 @@ Se descarta el "atardecer de postal" saturado: se busca **luz de 17:30–18:00 c
 | 41–47 | **Cocina de madera** (a la derecha del pasillo) | "La cocina, grande, toda de madera." | `Cocina` | REAL · 1819/1820, 1822 |
 | 47–53 | **Gran salón**, el sol sobre el mosaico, abierto al patio | "Un gran salón que se abre al patio." | `419,86 m² · 295,41 m²` + `Catastro 2023` | REAL · 1826/1827, 1828 |
 | 53–58 | **Patio** visto desde la puerta del gran salón; al fondo, el cuarto de servicio | "Un patio grande… y al fondo, un cuarto de servicio, un baño y una lavandería." | `Patio · fondo` | REAL · 1851/1852, 1853–1856 |
-| 58–66 | **Subimos**: escalera → segundo piso (cuartos, salas de estar, balcón con vista a la calle) | "Subimos. Cuatro cuartos, dos baños, dos salas de estar y balcones." | | REAL · 1870, 1812/1813, 1802, 1801 |
-| 66–72 | **Sala de estar de techo de madera** (la puerta se abre y aparece el techo y la luz) | "Una sala de estar con techo de madera…" | | REAL · "Terraza_3", "Terraza" |
-| 72–78 | **Sale a la terraza** y se abre la imagen: giro 360 hacia la cordillera | "…y arriba, la terraza. Con toda la cordillera de frente." *(silencio de 2 s)* | | REAL · "TERRAZA" (36 s), 1814–1817 |
-| 78–85 | **Elevación sobre el techo verde**; el atardecer lo cubre todo; fundido a la fachada cálida | "Uso residencial y comercial, verificable. USD 120.000. Ven a verla." | `USD 120.000` + logo + `Escríbeme por WhatsApp` | IA · 1814 y 1881 con luz cálida |
+| 58–64 | **Subimos**: escalera → segundo piso → **el cuarto del frente y su balcón con reja** (vista a los edificios) | "Subimos. Cuatro cuartos, dos baños… y balcones." | `6 cuartos · 4 baños` | REAL · 1870, 1812/1813, `Cuarto_3_with_balcón` (0:10–0:21), 1798 |
+| 64–71 | **La entrada secreta:** el **cuarto trasero**, la mano abre la puerta de madera y **aparece el balcón-salón de techo de madera y cortinas negras** (revelación) | "Y hay un cuarto con un secreto: abres la puerta… y aparece un salón con techo de madera." | | REAL · `Cuarto_2_with_terraza` (0:05–0:27), `Terraza_3` |
+| 71–76 | **Escalera a la terraza** y **sale a la terraza**: se abre la imagen, giro 360 hacia la cordillera | "…y arriba, la terraza. Con toda la cordillera de frente." *(silencio de 2 s)* | | REAL · `Escaleras terraza`, "TERRAZA" (36 s), 1814–1817 |
+| 76–85 | **Elevación sobre el techo verde**; el atardecer lo cubre todo; fundido a la fachada cálida | "Uso residencial y comercial, verificable. USD 120.000. Ven a verla." | `USD 120.000` + logo + `Escríbeme por WhatsApp` | IA · 1814 y 1881 con luz cálida |
 
-**Voz en off completa (≈140 palabras):** tranquila y observadora en la calle, más enérgica por dentro, suave y firme al final.
+**Voz en off completa (≈135 palabras):** tranquila y observadora en la calle, más enérgica por dentro, suave y firme al final.
 *Si se quiere más corto, usar las variantes B (45 s) y C (40 s).*
 
 ## Guion B · "Tono inversionista" (45 s)
@@ -83,7 +83,7 @@ Aplicar el **mismo grado cálido** (temperatura +, contraste suave, sombras con 
 Se regraban las mismas tomas: **órbita 360** a 15–25 m, **avance al porche**, **vuelo interior despacio**, **elevación sobre la terraza** al atardecer. **No cambia el guion ni la voz en off.** Solo se reemplazan los clips de IA y se quita el rótulo en esas tomas.
 
 ## Qué necesito
-Nada más para empezar: las coordenadas, el croquis, los clips de cocina, patio y fondo, y la fachada sin carro (**IMG_1881**) **ya llegaron**. Falta confirmar dónde queda el salón de techo de madera.
+Nada más para empezar: las coordenadas, el croquis, los clips de cocina, patio y fondo, y la fachada sin carro (**IMG_1881**) **ya llegaron**. Ya está confirmado que el salón de techo de madera es el **balcón-salón** del segundo piso y se entra solo por el cuarto trasero.
 
 ## Caption
 *"De la calle al cielo, con la hora dorada sobre la cordillera. Casco central de Guatire, 419 m² de construcción sobre 295 m² de terreno, cocina, patio interior y una terraza con vista a la montaña. Uso residencial y comercial (verificable). USD 120.000. Escríbeme por WhatsApp y la vemos juntos. Imágenes ilustrativas con IA en las tomas aéreas. Superficies según ficha catastral del 17/08/2023; todo proyecto sujeto a permisos y factibilidad."*

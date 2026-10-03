@@ -1,6 +1,6 @@
 # Las 4 ideas de Eduardo · Calle Miranda N.º 51
 
-**Estado (03-10-2026):** borrador ajustado con las decisiones de Eduardo. **Higgsfield: no se ha usado ni gastado nada** (saldo: 801 créditos, plan Plus).
+**Estado (03-10-2026, versión 3):** borrador ajustado con las decisiones de Eduardo. **Higgsfield: no se ha usado ni gastado nada** (saldo: 801 créditos, plan Plus).
 **Reglas:** todo con **fotos y videos de la propiedad** y **solo la voz en off de Eduardo** (la idea 4 pide que él grabe). **Precio USD 120.000 visible.** IA lo mejor posible ahora, **dron real después**, sin cambiar la estructura de la casa.
 **Datos:** casco central de Guatire · 419,86 m² construcción · 295,41 m² terreno (catastro 17/08/2023) · uso residencial y comercial, verificable. Inventario del material: `../material.md`. Calidad y modelos de Higgsfield: `higgsfield-calidad.md`.
 
@@ -16,19 +16,31 @@
 Cada archivo trae: análisis, **guion principal con la voz en off palabra por palabra** (borrador), **variantes**, prompts de Higgsfield (sin ejecutar) y qué se necesita.
 
 ## Ya revisado y confirmado (03-10-2026)
-- Los **149 archivos** de la carpeta (la vista normal de Drive solo muestra 50; se listó todo), el **croquis**, las 15 fotos de afuera, 4 videos de los alrededores y las 4 fotos del patio. Inventario por espacio: `../material.md`.
-- **Confirmado por Eduardo:** **2 estacionamientos**, **6 cuartos** (2 abajo, 4 arriba), lavandería, patio entre la casa y el cuarto de servicio, cocina de madera a la derecha del pasillo, 2 balcones y la terraza en el tercer piso.
-- **Coordenadas:** 10°28'08.2"N 66°32'30.2"W (10,468938; −66,541720). El enlace de Maps abre en Guatire, **funcionan**.
-- **Fachada sin carro:** la foto **IMG_1881** ya lo es. Para tomas frontales, el carro se puede **borrar con IA** y revisar.
-- **Cambio de la idea 2:** ahora es una **cadena** (fachada → interior → fachada…), una transformación a la vez, y ese **mismo patrón y la misma ruta real** se usan en los recorridos de las otras ideas.
+- Los **149 archivos** de la carpeta (la vista normal de Drive solo muestra 50; se listó todo), el **croquis**, las fotos de afuera y los videos de los alrededores. Inventario y **secuencia maestra del material**: `../material.md`.
+- **Confirmado por Eduardo:** **2 estacionamientos**, **6 cuartos** (2 abajo, 4 arriba), **4 baños** (2 abajo, 2 arriba), lavandería, patio entre la casa y el cuarto de servicio, cocina de madera, y la terraza en el tercer piso.
+- **Dos cuartos con balcón:** el del **frente** (balcón con reja que da a los edificios) y el **trasero**, cuya puerta de madera abre al **balcón-salón de techo de madera y cortinas negras**. **La única entrada a ese salón es por el cuarto trasero**; se usa como "entrada secreta" en los videos.
+- **Coordenadas:** 10°28'08.2"N 66°32'30.2"W (10,468938; −66,541720). El enlace de Maps abre en Guatire.
+- **Fachada sin carro:** la foto **IMG_1881**. Para tomas frontales, el carro se puede **borrar con IA** y revisar.
+- **Costos de Higgsfield consultados (sin gastar):** imagen 4 créditos; transición con Kling pro 8,75; toma héroe con Veo ultra 120 (rápido 32). **Saldo 801.** Ver el plan por etapas en `higgsfield-calidad.md`.
+- **Idea 2 = cadena** (fachada → interior → fachada…), con **apertura a elegir** (caída del cielo + calle real, calle real, o dron sobre la calle). **Mismo patrón y misma ruta real** en las otras ideas.
+- **Idea 4:** primero se diseña la **versión B (con IA)**; si el primo autoriza, después se graba la **versión A**.
 
-## Pendiente de Eduardo (poco)
-1. **Baños: ¿3 o 4?** (dijo 3 y al detallar suma 4: 2 abajo y 2 arriba).
-2. **¿Dónde queda el salón de techo de madera?** (¿sala de estar del segundo piso?).
-3. **Idea 2:** ¿se queda la **caída del cielo** al inicio, y el orden de los rubros (restaurante → concesionario → coworking/estudio → spa)?
-4. **Primo/motorizado:** autorización y fecha de grabación.
-5. **Palabra clave** de la idea 3 (propuesta: CASA) y qué es público y qué privado.
-6. **Visto bueno** a cada guion y a probar primero **una cadena** en Higgsfield (te digo el costo antes de cada generación).
+## Pendiente de Eduardo (muy poco)
+1. **Elegir la apertura de la idea 2:** 1 (caída + calle real, recomendada), 2 (calle real) o 3 (dron sobre la calle).
+2. **Tu «dale»** para la primera prueba en Higgsfield: la cadena del restaurante (**≈ 77 créditos**).
+3. **Primo/motorizado:** autorización y fecha (se puede dejar para después).
+4. **Palabra clave** de la idea 3 (propuesta: CASA) y qué es público y qué privado.
+5. Si vas a **grabar tu voz**: cuando apruebes cada guion te paso los textos limpios.
+
+## Plan para esta semana (propuesto)
+| Día | Qué se hace | Créditos |
+|---|---|---|
+| **1** | **Etapa A:** cadena del restaurante (idea 2): te la muestro y la corriges | ≈ 77 |
+| **2** | **Etapa B:** concesionario, coworking y spa | ≈ 230 |
+| **3** | **Etapa C:** apertura y paneo; armo la idea 2 completa para tu edición | ≈ 64–304 |
+| **4** | **Idea 1** (calle → atardecer final) con tu recorrido real | ≈ 150 |
+| **5** | **Idea 3** (interactivo) y **Idea 4 versión B** | ≈ 110 |
+Tú: grabas la voz en off de cada idea cuando te entregue los textos y editas con los clips. **Nada se genera sin tu «dale» por etapa.**
 
 ## Reglas de las 4 ideas
 - Cada toma marcada **REAL** o **IA**. Rótulos: **"Recreación con IA · No es un proyecto aprobado"** (transformaciones) y **"Imagen ilustrativa con IA"** (aéreas y caída).

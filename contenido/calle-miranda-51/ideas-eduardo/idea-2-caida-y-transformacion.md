@@ -4,8 +4,8 @@
 **Calidad y reglas de prompts:** `higgsfield-calidad.md`. **Datos y recorrido real:** `../material.md`.
 
 ## Lo que pidió Eduardo (ajuste del 03-10)
-1. **Abre con la calle y los alrededores**: recorrido caminando (y panorámica 360) por donde se grabaron los videos, hasta llegar a la fachada.
-2. **Paneo 360** por fuera de la propiedad.
+1. **Abre con la caída del cielo y/o con la calle y los alrededores** (a elegir entre 3 aperturas, abajo): recorrido caminando por donde se grabaron los videos, o como si **un dron siguiera esa calle**, hasta llegar a la fachada.
+2. **Paneo rápido** (360°) de la **fachada tal como está hoy**, y **después** empieza la reconstrucción de los 4 rubros.
 3. **Una transformación a la vez, en cadena** (no todas al mismo tiempo):
     - La **fachada se reconstruye** hacia el **restaurante gastronómico** (se ve la obra) → **recorrido por dentro**, también remodelándose para el restaurante.
     - **Vuelve a la fachada**: se **quita todo lo del restaurante** y se monta el **concesionario de motos** → recorrido por dentro como concesionario.
@@ -13,7 +13,7 @@
     - **Vuelve a la fachada**: al **spa** → recorrido por dentro.
 4. En **todas las ideas**, cuando haya recorrido interior, se sigue **el mismo patrón** (ver "Patrón de cadena").
 5. La IA hace **lo mejor posible**, **sin cambiar la esencia ni la estructura** de la casa. Por ahora IA; luego dron real.
-*(Mantuve la **caída del cielo** como apertura corta, porque fue idea tuya. Si prefieres empezar directamente en la calle, se quita: son 7 s.)*
+*(En el mensaje del 03-10 Eduardo dudó entre la caída del cielo y el recorrido por la calle: dejé las dos y una tercera con dron para que elija.)*
 
 ## El patrón de cadena (se repite en cada rubro)
 
@@ -22,8 +22,20 @@ FACHADA (rubro anterior)  →  desmontaje + obra + reveal del nuevo rubro   (6�
 INTERIOR (siguiendo la ruta real de la casa)  →  5 tomas de 3 s, cada una "obra → reveal"  (≈16 s)
 FACHADA otra vez  →  se quita todo y se monta el siguiente rubro
 ```
-**Ruta real del interior** (confirmada por Eduardo): estacionamiento y porche → sala pequeña con la escalera → sala tipo comedor → pasillo (cuarto; baño al final) → cocina de madera (a la derecha del pasillo) → gran salón → patio → fondo (cuarto de servicio, baño y lavandería) → escalera → segundo piso (4 cuartos, 2 baños, 2 salas de estar, balcón al frente y balcón amplio atrás) → terraza (tercer piso).
+**Ruta real del interior** (confirmada por Eduardo): estacionamiento y porche → sala pequeña con la escalera → sala tipo comedor → pasillo (cuarto; baño al final) → cocina de madera (a la derecha del pasillo) → gran salón → patio → fondo (cuarto de servicio, baño y lavandería) → escalera → segundo piso (4 cuartos, 2 baños, 2 salas de estar; **cuarto del frente → balcón del frente**; **cuarto trasero → puerta → balcón-salón de techo de madera**) → escalera a la terraza → terraza (tercer piso). **Total: 6 cuartos y 4 baños.**
 Cada rubro usa **5 espacios** de esa ruta, **siempre en el mismo orden**, y el mismo espacio va cambiando de un rubro al siguiente (el gran salón pasa de comedor a exhibición de motos a estudio).
+
+## Apertura a elegir (los primeros 20 s; después, todo igual)
+
+Eduardo dudó entre la caída del cielo y el recorrido por la calle (y comentó que le gustaría ver ese recorrido como si **un dron siguiera la calle por donde él caminó**). Las tres versiones terminan igual: **llegan a la fachada** y empieza el paneo rápido.
+
+| Opción | Qué se ve | Voz en off | Origen |
+|---|---|---|---|
+| **1 · Caída + calle real** *(recomendada: la más viral y mantiene lo real)* | Caída del cielo (7 s) → aterriza en la calle → recorrido real a pie (13 s) → llega a la fachada | "Imagina caer desde el cielo… atravesar las nubes… y aterrizar en un punto exacto de Venezuela. Guatire. Casco central: comercios, transporte, gente que va y viene… y en medio de todo ese movimiento, una propiedad que puede ser lo que tú imagines." | IA (caída) + REAL (3350, 3342) |
+| **2 · Calle real, directo** *(la más auténtica y barata)* | Recorrido real caminando (3342) y la revelación de la terraza verde (3350), 20 s | "Casco central de Guatire. Comercios, transporte, gente que va y viene… y en medio de todo ese movimiento, una propiedad que puede ser lo que tú imagines." | REAL (3342, 3350) |
+| **3 · Dron sobre la calle** *(lo que Eduardo imaginó)* | Vista tipo dron que **sigue la calle** por donde se caminó, sube un poco y avanza hasta la fachada; después corta al video real a pie. Se genera con IA a partir de fotos reales de la calle (3341, 3345, 3351, 3352) | "Mira Guatire desde arriba: casco central, comercios, transporte… y allá, entre tantas casas, una propiedad que puede ser lo que tú imagines." | IA ilustrativa (rótulo) + REAL |
+
+*Honestidad:* en las opciones 1 y 3 los edificios y calles que no se filmaron los inventa la IA; por eso va el rótulo "Imagen ilustrativa con IA". Con un **dron real** (cuando lo compres) la opción 3 se regraba de verdad.
 
 ## Análisis
 
@@ -50,16 +62,14 @@ Cada rubro usa **5 espacios** de esa ruta, **siempre en el mismo orden**, y el m
 
 | Tiempo | Plano y cámara | Voz en off (Eduardo) | Texto en pantalla | Origen y archivo |
 |---|---|---|---|---|
-| 0–7 | **Caída desde el espacio**: estrellas, Tierra, nubes, costa y cordillera, valle de Guatire; aterriza en la calle | "Imagina caer desde el cielo… atravesar las nubes… y aterrizar en un punto exacto de Venezuela. Guatire." | `Imagen ilustrativa con IA` | IA · último fotograma = calle (3350) |
-| 7–19 | **Calle y alrededores**: recorrido caminando, y un giro de 360° en la esquina | "Casco central. Comercios, transporte, gente que va y viene… y en medio de todo ese movimiento, una propiedad que puede ser lo que tú imagines." | `GUATIRE · CASCO CENTRAL` | REAL · 3342 (0:40, 1:48), 3350 (0:05–0:35) |
-| 19–26 | **Llega a la fachada** y **paneo 360** al atardecer | "Calle Miranda, número 51. Tres niveles, dos estacionamientos y una terraza con vista a la cordillera." | `CALLE MIRANDA 51` + `Imagen ilustrativa con IA` | REAL → IA · 1881, 3339, 3335, 3336 |
-| 26–30 | **HOY**: fachada y un destello del interior, frío y apagado | "Hoy es una casa. Mira lo que podría llegar a ser." | `HOY` | REAL · 1881, sala 1860, cocina 1835 |
+| 0–20 | **APERTURA A ELEGIR** (ver las 3 opciones abajo): llega a la calle del casco central de Guatire y camina hasta la propiedad | Opción 1: "Imagina caer desde el cielo… atravesar las nubes… y aterrizar en un punto exacto de Venezuela. Guatire. Casco central: comercios, transporte, gente que va y viene… y en medio de todo ese movimiento, una propiedad que puede ser lo que tú imagines." *(los textos de las otras opciones, abajo)* | `GUATIRE · CASCO CENTRAL` | según la opción |
+| 20–30 | **Paneo rápido de la fachada tal como está hoy** (360° corto), color frío y apagado: "HOY" | "Calle Miranda, número 51. Tres niveles, dos estacionamientos y una terraza con vista a la cordillera. Hoy es una casa. Mira lo que podría llegar a ser." | `CALLE MIRANDA 51` · `HOY` · rótulo IA donde haya IA | REAL → IA · 1881, 3339, 3335, 3336 (órbita ±35° o dron real) |
 | 30–36 | **FACHADA → RESTAURANTE:** obra rápida, planta baja convertida en acceso del restaurante, terraza con luces cálidas | "Primero, un restaurante gastronómico." | `1 · RESTAURANTE GASTRONÓMICO` + rótulo IA | IA · render desde 1881 |
 | 36–52 | **INTERIOR restaurante (5 tomas × 3 s):** sala comedor → **cocina profesional** → **gran salón** (comedor) → **patio** (cenar al aire libre) → **terraza** (lounge) | "Una sala comedor con carácter, una cocina de alto nivel, el gran salón para el servicio, un patio para cenar al aire libre… y arriba, la terraza." | rótulo IA | IA · desde 1863, 1835, 1837, 1843, 1816 |
 | 52–58 | **FACHADA:** **se quita todo el restaurante** y se monta el **CONCESIONARIO**: vitrina de cristal en el porche, portón abierto | "Ahora quitamos el restaurante… y montamos un concesionario de motos." | `2 · CONCESIONARIO DE MOTOS` + rótulo IA | IA · transición render 1 → render 2 |
 | 58–74 | **INTERIOR concesionario (5 × 3 s):** **estacionamiento y porche** (exhibición) → sala pequeña (recepción) → **gran salón** (showroom) → **patio** (entrega) → **fondo** (taller) | "Exhibición en el estacionamiento, un showroom en el gran salón, un patio para entregas y un taller al fondo. Y en esta zona, las motos se ven por todas partes." | rótulo IA | IA · desde 1882, 1860, 1837, 1843, 1848 |
 | 74–80 | **FACHADA:** se desmonta el concesionario y se monta el **COWORKING + ESTUDIO**: blanco, negro y vidrio | "Cambiamos otra vez: un coworking con estudio de fotografía y video." | `3 · COWORKING + ESTUDIO` + rótulo IA | IA · render 2 → render 3 |
-| 80–96 | **INTERIOR coworking (5 × 3 s):** recepción (sala comedor) → **gran salón** (estudio con fondo infinito y luces) → **escalera → segundo piso** (salas de estar como coworking) → **cuartos** (salas de reunión) → **terraza** (set de grabación) | "Recepción, un gran salón convertido en estudio, salas de estar para trabajar, cuartos para reuniones… y la terraza como locación." | rótulo IA | IA · desde 1863, 1839, 1864, 1804, 1814 |
+| 80–96 | **INTERIOR coworking (5 × 3 s):** recepción (sala comedor) → **gran salón** (estudio con fondo infinito y luces) → **escalera → segundo piso** → **cuarto trasero** (sala de reuniones) → **se abre la puerta y aparece el balcón-salón de techo de madera** (coworking con vista) | "Recepción, un gran salón convertido en estudio… y arriba, un cuarto con un secreto: abres la puerta y aparece un salón de techo de madera para trabajar." | rótulo IA | IA · desde 1863, 1839, 1864, `Cuarto_2_with_terraza` (0:05 y 0:20), 1768 |
 | 96–102 | **FACHADA:** se desmonta el coworking y se monta el **SPA**: tonos cálidos, madera clara, plantas | "Y por último, un spa." | `4 · SPA` + rótulo IA | IA · render 3 → render 4 |
 | 102–118 | **INTERIOR spa (5 × 3 s):** cuarto del pasillo (cabina) → **baño** de spa → **patio** (jardín de relajación) → **segundo piso** (cabinas) → **terraza** (relax al atardecer) | "Cabinas para desconectar, baños de relajación, un patio convertido en jardín… y la terraza para ver el atardecer sobre la cordillera." | rótulo IA | IA · desde 1804, 1808, 1843, 1805, 1816 |
 | 118–130 | **Vuelve a lo real**: patio real, terraza real con la cordillera y la fachada real (IMG_1881) | "Una propiedad. Cuatro posibilidades. Tú decides cuál. Uso residencial y comercial, verificable; sujeto a permisos y factibilidad. USD 120.000. Ven a verla." | `USD 120.000` + `Escríbeme por WhatsApp` + logo | REAL · 1843, "TERRAZA", 1881 |
@@ -87,7 +97,7 @@ Visuales: caída (3 s) + las 4 **fachadas** transformándose una detrás de otra
 
 ## Producción en Higgsfield (**no ejecutada**; con los bloques de `higgsfield-calidad.md`)
 
-**Qué hay que generar (si se hace todo):** **24 imágenes** (4 fachadas + 5 espacios × 4 rubros) y **≈27 clips cortos** (caída, paneo, 1 transición real → restaurante, 3 transiciones fachada rubro → rubro, 20 tomas interiores de 3 s). **Plan por etapas** para controlar créditos: 1) probar **una sola cadena**: restaurante (1 fachada + 5 interiores) y mostrártela; 2) con tu visto bueno, seguir con el concesionario, el coworking y el spa; 3) caída y paneo al final. Cada etapa: costo antes, "dale" después.
+**Qué hay que generar (si se hace todo):** **24 imágenes** (4 fachadas + 5 espacios × 4 rubros) y **≈27 clips cortos** (apertura, paneo, 4 transiciones de fachada —real → restaurante y luego rubro → rubro— y 20 tomas interiores de 3–5 s). **Plan por etapas** para controlar créditos: 1) probar **una sola cadena**: restaurante (1 fachada + 5 interiores) y mostrártela; 2) con tu visto bueno, seguir con el concesionario, el coworking y el spa; 3) caída y paneo al final. Cada etapa: costo antes, "dale" después.
 
 **Fotos de referencia reales:** fachada **1881** (maestra) y 3339 · acceso/estacionamiento **1882, 1884** · salas **1860, 1863** · escalera **1864** · cocina **1835** · gran salón **1837, 1839** · patio **1843** · fondo **1848** · cuarto **1804** · baño **1808** · balcón **1801** · terraza **1814, 1816**.
 
@@ -105,21 +115,21 @@ Visuales: caída (3 s) + las 4 **fachadas** transformándose una detrás de otra
 **Plantilla de prompt (imagen):**
 `[BLOQUE DE FIDELIDAD] + Edit this exact photo of the [espacio]: keep all walls, ceiling, windows, doors, stairs, columns, floor pattern and proportions unchanged; convert only the finishes, furniture and lighting into [descripción de la tabla]; same camera angle, photorealistic, no people, no readable text or brand names. + [BLOQUE DE CALIDAD Y LUZ]`
 
-### Paso 2 · Transiciones (video; **Seedance 2.5**, imagen inicial y final; borrador 480p antes del final)
+### Paso 2 · Transiciones (video; **Kling v3.0 pro**, imagen inicial y final, 5 s, ≈ 8,75 créditos c/u; plan B: Seedance 2.5 con borrador a 480p)
 - **Real → rubro 1** (fachada 1881 → render restaurante) y, en cada espacio, **real → restaurante**.
 - **Rubro N → rubro N+1** (la cadena): imagen inicial = render del rubro anterior, final = render del siguiente.
 `Dismantle and remove the previous fit-out (signage, glass front, furniture, equipment), scaffolding appears, surfaces are repainted, the new fit-out is installed piece by piece, lights switch on, ending exactly on the end image; only materials, scaffolding and tools visible, no people, no faces; same camera angle; smooth, realistic time-lapse.` (+ bloque de calidad)
 
-### Paso 3 · Caída (video; Veo 3.1 ultra, imagen final = calle 3350 al atardecer) y paneo 360 (Veo 3.1 ultra, órbita ±35° desde 1881/3339/3335/3336)
+### Paso 3 · Caída y paneo (video; primero **Veo 3.1 rápido ≈ 32 créditos** para probar, y **Veo 3.1 ultra ≈ 120** solo para la versión final; imagen final de la caída = calle 3350; paneo con órbita ±35° desde 1881/3339/3335/3336)
 `Cinematic descent from outer space: stars, curvature of the Earth, clouds, the Caribbean coast of Venezuela, the coastal mountain range, a valley with a town, ending in a slow stop on the exact reference street; fast descent with slight shake, then a smooth stop; vertical 9:16.`
 `Slow cinematic drone orbit starting at the front of the building and rotating up to 35 degrees each side while rising slightly, warm golden-hour light, keep the exact facade, terrace, neighbors and street from the references; do not invent unseen sides.`
 
 **Revisión:** cada render se compara con la foto real (niveles, terraza, puertas del porche, ventanas, vecinos). Se rechaza si cambia la estructura.
 
 ## Qué necesito de Eduardo
-1. **¿Se queda la caída del cielo** al inicio (7 s) o empezamos directo en la calle?
-2. **Orden de los rubros:** restaurante → concesionario → coworking/estudio → spa. ¿Ok?
-3. **Visto bueno** al guion A y a probar primero la cadena del restaurante.
+1. **¿Qué apertura?** (las 3 opciones de arriba).
+2. **Orden de los rubros:** restaurante → concesionario → coworking/estudio → spa. ¿Ok? (si no dices nada, queda así)
+3. **Visto bueno** al guion A y tu «dale» para probar la primera cadena (restaurante). El costo estimado está en `higgsfield-calidad.md`.
 
 ## Caption (Instagram)
 *"Una casa. Cuatro vidas. Caemos hasta el casco central de Guatire y vemos lo que esta propiedad podría ser: restaurante gastronómico, concesionario de motos, coworking con estudio de fotografía y video, o spa. 419 m² de construcción sobre 295 m² de terreno, dos estacionamientos y una terraza con vista a la cordillera. Las transformaciones son recreaciones con IA; no son un proyecto aprobado y todo cambio está sujeto a permisos, uso conforme y estudio estructural. USD 120.000. ¿Cuál harías tú? Escríbeme por WhatsApp."*
