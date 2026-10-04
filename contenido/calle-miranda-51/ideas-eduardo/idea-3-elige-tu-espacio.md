@@ -88,7 +88,7 @@ Se guarda como Destacado "Calle Miranda 51". Quien responda, recibe el siguiente
 4. **Mosaicos y rótulos:** se hacen en CapCut o Canva, no en Higgsfield, para que los números queden exactos.
 
 ## Qué necesito
-1. La palabra clave final (propuesta: **CASA**). (Los clips de cocina, patio, cuartos y el croquis **ya llegaron**.)
+1. ~~La palabra clave~~ **aprobada por Eduardo (04-10): CASA.**
 2. Nada pendiente de datos: **2 carros, 6 cuartos y 4 baños** ya están confirmados.
 3. Aprobar **qué es privado** y **cómo respondes** (a mano o con apoyo del asistente de WhatsApp más adelante).
 4. Un **número de WhatsApp** y horario para agendar visitas.

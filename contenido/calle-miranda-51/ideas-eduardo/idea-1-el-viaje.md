@@ -4,6 +4,8 @@
 **Calidad y reglas de prompts:** `higgsfield-calidad.md`.
 
 ## Lo que pidió Eduardo
+**Apertura decidida (04-10): caída desde el universo, como en Google Earth, "buscando la calle" y cayendo hasta ella; al caer, un paneo 360 de la propiedad.**
+
 Recorrido de la calle (a pie o en carro) → llegada → **paneo 360 por fuera** → un **dron entra** y recorre toda la propiedad por dentro → **sale por la terraza** → **"alumbra": un atardecer** de calidad, **cálido, natural, humanizado, que no se vea ficticio**. El paneo 360 puede ir **al principio** o el atardecer **al final** (o ambos). Todo con IA lo mejor posible por ahora y **con dron real cuando lo compre**, sin cambiar la estructura de la casa.
 
 ## Análisis
@@ -35,9 +37,8 @@ Se descarta el "atardecer de postal" saturado: se busca **luz de 17:30–18:00 c
 
 | Tiempo | Plano y cámara | Voz en off (Eduardo) | Texto en pantalla | Origen y archivo |
 |---|---|---|---|---|
-| 0–8 | Camina por la acera comercial, cámara a la altura del pecho; speed ramp al empezar | "Todo empieza en la calle. Casco central de Guatire: comercios, transporte y mucha gente que va y viene." | `GUATIRE · CASCO CENTRAL` | REAL · 3342 (0:40), 3350 (0:05–0:12) |
-| 8–13 | La calle sube hacia la casa; entra la terraza verde al fondo (revelación) | "Y en medio de todo ese movimiento… aparece ella." | | REAL · 3350 (0:23–0:40) |
-| 13–23 | **Paneo 360** con luz de atardecer, cámara orbitando y subiendo un poco | "Calle Miranda, número 51. Tres niveles, dos estacionamientos y una terraza con la cordillera de frente." | `CALLE MIRANDA 51` + `Imagen ilustrativa con IA` | IA · fotos 1881, 3339, 3335, 3336 |
+| 0–10 | **Caída tipo Google Earth:** del espacio al globo, a Venezuela, a Miranda, a Guatire; "buscando la calle": aparece el **pin** y el nombre, y la cámara **cae hasta la calle** | "Imagina caer desde el cielo… cruzar las nubes… buscar en el mapa un punto exacto de Venezuela. Guatire. Calle Miranda." | rótulos que van apareciendo: `VENEZUELA › MIRANDA › GUATIRE › CALLE MIRANDA 51` + `Imagen ilustrativa con IA` | IA · última imagen = la calle (3350) |
+| 10–23 | **Paneo 360 de la propiedad** al atardecer, cálido y natural: empieza mirando la calle y los comercios de alrededor y termina frente a la fachada | "Casco central, comercios y movimiento por todos lados… y en el medio, una propiedad de tres niveles, con dos estacionamientos y una terraza con la cordillera de frente." | `CALLE MIRANDA 51` | IA (órbita ±35° o dron real) · fotos 1881, 3339, 3335, 3336; el inicio puede usar la calle real 3350/3342 |
 | 23–29 | **El "dron" entra** por el porche: techo de madera, mosaico, rejas; a un lado el estacionamiento | "Entramos por el porche. Aquí caben dos carros." *(1 s de silencio)* | `Estacionamiento · 2 carros` | REAL · 1871, 1872, 1882, 1883 |
 | 29–35 | **Entrada:** pequeña sala y la **escalera** al fondo, lámparas encendidas | "Una sala de entrada, y desde aquí, la escalera que sube." | | REAL · 1868, 1869 |
 | 35–41 | **Sala tipo comedor** y el **pasillo** (cuarto a un lado; baño al final) | "Una sala comedor… y un pasillo con un cuarto y un baño." | | REAL · 1860, 1863, 1826 (inicio) |
@@ -66,15 +67,18 @@ Apertura con el **paneo 360 al atardecer**; después la voz dice "ahora te llevo
 
 **Modelos:** tomas héroe con **Veo 3.1 (ultra)**; si el movimiento no queda fiel, **Kling v3.0 4K**. Mejora de clips reales con `upscale_video`.
 
-1. **Paneo 360 al atardecer (referencias: 3339, 3335, 3336)**
+1. **Caída tipo Google Earth (apertura; referencia final: foto de la calle 3350)** — probar con Veo 3.1 rápido
+   `Google Earth style zoom from outer space: stars, the curvature of the Earth at night turning to day, clouds, the Caribbean coast of Venezuela, the coastal mountain range, a valley and a town, then a rapid descent searching for one specific narrow street and landing at street level on the exact reference street; smooth continuous camera, a small location pin appears near the end, no text, no labels; vertical 9:16.`
+   *(Los nombres —Venezuela, Miranda, Guatire, Calle Miranda 51— y el pin se agregan en edición para que queden bien escritos; la IA no escribe bien las letras.)*
+2. **Paneo 360 al atardecer (referencias: 3339, 3335, 3336)**
    `Slow cinematic drone orbit starting at the front of the building and rotating up to 35 degrees to each side while rising slightly, warm golden-hour sunlight from the left casting soft long shadows, keep the exact facade, green terrace roof, neighboring buildings and street from the references; do not invent unseen sides; vertical 9:16.`
-2. **El "dron" entra al porche (referencia: fotograma 3343 en 0:05)**
+3. **El "dron" entra al porche (referencia: fotograma 3343 en 0:05)**
    `Smooth FPV drone-style forward glide into the covered porch, keep the wooden ceiling, tile floor, door and iron bars exactly as in the reference, soft warm light.`
-3. **Vuelo interior (referencias: IMG_1769 → cocina → IMG_1773)**
+4. **Vuelo interior (referencias: IMG_1769 → cocina → IMG_1773)**
    `Smooth drone-style forward glide through the room, gentle turn toward the next doorway, keep every wall, ceiling beam, window and floor pattern identical to the reference, warm natural light.`
-4. **Elevación final sobre la terraza (referencia: IMG_1753)**
+5. **Elevación final sobre la terraza (referencia: IMG_1753)**
    `Camera glides out onto the covered rooftop terrace and rises above the green roof toward the sky, the mountain range and town in the background in warm golden-hour light, keep the terrace layout, roof and railing identical to the reference.`
-5. **Alternativa "de noche con luces" (referencia 3339):** `Blue-hour version of the same facade with warm lights on in the windows and porch, keep the building identical.` *(por si prefieres cerrar de noche)*
+6. **Alternativa "de noche con luces" (referencia 3339):** `Blue-hour version of the same facade with warm lights on in the windows and porch, keep the building identical.` *(por si prefieres cerrar de noche)*
 
 ## Etalonaje real (en edición, sin IA)
 Aplicar el **mismo grado cálido** (temperatura +, contraste suave, sombras con un toque azul) a los clips reales. Es lo que une lo real con lo generado.

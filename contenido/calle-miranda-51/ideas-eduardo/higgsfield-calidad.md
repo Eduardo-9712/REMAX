@@ -18,11 +18,19 @@ El costo se consultó con la opción de "cotizar sin enviar" de Higgsfield. **Sa
 
 **Cómo gastar bien:** las transiciones y los interiores se hacen con **Kling pro** (baratísimo). Las tomas héroe se **prueban primero con Veo 3.1 rápido (32)** y solo se **repiten en ultra (120)** las 2 o 3 que de verdad lo merecen. Seedance queda como plan B y para los **borradores a 480p**.
 
+### Primera prueba recomendada (cuando Eduardo diga «dale»): la **prueba mínima de fidelidad**
+Antes de gastar en serio, se hace **una sola cosa** que responde a la duda más importante: **¿la IA respeta la estructura de la casa y la obra se ve bien?**
+1. **1 render** de la fachada real (IMG_1881) convertida en el **restaurante gastronómico** (Nano Banana Pro 4K): **4 créditos**.
+2. **1 transición** de la fachada real al render, con la obra en timelapse (Kling v3.0 pro, 5 s): **8,75 créditos**.
+**Total: ≈ 13 créditos.** Te muestro el resultado y comparamos con la foto real. Si respeta los 3 niveles, la terraza de techo verde, el porche con sus dos puertas y los vecinos, seguimos con la apertura (Etapa 0) y la cadena. Si no, ajustamos el prompt antes de gastar más.
+
 ### Plan de créditos (aproximado, con ≈30 % de margen para repetir tomas)
 
 | Etapa | Qué se genera | Créditos |
 |---|---|---|
-| **A · Prueba de la cadena del restaurante** (idea 2) | 6 renders (4K) + 6 transiciones (Kling pro) | **≈ 77** (+ margen ≈ 100) |
+| **0 · Prueba mínima de fidelidad** | 1 render + 1 transición (restaurante) | **≈ 13** |
+| **0b · Apertura Google Earth + paneo 360** (la misma para las ideas 1 y 2) | caída y paneo con Veo 3.1 rápido (probar) | **≈ 64** |
+| **A · Cadena completa del restaurante** (idea 2) | 6 renders (4K) + 6 transiciones (Kling pro) | **≈ 77** (+ margen ≈ 100) |
 | **B · Concesionario, coworking y spa** | 18 renders + 18 transiciones | **≈ 230** (+ margen ≈ 300) |
 | **C · Apertura y paneo** (idea 2 y 1) | 2 tomas héroe: pruebas en Veo rápido (64) + 2 finales en ultra (240) | **≈ 64 a 304** |
 | **D · Idea 1** (calle → atardecer final) | porche "dron" (Kling 8,75) + elevación final (Veo ultra 120) + reutiliza el paneo | **≈ 150** |

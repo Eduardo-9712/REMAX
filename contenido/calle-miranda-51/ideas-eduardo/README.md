@@ -25,22 +25,33 @@ Cada archivo trae: análisis, **guion principal con la voz en off palabra por pa
 - **Idea 2 = cadena** (fachada → interior → fachada…), con **apertura a elegir** (caída del cielo + calle real, calle real, o dron sobre la calle). **Mismo patrón y misma ruta real** en las otras ideas.
 - **Idea 4:** primero se diseña la **versión B (con IA)**; si el primo autoriza, después se graba la **versión A**.
 
+## Decisiones de Eduardo (04-10)
+- **Apertura de la idea 1 (y de la 2):** caída desde el universo **como en Google Earth, "buscando la calle"**, cae en la calle y de ahí un **paneo 360 de la propiedad**. Se genera **una sola vez** y sirve para las dos ideas. (Los nombres y el pin se ponen en edición.)
+- **Palabra clave de la idea 3: CASA** ✅.
+- **Todavía no se genera nada.** Eduardo avisa cuándo dar el «dale» para la primera prueba.
+
+## Mi recomendación: qué probar primero y qué publicar primero
+
+**1. Para probar primero en Higgsfield: la idea 2 (la cadena), empezando por una prueba mínima de ≈ 13 créditos.** Es la más arriesgada y la que más sirve a las demás (sus renders alimentan la idea 4 y su apertura sirve a la idea 1). Si la IA respeta la estructura de la casa, el resto sale casi seguro. Si no, lo sabemos gastando 13 y no 500.
+
+**2. Para publicar primero esta semana (tener contenido ya): la idea 3 (interactivo) y la idea 1.** Casi todo es **material real**: no dependen de las pruebas de IA, solo de tu voz y de la edición. Orden de publicación sugerido: **idea 3** (reel gancho + Stories con quiz; gasta 0 créditos si se hace con material real) → **idea 1** → **idea 2** (cuando esté lista) → **idea 4**.
+
 ## Pendiente de Eduardo (muy poco)
-1. **Elegir la apertura de la idea 2:** 1 (caída + calle real, recomendada), 2 (calle real) o 3 (dron sobre la calle).
-2. **Tu «dale»** para la primera prueba en Higgsfield: la cadena del restaurante (**≈ 77 créditos**).
-3. **Primo/motorizado:** autorización y fecha (se puede dejar para después).
-4. **Palabra clave** de la idea 3 (propuesta: CASA) y qué es público y qué privado.
-5. Si vas a **grabar tu voz**: cuando apruebes cada guion te paso los textos limpios.
+1. **Revisar el PDF** (cuando puedas) y marcar lo que cambie.
+2. **Tu «dale»** para la **prueba mínima de fidelidad** (≈ 13 créditos). El resto, por etapas.
+3. **Idea 2:** ¿usamos la **misma apertura** de la idea 1 (la caída Google Earth)? *(Si no dices nada, queda así.)*
+4. **Primo/motorizado:** autorización y fecha (se puede dejar para después).
+5. Cuando apruebes cada guion: te paso los **textos limpios** para grabar tu voz.
 
 ## Plan para esta semana (propuesto)
 | Día | Qué se hace | Créditos |
 |---|---|---|
-| **1** | **Etapa A:** cadena del restaurante (idea 2): te la muestro y la corriges | ≈ 77 |
-| **2** | **Etapa B:** concesionario, coworking y spa | ≈ 230 |
-| **3** | **Etapa C:** apertura y paneo; armo la idea 2 completa para tu edición | ≈ 64–304 |
-| **4** | **Idea 1** (calle → atardecer final) con tu recorrido real | ≈ 150 |
-| **5** | **Idea 3** (interactivo) y **Idea 4 versión B** | ≈ 110 |
-Tú: grabas la voz en off de cada idea cuando te entregue los textos y editas con los clips. **Nada se genera sin tu «dale» por etapa.**
+| **1** | **Etapa 0:** prueba mínima de fidelidad. En paralelo, **idea 3**: textos de voz en off y piezas (reel gancho y Stories) con material real | ≈ 13 |
+| **2** | **Etapa 0b:** apertura Google Earth + paneo 360. Publicas la idea 3 | ≈ 64 |
+| **3** | **Etapa A:** cadena del restaurante | ≈ 77 |
+| **4** | **Etapa B:** concesionario, coworking y spa. Publicas la idea 1 (real + apertura) | ≈ 230 |
+| **5** | **Idea 2 completa** armada; **idea 4 versión B** | ≈ 100 |
+Tú: grabas la voz en off cuando te entregue los textos y editas con los clips. **Nada se genera sin tu «dale» por etapa.**
 
 ## Reglas de las 4 ideas
 - Cada toma marcada **REAL** o **IA**. Rótulos: **"Recreación con IA · No es un proyecto aprobado"** (transformaciones) y **"Imagen ilustrativa con IA"** (aéreas y caída).

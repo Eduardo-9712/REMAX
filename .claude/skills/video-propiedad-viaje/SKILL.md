@@ -19,7 +19,7 @@ description: Idea "El viaje": recorrido de la calle a la propiedad, paneo 360 c�
 - Entregar: guion principal (tabla Tiempo | Plano y cámara | Voz en off | Texto en pantalla | Origen y archivo) + 2 variantes, prompts sin ejecutar, qué se necesita, caption y hashtags. Guardar en `contenido/<propiedad>/ideas-eduardo/`. Ejemplo completo: `contenido/calle-miranda-51/ideas-eduardo/`.
 
 ## Estructura (≈65 s; variantes de 45 y 40 s)
-Calle (a pie o en carro) → llegada y revelación de la fachada → **paneo 360 con luz de atardecer** → el "dron" entra por el porche y vuela por salón, cocina, escalera, cuartos y patio → sube a la terraza → elevación sobre el techo verde con **atardecer cálido, natural y humano, que no se vea ficticio**. Variante con el paneo cálido como apertura.
+**Apertura decidida por Eduardo: caída desde el universo tipo Google Earth "buscando la calle" (pin y nombres en edición) → cae en la calle → paneo 360 de la propiedad con luz de atardecer** (la misma apertura de la idea 2, se genera una sola vez) → el "dron" entra por el porche y vuela por salón, cocina, escalera, cuartos y patio → sube a la terraza → elevación sobre el techo verde con **atardecer cálido, natural y humano, que no se vea ficticio**. Variante con el paneo cálido como apertura.
 
 ## Cómo se logra el atardecer natural (3 capas)
 1) **Etalonaje real** (grado cálido uniforme en todos los clips reales). 2) IA solo en tomas héroe (Veo 3.1 ultra; Kling 4K como plan B) con luz de 17:30–18:00, sombras largas suaves y grano fino. 3) Mismo ángulo de sol y color de cielo en IA y real.

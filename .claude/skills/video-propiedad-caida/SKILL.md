@@ -19,7 +19,7 @@ description: Idea "Caída y transformación": caída desde el espacio hasta la p
 - Entregar: guion principal (tabla Tiempo | Plano y cámara | Voz en off | Texto en pantalla | Origen y archivo) + 2 variantes, prompts sin ejecutar, qué se necesita, caption y hashtags. Guardar en `contenido/<propiedad>/ideas-eduardo/`. Ejemplo completo: `contenido/calle-miranda-51/ideas-eduardo/`.
 
 ## Estructura (≈130 s; cortes de 60 s y de 30 s): CADENA
-**Apertura a elegir (20 s):** 1) caída del espacio + calle real, 2) calle real directa, o 3) vista tipo dron que sigue la calle (IA, rotulada) → llegada y **paneo rápido de la fachada tal como está hoy** ("HOY", frío) → **cadena de rubros, uno a la vez**:
+**Apertura a elegir (20 s):** 1) caída tipo Google Earth buscando la calle + paneo 360 (la misma de la idea 1; recomendada), 2) calle real directa, o 3) vista tipo dron que sigue la calle (IA, rotulada) → llegada y **paneo rápido de la fachada tal como está hoy** ("HOY", frío) → **cadena de rubros, uno a la vez**:
 `FACHADA se reconstruye al rubro (se quita lo del rubro anterior) → INTERIOR en 5 tomas de 3 s siguiendo la ruta real de la casa (obra → reveal) → vuelve a la FACHADA y monta el siguiente` → cierre en lo real (patio, terraza, fachada sin carro, precio).
 Rubros decididos por Eduardo, en este orden: **restaurante gastronómico** (cocina de madera, gran salón, patio, terraza), **concesionario de motos** (estacionamiento y porche, gran salón, patio, fondo; se ven muchas motos en la calle, sin afirmar demanda), **coworking + estudio de fotografía y video** (juntos), **spa** (cuartos, baños, patio, terraza).
 La misma **ruta real y el mismo patrón** se usan en los recorridos de las otras ideas. La ruta está en `material.md`.

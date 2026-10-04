@@ -160,6 +160,7 @@ estilos o ideas que funcionen, se anotan aquí.
   **Revisión completa del Drive el 03-10-2026** (149 archivos + croquis): el inventario por espacio y el croquis están en `material.md`
   (2 estacionamientos, 6 cuartos y 4 baños, confirmados). **Ojo:** la vista normal de una carpeta de Drive solo muestra 50 archivos; usar `embeddedfolderview`.
   **Confirmado por Eduardo (03-10):** 2 estacionamientos, 6 cuartos (2 abajo, 4 arriba), 4 baños, lavandería, patio entre la casa y el cuarto de servicio, cocina de madera, 2 balcones, terraza en el tercer piso; coordenadas 10°28'08.2"N 66°32'30.2"W (10,468938; −66,541720). Fachada sin carro: IMG_1881. **Idea 2 = cadena** (fachada → interior → fachada, una transformación a la vez) y la misma ruta real en todos los recorridos. El salón de techo de madera es un balcón-salón del 2.º piso al que solo se entra por el cuarto trasero. Costos de Higgsfield consultados sin gastar (imagen 4, Kling pro 8,75 por clip, Veo ultra 120; saldo 801): plan por etapas en `higgsfield-calidad.md`.
+  **Decisiones 04-10:** apertura de las ideas 1 y 2 = caída tipo Google Earth buscando la calle + paneo 360; palabra clave de la idea 3 = CASA; todavía no se genera nada (Eduardo avisa el «dale»; prueba mínima de fidelidad ≈ 13 créditos). Recomendación: probar primero la idea 2 y publicar primero las ideas 3 y 1 (casi todo real).
   PDF para revisar todo junto: `contenido/calle-miranda-51/Calle-Miranda-51_Ideas-Guiones-Prompts-Skills.pdf`. Pendiente: que Eduardo apruebe, grabar las tomas y dar el "dale" para Higgsfield.
 
 ## Cómo trabajamos
