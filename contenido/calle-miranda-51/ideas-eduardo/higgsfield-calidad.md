@@ -24,11 +24,15 @@ Antes de gastar en serio, se hace **una sola cosa** que responde a la duda más 
 2. **1 transición** de la fachada real al render, con la obra en timelapse (Kling v3.0 pro, 5 s): **8,75 créditos**.
 **Total: ≈ 13 créditos.** Te muestro el resultado y comparamos con la foto real. Si respeta los 3 niveles, la terraza de techo verde, el porche con sus dos puertas y los vecinos, seguimos con la apertura (Etapa 0) y la cadena. Si no, ajustamos el prompt antes de gastar más.
 
+### Resultado de la prueba mínima (04-10-2026): **funcionó**
+Se gastaron **25,5 créditos** (2 renders + 2 intentos de transición); saldo **775,5**. La IA **respetó la estructura** (3 niveles, terraza de techo verde, ventanas, tejas, vecino) y la transición con **malla verde de seguridad** quedó limpia. Detalle completo y archivos: `../prueba-higgsfield/LEEME.md`.
+**Costo real por pieza confirmado:** render 4K = 4 créditos; transición Kling pro 5 s = 8,75. **Receta que funciona:** foto recortada a 9:16 + una vista despejada del porche como segunda referencia; en el video, obra paso a paso con "sin tablas, sin derretidos, sin parpadeos".
+
 ### Plan de créditos (aproximado, con ≈30 % de margen para repetir tomas)
 
 | Etapa | Qué se genera | Créditos |
 |---|---|---|
-| **0 · Prueba mínima de fidelidad** | 1 render + 1 transición (restaurante) | **≈ 13** |
+| **0 · Prueba mínima de fidelidad** ✅ *(hecha el 04-10)* | 2 renders + 2 transiciones (restaurante) | **25,5 gastados** |
 | **0b · Apertura Google Earth + paneo 360** (la misma para las ideas 1 y 2) | caída y paneo con Veo 3.1 rápido (probar) | **≈ 64** |
 | **A · Cadena completa del restaurante** (idea 2) | 6 renders (4K) + 6 transiciones (Kling pro) | **≈ 77** (+ margen ≈ 100) |
 | **B · Concesionario, coworking y spa** | 18 renders + 18 transiciones | **≈ 230** (+ margen ≈ 300) |

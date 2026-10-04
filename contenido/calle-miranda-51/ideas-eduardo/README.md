@@ -25,6 +25,9 @@ Cada archivo trae: análisis, **guion principal con la voz en off palabra por pa
 - **Idea 2 = cadena** (fachada → interior → fachada…), con **apertura a elegir** (caída del cielo + calle real, calle real, o dron sobre la calle). **Mismo patrón y misma ruta real** en las otras ideas.
 - **Idea 4:** primero se diseña la **versión B (con IA)**; si el primo autoriza, después se graba la **versión A**.
 
+## ✅ Prueba mínima hecha (04-10): funcionó
+Resultado, archivos y lo aprendido en `../prueba-higgsfield/` (render A, render B de reserva, antes/después, tablero y video de la transición). **Gasto: 25,5 créditos; saldo 775,5.** Siguiente paso, cuando Eduardo diga «dale»: la **apertura Google Earth + paneo 360** (≈ 64) o seguir la **cadena** del restaurante por dentro.
+
 ## Decisiones de Eduardo (04-10)
 - **Apertura de la idea 1 (y de la 2):** caída desde el universo **como en Google Earth, "buscando la calle"**, cae en la calle y de ahí un **paneo 360 de la propiedad**. Se genera **una sola vez** y sirve para las dos ideas. (Los nombres y el pin se ponen en edición.)
 - **Palabra clave de la idea 3: CASA** ✅.
