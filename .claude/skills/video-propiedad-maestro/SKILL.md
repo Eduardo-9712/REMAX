@@ -9,11 +9,19 @@ Responde en español, tono de amigo, a Eduardo. Reglas del CLAUDE.md: **no inven
 
 ## REGLA MAESTRA DE REMODELACIÓN (decidida por Eduardo el 05-10-2026; aplica a TODAS las remodelaciones)
 1. **Se genera LARGO y se publica a 2×:** fachada **10 s → 5 s**; interiores **5 s → 2,5 s** (más dramático: 1,5×). Se acelera en la edición (CapCut: flujo óptico/mezcla de cuadros y desenfoque de movimiento).
-2. **Obreros visibles:** 3–4 en la fachada y 2 por interior, con **casco, chaleco reflectivo y overol**, en plano medio o general, **de espaldas o de perfil, sin rostros nítidos**, sin logos ni texto; trabajan de verdad (pintan, instalan vidrios y puertas, sueldan con chispas, arman andamio, cargan materiales, colocan plantas). Son ficción de IA, genéricos.
+2. **Obreros visibles:** **10 en cada fachada** (decisión de Eduardo, 05-10) y **4 por interior** (por confirmar), con **casco, chaleco reflectivo y overol**, en plano medio o general, **de espaldas o de perfil, sin rostros nítidos**, sin logos ni texto; trabajan de verdad (pintan, instalan vidrios y puertas, sueldan con chispas, arman andamio, cargan materiales, colocan plantas). Son ficción de IA, genéricos.
 3. **Secuencia:** desmontan lo anterior → andamio con **malla verde de seguridad** → trabajos → retiran la malla → remates (plantas y luces) → **reveal** con barrido de luz.
 4. **Estructura intacta:** no se cambia el volumen ni la distribución; solo acabados, vidrio, mobiliario, luz y función. Eduardo permite ser **creativo** (estacionamiento, plantas, luces, detalles premium) siempre **acorde a la estructura**.
 5. **Cámara fija (trípode)** para que inicio y final calcen. **Sonido en edición** (martillo, taladro, soldadura, radio de obra, *whoosh* al revelar).
 6. **Rótulo siempre:** "Recreación con IA · No es un proyecto aprobado" (y "Imagen ilustrativa con IA" en aéreas y caída).
+
+## Extras decididos por Eduardo (05-10) para los videos de transformación
+- **Camión de materiales y hormigonera solo en la primera fachada**; en las demás, solo obreros.
+- **Letrero en blanco** (el nombre del rubro lo escribe Eduardo en edición), **chispas y pintura** en la obra.
+- **Reveal con "inauguración"** (luces y siluetas lejanas de gente, sin rostros), al menos en restaurante y concesionario.
+- **Plano animado con el croquis real**, **cifras reales en pantalla** (419,86 m² · 295,41 m² · 6 cuartos · 4 baños · 2 estacionamientos; precio en el cierre), **sonido por rubro** (obra como ASMR) y **firma sonora** en cada reveal.
+- **4 mini-reels (20–25 s) además del video maestro.**
+Prompts: `prompts-maestros.md` (secciones 10 a 18). Más ideas: `mejoras-espectaculares.md` (segunda ronda: kit gráfico, final en 4 paneles, planos de detalle, subtítulos en inglés, calendario, maqueta isométrica).
 
 ## Flujo de trabajo (siempre por etapas)
 1. **Preparar** las fotos: recorte 9:16 + una referencia despejada. Cotizar con `get_cost:true` (no gasta).

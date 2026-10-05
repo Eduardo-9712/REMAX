@@ -18,8 +18,18 @@
 ## REGLA MAESTRA DE REMODELACIÓN (Eduardo, 05-10): obreros y 2×
 Tras ver la prueba, Eduardo pidió que **cada remodelación dure más al generarse, con obreros trabajando, y se acelere a 2× en la edición** (se ve rápida y corta, pero con vida). Aplica a **todas** las transiciones de todos los videos. Detalle y prompts: `prompts-maestros.md`; resumen y costos abajo.
 - **Fachada:** se genera **10 s** (17,5 créditos) y se publica **5 s**. **Interior:** se genera **5 s** (8,75) y se publica **2,5 s**.
-- **Obreros** (3–4 en la fachada, 2 por interior): casco, chaleco, de espaldas o de perfil, **sin rostros nítidos**; pintan, instalan vidrios y puertas, sueldan con chispas, cargan materiales. Camión de materiales y hormigonera como extra (ver `mejoras-espectaculares.md`).
+- **Obreros** (**10 en cada fachada**, 4 por interior): casco, chaleco, de espaldas o de perfil, **sin rostros nítidos**; pintan, instalan vidrios y puertas, sueldan con chispas, cargan materiales. **Camión de materiales y hormigonera solo en la primera fachada.**
 - La **prueba del restaurante** se rehace con esta regla: **solo la transición de la fachada, 10 s ≈ 17,5 créditos** (el render ya existe).
+
+## DECISIONES DE EDUARDO (05-10): lo que se agrega a la cadena
+- **10 obreros** en cada remodelación de fachada; **camión de materiales y hormigonera solo en la primera fachada** (restaurante). En las demás fachadas, solo obreros desmontando y montando hacia el siguiente rubro.
+- **Letrero en blanco** en cada fachada (Eduardo escribe el nombre del rubro en edición) y **chispas/pintura** en las obras.
+- **Reveal con "inauguración"** (luces y siluetas lejanas de gente) **al menos en el restaurante y el concesionario**.
+- **Plano animado con el croquis real** dentro del video maestro (6–8 s) y como reel propio.
+- **Cifras reales en pantalla:** 419,86 m² · 295,41 m² · 6 cuartos · 4 baños · 2 estacionamientos (y el precio en el cierre).
+- **Sonido por rubro** (obra como ASMR) y **firma sonora** en cada reveal.
+- **4 mini-reels** (20–25 s) **además** del video maestro de 130 s. Voz en off y estructura en `prompts-maestros.md` (sección 18).
+Los prompts de cada elemento están en `prompts-maestros.md` (secciones 10 a 18). Más ideas "para que quede brutal": `mejoras-espectaculares.md` (segunda ronda).
 
 ## El patrón de cadena (se repite en cada rubro)
 

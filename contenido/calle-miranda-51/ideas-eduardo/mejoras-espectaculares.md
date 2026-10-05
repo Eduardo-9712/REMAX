@@ -67,3 +67,82 @@ De **una sola cadena** salen **varios videos**:
 2. ¿Dejamos **siluetas lejanas de gente** en el reveal (B1) o prefieres fachadas sin personas?
 3. ¿Quieres que las 4 transiciones de fachada lleven **camión y materiales** (A1)?
 4. ¿Hacemos los **4 mini-reels** además del video maestro?
+
+---
+
+# DECISIONES DE EDUARDO (05-10-2026)
+✅ **Entran:** A1 camión y materiales (**solo en la primera fachada, el restaurante**), A2 chispas/pintura, A4 letrero en blanco (el nombre lo escribe Eduardo), B1 reveal con "inauguración" (siluetas lejanas; **al menos restaurante y concesionario**), C1 **plano animado con el croquis**, C2 cifras reales en pantalla, D sonido por rubro (obra como ASMR), E **4 mini-reels** además del video maestro.
+✅ **10 obreros** en cada remodelación de fachada. En las fachadas 2, 3 y 4 **no hay camión**: solo los obreros remodelando hacia el siguiente rubro.
+📝 Todo está redactado en `prompts-maestros.md` (secciones 10 a 18).
+
+---
+
+# SEGUNDA RONDA: ¿qué más para que quede BRUTAL? (propuestas)
+**Leyenda:** 💰 créditos de Higgsfield · 🎞️ solo edición (0 créditos) · ⚠️ riesgo.
+
+## 1 · Identidad de serie (que se reconozca a la primera) 🎞️
+| # | Idea | Por qué ayuda |
+|---|---|---|
+| 1 🔥 | **Kit gráfico por rubro:** numeración grande (01, 02, 03, 04), íconos animados, colores por rubro dentro de la paleta de marca (negro, azul, rojo, blanco), barras inferiores elegantes | Se siente producción de primer nivel y todo se ve como una sola serie |
+| 2 🔥 | **Firma sonora:** el mismo *whoosh* + acorde en cada reveal | Memoria de marca |
+| 3 | **Cuenta regresiva 3-2-1** corta antes de cada reveal | Suspenso y retención |
+| 4 | **Portadas** de cada reel con el render del rubro y el título | Sube los clics y se ve premium en el perfil |
+
+## 2 · El gran final 🔥 🎞️
+- **Final en 4 paneles:** la pantalla se divide en 4 (los 4 rubros terminados, con luces), se funde de nuevo a la **foto real de hoy** y aparece **"Tú decides · Escribe CASA"**. Es el cierre que invita a comentar.
+- **Cuenta de cierre sin inventar números:** "**1 propiedad · 4 posibilidades · 1 decisión**".
+
+## 3 · Planos de detalle (cutaways) que dan lujo 💰
+Tomas cortas **sin personas** que se intercalan en cada reveal: un plato servido en la barra (restaurante), una rueda y el tablero de una moto (concesionario), una lámpara de escritorio y una cámara sobre un trípode (coworking/estudio), toallas y una vela (spa).
+**Costo por detalle:** imagen 4 créditos + animación Kling estándar 5 s (7,5) ≈ **11,5**. **2 por rubro ≈ 92** en total. **Riesgo bajo.**
+
+## 4 · Plano animado a otro nivel
+- **Maqueta isométrica en corte** hecha desde el croquis (ilustración conceptual, rotulada), con los 4 rubros en colores. 💰 4 créditos por imagen (+ animación opcional 8,75). ⚠️ revisar que no invente habitaciones.
+- **Reel propio de 20 s** "La casa por dentro" con el plano animado. 🎞️
+
+## 5 · Llegar a quien más importa: inversionistas y venezolanos en el exterior 🎞️
+1. **Subtítulos en inglés** (y portugués, si hace falta) en el video maestro y en un reel: Eduardo graba **solo una vez** su voz.
+2. **Un mensaje corto de cierre para el exterior:** "¿Vives fuera? Escribe CASA y te muestro todo por WhatsApp" (conecta con la idea 3 y con el asistente).
+3. **Un hilo de comentarios fijado** con las preguntas típicas (¿uso comercial?, ¿documentos?, ¿cómo compro desde afuera?) respondido con honestidad: "verificable", "sujeto a permisos".
+
+## 6 · Educación y autoridad (cuando Eduardo quiera y Luis León acepte) 🎞️
+**"Antes de montar tu negocio, revisa esto":** 15 s por rubro con lo que hay que verificar (uso conforme, permisos, estudio estructural). **Luis León revisa el texto.** Refuerza el legado y la confianza sin prometer nada.
+
+## 7 · Conversión (que el video traiga clientes)
+1. **Palabra clave CASA** en cada pieza (aprobada).
+2. **Respuesta automática o a mano** con el recorrido privado y las 3 preguntas del asistente (qué busca, plazo, desde dónde escribe).
+3. **Stories de seguimiento:** encuesta "¿Cuál rubro te gustó más?" con los 4 mini-reels.
+4. **Guardado:** una última toma con "Guarda este video para cuando estés listo" (los guardados suben el alcance).
+
+## 8 · Calendario de la semana (propuesta) 🎞️
+| Día | Pieza |
+|---|---|
+| **Lunes** | Idea 3: reel gancho "Elige tu espacio" + Stories |
+| **Martes** | Mini-reel 1 · Restaurante |
+| **Miércoles** | Mini-reel 2 · Concesionario |
+| **Jueves** | Mini-reel 3 · Coworking + estudio |
+| **Viernes** | Mini-reel 4 · Spa |
+| **Sábado** | **Video maestro** de 130 s (con plano animado y final en 4 paneles) |
+| **Domingo** | Stories con encuesta "¿Cuál harías?" + respuesta a comentarios con la palabra CASA |
+*(Sujeto a que las piezas estén listas. No promete resultados.)*
+
+## 9 · Calidad técnica (sin costo extra) 🎞️
+1. **Acelerar a 2×** con flujo óptico y un poco de desenfoque de movimiento.
+2. **Mismo grado de color** en todas las piezas para que parezcan de la misma película.
+3. **Estabilizar** y **subir resolución** de las tomas que se vean blandas (`upscale_video`: se cotiza antes).
+4. **Subtítulos grandes** con tu voz (se ve sin sonido).
+5. **Gancho en los primeros 2 segundos** (el carro que se va, o la caída).
+
+## Mi recomendación: los 6 que más suman ahora
+1. **Kit gráfico + firma sonora** (gratis; unifica toda la serie).
+2. **Final en 4 paneles** y "1 propiedad · 4 posibilidades · 1 decisión".
+3. **Planos de detalle** (2 por rubro) para el lujo de cada reveal.
+4. **Subtítulos en inglés** para venezolanos en el exterior.
+5. **Calendario de la semana** con los 4 mini-reels.
+6. **Maqueta isométrica** como pieza "wow" del plano animado.
+
+## Para decidir (Eduardo)
+1. ¿Entran los **planos de detalle** (≈ 92 créditos en total)?
+2. ¿Hacemos la **maqueta isométrica** del croquis (ilustración conceptual)?
+3. ¿Subtítulos en **inglés** también?
+4. ¿Confirmas **10 obreros por fachada y 4 por interior**? ¿Y que el **precio** va en el cierre?

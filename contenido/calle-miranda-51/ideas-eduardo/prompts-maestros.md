@@ -26,7 +26,7 @@
 | Regla | Qué significa |
 |---|---|
 | **1. Generar largo, publicar a 2×** | **Fachada: generar 10 s → publica 5 s.** **Interiores: generar 5 s → publica 2,5 s.** (Más dramático: 1,5×.) La velocidad se aplica en CapCut con flujo óptico o mezcla de cuadros y algo de desenfoque de movimiento. |
-| **2. Obreros visibles** | **3–4 obreros en la fachada y 2 por interior**, con **casco, chaleco reflectivo y overol**, en plano medio o general, **de espaldas o de perfil, sin rostros nítidos**, sin logos ni texto. Trabajan de verdad: **pintan, instalan vidrios y puertas, sueldan (chispas), arman andamio, cargan materiales, colocan plantas**. |
+| **2. Obreros visibles** | **10 obreros en la fachada** (decisión de Eduardo, 05-10) y **4 por interior** (por confirmar), con **casco, chaleco reflectivo y overol**, en plano medio o general, **de espaldas o de perfil, sin rostros nítidos**, sin logos ni texto. Trabajan de verdad: **pintan, instalan vidrios y puertas, sueldan (chispas), arman andamio, cargan materiales, colocan plantas**. |
 | **3. Secuencia de obra** | (a) **desmontan lo anterior** (letrero, vitrinas, mobiliario, rejas); (b) sube un **andamio con malla verde de seguridad**; (c) **trabajos** a la vista; (d) **retiran la malla**; (e) **remates** (plantas, luces); (f) **reveal** con barrido de luz. |
 | **4. Estructura intacta** | La obra **no cambia el volumen** ni la distribución: solo acabados, vidrio, mobiliario, luz y función. La terraza de techo verde no se cubre con tablas. |
 | **5. Cámara** | **Trípode fijo** (sin movimiento) para que el inicio y el final calcen; un leve empuje solo si se pide. |
@@ -76,3 +76,61 @@ Nano Banana Pro · 4K · 9:16 · **2 referencias**: (1) la foto real **recortada
 
 ## 9 · Control de calidad antes de aprobar
 Comparar **lado a lado** con la foto real. Rechazar si cambia: niveles, terraza/techo, posición de ventanas y puertas, vecinos, forma de la calle; si hay letras, logos, placas o **rostros nítidos**; si algo "se derrite" o parpadea.
+
+---
+
+# AÑADIDOS DEL 05-10-2026 (decisiones de Eduardo sobre la lista "para un video espectacular")
+
+**Decisiones de Eduardo:** (1) **10 obreros** en las remodelaciones de **fachada**; (2) **camión de materiales y hormigonera solo en la PRIMERA fachada** (restaurante); en los otros rubros solo están los obreros remodelando hacia el siguiente rubro; (3) **reveal con "inauguración"** (luces y siluetas lejanas de gente) **al menos en el restaurante y el concesionario**; (4) **plano animado con el croquis real**: SÍ; (5) **sonido por rubro / obra como ASMR**: SÍ; (6) **4 mini-reels** además del video maestro: SÍ; (7) **letrero en blanco** y el nombre del rubro lo pone Eduardo en edición.
+*(Interiores: se propone 4 obreros por toma. Por confirmar con Eduardo.)*
+
+## 10 · Bloque de obra con 10 obreros (fachada, todas)
+Se **agrega a la transición de fachada** (sección 3). Reemplaza "three to four workers":
+`A crew of ten construction workers in hard hats, high-visibility vests and work overalls, seen from behind or in profile at medium and wide distance, faces not visible, working in coordinated groups: two on the scaffolding installing glass panels, two carrying wooden panels and planters, two painting walls with rollers from ladders, one using an angle grinder with sparks, one operating a small cement mixer, two removing the previous fit-out. Light dust and warm work lights; every worker is busy and distinct, no faces visible, no text on clothing.`
+
+## 11 · Bloque de camión y materiales (SOLO la primera fachada: restaurante)
+`At the start, a flatbed truck arrives and parks at the curb with building materials (large glass panels, wooden panels, planters, paint buckets, bags of cement); workers unload with hand trolleys. The truck has no text, no logo and no readable license plate. By the end of the sequence the truck has left.`
+*(En las fachadas siguientes no hay camión: solo los obreros desmontando y montando.)*
+
+## 12 · Bloque de letrero en blanco (todas las fachadas)
+`A large blank sign band above the entrance is installed with a crane-free hand lift by two workers; the sign is plain, dark, softly lit and completely blank: no text, no letters, no logo.`
+**En edición:** Eduardo escribe el **nombre del rubro** con el texto exacto (tipografía y color de la marca).
+
+## 13 · Bloque de reveal "inauguración" (restaurante y concesionario)
+Se usa como **imagen final** de la transición o como un **clip corto de 5 s** posterior (+8,75 créditos):
+`The finished building at blue-hour dusk, all lights on, a warm opening-night atmosphere: about ten distant silhouettes of people (guests and visitors) arriving and walking near the entrance, far from the camera, backlit and blurred, no faces visible, no readable text, no logos. [Restaurante: a soft glow from inside, guests at the tables behind the glass.] [Concesionario: generic unbranded motorcycles lit on display, a few visitors looking at them.] Locked-off camera, slow subtle push-in.`
+*(Siluetas lejanas y borrosas, sin rostros; se rotula como recreación con IA.)*
+
+## 14 · Chispas, pintura con pistola y polvo (todas)
+`Occasional welding or grinder sparks, a worker spraying paint with a spray gun in a soft cloud, light dust drifting in the work lights; satisfying, realistic, never covering the structure.`
+
+## 15 · Plano animado con el croquis real (se hace en CapCut/Canva, **0 créditos**)
+1. **Base:** redibujar limpio el **croquis** (planta baja y segundo piso) sobre fondo **negro**, líneas blancas y azules, **sin medidas** (no inventar). Rótulo: **"Plano ilustrativo, no a escala"**.
+2. **Línea de recorrido** en **rojo** que sigue **la ruta real**: estacionamiento y porche → sala → comedor → pasillo → cocina → gran salón → patio → fondo → escalera → segundo piso → terraza.
+3. **Se detiene en cada espacio** y **se ilumina la zona del rubro** con su color: restaurante (cocina, gran salón, patio, terraza), concesionario (estacionamiento, porche, sala, fondo), coworking + estudio (salas, gran salón, cuartos, balcón-salón), spa (cuartos, baños, patio, terraza).
+4. **Texto en pantalla:** nombre del espacio y del rubro. **Voz:** "Aquí iría…".
+5. **Versión opcional con IA:** una **maqueta isométrica en corte** hecha desde el croquis (Nano Banana Pro, 4 créditos) para un plano "wow"; se rotula **"Ilustración conceptual"** y se revisa que no invente habitaciones.
+**Usos:** 1) escena de 6–8 s dentro del video maestro; 2) **reel propio de 20 s** "La casa por dentro".
+
+## 16 · Cifras reales en pantalla (0 créditos)
+**419,86 m² de construcción · 295,41 m² de terreno · 6 cuartos · 4 baños · 2 estacionamientos.** *(Eduardo no incluyó el precio en esta lista; se mantiene **USD 120.000** en el cierre, según su decisión anterior, salvo que él diga lo contrario.)* Las cifras entran con un golpe de música, en la tipografía de la marca.
+
+## 17 · Sonido por rubro y de obra (0 créditos)
+| Momento | Sonido |
+|---|---|
+| **Obra (todas)** | martillo, taladro, amoladora con chispas, mezcladora, andamio, radio de obra suave: **ASMR** |
+| **Restaurante** | cuchillos, sartenes, copas, murmullo suave |
+| **Concesionario** | motor encendiendo, aceleración corta, llave y tubo de escape |
+| **Coworking + estudio** | teclado, obturador de cámara, flash |
+| **Spa** | agua, campanillas, respiración |
+| **Reveal (todos)** | silencio de 0,5 s → *whoosh* → acorde (la misma "firma sonora" en los 4) |
+
+## 18 · Los 4 mini-reels (20–25 s cada uno), con el mismo material de la cadena
+**Estructura:** gancho (2 s) → fachada con obra (5 s a 2×) → 3 tomas interiores (7,5 s) → reveal (5 s) → cierre con cifras y "Escribe CASA" (3 s).
+| Reel | Voz en off (borrador) |
+|---|---|
+| **1 · Restaurante gastronómico** | "¿Y si esta casa fuera un restaurante gastronómico? Mira cómo cambia. Una cocina de alto nivel, un gran salón para el servicio, un patio para cenar al aire libre… y arriba, la terraza con la cordillera. Calle Miranda 51, Guatire. USD 120.000. Escribe CASA." |
+| **2 · Concesionario de motos** | "¿Y si fuera un concesionario de motos? En esta zona las motos se ven por todas partes. Vitrina a la calle, exhibición adentro, un patio para entregas y un taller al fondo. Calle Miranda 51, Guatire. USD 120.000. Escribe CASA." |
+| **3 · Coworking + estudio** | "¿Y si fuera un coworking con estudio de fotografía y video? Recepción, un gran salón para el set… y arriba, un cuarto con un secreto: abres la puerta y aparece un salón de techo de madera. Calle Miranda 51, Guatire. USD 120.000. Escribe CASA." |
+| **4 · Spa** | "¿Y si fuera un spa? Cabinas para desconectar, baños de relajación, un patio convertido en jardín y una terraza para ver el atardecer. Calle Miranda 51, Guatire. USD 120.000. Escribe CASA." |
+*(Todas llevan: "Recreación con IA · No es un proyecto aprobado" y la nota de pie: uso residencial y comercial verificable, sujeto a permisos y factibilidad.)*
