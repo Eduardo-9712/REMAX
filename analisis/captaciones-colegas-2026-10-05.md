@@ -85,3 +85,26 @@ Ambos: **Kristy pidió esperar a que la captación esté aprobada en la platafor
 ## Actualización (5-oct)
 - Marcadas como **posible cierre** (`cierre_manual`, la rutina semanal ya no las reactiva): Playa El Agua Sal (remax-341303, vendida según Jorcy el 8-sep), Buenaventura Suites (remax-336330) y Vista Dorada (remax-340651, ya figuraban fuera del portal).
 - El Escorial no está en la base, así que no hay nada que marcar.
+
+## Inventario de la oficina (Excel "INVENTARIO REMAX Aventura PROPIEDADES", hoja "Propiedades activas actualizada")
+Llegaron dos archivos con ese nombre; uno vino vacío (0 bytes). Se usó el que sí abrió. Trae, por propiedad:
+captador, fecha de inicio, código Novu (igual al código del portal), precio, comisión (5 %) y, a veces, el álbum de fotos.
+La hoja "Cierres de mes septiembre" tiene la columna de cierre **vacía**: no hay cierres anotados.
+
+- **Todas las propiedades con código están en la base con el mismo precio**, salvo las de abajo.
+- **El Escorial = remax-340897** (Jorcy, USD 90.000): sí estaba en la base. Salió de la lista activa del Excel y Jorcy avisó el 14-sep. **Marcada como posible cierre.**
+- **Agregadas como *por confirmar* (no estaban en la base):**
+  - `col-inv-339450-rio-chico`: apartamento en Río Chico, USD 16.000, Bronson, captación del 18-feb.
+  - `col-inv-agua-sal-36000`: apartamento en Aguasal, USD 36.000, María Antonieta, captación del 7-sep, sin código. El álbum del Excel se repite en el chat para otra propiedad: verificar.
+- **Resuelto:** Alto Grande P1 = remax-337616 y P2 = remax-337757 (los dos de USD 62.000, de Arianger).
+- **Terrazas del Este** (Bronson): en el Excel pasó a alquiler por USD **300**; en el chat dijo USD 320.
+- **Las Islas, Residencias 411** (Yuleidy): el Excel la lista con el código 343587 (el que el portal ya no abre); la base tiene 343551. Parece la misma propiedad con otro código.
+- **Local de Calle Comercio** (remax-341135): el Excel sigue en USD 220.000; el chat dice 200.000.
+- **Salieron de la lista activa y no se tocaron (por confirmar con la oficina):** 339649 (Terrazas de San Pedro, Alirio, USD 65.000, no está en la base) y 341895 (alquiler Frutas Condominios, USD 650, sigue activo en la base).
+- Pendiente si lo quieres: guardar el **captador** y la fecha de inicio en cada ficha de la base (hoy solo están en el Excel).
+
+## Cambios en la página (5-oct)
+- **Fotos, videos y archivos** dentro de cada propiedad y cada cliente: subir fotos (JPG/PNG/WEBP), videos MP4/WebM y PDF de hasta 20 MB, o pegar enlaces (Google Fotos, Drive). No se pueden subir audios ni videos .mov.
+- **"Que Claude mire las fotos"**: describe solo lo que se ve; no inventa metros, habitaciones ni precios.
+- **Captaciones del grupo** (pestaña Propiedades): pegar el chat del grupo; Claude lo lee, lo compara con la base y propone agregar lo nuevo, marcar posibles cierres o anotar en la ficha. No confirma nada.
+- La rutina semanal respeta `cierre_manual`: no reactiva lo que el equipo marcó como posible cierre.
