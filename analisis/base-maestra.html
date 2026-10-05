@@ -132,6 +132,11 @@ select,input,textarea{font:inherit;color:var(--ink);background:var(--card);borde
 .who{font-size:12px;color:var(--mute)}
 details.edit{border-top:1px solid var(--line)}
 details.edit summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body);color:var(--blue)}
+.minis{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start;margin-top:10px}
+.minis details.add{flex:0 1 auto}
+.minis details.add[open]{flex:1 1 100%}
+.minis .add summary{padding:7px 12px;font:600 13px/1.2 var(--body)}
+.minis .add .form{padding-top:6px}
 details.adj{border-top:1px solid var(--line)}
 details.adj summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body);color:var(--blue)}
 label.btn input[type=file]{display:none}
@@ -341,11 +346,9 @@ details.edit .form{padding:4px 16px 16px}
         <label class="who"><input type="checkbox" id="f-dup"> Ocultar duplicados</label>
         <span class="count" id="count"></span>
       </div>
-      <div class="list" id="list" style="margin-top:12px"></div>
-      <div class="more" style="margin-top:12px"><button class="btn" id="more" hidden>Mostrar más</button></div>
-    </div>
+      <div class="minis">
     <details class="add">
-      <summary>Agregar propiedad a mano (MercadoLibre, cartera propia, otro portal)</summary>
+      <summary>➕ Agregar propiedad a mano</summary>
       <form class="form" id="add-form">
         <div class="wide panel" style="background:var(--paper)">
           <h3 style="margin:0 0 6px">Pegar el anuncio y que Claude lo ordene</h3>
@@ -370,7 +373,7 @@ details.edit .form{padding:4px 16px 16px}
       </form>
     </details>
     <details class="add" id="g-box">
-      <summary>Captaciones del grupo de la oficina (pegar el chat de WhatsApp)</summary>
+      <summary>📋 Captaciones del grupo</summary>
       <div class="form">
         <p class="note wide" style="margin:0">En WhatsApp abre el grupo, toca el nombre, <em>Exportar chat</em> y <em>Sin archivos</em>. Abre el .txt y pégalo aquí, o elige el archivo. Claude saca las propiedades, las compara con la base y te dice cuáles son nuevas, cuáles ya están y cuáles se vendieron o se dieron de baja. <strong>No confirma nada</strong>: lo nuevo entra como por confirmar y es interno (de colegas). Los enlaces de fotos y videos quedan guardados en cada propiedad.</p>
         <label class="wide">Archivo del chat (.txt)<input type="file" id="g-file" accept=".txt,text/plain"></label>
@@ -379,6 +382,10 @@ details.edit .form{padding:4px 16px 16px}
         <div class="wide list" id="g-out"></div>
       </div>
     </details>
+    </div>
+      <div class="list" id="list" style="margin-top:12px"></div>
+      <div class="more" style="margin-top:12px"><button class="btn" id="more" hidden>Mostrar más</button></div>
+    </div>
   </section>
 
   <!-- CLIENTE -->
@@ -690,7 +697,7 @@ function card(r, o = {}){
   return `<article class="item" data-estado="${ok?"confirmado":"por_confirmar"}" data-out="${out?1:0}" data-id="${esc(r._id)}">
     <div class="row"><div class="${o.select?"check":""}">${sel}<div style="min-width:0">
       <div class="top"><span class="pill ${ok?"ok":"pend"}">${ok?"Confirmado":"Por confirmar"}</span><span class="pill zone">${esc(r.zona)}</span>${r.destacada?`<span class="pill new" title="El asistente la ofrece primero cuando calza con lo que busca el cliente">📌 Destacada</span>`:""}${out?`<span class="pill out">Posible cierre · salió ${esc(r.salio_en||"")}</span>`:""}${nueva?`<span class="pill new">Nueva</span>`:""}${r._dup?`<span class="pill dup">Posible duplicado de ${esc(r._dup.fuente)}</span>`:""}<span>${esc(tipo(r))} · ${esc(op(r))}</span></div>
-      <div class="top" style="margin-top:6px">${srcBadge(r)}${r.oficina?`<span>${esc(r.oficina)}</span>`:""}${r.codigo?`<span>Cód. ${esc(String(r.codigo).replace(/^(c21|zv|bo|remax)-/,""))}</span>`:""}</div>
+      <div class="top" style="margin-top:6px">${srcBadge(r)}${r.oficina?`<span>${esc(r.oficina)}</span>`:""}${r.codigo?`<span>Cód. ${esc(String(r.codigo).replace(/^(c21|zv|bo|remax)-/,""))}</span>`:""}${r.captador?`<span>Captador: <b>${esc(r.captador)}</b></span>`:""}</div>
       <div class="title">${esc(r.titulo||"Sin título")}</div>
       <div class="where">${esc([r.sector,r.localidad,r.municipio].filter(Boolean).join(" · ") || r.direccion || "")}</div>
       <div class="facts">${r.m2_construccion?`<span><b>${r.m2_construccion}</b> m² const.</span>`:""}${r.m2_terreno?`<span><b>${r.m2_terreno}</b> m² terreno</span>`:""}${r.habitaciones?`<span><b>${r.habitaciones}</b> hab.</span>`:""}${r.banos?`<span><b>${r.banos}</b> baños</span>`:""}${r.fecha_publicacion?`<span>Publicada <b>${esc(r.fecha_publicacion)}</b></span>`:(r.visto_primera?`<span>Detectada <b>${esc(r.visto_primera)}</b></span>`:"")}${r._dias!=null?`<span><b>${r._dias}</b> días publicada</span>`:""}</div>

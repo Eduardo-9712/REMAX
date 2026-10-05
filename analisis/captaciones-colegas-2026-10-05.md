@@ -101,7 +101,7 @@ La hoja "Cierres de mes septiembre" tiene la columna de cierre **vacía**: no ha
 - **Las Islas, Residencias 411** (Yuleidy): el Excel la lista con el código 343587 (el que el portal ya no abre); la base tiene 343551. Parece la misma propiedad con otro código.
 - **Local de Calle Comercio** (remax-341135): el Excel sigue en USD 220.000; el chat dice 200.000.
 - **Salieron de la lista activa y no se tocaron (por confirmar con la oficina):** 339649 (Terrazas de San Pedro, Alirio, USD 65.000, no está en la base) y 341895 (alquiler Frutas Condominios, USD 650, sigue activo en la base).
-- Pendiente si lo quieres: guardar el **captador** y la fecha de inicio en cada ficha de la base (hoy solo están en el Excel).
+- **Captador y fecha de inicio guardados** en 30 fichas de la base (se ven en cada ficha). No se guardó en Las Islas (343587 vs 343551) ni en Terrazas del Este (335634 vs 342992) porque el código no coincide con la base.
 
 ## Cambios en la página (5-oct)
 - **Fotos, videos y archivos** dentro de cada propiedad y cada cliente: subir fotos (JPG/PNG/WEBP), videos MP4/WebM y PDF de hasta 20 MB, o pegar enlaces (Google Fotos, Drive). No se pueden subir audios ni videos .mov.
