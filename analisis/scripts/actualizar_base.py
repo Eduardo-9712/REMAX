@@ -80,9 +80,12 @@ def main():
             nuevas.append(doc_id)
             continue
         siguen += 1
-        cambio = {"visto_ultima": fecha, "activo": True, "precio_portal": fila["precio_usd"]}
-        if previo.get("activo") is False:
-            cambio["salio_en"] = {"__delete__": True}
+        cambio = {"visto_ultima": fecha, "precio_portal": fila["precio_usd"]}
+        # "cierre_manual": el equipo marcó la propiedad como posible cierre aunque el portal la siga mostrando
+        if not previo.get("cierre_manual"):
+            cambio["activo"] = True
+            if previo.get("activo") is False:
+                cambio["salio_en"] = {"__delete__": True}
         antes = previo.get("precio_portal", previo.get("precio_usd"))
         if fila["precio_usd"] is not None and antes is not None and fila["precio_usd"] != antes:
             cambio["cambio_precio"] = {"de": antes, "a": fila["precio_usd"], "fecha": fecha}

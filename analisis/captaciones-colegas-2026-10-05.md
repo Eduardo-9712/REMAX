@@ -81,3 +81,7 @@ Ambos: **Kristy pidió esperar a que la captación esté aprobada en la platafor
 2. Verificar los **posibles cierres/bajas**: Playa El Agua Sal (vendida), Buenaventura Suites y Vista Dorada (baja), El Escorial (no disponible).
 3. Revisar el **cambio de precio** del local de Calle Comercio (220.000 a 200.000) y el **canon** de Terrazas del Este (300 a 320).
 4. Decidir si se construye la caja "Pegar mensajes del grupo" en la base maestra para repetir esto cada semana.
+
+## Actualización (5-oct)
+- Marcadas como **posible cierre** (`cierre_manual`, la rutina semanal ya no las reactiva): Playa El Agua Sal (remax-341303, vendida según Jorcy el 8-sep), Buenaventura Suites (remax-336330) y Vista Dorada (remax-340651, ya figuraban fuera del portal).
+- El Escorial no está en la base, así que no hay nada que marcar.
