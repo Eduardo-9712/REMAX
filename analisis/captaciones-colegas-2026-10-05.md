@@ -16,10 +16,11 @@ no se ofrecen a clientes sin hablar con quien las capta.
 | | Cantidad |
 |---|---|
 | Álbumes revisados | 30 (29 abren) |
-| Ya estaban en la base (RE/MAX Aventura) | 24 |
+| Álbumes que ya estaban en la base (RE/MAX Aventura; algunos son la misma propiedad repostada) | 26 |
 | Nuevos agregados como *por confirmar* | 2 |
-| No encontré en la base y no están disponibles | 1 (El Escorial) |
-| Sin coincidencia segura | 3 (ver abajo) |
+| Ya no disponible (El Escorial) | 1 |
+| Álbum que ya no abre (Las Islas, Residencias 411; igual está en la base) | 1 |
+| Mensajes sueltos sin coincidencia segura | 2 (ver abajo) |
 
 ## Ya están en la base: no se agregaron
 Coincidencia por zona, tipo, precio y título. "Probable" = no hay código en el chat; **por confirmar**.
