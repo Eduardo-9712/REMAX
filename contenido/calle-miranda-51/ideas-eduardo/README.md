@@ -25,6 +25,9 @@ Cada archivo trae: análisis, **guion principal con la voz en off palabra por pa
 - **Idea 2 = cadena** (fachada → interior → fachada…), con **apertura a elegir** (caída del cielo + calle real, calle real, o dron sobre la calle). **Mismo patrón y misma ruta real** en las otras ideas.
 - **Idea 4:** primero se diseña la **versión B (con IA)**; si el primo autoriza, después se graba la **versión A**.
 
+## 🔧 Cambio del 05-10: REGLA MAESTRA DE REMODELACIÓN
+Eduardo vio la prueba y pidió que **toda remodelación se genere más larga, con obreros trabajando, y se acelere a 2× en la edición** (fachada 10 s → 5 s; interior 5 s → 2,5 s). Quedó como **regla fija**: `prompts-maestros.md` (prompts), skill `video-propiedad-maestro`, y en los 4 skills de las ideas. Más ideas para hacerlo espectacular: `mejoras-espectaculares.md`. **Siguiente prueba (cuando diga «dale»): rehacer solo la fachada del restaurante con obreros, 10 s ≈ 17,5 créditos** (el render ya existe).
+
 ## ✅ Prueba mínima hecha (04-10): funcionó
 Resultado, archivos y lo aprendido en `../prueba-higgsfield/` (render A, render B de reserva, antes/después, tablero y video de la transición). **Gasto: 25,5 créditos; saldo 775,5.** Siguiente paso, cuando Eduardo diga «dale»: la **apertura Google Earth + paneo 360** (≈ 64) o seguir la **cadena** del restaurante por dentro.
 

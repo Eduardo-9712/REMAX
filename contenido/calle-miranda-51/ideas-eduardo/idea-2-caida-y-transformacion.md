@@ -15,11 +15,17 @@
 5. La IA hace **lo mejor posible**, **sin cambiar la esencia ni la estructura** de la casa. Por ahora IA; luego dron real.
 *(En el mensaje del 03-10 Eduardo dudó entre la caída del cielo y el recorrido por la calle: dejé las dos y una tercera con dron para que elija.)*
 
+## REGLA MAESTRA DE REMODELACIÓN (Eduardo, 05-10): obreros y 2×
+Tras ver la prueba, Eduardo pidió que **cada remodelación dure más al generarse, con obreros trabajando, y se acelere a 2× en la edición** (se ve rápida y corta, pero con vida). Aplica a **todas** las transiciones de todos los videos. Detalle y prompts: `prompts-maestros.md`; resumen y costos abajo.
+- **Fachada:** se genera **10 s** (17,5 créditos) y se publica **5 s**. **Interior:** se genera **5 s** (8,75) y se publica **2,5 s**.
+- **Obreros** (3–4 en la fachada, 2 por interior): casco, chaleco, de espaldas o de perfil, **sin rostros nítidos**; pintan, instalan vidrios y puertas, sueldan con chispas, cargan materiales. Camión de materiales y hormigonera como extra (ver `mejoras-espectaculares.md`).
+- La **prueba del restaurante** se rehace con esta regla: **solo la transición de la fachada, 10 s ≈ 17,5 créditos** (el render ya existe).
+
 ## El patrón de cadena (se repite en cada rubro)
 
 ```
-FACHADA (rubro anterior)  →  desmontaje + obra + reveal del nuevo rubro   (6–7 s)
-INTERIOR (siguiendo la ruta real de la casa)  →  5 tomas de 3 s, cada una "obra → reveal"  (≈16 s)
+FACHADA (rubro anterior)  →  desmontaje + obra con obreros + reveal del nuevo rubro   (generado 10 s → publicado 5 s a 2×)
+INTERIOR (siguiendo la ruta real de la casa)  →  5 tomas, cada una "obra con 2 obreros → reveal"  (generadas 5 s → publicadas 2,5 s a 2×)
 FACHADA otra vez  →  se quita todo y se monta el siguiente rubro
 ```
 **Ruta real del interior** (confirmada por Eduardo): estacionamiento y porche → sala pequeña con la escalera → sala tipo comedor → pasillo (cuarto; baño al final) → cocina de madera (a la derecha del pasillo) → gran salón → patio → fondo (cuarto de servicio, baño y lavandería) → escalera → segundo piso (4 cuartos, 2 baños, 2 salas de estar; **cuarto del frente → balcón del frente**; **cuarto trasero → puerta → balcón-salón de techo de madera**) → escalera a la terraza → terraza (tercer piso). **Total: 6 cuartos y 4 baños.**
@@ -115,7 +121,7 @@ Visuales: caída (3 s) + las 4 **fachadas** transformándose una detrás de otra
 **Plantilla de prompt (imagen):**
 `[BLOQUE DE FIDELIDAD] + Edit this exact photo of the [espacio]: keep all walls, ceiling, windows, doors, stairs, columns, floor pattern and proportions unchanged; convert only the finishes, furniture and lighting into [descripción de la tabla]; same camera angle, photorealistic, no people, no readable text or brand names. + [BLOQUE DE CALIDAD Y LUZ]`
 
-### Paso 2 · Transiciones (video; **Kling v3.0 pro**, imagen inicial y final, 5 s, ≈ 8,75 créditos c/u; plan B: Seedance 2.5 con borrador a 480p)
+### Paso 2 · Transiciones con obreros (video; **Kling v3.0 pro**, imagen inicial y final; **fachada 10 s ≈ 17,5 créditos, interior 5 s ≈ 8,75**; se publican a 2×; plan B: Seedance 2.5 con borrador a 480p). Prompts: `prompts-maestros.md` (secciones 3 y 4)
 - **Real → rubro 1** (fachada 1881 → render restaurante) y, en cada espacio, **real → restaurante**.
 - **Rubro N → rubro N+1** (la cadena): imagen inicial = render del rubro anterior, final = render del siguiente.
 `Dismantle and remove the previous fit-out (signage, glass front, furniture, equipment), scaffolding appears, surfaces are repainted, the new fit-out is installed piece by piece, lights switch on, ending exactly on the end image; only materials, scaffolding and tools visible, no people, no faces; same camera angle; smooth, realistic time-lapse.` (+ bloque de calidad)

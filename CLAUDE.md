@@ -162,6 +162,7 @@ estilos o ideas que funcionen, se anotan aquí.
   **Confirmado por Eduardo (03-10):** 2 estacionamientos, 6 cuartos (2 abajo, 4 arriba), 4 baños, lavandería, patio entre la casa y el cuarto de servicio, cocina de madera, 2 balcones, terraza en el tercer piso; coordenadas 10°28'08.2"N 66°32'30.2"W (10,468938; −66,541720). Fachada sin carro: IMG_1881. **Idea 2 = cadena** (fachada → interior → fachada, una transformación a la vez) y la misma ruta real en todos los recorridos. El salón de techo de madera es un balcón-salón del 2.º piso al que solo se entra por el cuarto trasero. Costos de Higgsfield consultados sin gastar (imagen 4, Kling pro 8,75 por clip, Veo ultra 120; saldo 801): plan por etapas en `higgsfield-calidad.md`.
   **Decisiones 04-10:** apertura de las ideas 1 y 2 = caída tipo Google Earth buscando la calle + paneo 360; palabra clave de la idea 3 = CASA; todavía no se genera nada (Eduardo avisa el «dale»; prueba mínima de fidelidad ≈ 13 créditos). Recomendación: probar primero la idea 2 y publicar primero las ideas 3 y 1 (casi todo real).
   **Prueba mínima hecha el 04-10** (Eduardo dio el «dale»): fachada → restaurante gastronómico con Nano Banana Pro + Kling pro; respetó la estructura; 25,5 créditos (saldo 775,5). Archivos en `contenido/calle-miranda-51/prueba-higgsfield/`.
+  **Cambio 05-10:** regla maestra de remodelaciones (obreros + 2×), `prompts-maestros.md`, `mejoras-espectaculares.md` y skill `video-propiedad-maestro`. Próxima prueba (con su «dale»): fachada del restaurante con obreros, 10 s ≈ 17,5 créditos.
   PDF para revisar todo junto: `contenido/calle-miranda-51/Calle-Miranda-51_Ideas-Guiones-Prompts-Skills.pdf`. Pendiente: que Eduardo apruebe, grabar las tomas y dar el "dale" para Higgsfield.
 
 ## Cómo trabajamos
@@ -176,6 +177,11 @@ estilos o ideas que funcionen, se anotan aquí.
   el de una búsqueda general).
 - **Práctico y rápido:** todo lo que armemos debe ser fácil y rápido de usar y de editar.
 - Antes de gastar créditos en Higgsfield, propongo la idea y el prompt, y espero el visto bueno.
+- **Regla maestra de remodelaciones con IA (Eduardo, 05-10-2026):** toda remodelación se genera **larga, con obreros trabajando**
+  (casco, chaleco, de espaldas o perfil, sin rostros nítidos) y se **acelera a 2×** en la edición (fachada 10 s → 5 s; interior 5 s →
+  2,5 s). Siempre respetando la **estructura** del inmueble (se puede ser creativo: estacionamiento, plantas, luces). Está en el skill
+  `video-propiedad-maestro` y en `contenido/calle-miranda-51/ideas-eduardo/prompts-maestros.md`. Cada vez que Eduardo pida un video de esta
+  idea o tema, se aplica sin que lo repita.
 - Commits claros y en español.
 - Te pregunto antes de hacer cambios grandes o difíciles de deshacer.
 

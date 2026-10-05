@@ -16,6 +16,7 @@ description: Idea "El delivery": un motorizado se detiene ante la propiedad y su
 - Precio **USD 120.000 visible** (decisión de Eduardo). Luis León: Broker de RE/MAX Delta primero, luego Consultor Jurídico de la Cámara Inmobiliaria de Miranda. Logo: Aventura hasta el cambio a Delta (fines de oct 2026).
 - No usar clips ya editados con logo (p. ej. `copy_7183…`); pedir los originales. Difuminar rostros y placas; nada de la propietaria.
 - Leer en `material.md` la **ruta real de la casa** (confirmada por Eduardo) y seguirla **siempre en el mismo orden** en cualquier recorrido interior. En cadenas de transformación: fachada → interior → fachada.
+- **Regla maestra de remodelación (Eduardo, 05-10):** toda obra se genera larga, con **obreros visibles** (casco, chaleco, de espaldas o perfil, sin rostros nítidos) y se publica a **2×** (fachada 10 s → 5 s; interior 5 s → 2,5 s). Leer el skill `video-propiedad-maestro` y `prompts-maestros.md` antes de planear o generar transiciones.
 - Entregar: guion principal (tabla Tiempo | Plano y cámara | Voz en off | Texto en pantalla | Origen y archivo) + 2 variantes, prompts sin ejecutar, qué se necesita, caption y hashtags. Guardar en `contenido/<propiedad>/ideas-eduardo/`. Ejemplo completo: `contenido/calle-miranda-51/ideas-eduardo/`.
 
 ## Excepción a la regla de voz en off

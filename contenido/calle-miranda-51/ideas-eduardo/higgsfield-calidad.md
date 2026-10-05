@@ -12,7 +12,7 @@ El costo se consultó con la opción de "cotizar sin enviar" de Higgsfield. **Sa
 | Trabajo | Modelo recomendado | Costo por pieza | Plan B |
 |---|---|---|---|
 | **Renders del "después"** (fachada e interiores) | **Nano Banana Pro**, 4K (calidad máxima, usa fotos de referencia) | **4 créditos** (2K: 2) | FLUX 3 Image 2K: 3 · GPT Image 2.5 |
-| **Transiciones** (foto real → render, con la obra en medio; y rubro → rubro) | **Kling v3.0 modo pro**, imagen inicial y final, 5 s, sin sonido | **8,75 créditos** (modo estándar: 7,5) | Seedance 2.5: 720p 4 s = 28 · 1080p 5 s = 60 · **borrador 480p 4–5 s = 12–15** |
+| **Transiciones con obreros** (foto real → render, con la obra en medio; y rubro → rubro) | **Kling v3.0 modo pro**, imagen inicial y final, sin sonido. **Fachada 10 s; interior 5 s** (regla maestra de Eduardo: se generan largas y se publican a 2×) | **Fachada 10 s = 17,5** · **interior 5 s = 8,75** (8 s = 14 · 15 s = 26,25; modo estándar 10 s = 15) | Seedance 2.5: 720p 4 s = 28 · 1080p 5 s = 60 · **borrador 480p 4–5 s = 12–15** |
 | **Tomas "héroe" de cine** (caída, paneo, elevación final, apertura con dron) | **Veo 3.1 ultra**, 8 s | **120 créditos** | **Veo 3.1 rápido, 8 s = 32** · Kling v3.0 4K, 5 s = 30 |
 | **Mejorar la nitidez** de los clips reales | `upscale_video` | se cotiza antes | — |
 
@@ -24,6 +24,10 @@ Antes de gastar en serio, se hace **una sola cosa** que responde a la duda más 
 2. **1 transición** de la fachada real al render, con la obra en timelapse (Kling v3.0 pro, 5 s): **8,75 créditos**.
 **Total: ≈ 13 créditos.** Te muestro el resultado y comparamos con la foto real. Si respeta los 3 niveles, la terraza de techo verde, el porche con sus dos puertas y los vecinos, seguimos con la apertura (Etapa 0) y la cadena. Si no, ajustamos el prompt antes de gastar más.
 
+### REGLA MAESTRA DE REMODELACIÓN (Eduardo, 05-10-2026)
+**Toda remodelación se genera larga, con obreros trabajando, y se acelera a 2× en la edición** (fachada 10 s → 5 s; interior 5 s → 2,5 s). Prompts completos: `prompts-maestros.md`. Skill: `video-propiedad-maestro`. Más ideas para el video: `mejoras-espectaculares.md`.
+**Impacto en el plan:** la transición de fachada pasa de 8,75 a **17,5 créditos**; los interiores se quedan en 8,75. Cada rubro ≈ 24 (renders) + 17,5 + 5 × 8,75 ≈ **85 créditos** (antes ≈ 77).
+
 ### Resultado de la prueba mínima (04-10-2026): **funcionó**
 Se gastaron **25,5 créditos** (2 renders + 2 intentos de transición); saldo **775,5**. La IA **respetó la estructura** (3 niveles, terraza de techo verde, ventanas, tejas, vecino) y la transición con **malla verde de seguridad** quedó limpia. Detalle completo y archivos: `../prueba-higgsfield/LEEME.md`.
 **Costo real por pieza confirmado:** render 4K = 4 créditos; transición Kling pro 5 s = 8,75. **Receta que funciona:** foto recortada a 9:16 + una vista despejada del porche como segunda referencia; en el video, obra paso a paso con "sin tablas, sin derretidos, sin parpadeos".
@@ -34,8 +38,9 @@ Se gastaron **25,5 créditos** (2 renders + 2 intentos de transición); saldo **
 |---|---|---|
 | **0 · Prueba mínima de fidelidad** ✅ *(hecha el 04-10)* | 2 renders + 2 transiciones (restaurante) | **25,5 gastados** |
 | **0b · Apertura Google Earth + paneo 360** (la misma para las ideas 1 y 2) | caída y paneo con Veo 3.1 rápido (probar) | **≈ 64** |
-| **A · Cadena completa del restaurante** (idea 2) | 6 renders (4K) + 6 transiciones (Kling pro) | **≈ 77** (+ margen ≈ 100) |
-| **B · Concesionario, coworking y spa** | 18 renders + 18 transiciones | **≈ 230** (+ margen ≈ 300) |
+| **A0 · Rehacer la fachada del restaurante con obreros (10 s)** | solo la transición (el render ya existe) | **≈ 17,5** |
+| **A · Cadena completa del restaurante** (idea 2) | 6 renders (4K) + fachada 10 s + 5 interiores de 5 s | **≈ 85** (+ margen ≈ 110) |
+| **B · Concesionario, coworking y spa** | 18 renders + 3 fachadas de 10 s + 15 interiores de 5 s | **≈ 256** (+ margen ≈ 330) |
 | **C · Apertura y paneo** (idea 2 y 1) | 2 tomas héroe: pruebas en Veo rápido (64) + 2 finales en ultra (240) | **≈ 64 a 304** |
 | **D · Idea 1** (calle → atardecer final) | porche "dron" (Kling 8,75) + elevación final (Veo ultra 120) + reutiliza el paneo | **≈ 150** |
 | **E · Idea 3** (interactivo) | fachada al atardecer (Veo rápido 32) + 4 micro-movimientos (Kling estándar 30) | **≈ 70** |
