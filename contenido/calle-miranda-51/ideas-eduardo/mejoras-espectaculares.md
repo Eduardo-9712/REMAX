@@ -83,7 +83,7 @@ De **una sola cadena** salen **varios videos**:
 ## 1 · Identidad de serie (que se reconozca a la primera) 🎞️
 | # | Idea | Por qué ayuda |
 |---|---|---|
-| 1 🔥 | **Kit gráfico por rubro:** numeración grande (01, 02, 03, 04), íconos animados, colores por rubro dentro de la paleta de marca (negro, azul, rojo, blanco), barras inferiores elegantes | Se siente producción de primer nivel y todo se ve como una sola serie |
+| 1 ❌ | ~~**Kit gráfico por rubro:** numeración grande (01, 02, 03, 04), íconos animados, colores por rubro dentro de la paleta de marca (negro, azul, rojo, blanco), barras inferiores elegantes | Se siente producción de primer nivel y todo se ve como una sola serie~~ **(Eduardo dijo NO)** |
 | 2 🔥 | **Firma sonora:** el mismo *whoosh* + acorde en cada reveal | Memoria de marca |
 | 3 | **Cuenta regresiva 3-2-1** corta antes de cada reveal | Suspenso y retención |
 | 4 | **Portadas** de cada reel con el render del rubro y el título | Sube los clics y se ve premium en el perfil |
@@ -101,7 +101,7 @@ Tomas cortas **sin personas** que se intercalan en cada reveal: un plato servido
 - **Reel propio de 20 s** "La casa por dentro" con el plano animado. 🎞️
 
 ## 5 · Llegar a quien más importa: inversionistas y venezolanos en el exterior 🎞️
-1. **Subtítulos en inglés** (y portugués, si hace falta) en el video maestro y en un reel: Eduardo graba **solo una vez** su voz.
+1. ~~Subtítulos en inglés~~ **(Eduardo dijo NO).** Los videos llevan **subtítulos en español**, con la misma voz.
 2. **Un mensaje corto de cierre para el exterior:** "¿Vives fuera? Escribe CASA y te muestro todo por WhatsApp" (conecta con la idea 3 y con el asistente).
 3. **Un hilo de comentarios fijado** con las preguntas típicas (¿uso comercial?, ¿documentos?, ¿cómo compro desde afuera?) respondido con honestidad: "verificable", "sujeto a permisos".
 
@@ -146,3 +146,18 @@ Tomas cortas **sin personas** que se intercalan en cada reveal: un plato servido
 2. ¿Hacemos la **maqueta isométrica** del croquis (ilustración conceptual)?
 3. ¿Subtítulos en **inglés** también?
 4. ¿Confirmas **10 obreros por fachada y 4 por interior**? ¿Y que el **precio** va en el cierre?
+
+
+---
+
+# RESPUESTAS DE EDUARDO A LA SEGUNDA RONDA (05-10-2026)
+| Idea | Respuesta |
+|---|---|
+| Obreros | **10 afuera en cada transformación de fachada y 5 adentro.** Camión y materiales **solo en la primera transformación de la fachada**. |
+| Precio | **SÍ**, va en el cierre. |
+| Kit gráfico por rubro | **NO.** |
+| **Final en 4 paneles** | **SÍ.** (`prompts-maestros.md`, sección 19) |
+| Subtítulos | **En español; NO en inglés.** (sección 20) |
+| Calendario de la semana | **Sin decidir** ("no sé"): se arma cuando las piezas estén listas. |
+| **Maqueta isométrica del croquis** | **SÍ** (explicación en la sección 21; Eduardo pidió aclaración). |
+| **Planos de detalle** (≈ 92 créditos) | **Pendiente:** Eduardo pidió que se le explique qué son. |

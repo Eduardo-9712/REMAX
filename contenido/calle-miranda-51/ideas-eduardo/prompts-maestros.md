@@ -25,8 +25,8 @@
 
 | Regla | Qué significa |
 |---|---|
-| **1. Generar largo, publicar a 2×** | **Fachada: generar 10 s → publica 5 s.** **Interiores: generar 5 s → publica 2,5 s.** (Más dramático: 1,5×.) La velocidad se aplica en CapCut con flujo óptico o mezcla de cuadros y algo de desenfoque de movimiento. |
-| **2. Obreros visibles** | **10 obreros en la fachada** (decisión de Eduardo, 05-10) y **4 por interior** (por confirmar), con **casco, chaleco reflectivo y overol**, en plano medio o general, **de espaldas o de perfil, sin rostros nítidos**, sin logos ni texto. Trabajan de verdad: **pintan, instalan vidrios y puertas, sueldan (chispas), arman andamio, cargan materiales, colocan plantas**. |
+| **1. Generar largo, publicar a 2×** | **Fachada: generar 10 s → publica 5 s (10 obreros).** **Interiores: generar 5 s → publica 2,5 s (5 obreros).** (Más dramático: 1,5×.) La velocidad se aplica en CapCut con flujo óptico o mezcla de cuadros y algo de desenfoque de movimiento. |
+| **2. Obreros visibles** | **10 obreros en cada fachada y 5 por interior** (confirmado por Eduardo, 05-10), con **casco, chaleco reflectivo y overol**, en plano medio o general, **de espaldas o de perfil, sin rostros nítidos**, sin logos ni texto. Trabajan de verdad: **pintan, instalan vidrios y puertas, sueldan (chispas), arman andamio, cargan materiales, colocan plantas**. |
 | **3. Secuencia de obra** | (a) **desmontan lo anterior** (letrero, vitrinas, mobiliario, rejas); (b) sube un **andamio con malla verde de seguridad**; (c) **trabajos** a la vista; (d) **retiran la malla**; (e) **remates** (plantas, luces); (f) **reveal** con barrido de luz. |
 | **4. Estructura intacta** | La obra **no cambia el volumen** ni la distribución: solo acabados, vidrio, mobiliario, luz y función. La terraza de techo verde no se cubre con tablas. |
 | **5. Cámara** | **Trípode fijo** (sin movimiento) para que el inicio y el final calcen; un leve empuje solo si se pide. |
@@ -51,7 +51,7 @@ Imagen inicial = foto real o render del rubro anterior · Imagen final = render 
 ## 4 · Prompt maestro: transición de **INTERIOR** con obreros (5 s)
 Imagen inicial = espacio real o render del rubro anterior · final = render del rubro nuevo · Kling v3.0 pro · 9:16.
 
-`Locked-off camera, identical framing. A realistic interior renovation time-lapse of this exact room, from the start image to the end image. Two workers in hard hats, high-visibility vests and overalls, seen from behind or in profile, faces not visible, work: one removes the previous [mobiliario/equipos], one paints the walls and installs [el nuevo mobiliario/equipos]; light dust, ladders, drop cloths and tools. The walls, ceiling, windows, doors, stairs, columns and floor pattern never change. Ends exactly on the end image with the lights switched on. No smearing, no melting, no flicker, no text, no logos, no readable faces.`
+`Locked-off camera, identical framing. A realistic interior renovation time-lapse of this exact room, from the start image to the end image. Five workers in hard hats, high-visibility vests and overalls, seen from behind or in profile, faces not visible, work: two remove the previous [mobiliario/equipos], one paints the walls, two install [el nuevo mobiliario/equipos]; light dust, ladders, drop cloths and tools. The walls, ceiling, windows, doors, stairs, columns and floor pattern never change. Ends exactly on the end image with the lights switched on. No smearing, no melting, no flicker, no text, no logos, no readable faces.`
 
 ## 5 · Prompt maestro: render del "después" (imagen)
 Nano Banana Pro · 4K · 9:16 · **2 referencias**: (1) la foto real **recortada a 9:16** (composición) y (2) una vista despejada del mismo espacio (para entender la estructura).
@@ -82,7 +82,7 @@ Comparar **lado a lado** con la foto real. Rechazar si cambia: niveles, terraza/
 # AÑADIDOS DEL 05-10-2026 (decisiones de Eduardo sobre la lista "para un video espectacular")
 
 **Decisiones de Eduardo:** (1) **10 obreros** en las remodelaciones de **fachada**; (2) **camión de materiales y hormigonera solo en la PRIMERA fachada** (restaurante); en los otros rubros solo están los obreros remodelando hacia el siguiente rubro; (3) **reveal con "inauguración"** (luces y siluetas lejanas de gente) **al menos en el restaurante y el concesionario**; (4) **plano animado con el croquis real**: SÍ; (5) **sonido por rubro / obra como ASMR**: SÍ; (6) **4 mini-reels** además del video maestro: SÍ; (7) **letrero en blanco** y el nombre del rubro lo pone Eduardo en edición.
-*(Interiores: se propone 4 obreros por toma. Por confirmar con Eduardo.)*
+**Confirmado (05-10): afuera, en cada transformación de rubro, son 10 obreros; adentro son 5. El camión de materiales y la hormigonera solo salen en la PRIMERA transformación de la fachada (restaurante).** **Precio: SÍ en el cierre.** **Final en 4 paneles: SÍ.** **Maqueta isométrica: SÍ.** **Subtítulos: en español (no en inglés).** **Kit gráfico: NO.**
 
 ## 10 · Bloque de obra con 10 obreros (fachada, todas)
 Se **agrega a la transición de fachada** (sección 3). Reemplaza "three to four workers":
@@ -134,3 +134,18 @@ Se usa como **imagen final** de la transición o como un **clip corto de 5 s** p
 | **3 · Coworking + estudio** | "¿Y si fuera un coworking con estudio de fotografía y video? Recepción, un gran salón para el set… y arriba, un cuarto con un secreto: abres la puerta y aparece un salón de techo de madera. Calle Miranda 51, Guatire. USD 120.000. Escribe CASA." |
 | **4 · Spa** | "¿Y si fuera un spa? Cabinas para desconectar, baños de relajación, un patio convertido en jardín y una terraza para ver el atardecer. Calle Miranda 51, Guatire. USD 120.000. Escribe CASA." |
 *(Todas llevan: "Recreación con IA · No es un proyecto aprobado" y la nota de pie: uso residencial y comercial verificable, sujeto a permisos y factibilidad.)*
+
+
+## 19 · Final en 4 paneles (APROBADO por Eduardo, 05-10) — edición, 0 créditos
+1. La pantalla se divide en **4 paneles**: los 4 rubros terminados (restaurante, concesionario, coworking + estudio, spa), cada uno con sus luces del reveal.
+2. Los paneles **se funden de nuevo a la foto real de hoy** (la fachada tal como está).
+3. Texto grande: **"1 propiedad · 4 posibilidades · 1 decisión · Escribe CASA"** y el precio **USD 120.000**.
+4. Cierra con la firma sonora y la voz: "Tú decides cuál. Ven a verla."
+
+## 20 · Subtítulos en español (decisión de Eduardo, 05-10)
+**Los videos llevan subtítulos en español** (la misma voz en off de Eduardo, texto grande y legible, para que se entienda sin sonido). **No se hacen subtítulos en inglés.**
+
+## 21 · Maqueta isométrica del croquis (APROBADA por Eduardo, 05-10)
+**Qué es:** un dibujo en 3D de la casa "cortada" y vista desde arriba en diagonal, como una **casa de muñecas**: se ven los cuartos, la cocina, el patio y la terraza. Se hace a partir del croquis real, con los 4 rubros pintados en colores. Se usa dentro del plano animado.
+**Cómo se hace:** 1 imagen con Nano Banana Pro a partir del croquis (≈ **4 créditos**) y, si se quiere, una animación corta (≈ **8,75**). Se rotula **"Ilustración conceptual, no a escala"** y se revisa que **no invente habitaciones** ni medidas.
+`Isometric cutaway illustration of a three-level house with a long courtyard, based exactly on the reference floor plan sketch: same rooms in the same order from the street to the back, parking and porch at the front, stairs, kitchen, great hall, courtyard, service rooms at the back, second-floor rooms and balconies, rooftop terrace with a green roof; dark elegant style on a black background with thin white and blue lines; the rooms are softly colored in four groups; no text, no numbers, no measurements; clean, premium, conceptual.`
