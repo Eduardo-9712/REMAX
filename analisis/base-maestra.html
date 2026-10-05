@@ -325,7 +325,7 @@ details.edit .form{padding:4px 16px 16px}
     <div>
       <h2>Mejores oportunidades por precio/m²</h2>
       <div class="list" id="top-ops"></div>
-      <p class="note">Propiedades publicadas con su USD/m² al menos 15% por debajo de la mediana de sus comparables (misma zona, tipo y operación; mínimo 4 comparables). Hay que verificar estado, documentos y metros antes de ofrecerlas. Escala: oportunidad desde −15 %, en mercado hasta +10 %, por encima hasta +20 % y sobreprecio más allá de +20 %.</p>
+      <p class="note">Propiedades publicadas con su USD/m² al menos 15% por debajo de la mediana de sus comparables (propiedades parecidas: mismo tipo y operación, cerca —mismo sector o municipio; Guatire con Guarenas, nunca con la costa— y con m² y habitaciones similares; mínimo 4 comparables). Hay que verificar estado, documentos y metros antes de ofrecerlas. Escala: oportunidad desde −15 %, en mercado hasta +10 %, por encima hasta +20 % y sobreprecio más allá de +20 %.</p>
     </div>
     <div>
       <h2>Quién tiene el inventario</h2>
@@ -614,6 +614,14 @@ const tipo = r => r.tipo || "Otro";
 const VACIAS = new Set("en de la el los las y a con para venta alquiler se vende apartamento casa terreno local galpon edo estado miranda usd m2 mts".split(" "));
 function palabras(r){ return new Set(norm([r.titulo, r.sector].join(" ")).replace(/[^a-z0-9 ]/g," ").split(" ").filter(x=>x.length>2 && !VACIAS.has(x))); }
 function parecido(a, b){ if (!a.size || !b.size) return 0; let n = 0; a.forEach(x => { if (b.has(x)) n++; }); return n / Math.min(a.size, b.size); }
+const NEAR = {"Guatire":"Guarenas", "Guarenas":"Guatire"};
+const CRIT = [{tol:.35, hab:true, txt:"m² ±35 % y habitaciones ±1"}, {tol:.5, hab:false, txt:"m² ±50 %"}];
+const NIVEL = {1:"mismo sector", 2:"mismo municipio", 3:"misma zona", 4:"zona cercana"};
+const stem = t => t.replace(/s$/, "");
+const sectorTokens = r => norm(r.sector).replace(/\b(urb|urbanizacion|conjunto|conj|residencial|residencias|residencia|res|sector|calle|av|avenida|centro|comercial)\b/g," ").split(" ").filter(t=>t.length>3).map(stem);
+function sameSector(a, b){ const x = sectorTokens(a), y = sectorTokens(b); if (!x.length || !y.length) return false; const w = new Set(x); let n = 0; y.forEach(t => { if (w.has(t)) n++; }); return n / Math.min(x.length, y.length) >= .6; }
+const muniDe = r => norm(r.municipio || r.localidad || "");
+const sameMuni = (a, b) => { const x = muniDe(a), y = muniDe(b); return !!x && x===y; };
 function derive(){
   const rows = state.rows;
   // Duplicados entre portales: misma zona, tipo y operación, precio a ±2% y área a ±5%
@@ -629,15 +637,21 @@ function derive(){
                       : (Math.abs(num(k.precio_usd)-p)/p <= .01 && parecido(w, palabras(k)) >= .4))) : null;
     if (twin) r._dup = twin; else kept.push(r);
   }
-  // Comparables y veredicto
-  const groups = {};
-  for (const r of rows) if (r.activo !== false && !r._dup && ppm(r)) (groups[r.zona+"|"+tipo(r)+"|"+op(r)] ||= []).push(ppm(r));
-  const med = {}; for (const k in groups) med[k] = {m: median(groups[k]), n: groups[k].length};
+  // Comparables y veredicto: propiedades parecidas y cercanas (no de toda la zona)
+  const pool = rows.filter(x => x.activo !== false && !x._dup && ppm(x));
   for (const r of rows){
-    const g = med[r.zona+"|"+tipo(r)+"|"+op(r)], v = ppm(r);
-    r._n = g?.n || 0; r._diff = null; r._ver = null;
-    if (g && g.n >= MIN_COMP && v){ r._diff = v / g.m - 1; r._ver = r._diff <= -.15 ? "good" : r._diff <= .10 ? "fair" : r._diff <= .20 ? "high" : "over"; }
     r._dias = dias(r.fecha_publicacion || r.visto_primera);
+    r._n = 0; r._diff = null; r._ver = null; r._comps = []; r._nivel = null; r._crit = null; r._med = null;
+    const v = ppm(r), a = area(r); if (!v) continue;
+    const h = num(r.habitaciones), resid = /Apartamento|Casa/.test(tipo(r));
+    const base = pool.filter(c => c!==r && op(c)===op(r) && tipo(c)===tipo(r) && (c.zona===r.zona || NEAR[r.zona]===c.zona));
+    const maxL = r.zona==="Costas Mirandinas" ? 2 : 4; // en la costa nunca se mezclan pueblos distintos (Higuerote, Río Chico, Caucagua)
+    const lv = c => sameSector(r,c) ? 1 : (c.zona===r.zona && sameMuni(r,c)) ? 2 : c.zona===r.zona ? 3 : 4;
+    outer: for (const cf of CRIT){
+      const ok = base.filter(c => { const ca = area(c); if (!ca || Math.abs(ca-a)/a > cf.tol) return false; if (cf.hab && resid && h && num(c.habitaciones) && Math.abs(num(c.habitaciones)-h) > 1) return false; return true; });
+      for (let L = 1; L <= maxL; L++){ const set = ok.filter(c => lv(c) <= L); if (set.length >= MIN_COMP){ r._comps = set.map(c => ({c, l:lv(c)})); r._nivel = L; r._crit = cf.txt; break outer; } }
+    }
+    if (r._comps.length){ r._med = median(r._comps.map(x=>ppm(x.c))); r._n = r._comps.length; r._diff = v / r._med - 1; r._ver = r._diff <= -.15 ? "good" : r._diff <= .10 ? "fair" : r._diff <= .20 ? "high" : "over"; }
   }
 }
 const activos = () => state.rows.filter(r => r.activo !== false);
@@ -687,21 +701,25 @@ function renderMercado(){
 const SRC = {"RE/MAX Venezuela":"remax","Century 21":"c21","ZonaVen":"zv","BienesOnline":"bo","MercadoLibre":"ml","Inmobiliaria.com":"inm","Cartera RE/MAX Delta":"delta"};
 function srcBadge(r){ const f = r.fuente || "Sin fuente"; return `<span class="src" data-src="${SRC[f]||"otro"}">${esc(f)}</span>`; }
 function verdict(r){
-  if (!r._ver) return `<span class="v na">${ppm(r) ? `Sin comparables suficientes (${r._n})` : "Sin m² para comparar"}</span>`;
+  if (!r._ver) return `<span class="v na">${ppm(r) ? `Sin suficientes propiedades parecidas` : "Sin m² para comparar"}</span>`;
   return `<span class="v ${r._ver}" title="Frente a la mediana de ${r._n} comparables">${V[r._ver]} ${pct(r._diff)} vs ${r._n} comp.</span>`;
 }
 /* Comparables: las propiedades contra las que se calcula el veredicto de precio */
 const compOpen = new Set();
 const compGroup = r => state.rows.filter(x => x.activo!==false && !x._dup && ppm(x) && x.zona===r.zona && tipo(x)===tipo(r) && op(x)===op(r));
 function compsHTML(r){
-  const g = compGroup(r), med = median(g.map(ppm)), me = ppm(r), dup = !!r._dup;
-  const head = me==null ? `<p class="note">Esta propiedad no tiene m² cargados, así que no entra en la comparación. Agrégalos en "Editar datos".</p>`
-    : `<p class="note" style="margin:0 0 8px">${esc(r.zona)} · ${esc(tipo(r))} · ${esc(op(r))}: <b>${g.length}</b> propiedades publicadas con m², sin duplicados. Mediana <b>${usd(med)}/m²</b>. Esta: <b>${usd(me)}/m²</b>${med?` (${pct(me/med-1)} frente a la mediana)`:""}.${med && area(r) && me>med?` A la mediana valdría unos <b>${usd(med*area(r))}</b>.`:""}${g.length<MIN_COMP?` <span class="thin">Menos de ${MIN_COMP} comparables: no se marca veredicto.</span>`:""}${dup?` Esta propiedad es un posible duplicado y no cuenta en la mediana.`:""}</p>`;
-  const rows = [...g, ...(me!=null && !g.includes(r) ? [r] : [])].sort((a,b)=>ppm(a)-ppm(b));
-  return head + `<div class="tscroll"><table class="t"><thead><tr><th>Propiedad</th><th>Sector</th><th>Fuente</th><th class="num">Precio</th><th class="num">m²</th><th class="num">USD/m²</th><th class="num">vs mediana</th></tr></thead><tbody>${rows.map(x=>`<tr${x===r?' class="yo"':""}><th scope="row" style="white-space:normal;min-width:200px">${x===r?"◀ Esta · ":""}${x.enlace?`<a href="${esc(x.enlace)}" target="_blank" rel="noopener">${esc(String(x.titulo||"Sin título").slice(0,70))}</a>`:esc(String(x.titulo||"Sin título").slice(0,70))}</th><td>${esc(x.sector||"")}</td><td>${esc(x.fuente||"")}</td><td class="num">${usd(x.precio_usd)}</td><td class="num">${area(x)||"—"}</td><td class="num">${usd(ppm(x))}</td><td class="num">${med?pct(ppm(x)/med-1):"—"}</td></tr>`).join("")}</tbody></table></div><p class="note">Son las mismas propiedades que se usan para calcular el veredicto de precio. Si alguna no es comparable (otro estado, otro tamaño, datos mal cargados), corrígela o confírmala en su ficha.</p>`;
+  const me = ppm(r), a = area(r), med = r._med, dup = !!r._dup;
+  if (me==null) return `<p class="note">Esta propiedad no tiene m² cargados, así que no entra en la comparación. Agrégalos en "Editar datos".</p>`;
+  if (!r._comps.length){
+    return `<p class="note">No hay al menos ${MIN_COMP} propiedades parecidas (mismo tipo y operación, en el mismo sector o municipio —Guatire y Guarenas se consideran cercanas; la costa se compara solo dentro de su pueblo—, con m² y habitaciones similares), así que no se marca veredicto. A medida que entren más propiedades, aparecerá.</p>`;
+  }
+  const rows = [...r._comps.map(x=>({c:x.c, l:x.l})), {c:r, l:0}].sort((x,y)=>ppm(x.c)-ppm(y.c));
+  const lo = Math.round(Math.min(...r._comps.map(x=>area(x.c)))), hi = Math.round(Math.max(...r._comps.map(x=>area(x.c)))), pr = r._comps.map(x=>num(x.c.precio_usd)).filter(Boolean);
+  const head = `<p class="note" style="margin:0 0 8px">Se comparó con <b>${r._comps.length}</b> propiedades parecidas: ${esc(tipo(r))} en ${esc(op(r).toLowerCase())}, ${esc(NIVEL[r._nivel])}${r._nivel>1?" o más cerca":""}, con ${esc(r._crit)} (de ${lo} a ${hi} m²; precios de ${usd(Math.min(...pr))} a ${usd(Math.max(...pr))}). Mediana <b>${usd(med)}/m²</b>. Esta: <b>${usd(me)}/m²</b> (${pct(me/med-1)} frente a la mediana).${med && a && me>med?` A la mediana valdría unos <b>${usd(med*a)}</b>.`:""}${dup?" Esta propiedad es un posible duplicado.":""}</p>`;
+  return head + `<div class="tscroll"><table class="t"><thead><tr><th>Propiedad</th><th>Cercanía</th><th>Sector</th><th>Fuente</th><th class="num">Precio</th><th class="num">m²</th><th class="num">Hab.</th><th class="num">USD/m²</th><th class="num">vs mediana</th></tr></thead><tbody>${rows.map(({c:x,l})=>`<tr${x===r?' class="yo"':""}><th scope="row" style="white-space:normal;min-width:200px">${x===r?"◀ Esta · ":""}${x.enlace?`<a href="${esc(x.enlace)}" target="_blank" rel="noopener">${esc(String(x.titulo||"Sin título").slice(0,70))}</a>`:esc(String(x.titulo||"Sin título").slice(0,70))}</th><td>${x===r?"":esc(NIVEL[l])}</td><td>${esc(x.sector||"")}</td><td>${esc(x.fuente||"")}</td><td class="num">${usd(x.precio_usd)}</td><td class="num">${area(x)||"—"}</td><td class="num">${x.habitaciones||"—"}</td><td class="num">${usd(ppm(x))}</td><td class="num">${pct(ppm(x)/med-1)}</td></tr>`).join("")}</tbody></table></div><p class="note">El precio no se usa para elegir comparables (si no, un precio alto siempre encontraría comparables igual de altos). Si alguna no es comparable de verdad (otro estado, mal cargada), corrígela en su ficha.</p>`;
 }
 function compBlock(r){
-  const key = r._id, lab = r._ver ? `${V[r._ver]} ${pct(r._diff)} vs ${r._n} comp.` : (ppm(r) ? `${r._n} comp.` : "sin m²");
+  const key = r._id, lab = r._ver ? `${V[r._ver]} ${pct(r._diff)} vs ${r._n} comp.` : (ppm(r) ? "sin suficientes parecidas" : "sin m²");
   return `<details class="comp" data-comp="${esc(key)}" ${compOpen.has(key)?"open":""}><summary>Comparables del precio/m² (${esc(lab)})</summary><div data-comp-body>${compOpen.has(key)?compsHTML(r):""}</div></details>`;
 }
 function card(r, o = {}){

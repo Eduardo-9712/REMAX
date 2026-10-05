@@ -228,6 +228,11 @@ esto"* y sale al instante.
 - **Fuentes descartadas:** inmobiliaria.com (bloqueo anti-robots de Cloudflare), TuInmueble (es
   MercadoLibre), Encuentra24 (bloquea). No se saltan bloqueos: si un sitio no se deja leer, se
   agrega a mano o con ayuda de Alejandra.
+- **Sobreprecio (cómo se compara):** cada propiedad se compara solo con propiedades **parecidas y cercanas**: mismo
+  tipo y operación; primero el mismo sector, luego el mismo municipio, y solo Guatire con Guarenas como zonas
+  cercanas (**nunca Guatire/Guarenas con la costa**; en la costa solo dentro del mismo pueblo); m² ±35 % y
+  habitaciones ±1 (si faltan comparables, m² ±50 %); mínimo 4. El **precio no** se usa para elegir comparables
+  (haría el análisis circular). Cada ficha tiene la pestaña "Comparables del precio/m²" con la lista exacta.
 - **Duplicados:** la misma propiedad puede estar en varios portales. La página marca "posible
   duplicado" (misma zona, tipo y operación, precio a ±2 % y metros a ±5 %) y los excluye de las
   estadísticas.
