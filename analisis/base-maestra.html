@@ -137,7 +137,10 @@ details.edit summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body
 .minis details.add[open]{flex:1 1 100%}
 .minis .add summary{padding:7px 12px;font:600 13px/1.2 var(--body)}
 .minis .add .form{padding-top:6px}
-details.adj{border-top:1px solid var(--line)}
+details.adj,details.comp{border-top:1px solid var(--line)}
+details.comp summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body);color:var(--blue)}
+details.comp .tscroll{margin:0 16px 14px}
+tr.yo td,tr.yo th{background:var(--blue-soft)}
 details.adj summary{cursor:pointer;padding:10px 16px;font:600 13px/1 var(--body);color:var(--blue)}
 label.btn input[type=file]{display:none}
 .form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
@@ -687,6 +690,20 @@ function verdict(r){
   if (!r._ver) return `<span class="v na">${ppm(r) ? `Sin comparables suficientes (${r._n})` : "Sin m² para comparar"}</span>`;
   return `<span class="v ${r._ver}" title="Frente a la mediana de ${r._n} comparables">${V[r._ver]} ${pct(r._diff)} vs ${r._n} comp.</span>`;
 }
+/* Comparables: las propiedades contra las que se calcula el veredicto de precio */
+const compOpen = new Set();
+const compGroup = r => state.rows.filter(x => x.activo!==false && !x._dup && ppm(x) && x.zona===r.zona && tipo(x)===tipo(r) && op(x)===op(r));
+function compsHTML(r){
+  const g = compGroup(r), med = median(g.map(ppm)), me = ppm(r), dup = !!r._dup;
+  const head = me==null ? `<p class="note">Esta propiedad no tiene m² cargados, así que no entra en la comparación. Agrégalos en "Editar datos".</p>`
+    : `<p class="note" style="margin:0 0 8px">${esc(r.zona)} · ${esc(tipo(r))} · ${esc(op(r))}: <b>${g.length}</b> propiedades publicadas con m², sin duplicados. Mediana <b>${usd(med)}/m²</b>. Esta: <b>${usd(me)}/m²</b>${med?` (${pct(me/med-1)} frente a la mediana)`:""}.${med && area(r) && me>med?` A la mediana valdría unos <b>${usd(med*area(r))}</b>.`:""}${g.length<MIN_COMP?` <span class="thin">Menos de ${MIN_COMP} comparables: no se marca veredicto.</span>`:""}${dup?` Esta propiedad es un posible duplicado y no cuenta en la mediana.`:""}</p>`;
+  const rows = [...g, ...(me!=null && !g.includes(r) ? [r] : [])].sort((a,b)=>ppm(a)-ppm(b));
+  return head + `<div class="tscroll"><table class="t"><thead><tr><th>Propiedad</th><th>Sector</th><th>Fuente</th><th class="num">Precio</th><th class="num">m²</th><th class="num">USD/m²</th><th class="num">vs mediana</th></tr></thead><tbody>${rows.map(x=>`<tr${x===r?' class="yo"':""}><th scope="row" style="white-space:normal;min-width:200px">${x===r?"◀ Esta · ":""}${x.enlace?`<a href="${esc(x.enlace)}" target="_blank" rel="noopener">${esc(String(x.titulo||"Sin título").slice(0,70))}</a>`:esc(String(x.titulo||"Sin título").slice(0,70))}</th><td>${esc(x.sector||"")}</td><td>${esc(x.fuente||"")}</td><td class="num">${usd(x.precio_usd)}</td><td class="num">${area(x)||"—"}</td><td class="num">${usd(ppm(x))}</td><td class="num">${med?pct(ppm(x)/med-1):"—"}</td></tr>`).join("")}</tbody></table></div><p class="note">Son las mismas propiedades que se usan para calcular el veredicto de precio. Si alguna no es comparable (otro estado, otro tamaño, datos mal cargados), corrígela o confírmala en su ficha.</p>`;
+}
+function compBlock(r){
+  const key = r._id, lab = r._ver ? `${V[r._ver]} ${pct(r._diff)} vs ${r._n} comp.` : (ppm(r) ? `${r._n} comp.` : "sin m²");
+  return `<details class="comp" data-comp="${esc(key)}" ${compOpen.has(key)?"open":""}><summary>Comparables del precio/m² (${esc(lab)})</summary><div data-comp-body>${compOpen.has(key)?compsHTML(r):""}</div></details>`;
+}
 function card(r, o = {}){
   const ok = r.estado==="confirmado", p = ppm(r), out = r.activo===false;
   const nueva = !out && r.visto_primera && r.visto_primera===state.ultima && r.visto_primera!==state.primera;
@@ -720,6 +737,7 @@ function card(r, o = {}){
         <label class="wide">Notas (estado real, lo que dijo el anunciante, precio de cierre…)<textarea id="e-${esc(r._id)}-notas" ${dis}>${esc(r.notas??"")}</textarea></label>
         <div class="wide" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="save" ${dis}>Guardar</button><button class="btn primary" data-act="save-confirm" ${dis}>Guardar y confirmar</button></div>
       </div></details>`}
+    ${o.mini||o.select?"":compBlock(r)}
     ${o.mini||o.select?"":adjHTML("inmuebles", r)}
   </article>`;
 }
@@ -1454,7 +1472,8 @@ $("k-form").addEventListener("submit", async e => {
 });
 
 /* Archivos y grupo de captaciones */
-document.addEventListener("toggle", e => { const d = e.target; if (d?.matches?.("details.adj")){ d.open ? adjOpen.add(d.dataset.adj) : adjOpen.delete(d.dataset.adj); } }, true);
+document.addEventListener("toggle", e => { const d = e.target; if (d?.matches?.("details.adj")){ d.open ? adjOpen.add(d.dataset.adj) : adjOpen.delete(d.dataset.adj); }
+  if (d?.matches?.("details.comp")){ const id = d.dataset.comp; if (d.open){ compOpen.add(id); const r = state.rows.find(x=>x._id===id), b = d.querySelector("[data-comp-body]"); if (r && b && !b.innerHTML) b.innerHTML = compsHTML(r); } else compOpen.delete(id); } }, true);
 document.addEventListener("change", e => { const f = e.target.closest?.("[data-adj-file]"); if (f && f.files.length){ const l = [...f.files]; f.value = ""; subirArchivos(f.dataset.adjFile, l); } });
 document.addEventListener("click", async e => {
   const ad = e.target.closest("[data-adj-add]");
