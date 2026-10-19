@@ -1,0 +1,358 @@
+<title>Reconocimientos Delta 5 años</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Bodoni+Moda:wght@500;700&display=swap">
+<style>
+/* Concepto: mesa de taller en negro. Cada propuesta es una pieza sobre fondo oscuro, en rejilla para compararlas de un vistazo. */
+:root {
+  --bg: #0a0a0c;
+  --table: #17181c;
+  --table-2: #1f2025;
+  --fg: #f2f0ea;
+  --muted: #a7a8b0;
+  --line: #2c2d33;
+  --red: #d6212f;
+  --blue: #0b3d91;
+  --gold: #c9a45c;
+  --navy: #0a1a3a;
+  --display: "Bodoni Moda", "Didot", Georgia, serif;
+  --body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.5;
+  padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 56px;
+}
+.wrap { max-width: 1180px; margin: 0 auto; display: grid; gap: 32px; }
+header { display: grid; gap: 12px; max-width: 70ch; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin: 0; text-wrap: balance; }
+header p { margin: 0; color: var(--muted); }
+.aviso {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--red);
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: var(--muted);
+  max-width: 70ch;
+}
+.aviso strong { color: var(--fg); font-weight: 600; }
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.card { display: grid; gap: 10px; min-width: 0; }
+.mesa {
+  background: radial-gradient(120% 90% at 50% 20%, var(--table-2), var(--table));
+  border: 1px solid var(--line);
+  padding: 14px;
+}
+.mesa svg { display: block; width: 100%; height: auto; max-width: 100%; }
+.card h2 { margin: 0; font-size: 15px; font-weight: 700; display: flex; gap: 10px; align-items: baseline; }
+.card h2 .n { font-family: var(--display); font-size: 26px; color: var(--gold); line-height: 1; }
+.card p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.pick { border-top: 1px solid var(--line); padding-top: 20px; display: grid; gap: 8px; max-width: 70ch; }
+.pick h3 { margin: 0; font-family: var(--display); font-size: 22px; }
+.pick p { margin: 0; color: var(--muted); }
+
+/* Texto dentro de las placas */
+.d { font-family: var(--display); }
+.b { font-family: var(--body); }
+.sp { letter-spacing: .22em; }
+.gold { fill: var(--gold); }
+.paper { fill: #f4f1ea; }
+.dim { fill: #b9bac2; }
+.navy { fill: var(--navy); }
+.redf { fill: var(--red); }
+.cream { fill: #ecdcbc; }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".16"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6a4426"/>
+      <stop offset="1" stop-color="#3b2413"/>
+    </linearGradient>
+    <linearGradient id="goldplate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3c98a"/>
+      <stop offset="1" stop-color="#b08a43"/>
+    </linearGradient>
+    <linearGradient id="arco" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16171d"/>
+      <stop offset="1" stop-color="#08080a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#c9a45c" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#c9a45c" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="env">
+      <path d="M50 4 C20 4 6 30 10 52 C13 68 30 82 40 92 L60 92 C70 82 87 68 90 52 C94 30 80 4 50 4 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Globo de referencia a color: franjas roja, blanca y azul -->
+  <symbol id="globo" viewBox="0 0 100 130">
+    <g clip-path="url(#env)">
+      <rect width="100" height="40" fill="#d6212f"/>
+      <rect y="40" width="100" height="28" fill="#ffffff"/>
+      <rect y="68" width="100" height="32" fill="#0b3d91"/>
+    </g>
+    <path d="M50 4 C20 4 6 30 10 52 C13 68 30 82 40 92 L60 92 C70 82 87 68 90 52 C94 30 80 4 50 4 Z" fill="none" stroke="#ffffff" stroke-opacity=".45" stroke-width="1"/>
+    <path d="M40 92 L45 108 M60 92 L55 108" stroke="#c9c9cf" stroke-width="1" fill="none"/>
+    <rect x="43" y="108" width="14" height="10" rx="1.5" fill="#8a5a2b"/>
+  </symbol>
+
+  <!-- Globo de una sola tinta, para grabado láser -->
+  <symbol id="globo-linea" viewBox="0 0 100 130">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M50 4 C20 4 6 30 10 52 C13 68 30 82 40 92 L60 92 C70 82 87 68 90 52 C94 30 80 4 50 4 Z"/>
+      <path d="M11 40 Q50 47 89 40"/>
+      <path d="M17 68 Q50 75 83 68"/>
+      <path d="M40 92 L45 108 M60 92 L55 108"/>
+      <rect x="43" y="108" width="14" height="10" rx="1.5"/>
+    </g>
+  </symbol>
+</svg>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">RE/MAX Delta · 5 años</div>
+    <h1>Diez ideas de reconocimiento con el globo</h1>
+    <p>Para los 5 con más trayectoria y para el detalle del resto del equipo. Dime el número que te guste, o mezcla: "la forma del 2 con el color del 8".</p>
+  </header>
+
+  <div class="aviso">
+    <strong>Son maquetas de referencia.</strong> El globo está dibujado para que veas la idea; el taller debe usar el logo oficial de RE/MAX Delta. El nombre y la frase son de ejemplo, y la frase final la escribimos con un dato real de cada persona.
+  </div>
+
+  <div class="grid">
+
+    <!-- 1 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 1, placa negra clásica con borde dorado">
+          <ellipse cx="200" cy="486" rx="150" ry="7" fill="#000" opacity=".4"/>
+          <rect x="30" y="20" width="340" height="450" rx="6" fill="#0c0c0e" stroke="#c9a45c" stroke-width="2"/>
+          <rect x="40" y="30" width="320" height="430" rx="3" fill="none" stroke="#c9a45c" stroke-opacity=".35"/>
+          <use href="#globo" x="140" y="55" width="120" height="156"/>
+          <text x="200" y="256" text-anchor="middle" class="b paper sp" font-size="22" font-weight="700">RE/MAX DELTA</text>
+          <text x="200" y="282" text-anchor="middle" class="b gold" font-size="13" font-weight="600" letter-spacing="8">5 AÑOS</text>
+          <path d="M150 304 H250" stroke="#c9a45c" stroke-width="1"/>
+          <text x="200" y="345" text-anchor="middle" class="d paper" font-size="22" font-weight="500">[NOMBRE DEL AGENTE]</text>
+          <text x="200" y="382" text-anchor="middle" class="b dim" font-size="12">Cinco años de entrega y confianza.</text>
+          <text x="200" y="402" text-anchor="middle" class="b dim" font-size="12">Gracias por creer en Delta.</text>
+          <text x="200" y="440" text-anchor="middle" class="b gold" font-size="9" font-weight="600" letter-spacing="3">GRACIAS POR CONSTRUIR DELTA</text>
+        </svg>
+      </div>
+      <h2><span class="n">1</span> Negra clásica</h2>
+      <p>Acrílico negro o metal con borde dorado. Sobria y elegante, la más segura.</p>
+    </article>
+
+    <!-- 2 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 2, placa con forma de globo">
+          <ellipse cx="200" cy="486" rx="120" ry="7" fill="#000" opacity=".4"/>
+          <use href="#globo" x="40" y="14" width="320" height="416"/>
+          <text x="200" y="104" text-anchor="middle" class="d" fill="#fff" font-size="64" font-weight="700">5</text>
+          <text x="200" y="130" text-anchor="middle" class="b" fill="#fff" font-size="13" font-weight="600" letter-spacing="9">AÑOS</text>
+          <text x="200" y="176" text-anchor="middle" class="b navy sp" font-size="17" font-weight="700">RE/MAX DELTA</text>
+          <text x="200" y="208" text-anchor="middle" class="d navy" font-size="17" font-weight="700">[NOMBRE DEL AGENTE]</text>
+          <text x="200" y="262" text-anchor="middle" class="b" fill="#fff" font-size="11">Cinco años de entrega y confianza.</text>
+          <text x="200" y="279" text-anchor="middle" class="b" fill="#fff" font-size="11">Gracias por creer en Delta.</text>
+          <rect x="140" y="446" width="120" height="22" rx="3" fill="url(#goldplate)"/>
+          <text x="200" y="461" text-anchor="middle" class="b" fill="#1a1308" font-size="9" font-weight="700" letter-spacing="2">DELTA 5 AÑOS</text>
+        </svg>
+      </div>
+      <h2><span class="n">2</span> Placa en forma de globo</h2>
+      <p>La pieza misma es el globo, cortada en acrílico a color. La más reconocible.</p>
+    </article>
+
+    <!-- 3 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 3, trofeo de cristal con base negra">
+          <ellipse cx="200" cy="486" rx="160" ry="7" fill="#000" opacity=".4"/>
+          <rect x="70" y="20" width="260" height="390" rx="8" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".45"/>
+          <rect x="78" y="28" width="244" height="374" rx="5" fill="none" stroke="#ffffff" stroke-opacity=".15"/>
+          <use href="#globo" x="150" y="52" width="100" height="130"/>
+          <text x="200" y="222" text-anchor="middle" class="b paper sp" font-size="17" font-weight="700">RE/MAX DELTA</text>
+          <text x="200" y="246" text-anchor="middle" class="b gold" font-size="12" font-weight="600" letter-spacing="8">5 AÑOS</text>
+          <text x="200" y="302" text-anchor="middle" class="d paper" font-size="18" font-weight="500">[NOMBRE DEL AGENTE]</text>
+          <text x="200" y="340" text-anchor="middle" class="b dim" font-size="11">Cinco años de entrega y confianza.</text>
+          <text x="200" y="357" text-anchor="middle" class="b dim" font-size="11">Gracias por creer en Delta.</text>
+          <rect x="50" y="410" width="300" height="58" rx="3" fill="#0c0c0e" stroke="#c9a45c" stroke-width="1.5"/>
+          <rect x="140" y="426" width="120" height="26" rx="2" fill="url(#goldplate)"/>
+          <text x="200" y="443" text-anchor="middle" class="b" fill="#1a1308" font-size="9" font-weight="700" letter-spacing="2">GRACIAS POR CONSTRUIR DELTA</text>
+        </svg>
+      </div>
+      <h2><span class="n">3</span> Trofeo de cristal</h2>
+      <p>Acrílico transparente grabado, sobre base negra con placa dorada. Se ve de gala.</p>
+    </article>
+
+    <!-- 4 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 4, medallón redondo con anillo de texto">
+          <defs><path id="anillo" d="M58,236 a142,142 0 1,1 284,0 a142,142 0 1,1 -284,0"/></defs>
+          <ellipse cx="200" cy="486" rx="150" ry="7" fill="#000" opacity=".4"/>
+          <circle cx="200" cy="236" r="176" fill="#0c0c0e" stroke="#c9a45c" stroke-width="2"/>
+          <circle cx="200" cy="236" r="122" fill="none" stroke="#c9a45c" stroke-opacity=".5"/>
+          <text class="b gold" font-size="15" font-weight="700" letter-spacing="3"><textPath href="#anillo" textLength="880" lengthAdjust="spacing">RE/MAX DELTA • 5 AÑOS • RE/MAX DELTA • 5 AÑOS •</textPath></text>
+          <use href="#globo" x="155" y="112" width="90" height="117"/>
+          <text x="200" y="266" text-anchor="middle" class="d paper" font-size="15" font-weight="500">[NOMBRE DEL AGENTE]</text>
+          <text x="200" y="296" text-anchor="middle" class="b dim" font-size="10">Cinco años de entrega y confianza.</text>
+          <text x="200" y="311" text-anchor="middle" class="b dim" font-size="10">Gracias por creer en Delta.</text>
+          <path d="M96 424 L304 424 L288 446 L304 468 L96 468 L112 446 Z" class="redf"/>
+          <text x="200" y="451" text-anchor="middle" class="b paper" font-size="11" font-weight="700" letter-spacing="3">GRACIAS, DELTA</text>
+        </svg>
+      </div>
+      <h2><span class="n">4</span> Medallón con cinta</h2>
+      <p>Medalla redonda con el nombre al centro. También sirve en versión pequeña para el detalle del resto.</p>
+    </article>
+
+    <!-- 5 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 5, placa con arco">
+          <ellipse cx="200" cy="486" rx="150" ry="7" fill="#000" opacity=".4"/>
+          <path d="M60,470 V200 a140,140 0 0 1 280,0 V470 Z" fill="url(#arco)" stroke="#c9a45c" stroke-width="2"/>
+          <path d="M70,460 V200 a130,130 0 0 1 260,0 V460" fill="none" stroke="#c9a45c" stroke-opacity=".3"/>
+          <use href="#globo" x="155" y="88" width="90" height="117"/>
+          <text x="200" y="250" text-anchor="middle" class="b paper sp" font-size="19" font-weight="700">RE/MAX DELTA</text>
+          <text x="200" y="274" text-anchor="middle" class="b gold" font-size="12" font-weight="600" letter-spacing="8">5 AÑOS</text>
+          <text x="200" y="332" text-anchor="middle" class="d paper" font-size="20" font-weight="500">[NOMBRE DEL AGENTE]</text>
+          <text x="200" y="368" text-anchor="middle" class="b dim" font-size="11">Cinco años de entrega y confianza.</text>
+          <text x="200" y="385" text-anchor="middle" class="b dim" font-size="11">Gracias por creer en Delta.</text>
+          <rect x="60" y="428" width="280" height="42" fill="#0b3d91"/>
+          <text x="200" y="454" text-anchor="middle" class="b paper" font-size="10" font-weight="700" letter-spacing="3">GRACIAS POR CONSTRUIR DELTA</text>
+        </svg>
+      </div>
+      <h2><span class="n">5</span> Arco con franja azul</h2>
+      <p>Forma de arco con el globo "saliendo" arriba y una franja azul abajo.</p>
+    </article>
+
+    <!-- 6 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 6, placa horizontal de escritorio">
+          <ellipse cx="200" cy="396" rx="170" ry="8" fill="#000" opacity=".45"/>
+          <rect x="16" y="130" width="368" height="250" rx="5" fill="#0c0c0e" stroke="#c9a45c" stroke-width="2"/>
+          <rect x="24" y="138" width="352" height="234" rx="3" fill="none" stroke="#c9a45c" stroke-opacity=".35"/>
+          <use href="#globo" x="40" y="168" width="96" height="125"/>
+          <path d="M150 160 V350" stroke="#c9a45c" stroke-opacity=".6"/>
+          <text x="166" y="190" class="b paper sp" font-size="16" font-weight="700">RE/MAX DELTA</text>
+          <text x="166" y="210" class="b gold" font-size="11" font-weight="600" letter-spacing="7">5 AÑOS</text>
+          <text x="166" y="256" class="d paper" font-size="17" font-weight="500">[NOMBRE DEL AGENTE]</text>
+          <text x="166" y="290" class="b dim" font-size="11">Cinco años de entrega y confianza.</text>
+          <text x="166" y="306" class="b dim" font-size="11">Gracias por creer en Delta.</text>
+          <text x="166" y="344" class="b gold" font-size="8.5" font-weight="600" letter-spacing="2">GRACIAS POR CONSTRUIR DELTA</text>
+        </svg>
+      </div>
+      <h2><span class="n">6</span> Horizontal de escritorio</h2>
+      <p>Globo a la izquierda y texto a la derecha. Cabe mejor un mensaje largo.</p>
+    </article>
+
+    <!-- 7 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 7, número 5 grande con el globo encima">
+          <ellipse cx="200" cy="490" rx="150" ry="6" fill="#000" opacity=".4"/>
+          <rect x="30" y="14" width="340" height="468" rx="6" fill="#0c0c0e" stroke="#c9a45c" stroke-width="2"/>
+          <circle cx="200" cy="130" r="120" fill="url(#glow)"/>
+          <use href="#globo" x="140" y="30" width="120" height="156"/>
+          <text x="200" y="372" text-anchor="middle" class="d" fill="none" stroke="#c9a45c" stroke-width="2.5" font-size="230" font-weight="700">5</text>
+          <text x="200" y="402" text-anchor="middle" class="b paper" font-size="13" font-weight="700" letter-spacing="6">AÑOS DE RE/MAX DELTA</text>
+          <text x="200" y="432" text-anchor="middle" class="d paper" font-size="19" font-weight="500">[NOMBRE DEL AGENTE]</text>
+          <text x="200" y="454" text-anchor="middle" class="b dim" font-size="10.5">Cinco años de entrega y confianza. Gracias por creer en Delta.</text>
+        </svg>
+      </div>
+      <h2><span class="n">7</span> El gran 5</h2>
+      <p>El número 5 en contorno dorado con el globo flotando encima. Muy fotogénica para redes.</p>
+    </article>
+
+    <!-- 8 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 8, madera con grabado láser">
+          <ellipse cx="200" cy="486" rx="150" ry="7" fill="#000" opacity=".4"/>
+          <rect x="30" y="20" width="340" height="450" rx="6" fill="url(#wood)"/>
+          <g stroke="#000" stroke-opacity=".18" stroke-width="1" fill="none">
+            <path d="M30 70 Q200 58 370 74"/><path d="M30 120 Q200 132 370 116"/>
+            <path d="M30 190 Q200 178 370 194"/><path d="M30 260 Q200 272 370 256"/>
+            <path d="M30 330 Q200 318 370 334"/><path d="M30 400 Q200 412 370 396"/>
+          </g>
+          <rect x="44" y="34" width="312" height="422" rx="3" fill="none" stroke="#ecdcbc" stroke-opacity=".55"/>
+          <use href="#globo-linea" x="145" y="56" width="110" height="143" style="color:#ecdcbc"/>
+          <text x="200" y="246" text-anchor="middle" class="b cream sp" font-size="21" font-weight="700">RE/MAX DELTA</text>
+          <text x="200" y="272" text-anchor="middle" class="b cream" font-size="12" font-weight="600" letter-spacing="8">5 AÑOS</text>
+          <path d="M150 296 H250" stroke="#ecdcbc" stroke-opacity=".7"/>
+          <text x="200" y="338" text-anchor="middle" class="d cream" font-size="21" font-weight="500">[NOMBRE DEL AGENTE]</text>
+          <text x="200" y="376" text-anchor="middle" class="b cream" font-size="12" opacity=".85">Cinco años de entrega y confianza.</text>
+          <text x="200" y="395" text-anchor="middle" class="b cream" font-size="12" opacity=".85">Gracias por creer en Delta.</text>
+          <text x="200" y="436" text-anchor="middle" class="b cream" font-size="9" font-weight="600" letter-spacing="3" opacity=".9">GRACIAS POR CONSTRUIR DELTA</text>
+        </svg>
+      </div>
+      <h2><span class="n">8</span> Madera con grabado láser</h2>
+      <p>Madera oscura grabada en una sola tinta. Cálida, artesanal y de bajo costo.</p>
+    </article>
+
+    <!-- 9 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 9, globo flotante sobre base escalonada">
+          <ellipse cx="200" cy="488" rx="150" ry="7" fill="#000" opacity=".4"/>
+          <circle cx="200" cy="140" r="150" fill="url(#glow)"/>
+          <use href="#globo" x="130" y="30" width="140" height="182"/>
+          <path d="M200 212 V318" stroke="#c9a45c" stroke-width="1" stroke-dasharray="3 4"/>
+          <rect x="95" y="318" width="210" height="52" fill="#0c0c0e" stroke="#c9a45c" stroke-width="1.5"/>
+          <text x="200" y="343" text-anchor="middle" class="b paper sp" font-size="14" font-weight="700">RE/MAX DELTA</text>
+          <text x="200" y="360" text-anchor="middle" class="b gold" font-size="10" font-weight="600" letter-spacing="7">5 AÑOS</text>
+          <rect x="60" y="370" width="280" height="98" fill="#0c0c0e" stroke="#c9a45c" stroke-width="1.5"/>
+          <rect x="76" y="384" width="248" height="38" rx="2" fill="url(#goldplate)"/>
+          <text x="200" y="408" text-anchor="middle" class="d" fill="#1a1308" font-size="17" font-weight="700">[NOMBRE DEL AGENTE]</text>
+          <text x="200" y="440" text-anchor="middle" class="b dim" font-size="10">Cinco años de entrega y confianza.</text>
+          <text x="200" y="455" text-anchor="middle" class="b dim" font-size="10">Gracias por creer en Delta.</text>
+        </svg>
+      </div>
+      <h2><span class="n">9</span> Globo sobre pedestal</h2>
+      <p>Escultura pequeña: el globo flota sobre una base de dos escalones con placa dorada.</p>
+    </article>
+
+    <!-- 10 -->
+    <article class="card">
+      <div class="mesa">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Opción 10, placa blanca con azul y rojo">
+          <ellipse cx="200" cy="486" rx="150" ry="7" fill="#000" opacity=".4"/>
+          <rect x="30" y="20" width="340" height="450" rx="6" fill="#f6f4ef"/>
+          <rect x="30" y="20" width="340" height="12" fill="#d6212f"/>
+          <rect x="30" y="32" width="340" height="5" fill="#0b3d91"/>
+          <use href="#globo" x="140" y="62" width="120" height="156"/>
+          <text x="200" y="262" text-anchor="middle" class="b navy sp" font-size="22" font-weight="700">RE/MAX DELTA</text>
+          <text x="200" y="288" text-anchor="middle" class="b redf" font-size="13" font-weight="700" letter-spacing="8">5 AÑOS</text>
+          <path d="M150 308 H250" stroke="#0a1a3a" stroke-opacity=".4"/>
+          <text x="200" y="348" text-anchor="middle" class="d navy" font-size="22" font-weight="700">[NOMBRE DEL AGENTE]</text>
+          <text x="200" y="384" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12" fill="#3a4258">Cinco años de entrega y confianza.</text>
+          <text x="200" y="403" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12" fill="#3a4258">Gracias por creer en Delta.</text>
+          <rect x="30" y="432" width="340" height="38" fill="#0a1a3a"/>
+          <text x="200" y="456" text-anchor="middle" class="b paper" font-size="10" font-weight="700" letter-spacing="3">GRACIAS POR CONSTRUIR DELTA</text>
+        </svg>
+      </div>
+      <h2><span class="n">10</span> Blanca RE/MAX</h2>
+      <p>Fondo blanco con rojo y azul de la marca. La más "oficial", sin el negro.</p>
+    </article>
+
+  </div>
+
+  <section class="pick">
+    <h3>Mi recomendación</h3>
+    <p>Para los 5 homenajeados, el <strong>2</strong>, el <strong>3</strong> o el <strong>9</strong>: son las que más se sienten como un premio. Para el detalle del resto del equipo, el <strong>4</strong> hecho medalla o llavero. Si hay que decidir hoy por tiempo de fabricación, el <strong>1</strong> y el <strong>8</strong> son las más rápidas de conseguir.</p>
+  </section>
+</div>
