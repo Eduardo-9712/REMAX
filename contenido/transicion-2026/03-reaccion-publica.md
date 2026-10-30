@@ -6,8 +6,9 @@
 - **Redes:** su mensaje "Estoy aquí. Con ustedes" alcanzó "millones de visualizaciones" (NTN24); las imágenes se hicieron virales y tendencia (Canal 26, RCN).
 - **Aliados:** Edmundo González celebró el regreso y planea volver.
 - **Chavismo:** Delcy Rodríguez: "Debe cesar la política como un show... Podría evitarse el show"; Diosdado Cabello: "Aquí no hay persecuciones para nadie. Que dejen el show". [RCN](https://www.noticiasrcn.com/internacional/delcy-rodriguez-y-diosdado-cabello-sobre-regreso-de-maria-corina-machado-a-venezuela-1075437)
-- **EEUU:** Marco Rubio dijo que las condiciones para el regreso seguro fueron "resultado directo de las conversaciones de reconciliación apoyadas por Estados Unidos" y que son "la mejor oportunidad en treinta años" para una elección libre. RCN indica que EEUU participó en el operativo, según Rubio.
-- **UE:** pidió aprovechar el regreso para un diálogo hacia elecciones libres (solo titular; no leído).
+- **EEUU:** Marco Rubio dijo que las condiciones para el regreso seguro fueron "resultado directo de las conversaciones de reconciliación apoyadas por Estados Unidos" y que son "la mejor oportunidad en treinta años" para una elección libre. RCN indica que EEUU participó en el operativo, según Rubio. Matiz: según Canal 26, Trump dijo no saber "nada" del regreso y deseó que ella estuviera a salvo. El lunes 27-10 un funcionario del Departamento de Estado presentó una hoja de ruta electoral.
+- **UE:** un portavoz de Kaja Kallas dijo que "el regreso de los líderes y representantes de la oposición contribuye a una mayor apertura del espacio político" y pidió un "diálogo inclusivo, liderado por los propios venezolanos" hacia "elecciones libres y justas". [Canal 26](https://www.canal26.com/internacionales/2026/10/27/venezuela-la-union-europea-pide-aprovechar-el-regreso-de-maria-corina-machado-para-impulsar-un-dialogo-que-lleve-a-elecciones-libres/)
+- **Delcy sobre el regreso (26-10):** "Podía evitarse el show"; dijo que no había restricciones y que ahí estaban los aeropuertos. [El Estímulo](https://elestimulo.com/venezuela/2026-10-26/delcy-rodriguez-maria-corina-machado/)
 - **Encuesta previa (no posterior):** Bloomberg la ubicaba con 52 % de intención de voto (sin fecha ni metodología en el texto).
 
 ## Lo que NO sabemos

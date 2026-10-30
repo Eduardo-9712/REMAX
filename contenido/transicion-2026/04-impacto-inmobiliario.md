@@ -2,16 +2,24 @@
 
 **Cómo leer este archivo:** los discursos casi no hablan de inmuebles. Por eso aquí separamos 🟦 **Lo dicho** (con fuente) de 🟨 **[Análisis]** (nuestra hipótesis, a validar con Luis León). Nada es predicción ni promesa de rentabilidad.
 
-## Punto de partida: cómo está el mercado (datos del sector, por confirmar)
+## Punto de partida: cómo está el mercado (verificado en páginas completas, 30-10)
 
-- Precios de oferta subieron entre 20 % y 30 % en el último año sin igual aumento de transacciones, según la Cámara Inmobiliaria de Venezuela (CIV). [El Impulso](https://www.elimpulso.com/2026/03/11/camara-inmobiliaria-de-venezuela-advierte-que-el-exceso-de-oferta-y-la-falta-de-creditos-frenan-al-sector-11mar/)
-- "El financiamiento a largo plazo no existe en el país" (presidente de la CIV). [Mundour](https://mundour.com/2026/10/06/mercado-inmobiliario-venezolano-de-2026-entre-reajustes-de-precios-y-falta-de-credito/)
-- CIV: "15 años sin producir un metro cuadrado de vivienda residencial nueva"; la Ley de Estafa Inmobiliaria ha afectado nuevos proyectos.
-- Nueva Ley de Arrendamiento (agosto 2026), con más flexibilidad según la Cámara Inmobiliaria Metropolitana. [El Nacional](https://www.elnacional.com/2026/08/mercado-inmobiliario-venezuela-ley-arrendamiento-alquileres-2026/)
-- Tras los sismos, se habla de una pérdida de 60–70 % del inventario en La Guaira (estimación de una cámara local; **por confirmar**).
-- *Todo esto lo leímos solo en resúmenes: abrir las fuentes antes de citarlas en video.*
+- **Expectativas desbordadas a inicios de año.** Fernando Di Gerónimo (presidente de la Cámara Inmobiliaria Metropolitana): fue "una fantasía por parte de los propietarios que tuvieron la ilusión de poder duplicar el precio"; luego muchos bajaron. El Nacional cuenta que subieron precios "en más de 50 % y hasta a duplicarlos". [El Nacional, 13-08](https://www.elnacional.com/2026/08/mercado-inmobiliario-venezuela-ley-arrendamiento-alquileres-2026/)
+- **Precios y capacidad de pago.** Los precios se "adaptaron a la capacidad real de pago" tras un "intento de aumento especulativo". Hay "brecha notable" entre precio de oferta y precio de cierre. [Mundour](https://mundour.com/2026/10/06/mercado-inmobiliario-venezolano-de-2026-entre-reajustes-de-precios-y-falta-de-credito/), [Curadas](https://curadas.com/2026/08/13/el-mercado-inmobiliario-en-venezuela-entre-la-reactivacion-cautelosa-y-el-desafio-del-credito/)
+- **Crédito.** Pablo González Travieso (presidente de la Cámara Inmobiliaria de Venezuela): "El financiamiento a largo plazo no existe en el país", y un encaje bancario cercano al 70 % frena el crédito. [Mundour](https://mundour.com/2026/10/06/mercado-inmobiliario-venezolano-de-2026-entre-reajustes-de-precios-y-falta-de-credito/) **Matiz:** hay créditos estatales para damnificados (ver `02`).
+- **Producción de vivienda.** González Travieso: "La solución no es el mercado secundario; la solución es la producción de vivienda." Curadas habla de "escasa edificación de nuevos desarrollos residenciales".
+- **Ley de Arrendamiento (Gaceta del 07-08-2026).** "Ley Especial de Arrendamiento de Inmuebles Destinados a Vivienda": libre estipulación entre las partes, cánones en divisas (en bolívares, a tasa indexada del BCV), depósito de hasta tres meses, y los contratos anteriores siguen bajo la ley de 2011. Según "fuentes oficiales", busca activar unas 200.000 viviendas cerradas. Di Gerónimo: "da mayor confianza". Aplica a **vivienda**; si cubre alquileres vacacionales o comerciales, *por confirmar con Luis León*. [El Nacional](https://www.elnacional.com/2026/08/mercado-inmobiliario-venezuela-ley-arrendamiento-alquileres-2026/)
+- **Sismos y precios.** En La Guaira el m² habría caído de 600–1.000 a 300–600 dólares (Mundour). *Es precio, no inventario.*
+- **Cierre de año.** Di Gerónimo ve un cierre de 2026 "prometedor" y lo atribuye en parte a la apertura petrolera y a la llegada de multinacionales. [Fedecámaras Radio, 28-10](https://fedecamarasradio.com/programas/camara-inmobiliaria-metropolitana-cierre-del-2026-es-prometedor-para-el-sector/)
+- **Diáspora.** Hay propietarios en el exterior con inmuebles cerrados y familiares de la diáspora que buscan vivienda para los suyos (El Nacional, Curadas).
+- **Lo que NO apareció:** ningún texto menciona Guarenas, Guatire ni Higuerote; tampoco hay datos de galpones. Eso es información que **Luis León y nuestra base maestra** deben aportar.
 
 ## Análisis por tema
+
+### 0. Lo único inmobiliario concreto de María Corina (plan 2025)
+- 🟦 Área "Bienes Raíces": "sistema robusto de derechos de propiedad, legalización de transacciones en divisas y reformas a leyes de alquiler", y se espera "una fuerte expansión del mercado inmobiliario". Más el área de Servicios Financieros: "se eliminarán los controles que impiden el crédito".
+- **Pros:** 🟨 apunta a lo que hoy frena el mercado: transacciones en divisas, alquileres y crédito. La Ley de Arrendamiento de agosto de 2026 (del gobierno encargado) ya tocó el alquiler.
+- **Contras:** es un resumen de intención de 2025, sin detalles ni plazos; depende de que haya un gobierno electo.
 
 ### 1. Seguridad jurídica y propiedad privada
 - 🟦 Machado: propiedad privada y seguridad jurídica como base; contratos legales "se van a respetar". Delcy: "la propiedad privada es un derecho protegido y garantizado por nuestra Constitución."
@@ -43,21 +51,21 @@
 - **Contras:** 🟨 el retorno masivo no ha ocurrido; depende de seguridad, servicios y empleo.
 
 ### 6. Crédito, FMI y moneda
-- 🟦 Machado: plan con el FMI. Delcy: descarta la dolarización. CIV: no existe financiamiento a largo plazo.
+- 🟦 Machado: plan con el FMI. Delcy: descarta la dolarización. Cámara Inmobiliaria de Venezuela: no existe financiamiento a largo plazo. Estado: créditos a damnificados (por confirmar).
 - **Pros:** 🟨 un acuerdo con el FMI y reformas monetarias podrían abrir el camino a crédito hipotecario, la gran pieza que falta.
 - **Contras:** hoy casi todo se paga de contado. La moneda de pago sigue siendo tema (ver duda de propietarios con "Venezuela Renace" en CLAUDE.md).
 
 ### 7. Construcción nueva
-- 🟦 La CIV pide producir vivienda nueva. El Gobierno encargado habla de unas 25.000 viviendas antisísmicas para La Guaira. Machado evalúa un plan maestro costero.
+- 🟦 La Cámara Inmobiliaria de Venezuela pide producir vivienda nueva. El Gobierno encargado habla de un plan de unas 25.000 viviendas (sin calendario ni presupuesto). El plan de 2025 de María Corina incluye el área Bienes Raíces.
 - **Pros:** 🟨 la reconstrucción y la necesidad de vivienda nueva abren espacio a desarrolladores, terrenos bien ubicados y proyectos antisísmicos.
-- **Contras:** 🟨 el riesgo regulatorio (Ley de Estafa Inmobiliaria), la falta de crédito y el costo de materiales frenan nuevos proyectos. Quien venda "preventas" debe cuidar la transparencia.
+- **Contras:** 🟨 la falta de crédito a largo plazo y la incertidumbre frenan nuevos proyectos (costos y reglas, por confirmar con Luis León). Quien venda "preventas" debe cuidar la transparencia.
 
 ### 8. Reforma tributaria
 - 🟦 Anunciada para este año, sin detalles.
 - **Qué vigilar:** 🟨 impuestos a la compraventa, registro, ganancias. **Por confirmar con Luis León** (es su terreno jurídico).
 
 ### 9. Sismos y desplazamiento
-- 🟦 Doble sismo del 24-06; miles de viviendas dañadas.
+- 🟦 Doble sismo del 24-06; 41.624 viviendas afectadas según cifras oficiales de agosto; m² en La Guaira habría caído de precio (Mundour).
 - **Pros/oportunidad:** 🟨 demanda de casas en zonas seguras y de playa (ya la vemos en nuestro contexto). 
 - **Contras:** inventario dañado, familias sin ingreso y miedo a decidir.
 

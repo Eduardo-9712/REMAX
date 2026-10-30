@@ -10,7 +10,8 @@ Carpeta preparada el 30-10-2026 para Eduardo y Luis León. Todo sale de prensa l
 | `02-delcy-rodriguez.md` | Los discursos de Delcy Rodríguez (Fedecámaras 8-10, petróleo 17-10, mensaje del 29-10) |
 | `03-reaccion-publica.md` | Recibimiento, redes, chavismo, EEUU. Qué se sabe y qué NO se sabe |
 | `04-impacto-inmobiliario.md` | Pros y contras por tema: inmuebles, inversionistas, construcción, Guarenas/Guatire/Costas |
-| `05-guiones.md` | 16 guiones para que Luis León grabe (generales y por subtema), con 2–3 opciones cada uno |
+| `05-guiones.md` | 24 guiones para que Luis León grabe: 3 sobre el discurso de María Corina, 3 sobre el de Delcy y 9 subtemas con 2 opciones cada uno |
+| `08-correcciones.md` | Qué se corrigió en la revisión del 30-10 y por qué |
 | `06-estrategia-posicionamiento.md` | Cómo posicionar a Luis León y la oficina, incluida la idea del equipo de María Corina |
 | `07-fuentes.md` | Lista de enlaces y qué se pudo leer y qué no |
 
@@ -27,8 +28,8 @@ Carpeta preparada el 30-10-2026 para Eduardo y Luis León. Todo sale de prensa l
 - **Ningún dato de mercado** (dólar, bonos) ligado al regreso.
 - **Redes sociales:** solo hay datos cualitativos ("viral", "millones de visualizaciones" de un mensaje). No medimos comentarios, sentimiento ni tendencias; eso necesita una herramienta de escucha o revisión manual.
 - Páginas que bloquearon la lectura (CNN en Español, NPR, El Pitazo, Deia, Resumen Latinoamericano, Finanzas Digital) y un PDF del plan de 2025 que no se pudo extraer.
-- **Vivienda y construcción:** ni María Corina ni Delcy hablaron de vivienda en los textos leídos (salvo un plan maestro para La Guaira, citado de forma indirecta). Todo el apartado inmobiliario es por tanto **análisis nuestro**, apoyado en datos del sector (Cámara Inmobiliaria) y en lo que dijeron sobre propiedad, inversión y contratos.
-- Lo del sector inmobiliario (precios, crédito) viene de resúmenes de búsqueda; antes de citar cifras en video, **hay que abrir la fuente original** o que Luis León las confirme.
+- **Vivienda y construcción:** en la rueda de prensa del 29-10 y en los mensajes de Delcy no aparece vivienda ni construcción privada. **Sí aparece "Bienes Raíces" en el plan económico de 2025 de María Corina** (resumen ejecutivo de su presentación en AS/COA): "sistema robusto de derechos de propiedad, legalización de transacciones en divisas y reformas a leyes de alquiler", con "fuerte expansión del mercado inmobiliario". Es una intención de 2025, no un decreto. El resto del apartado inmobiliario es **análisis nuestro**.
+- Los datos del sector (precios, crédito, arrendamiento) ya se contrastaron con las páginas completas de Mundour, El Nacional, Curadas y Fedecámaras Radio. Lo que no se pudo confirmar se quitó (ver `08-correcciones.md`).
 
 ## Antes de grabar
 

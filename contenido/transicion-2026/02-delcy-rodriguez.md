@@ -1,6 +1,6 @@
 # 2. Delcy Rodríguez: lo que ha dicho
 
-Presidenta encargada/interina. Importante: la cifra de 76.000 millones es del **17-10**, no del discurso del 29-10. No pudimos leer CNN en Español ni Resumen Latinoamericano. El orden exacto entre su mensaje y la rueda de prensa de María Corina el 29-10 está **por confirmar** (El Estímulo indica que fue el mismo día).
+Presidenta encargada/interina. Importante: la cifra de 76.000 millones es del **17-10**, no del discurso del 29-10. No pudimos leer CNN en Español ni Resumen Latinoamericano. Según Voz, su mensaje del 29-10 se emitió **horas antes** de la rueda de prensa de María Corina. Voz interpreta que la medida de activos busca "generar certeza jurídica para las inversiones" (es lectura del medio, no cita de Delcy). Sobre el regreso de Machado (26-10) dijo: "Podía evitarse el show" ([El Estímulo](https://elestimulo.com/venezuela/2026-10-26/delcy-rodriguez-maria-corina-machado/)).
 
 ## A. Mensaje del 29-10-2026
 
@@ -30,7 +30,13 @@ Fuente: [El Estímulo](https://elestimulo.com/de-interes/2026-10-08/delcy-rodrig
 
 ## D. Vivienda tras los sismos (contexto, no discurso)
 
-Doble sismo del 24-06-2026 en La Guaira. El Gobierno encargado habla de un "plan maestro" de reconstrucción, necesidad de unas 25.000 viviendas, más de 40 terrenos habilitados en La Guaira (≈584.000 m²), reparación de casi 4.000 viviendas y entregas bajo "Plan Venezuela Renace". Las cifras de fallecidos varían según la fuente. Ver [Vanguardia](https://www.vanguardia.com/mundo/2026/07/12/venezuela-proyecta-construir-25000-viviendas-para-familias-afectadas-por-los-terremotos/), [El Diario](https://eldiario.com/2026/08/04/gobierno-encargado-reparacion-4-000-viviendas-danadas-terremotos-la-guaira/). (Leídas solo en resumen de búsqueda: **por confirmar** antes de citar números.)
+Verificado leyendo las páginas completas (no son parte de los discursos del 29-10):
+- **Doble sismo del 24-06-2026.** Fallecidos: las cifras cambian con el tiempo (4.333 el 12-07; 5.546 el 25-07; "más de 6 mil" el 28-10). Usar "más de 6.000 según cifras oficiales" y citar fecha.
+- **Plan de vivienda:** Vanguardia (12-07) dice que contempla construir unas 25.000 viviendas; PorEsto lo presenta como estimación de necesidad. Delcy habló de un "plan maestro" (25-07) sin calendario, presupuesto ni etapas. [Vanguardia](https://www.vanguardia.com/mundo/2026/07/12/venezuela-proyecta-construir-25000-viviendas-para-familias-afectadas-por-los-terremotos/), [PorEsto](https://www.poresto.com/internacional/2026/7/25/delcy-rodriguez-anuncia-un-plan-maestro-para-reconstruir-venezuela-tras-los-terremotos-que-dejaron-mas-de-5-mil-muertos.amp.html)
+- **Terrenos:** inspeccionaron "aproximadamente 580.000 m²" en La Guaira (22-07). [El Diario Ecuador](https://www.eldiario.ec/centro/delcy-rodriguez-inspecciona-terrenos-en-la-guaira-para-ofrecer-soluciones-a-los-desplazados-por-los-terremotos-22072026/)
+- **Reparaciones:** 3.938 viviendas con daños leves, según el gobernador José Alejandro Terán (04-08); de 41.624 afectadas, 25.325 habitables, 9.866 restringidas y 6.433 de alto riesgo. Banco Mundial: US$ 19,6 mil millones en daños físicos directos. [El Diario/EFE](https://eldiario.com/2026/08/04/gobierno-encargado-reparacion-4-000-viviendas-danadas-terremotos-la-guaira/)
+- **Créditos:** Vanguardia menciona un programa con subsidios estatales que podrían cubrir hasta el 80 %. El Nacional (13-08) habla de créditos a damnificados (80 % para viviendas de hasta US$ 70.000 y 50 % hasta US$ 100.000), **por confirmar con fuente oficial**.
+- "Plan Venezuela Renace": solo vimos que continúa la rehabilitación de viviendas (22-07). No tenemos detalles de quién lo ejecuta.
 
 ## E. Pros y contras para el sector
 

@@ -37,7 +37,7 @@ Es un objetivo legítimo, pero **no se consigue pidiéndolo en un video**. Propu
 
 ## Calendario sugerido (para revisar)
 - **Mañana:** grabar 4–5 guiones (los de General + 2 de subtema).
-- **Semana 1:** publicar uno general de cada discurso y uno de subtema por día; *lo que se publique tras la grabación depende de qué pase en el diálogo político*.
+- **Semana 1:** publicar un guion general de cada discurso y uno de subtema por día. Antes de publicar, revisar si hubo hechos nuevos en el diálogo político.
 - **Semana 2:** guía en PDF y carrusel de Instagram "Qué dijeron y qué cambia".
 - **Después:** actualizar con hechos (fecha electoral, decreto de activos, reforma tributaria).
 

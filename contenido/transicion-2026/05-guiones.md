@@ -9,15 +9,15 @@
 ## A. GENERAL: DISCURSO DE MARÍA CORINA (29-10)
 
 ### A1. "Qué dijo y qué significa para tu inmueble" ⭐
-- **Gancho:** "María Corina Machado habló ayer. Yo llevo más de 40 años en bienes raíces y te digo qué significa para quien tiene o quiere comprar una propiedad."
-- **Cuerpo:** "Ella dijo que todo contrato legalmente firmado se va a respetar y que quiere inversión, 'el tema es cómo y con quién'. Habló de elecciones en 2027 y de que los venezolanos del exterior vuelvan. **[El Diario, 29-10]** De vivienda no habló. Entonces, ¿qué te dice esto? Que el eje es la seguridad jurídica. Y eso es lo que yo cuido cada día con mis clientes."
+- **Gancho:** "María Corina Machado dio su primera rueda de prensa esta semana. Yo llevo más de 40 años en bienes raíces y te digo qué significa para quien tiene o quiere comprar una propiedad."
+- **Cuerpo:** "Ella dijo que todo contrato legalmente firmado se va a respetar y que quiere inversión, 'el tema es cómo y con quién'. Habló de elecciones en 2027 y de que los venezolanos del exterior vuelvan. **[El Diario, 29-10]** De vivienda, en esa rueda de prensa, no habló; su plan de 2025 sí incluye bienes raíces: derechos de propiedad, transacciones en divisas y reformas al alquiler. Entonces, ¿qué te dice esto? Que el eje es la seguridad jurídica. Y eso es lo que yo cuido cada día con mis clientes."
 - **Cierre:** "No es política, es tu patrimonio. Escríbeme y revisamos tus papeles."
 
 ### A2. "Tres frases, tres lecciones"
 Tres citas con su lectura inmobiliaria: (1) "Todo contrato legalmente firmado se va a respetar" → la importancia del documento. (2) "La fecha de la elección es la fecha de la liberación" → el calendario importa a los inversionistas. (3) "Queremos a nuestros hijos de vuelta en casa" → demanda potencial de vivienda. Cierre: "Frases son frases; lo que cuenta son los papeles."
 
-### A3. "Lo que NO dijo" (diferenciador)
-"Muchos hablan de lo que dijo. Yo te digo lo que *no* dijo: no habló de vivienda, ni de crédito hipotecario, ni de títulos. Eso significa que aún no hay reglas nuevas. Hasta que las haya, se compra con las reglas de hoy." ⚠️ Tono informativo, sin crítica.
+### A3. "Su plan para bienes raíces" (diferenciador)
+"En su plan económico de 2025, el área de bienes raíces habla de derechos de propiedad, transacciones en divisas y reformas al alquiler. **[Resumen del plan, AS/COA]** Es una intención, no una ley. Hasta que haya reglas nuevas, se compra con las reglas de hoy." ⚠️ Tono informativo, sin crítica.
 
 ---
 
@@ -59,19 +59,19 @@ Explica la inversión petrolera anunciada el 17-10 (**El Nacional**) y qué sect
 - **C5-b. "Terrenos: lo que nadie te dice":** linderos, uso, servidumbres, catastro.
 
 ### C6. Construcción, reconstrucción y sismos
-- **C6-a. "Tras los sismos, ¿qué casa comprar?":** revisar estructura, ingeniero, zonas. Datos: 25.000 viviendas proyectadas, más de 40 terrenos en La Guaira **[Vanguardia / El Diario, por confirmar]**.
-- **C6-b. "Nuevos proyectos: cómo evitar estafas":** cuidar preventas, permisos, documentos del desarrollador; Ley de Estafa Inmobiliaria *(Luis León explica)*.
+- **C6-a. "Tras los sismos, ¿qué casa comprar?":** revisar estructura, ingeniero, zonas. Datos verificados: plan de unas 25.000 viviendas, sin calendario **[Vanguardia, 12-07]**; unos 580.000 m² de terrenos inspeccionados en La Guaira **[El Diario Ecuador, 22-07]**.
+- **C6-b. "Nuevos proyectos: cómo evitar estafas":** cuidar preventas, permisos y documentos del desarrollador. *(Luis León aporta la normativa vigente; no citamos leyes que no verificamos.)*
 
 ### C7. Crédito, FMI y moneda
-- **C7-a. "¿Habrá crédito hipotecario?":** hoy no existe financiamiento a largo plazo según la CIV; Machado habla de acuerdo con el FMI. No es garantía.
+- **C7-a. "¿Habrá crédito hipotecario?":** la Cámara Inmobiliaria de Venezuela dice que el financiamiento a largo plazo "no existe"; hay créditos estatales para damnificados *(confirmar condiciones)*. El plan de 2025 de María Corina propone quitar controles al crédito. No es garantía.
 - **C7-b. "¿En qué moneda se paga?":** responde la duda que vemos con "Venezuela Renace"; Delcy descartó dolarizar. *(Luis León aclara aspectos jurídicos.)*
 
 ### C8. Costas Mirandinas / Higuerote
 - **C8-a. "Casa de playa tras los sismos":** demanda de gente de La Guaira; qué mirar en Higuerote.
-- **C8-b. "Playa para disfrutar y para rentar":** nueva Ley de Arrendamiento (agosto 2026) *(Luis León explica)*.
+- **C8-b. "Playa para disfrutar y para rentar":** la nueva ley de arrendamiento (07-08-2026) es para **vivienda**; Luis León aclara si aplica al alquiler de playa.
 
 ### C9. Precios y sobreprecio
-- **C9-a. "Subieron los precios de oferta, no las ventas":** dato de la CIV (20–30 % en oferta). Mensaje: precio realista.
+- **C9-a. "La fantasía de duplicar el precio":** Di Gerónimo habló de "una fantasía por parte de los propietarios que tuvieron la ilusión de poder duplicar el precio" **[El Nacional, 13-08]**. Mensaje: precio realista.
 - **C9-b. "El sobreprecio sentimental":** conecta con el reel de `contenido/reels.md`.
 
 ---

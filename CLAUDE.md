@@ -148,6 +148,7 @@ estilos o ideas que funcionen, se anotan aquí.
 
 ## Contenido
 
+- Documento maestro de la transición (oct 2026): `contenido/transicion-2026/` (discursos de María Corina y Delcy, impacto inmobiliario, 24 guiones para Luis León, estrategia). Revisado y corregido el 30-10; ver `08-correcciones.md`. Línea de posicionamiento: neutral, informativa, basada en confianza y trayectoria, sin bando político.
 - Ideas de reels con medio guion: `contenido/reels.md` (Pregúntale al Broker, precios reales con datos
   de la base, el sobreprecio). Eduardo tiene grabados: un video sobre un tema (por definir) y su paso por el
   curso de la Cámara; faltan edición y estructura. También hay 2–3 videos de una propiedad captada para Higgsfield.
