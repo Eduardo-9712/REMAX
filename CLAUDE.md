@@ -206,6 +206,7 @@ esto"* y sale al instante.
 - **La base en vivo:** https://claude.ai/artifact/JnuELprRV41EFNRx6xXr46 (página
   `analisis/base-maestra.html`, datos en la colección `inmuebles` de la base del artifact).
   Para que Alejandra confirme, hay que compartirle la página con acceso de **Colaborador**.
+- **Informe global del mercado 2026** (30-10-2026): `analisis/mercado-2026/` (informe, resumen, PDF y los 7 informes en bruto de los agentes). No hay estadística oficial: todo son precios de oferta y declaraciones de gremios. Faltan precios de cierre, galpones, terrenos y playa: se llenan con los cierres de Luis León y esta base.
 - **Cómo se extrae RE/MAX:** `python3 analisis/scripts/remax_scraper.py` recorre las páginas de
   todas las oficinas RE/MAX (el buscador público no responde a consultas automáticas) y guarda
   `analisis/datos/remax_<fecha>.json`. Respeta 1 s entre páginas; tarda ~30 min.

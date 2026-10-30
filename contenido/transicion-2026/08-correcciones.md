@@ -26,3 +26,10 @@ Revisé todo contra las páginas completas. Esto es lo que cambió y por qué.
 - Abrir CNN en Español, El Impulso, Cimiranda y NY Post (bloqueados).
 - Medir redes sociales y asistencia con datos reales.
 - Que Luis León valide: reforma tributaria, alcance de la ley de arrendamiento, datos de galpones y terrenos en Guatire/Guarenas, y regla de inversión (pendiente en CLAUDE.md).
+
+## Actualización del 30-10 (informe global del mercado)
+Con la investigación completa del mercado (`analisis/mercado-2026/`), tres datos que se habían quitado por no poder abrir su fuente **sí quedaron verificados** y pueden usarse, como declaraciones de la Cámara Inmobiliaria de Venezuela:
+- Precios de oferta +20 a 30 % sin más ventas: Pablo González Travieso, 11-03-2026 ([Mundour](https://mundour.com/2026/03/11/sector-inmobiliario-en-venezuela-precios-de-oferta-suben-hasta-30-pese-a-la-baja-demanda/)).
+- "15 años" sin producir vivienda residencial nueva: misma nota y [Fedecámaras Radio, 17-08](https://fedecamarasradio.com/programas/informe-fedecamaras/nueva-ley-de-arrendamiento-impulsara-oferta-en-el-mercado-inmobiliario/).
+- La Ley contra la Estafa Inmobiliaria existía y fue sustituida por la Ley de Promoción y Protección de la Construcción de Viviendas (Gaceta 7.071, 25-08-2026).
+También: la tasa de 5 % del crédito a damnificados la reporta el presidente de Asobanca (El Diario) y la CIV; sigue sin circular oficial.
