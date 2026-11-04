@@ -146,6 +146,17 @@ estilos o ideas que funcionen, se anotan aquí.
   Conocimiento en la base maestra), 3) conexión con la API de WhatsApp. Plan: `whatsapp/plan-agente.md`.
 - El conocimiento del asistente vive en la colección `conocimiento`; solo se usa lo **aprobado**.
 
+## Plan de 30 días (10 nov – 9 dic 2026)
+
+- Plan: `contenido/plan-30-dias.md`. Oficina: `oficina/plan-crecimiento.md`. Material: `recursos/`.
+- **Tres cuentas:** Eduardo, Luis León y la oficina RE/MAX Delta. Lo de Luis solo va en su cuenta; lo conjunto, con Collab.
+- **Ritmo:** reels lunes (oficina), miércoles (Pregúntale al Broker) y viernes (Debate); carrusel el domingo; extra opcional el martes; historias todos los días menos el sábado. **El sábado es libre.**
+- **Debate padre e hijo:** las dos caras; Eduardo trae lo nuevo, Luis lo rectifica con base y hechos.
+- **Oficina:** unos 18 agentes; reunión semanal los lunes; kit de inicio (camisas, merch, cartera de clientes). Eduardo aspira a un rol tipo COO.
+- **Edición:** Eduardo me pasa los videos, yo propongo cortes y transiciones; él pone música, texto, subtítulos, voces y efectos.
+- **Luis León graba** en cualquier momento, 1–2 horas, 2–3 videos por sesión. El guion es una guía; él lo dice a su manera.
+- Sobre Luis León se puede hablar de años, casos y logros, sin nombres ni detalles.
+
 ## Contenido
 
 - Ideas de reels con medio guion: `contenido/reels.md` (Pregúntale al Broker, precios reales con datos
