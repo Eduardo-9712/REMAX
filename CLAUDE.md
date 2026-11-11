@@ -250,7 +250,18 @@ esto"* y sale al instante.
   Luis León tiene una cartera importante de inversionistas en galpones y terrenos.
 - **Higuerote:** compran venezolanos en el exterior, inversionistas y familias que quieren
   playa.
-- **Regla de inversión de Luis León:** _pendiente, hay que pedírsela y anotarla aquí._
+- **La regla de 3 de Luis León** (nota de voz del 11-11-2026; detalle y transcripción en
+  `analisis/regla-de-3-luis-leon.md`). El valor de una propiedad se busca por **tres caminos**:
+  1. **Por la renta.** Rentabilidad normal: **6 % a 12 % anual** según la ubicación. Regla
+     plana: **canon mensual × 12 × 10 = valor**; al revés, **valor ÷ 10 ÷ 12 = canon**. El
+     canon es lo que el inquilino está dispuesto a pagar.
+  2. **Por el costo de construcción.** Lo calculan los ingenieros; hoy es difícil porque
+     casi no hay construcción.
+  3. **Por el mercado.** Las últimas ventas del entorno. Como en Venezuela no hay
+     estadística de ventas, se usan las **ofertas** publicadas y los negocios que se sabe
+     que se hicieron (para eso sirve la base maestra).
+  - Es **referencial, no científica**: nunca se presenta como promesa de rentabilidad.
+  - Por confirmar con él: cuándo va 6 % y cuándo 12 %, y si la renta es bruta o neta.
 
 ## Notas y cosas que vamos aprendiendo
 

@@ -37,7 +37,8 @@ Por cada cierre, lo ideal es tener:
 
 ## 3. Para tu papá (Luis León)
 
-- [ ] Su **regla de inversión** (para aplicarla a cada propiedad en la pestaña Rentabilidad).
+- [x] Su **regla de inversión** — ya está: `analisis/regla-de-3-luis-leon.md` (nota de voz del 11-11-2026).
+- [ ] Confirmar con él los puntos dudosos de la regla (cuándo 6 % y cuándo 12 %, renta bruta o neta).
 - [ ] Las respuestas de `analisis/preguntas-luis-leon.md`.
 - [ ] La cartera de **terrenos y galpones** de RE/MAX Delta que no esté publicada en portales (si se puede compartir).
 

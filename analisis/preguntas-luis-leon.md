@@ -8,8 +8,10 @@ Eduardo las transcribe.
 
 ## 1. La regla de inversión
 
-1. ¿Cuál es su regla para calcular si una inversión vale la pena? (La que le explicó a Eduardo.)
-2. ¿Cómo calcula el retorno de un alquiler? ¿Qué porcentaje anual considera bueno, regular y malo?
+1. ~~¿Cuál es su regla para calcular si una inversión vale la pena?~~ **Respondida** (nota de voz
+   del 11-11-2026): ver `analisis/regla-de-3-luis-leon.md`.
+2. Ya sabemos que el alquiler rinde entre 6 % y 12 % anual y que la regla plana es canon × 12 × 10.
+   Falta: ¿en qué zonas o tipos de inmueble va 6 % y en cuáles 12 %? ¿Esa renta es bruta o neta?
 3. ¿Qué gastos hay que restar siempre (condominio, impuestos, mantenimiento, comisión, meses vacíos)?
 
 ## 2. Precios reales por zona
