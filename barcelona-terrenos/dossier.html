@@ -1,0 +1,331 @@
+<title>Dossier Barcelona y Retail</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Concepto: dossier nocturno de inversión. Negro de fondo (el favorito de Eduardo), azul y rojo RE/MAX como únicos acentos, mapas como protagonistas. */
+:root{
+  --bg:#0A0B0E; --surface:#12141A; --surface2:#1A1D26; --fg:#ECEEF3; --muted:#9BA2B3; --line:#272B38;
+  --blue:#4C86FF; --red:#FF5560; --ok:#4CC38A; --warn:#F0B44C;
+  --f-display:"Space Grotesk",system-ui,sans-serif; --f-body:"Inter",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --bg:#F4F5F8; --surface:#FFFFFF; --surface2:#ECEEF4; --fg:#12141A; --muted:#556073; --line:#D8DCE6;
+  --blue:#0B4BD9; --red:#C81E2B; --ok:#157A52; --warn:#9A6400; color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#F4F5F8; --surface:#FFFFFF; --surface2:#ECEEF4; --fg:#12141A; --muted:#556073; --line:#D8DCE6;
+  --blue:#0B4BD9; --red:#C81E2B; --ok:#157A52; --warn:#9A6400; color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.6 var(--f-body);padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,6vw,52px);font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(22px,3.4vw,30px);font-weight:700;margin-bottom:14px}
+h3{font-size:17px;font-weight:700}
+p{margin:0 0 12px;max-width:68ch}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.mono{font-family:var(--f-mono);font-size:12.5px}
+.dim{color:var(--muted)}
+.top{padding:44px 0 28px;border-bottom:1px solid var(--line);margin-bottom:36px}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.bar{display:flex;gap:4px;margin-bottom:22px}.bar i{display:block;height:5px;width:44px}.bar i:nth-child(1){background:var(--blue)}.bar i:nth-child(2){background:var(--fg)}.bar i:nth-child(3){background:var(--red)}
+.lead{font-size:17px;color:var(--muted);margin-top:14px}
+section{margin-bottom:56px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;min-width:0}
+.box h3{margin-bottom:8px}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+ul{margin:0 0 12px;padding-left:20px}li{margin-bottom:6px;max-width:68ch}
+.key{border-left:3px solid var(--red);padding:2px 0 2px 16px;margin:0 0 14px}
+.key b{font-family:var(--f-display)}
+.pc{display:inline-block;font:500 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--warn);border:1px solid var(--warn);border-radius:4px;padding:3px 6px;vertical-align:2px;white-space:nowrap}
+figure{margin:0 0 18px}
+figure img,.shot img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:var(--surface2)}
+figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+.tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+button{font:500 13px var(--f-body);background:var(--surface2);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font:500 11px/1.2 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+tr:last-child td,tr:last-child th{border-bottom:0}
+table.mx{width:auto;min-width:100%;font-family:var(--f-mono);font-size:12px;font-variant-numeric:tabular-nums}
+table.mx th,table.mx td{text-align:center;padding:6px 8px;border:1px solid var(--line);white-space:nowrap}
+table.mx td{background:color-mix(in srgb,var(--blue) calc(var(--a,0)*70%),var(--surface))}
+table.mx td.z{color:var(--muted);background:var(--surface2)}
+table.cmp td:first-child,table.cmp th:first-child{white-space:nowrap;color:var(--muted);font-weight:500}
+table.cmp{min-width:640px}
+.pts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:18px}
+.pt{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0}
+.pt header{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+.pt header>div{flex:1;min-width:0}
+.pt header p{margin:4px 0 0;overflow-wrap:anywhere}
+.n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font:700 15px/34px var(--f-display);text-align:center}
+.tag{flex:none;font:500 11px/1.2 var(--f-mono);color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:4px 6px;max-width:30%}
+.views{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:14px 0 0;font-size:14px}
+dt{color:var(--muted);font:500 11px/1.9 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+dt.g{color:var(--ok)}dt.r{color:var(--red)}
+dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.lk{margin:12px 0 0;font-size:13px}
+.risk{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin-bottom:16px}
+.risk div{border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--surface)}
+.risk b{display:block;font-family:var(--f-display);margin-bottom:4px}
+.risk .hi{border-top:3px solid var(--red)}.risk .md{border-top:3px solid var(--warn)}.risk .un{border-top:3px solid var(--muted)}
+.src li{font-size:13px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}
+@media (max-width:520px){.tag{display:none}dl{grid-template-columns:1fr}dt{line-height:1.2;margin-top:6px}}
+</style>
+
+<div class="wrap">
+<div class="top">
+  <div class="bar"><i></i><i></i><i></i></div>
+  <div class="eyebrow">RE/MAX · 21 de noviembre de 2026</div>
+  <h1>Dossier Barcelona y Retail</h1>
+  <p class="lead">Estudio de las 13 ubicaciones visitadas en Barcelona, Anzoátegui, y ficha de tres cadenas de retail que miran a Venezuela. Todo dato sin confirmar lleva la etiqueta <span class="pc">por confirmar</span>.</p>
+</div>
+
+<section id="resumen">
+  <h2>Lo más importante</h2>
+  <div class="key"><b>Las 13 ubicaciones forman un corredor de unos 11 km.</b> Va desde el casco de Barcelona, por la Av. Intercomunal Andrés Bello y el río Neverí, hasta el centro de Puerto La Cruz. El punto 5 ya está en Puerto La Cruz (municipio Sotillo) y el punto 2 en Lechería (municipio Urbaneja).</div>
+  <div class="key"><b>El río Neverí es el factor que más pesa.</b> Casi todos los puntos están junto a su cauce o a su canal. En septiembre de 2021 se desbordó y la ciudad quedó prácticamente bajo el agua. Antes de pagar cualquier lote hay que revisar el riesgo de inundación de cada uno.</div>
+  <div class="key"><b>No hay un precio por metro cuadrado confiable para la zona.</b> Encontré referencias sueltas, pero ninguna de estos sectores. Hay que pedir precios reales a la Cámara Inmobiliaria de Anzoátegui o a corredores locales.</div>
+  <div class="key"><b>De las tres empresas, solo D1 tiene un paso concreto hacia Venezuela.</b> Envió una delegación de 11 ejecutivos a evaluar el mercado. De Ara y de Dollarcity no encontré nada sobre Venezuela.</div>
+</section>
+
+<section id="plano">
+  <h2>Plano general de los 13 puntos</h2>
+  <div class="tabs" id="tab-gen"><button class="on" data-g="plano_general_satelite">Satélite</button><button data-g="plano_general_calles">Calles</button></div>
+  <figure><img id="img-gen" src="mapas/plano_general_satelite.jpg" alt="Plano general con los 13 puntos" loading="lazy"><figcaption>Imágenes de Esri World Imagery y OpenStreetMap. Hay nubes en el sector noreste. Escala: la barra inferior marca 1.000 m.</figcaption></figure>
+  <div class="grid2">
+    <figure><img src="mapas/zona_centro_sur_satelite.jpg" alt="Zona centro-sur satélite" loading="lazy"><figcaption><b>Zona A y B, centro-sur.</b> Puntos 1, 3, 8, 9, 10, 11 y 12, todos a menos de 2,3 km del punto 1.</figcaption></figure>
+    <figure><img src="mapas/zona_corredor_norte_satelite.jpg" alt="Corredor norte satélite" loading="lazy"><figcaption><b>Zona C, corredor norte.</b> Puntos 4, 6, 7 y 13, frente a la Laguna de Los Tronconales.</figcaption></figure>
+  </div>
+  <p class="dim">También están los mapas de calles de cada zona en la carpeta <span class="mono">mapas/</span> del proyecto.</p>
+</section>
+
+<section id="distancias">
+  <h2>Distancias entre los puntos</h2>
+  <p>Son kilómetros en línea recta. Por carretera serán algo más. Cuanto más azul la celda, más cerca están.</p>
+  <div class="scroll"><table class="mx"><thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th></tr></thead><tbody><tr><th>1</th><td class="z">·</td><td style="--a:0.14">5.1</td><td style="--a:0.62">2.2</td><td style="--a:0.37">3.8</td><td style="--a:0.00">11.0</td><td style="--a:0.38">3.7</td><td style="--a:0.43">3.4</td><td style="--a:0.90">0.6</td><td style="--a:0.88">0.7</td><td style="--a:0.68">1.9</td><td style="--a:0.74">1.6</td><td style="--a:0.79">1.3</td><td style="--a:0.51">2.9</td></tr><tr><th>2</th><td style="--a:0.14">5.1</td><td class="z">·</td><td style="--a:0.51">2.9</td><td style="--a:0.75">1.5</td><td style="--a:0.00">7.5</td><td style="--a:0.74">1.6</td><td style="--a:0.70">1.8</td><td style="--a:0.23">4.6</td><td style="--a:0.23">4.6</td><td style="--a:0.45">3.3</td><td style="--a:0.39">3.7</td><td style="--a:0.35">3.9</td><td style="--a:0.62">2.3</td></tr><tr><th>3</th><td style="--a:0.62">2.2</td><td style="--a:0.51">2.9</td><td class="z">·</td><td style="--a:0.74">1.6</td><td style="--a:0.00">9.0</td><td style="--a:0.75">1.5</td><td style="--a:0.80">1.2</td><td style="--a:0.72">1.7</td><td style="--a:0.73">1.6</td><td style="--a:0.94">0.3</td><td style="--a:0.88">0.7</td><td style="--a:0.84">1.0</td><td style="--a:0.82">1.1</td></tr><tr><th>4</th><td style="--a:0.37">3.8</td><td style="--a:0.75">1.5</td><td style="--a:0.74">1.6</td><td class="z">·</td><td style="--a:0.00">7.8</td><td style="--a:0.99">0.1</td><td style="--a:0.94">0.4</td><td style="--a:0.46">3.2</td><td style="--a:0.47">3.2</td><td style="--a:0.69">1.9</td><td style="--a:0.62">2.3</td><td style="--a:0.58">2.5</td><td style="--a:0.77">1.4</td></tr><tr><th>5</th><td style="--a:0.00">11.0</td><td style="--a:0.00">7.5</td><td style="--a:0.00">9.0</td><td style="--a:0.00">7.8</td><td class="z">·</td><td style="--a:0.00">7.8</td><td style="--a:0.00">8.1</td><td style="--a:0.00">10.4</td><td style="--a:0.00">10.3</td><td style="--a:0.00">9.3</td><td style="--a:0.00">9.5</td><td style="--a:0.00">9.9</td><td style="--a:0.00">9.2</td></tr><tr><th>6</th><td style="--a:0.38">3.7</td><td style="--a:0.74">1.6</td><td style="--a:0.75">1.5</td><td style="--a:0.99">0.1</td><td style="--a:0.00">7.8</td><td class="z">·</td><td style="--a:0.95">0.3</td><td style="--a:0.47">3.2</td><td style="--a:0.48">3.1</td><td style="--a:0.70">1.8</td><td style="--a:0.63">2.2</td><td style="--a:0.59">2.5</td><td style="--a:0.77">1.4</td></tr><tr><th>7</th><td style="--a:0.43">3.4</td><td style="--a:0.70">1.8</td><td style="--a:0.80">1.2</td><td style="--a:0.94">0.4</td><td style="--a:0.00">8.1</td><td style="--a:0.95">0.3</td><td class="z">·</td><td style="--a:0.52">2.9</td><td style="--a:0.53">2.8</td><td style="--a:0.74">1.5</td><td style="--a:0.68">1.9</td><td style="--a:0.64">2.2</td><td style="--a:0.81">1.2</td></tr><tr><th>8</th><td style="--a:0.90">0.6</td><td style="--a:0.23">4.6</td><td style="--a:0.72">1.7</td><td style="--a:0.46">3.2</td><td style="--a:0.00">10.4</td><td style="--a:0.47">3.2</td><td style="--a:0.52">2.9</td><td class="z">·</td><td style="--a:0.97">0.2</td><td style="--a:0.77">1.4</td><td style="--a:0.84">1.0</td><td style="--a:0.88">0.7</td><td style="--a:0.58">2.5</td></tr><tr><th>9</th><td style="--a:0.88">0.7</td><td style="--a:0.23">4.6</td><td style="--a:0.73">1.6</td><td style="--a:0.47">3.2</td><td style="--a:0.00">10.3</td><td style="--a:0.48">3.1</td><td style="--a:0.53">2.8</td><td style="--a:0.97">0.2</td><td class="z">·</td><td style="--a:0.78">1.3</td><td style="--a:0.85">0.9</td><td style="--a:0.88">0.7</td><td style="--a:0.58">2.5</td></tr><tr><th>10</th><td style="--a:0.68">1.9</td><td style="--a:0.45">3.3</td><td style="--a:0.94">0.3</td><td style="--a:0.69">1.9</td><td style="--a:0.00">9.3</td><td style="--a:0.70">1.8</td><td style="--a:0.74">1.5</td><td style="--a:0.77">1.4</td><td style="--a:0.78">1.3</td><td class="z">·</td><td style="--a:0.93">0.4</td><td style="--a:0.89">0.7</td><td style="--a:0.78">1.3</td></tr><tr><th>11</th><td style="--a:0.74">1.6</td><td style="--a:0.39">3.7</td><td style="--a:0.88">0.7</td><td style="--a:0.62">2.3</td><td style="--a:0.00">9.5</td><td style="--a:0.63">2.2</td><td style="--a:0.68">1.9</td><td style="--a:0.84">1.0</td><td style="--a:0.85">0.9</td><td style="--a:0.93">0.4</td><td class="z">·</td><td style="--a:0.94">0.3</td><td style="--a:0.72">1.7</td></tr><tr><th>12</th><td style="--a:0.79">1.3</td><td style="--a:0.35">3.9</td><td style="--a:0.84">1.0</td><td style="--a:0.58">2.5</td><td style="--a:0.00">9.9</td><td style="--a:0.59">2.5</td><td style="--a:0.64">2.2</td><td style="--a:0.88">0.7</td><td style="--a:0.88">0.7</td><td style="--a:0.89">0.7</td><td style="--a:0.94">0.3</td><td class="z">·</td><td style="--a:0.70">1.8</td></tr><tr><th>13</th><td style="--a:0.51">2.9</td><td style="--a:0.62">2.3</td><td style="--a:0.82">1.1</td><td style="--a:0.77">1.4</td><td style="--a:0.00">9.2</td><td style="--a:0.77">1.4</td><td style="--a:0.81">1.2</td><td style="--a:0.58">2.5</td><td style="--a:0.58">2.5</td><td style="--a:0.78">1.3</td><td style="--a:0.72">1.7</td><td style="--a:0.70">1.8</td><td class="z">·</td></tr></tbody></table></div>
+  <ul style="margin-top:14px">
+    <li><b>Puntos casi juntos:</b> el 4 y el 6 están a 70 m. El 8 y el 9 están a 160 m. Del 10 al 3 hay 340 m, y del 11 al 12, 330 m.</li>
+    <li><b>Extremos:</b> del punto 1 (centro de Barcelona) al punto 5 (Puerto La Cruz) hay 11,0 km.</li>
+    <li><b>Punto 2:</b> está a 5,1 km del punto 1 y a 1,5 km del corredor de los puntos 4 y 6.</li>
+  </ul>
+</section>
+
+<section id="zonas">
+  <h2>Cómo se agrupan</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Zona</th><th>Puntos</th><th>Carácter</th></tr></thead>
+    <tbody>
+      <tr><td><b>A · Centro-sur</b></td><td class="mono">1, 8, 9, 11, 12</td><td>La parte más urbana y consolidada. Lotes pequeños y calles muy usadas. Pegada al río.</td></tr>
+      <tr><td><b>B · Centro-norte</b></td><td class="mono">3, 10</td><td>Parcelamiento Río, junto a la Intercomunal y al canal. Uso mixto.</td></tr>
+      <tr><td><b>C · Corredor norte</b></td><td class="mono">4, 6, 7</td><td>Frente de la Intercomunal en Colinas del Neverí, con edificios. El humedal está al otro lado.</td></tr>
+      <tr><td><b>Sueltos</b></td><td class="mono">2, 5, 13</td><td>Lechería (2), Puerto La Cruz (5) y el borde oeste junto al Neverí (13).</td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="puntos">
+  <h2>Cada punto por separado</h2>
+  <p>Cada ficha trae vista satelital, de calles y de contexto amplio. El nombre de la calle y del sector sale del mapa de OpenStreetMap. Lo que hay en cada terreno exactamente <span class="pc">por confirmar en sitio</span>.</p>
+  <div class="pts"><article class="pt" id="p1">
+<header><span class="n">1</span><div><h3>Casco central de Barcelona, Calle Carabobo</h3><p class="mono">10°08'10.2"N 64°41'06.7"W <span class="dim">(10.13617, -64.68519)</span></p></div><span class="tag">A · Centro-sur</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 1">
+<button class="on" data-v="satelite" data-p="1">Satélite</button><button data-v="calles" data-p="1">Calles</button><button data-v="contexto" data-p="1">Contexto</button></div>
+<div class="shot"><img src="mapas/punto01_satelite.jpg" alt="Punto 1 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Tejido urbano denso de comercio, servicios y colegios. La Intercomunal queda a unos 600 m al este.</dd><dt class="g">A favor</dt><dd>Centro histórico con mucho flujo de gente y servicios cerca.</dd><dt class="r">En contra</dt><dd>Manzanas ya consolidadas, lotes pequeños, tráfico y poco espacio para estacionar. El cauce del Neverí queda muy cerca (por confirmar la distancia exacta).</dd><dt>Más cercanos</dt><dd class="mono">P8: 590 m · P9: 710 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/hMVuJKcEJ3VKRHFU6" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p2">
+<header><span class="n">2</span><div><h3>Lechería, Av. Diego Bautista Urbaneja (zona de bancos)</h3><p class="mono">10°10'55.9"N 64°41'22.5"W <span class="dim">(10.18219, -64.68958)</span></p></div><span class="tag">Suelto · Lechería</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 2">
+<button class="on" data-v="satelite" data-p="2">Satélite</button><button data-v="calles" data-p="2">Calles</button><button data-v="contexto" data-p="2">Contexto</button></div>
+<div class="shot"><img src="mapas/punto02_satelite.jpg" alt="Punto 2 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Eje comercial y bancario de Lechería, ya en el municipio Urbaneja, cerca de la bahía y de la zona de marinas.</dd><dt class="g">A favor</dt><dd>Es la zona de mayor movimiento inmobiliario del estado. Imagen y turismo.</dd><dt class="r">En contra</dt><dd>Casi no quedan terrenos y los precios son más altos. Está fuera de Barcelona y del municipio Simón Bolívar.</dd><dt>Más cercanos</dt><dd class="mono">P4: 1.5 km · P6: 1.6 km</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/V994tJbZxyyN9dNU8" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p3">
+<header><span class="n">3</span><div><h3>Parcelamiento Río, Av. Río con la Intercomunal</h3><p class="mono">10°09'22.8"N 64°41'01.9"W <span class="dim">(10.15633, -64.68386)</span></p></div><span class="tag">B · Centro-norte</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 3">
+<button class="on" data-v="satelite" data-p="3">Satélite</button><button data-v="calles" data-p="3">Calles</button><button data-v="contexto" data-p="3">Contexto</button></div>
+<div class="shot"><img src="mapas/punto03_satelite.jpg" alt="Punto 3 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Nodo donde la Av. Río llega a la Intercomunal Andrés Bello, cerca del INCES.</dd><dt class="g">A favor</dt><dd>Frente a la arteria principal. A 340 m del punto 10, así que se pueden evaluar juntos.</dd><dt class="r">En contra</dt><dd>Está pegado al canal y al cauce del Neverí. Hay que revisar el riesgo de inundación.</dd><dt>Más cercanos</dt><dd class="mono">P10: 340 m · P11: 730 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/yr2HTLkAxnJfntrX6" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p4">
+<header><span class="n">4</span><div><h3>Intercomunal Andrés Bello, Colinas del Neverí (límite con Lechería)</h3><p class="mono">10°10'12.9"N 64°40'58.3"W <span class="dim">(10.17025, -64.68286)</span></p></div><span class="tag">C · Corredor norte</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 4">
+<button class="on" data-v="satelite" data-p="4">Satélite</button><button data-v="calles" data-p="4">Calles</button><button data-v="contexto" data-p="4">Contexto</button></div>
+<div class="shot"><img src="mapas/punto04_satelite.jpg" alt="Punto 4 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Avenida con edificios de apartamentos y comercio. Al este está la Laguna de Los Tronconales, un humedal. Al oeste, el Cerro La Pedrera.</dd><dt class="g">A favor</dt><dd>Alto tráfico, zona residencial de clase media y buena visibilidad desde la avenida.</dd><dt class="r">En contra</dt><dd>El humedal al otro lado de la vía indica terreno bajo. Frente de avenida angosto.</dd><dt>Más cercanos</dt><dd class="mono">P6: 70 m · P7: 360 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/SXqNAaGoW4kec7EH8" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p5">
+<header><span class="n">5</span><div><h3>Puerto La Cruz, centro, Av. 5 de Julio (municipio Sotillo)</h3><p class="mono">10°13'16.3"N 64°38'03.3"W <span class="dim">(10.22119, -64.63425)</span></p></div><span class="tag">Suelto · Puerto La Cruz</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 5">
+<button class="on" data-v="satelite" data-p="5">Satélite</button><button data-v="calles" data-p="5">Calles</button><button data-v="contexto" data-p="5">Contexto</button></div>
+<div class="shot"><img src="mapas/punto05_satelite.jpg" alt="Punto 5 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Casco comercial muy denso, a unos 300 m de la costa. La imagen satelital trae nubes.</dd><dt class="g">A favor</dt><dd>Mayor densidad comercial, turismo y puerto. Cerca de la refinería.</dd><dt class="r">En contra</dt><dd>No es Barcelona. Tú marcaste este punto como el límite norte de la búsqueda. Lotes escasos y congestión.</dd><dt>Más cercanos</dt><dd class="mono">P2: 7.5 km · P4: 7.8 km</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/8CrFkcPezvbGxskT6" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p6">
+<header><span class="n">6</span><div><h3>Intercomunal Andrés Bello, Colinas del Neverí</h3><p class="mono">10°10'10.6"N 64°40'58.4"W <span class="dim">(10.16961, -64.68289)</span></p></div><span class="tag">C · Corredor norte</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 6">
+<button class="on" data-v="satelite" data-p="6">Satélite</button><button data-v="calles" data-p="6">Calles</button><button data-v="contexto" data-p="6">Contexto</button></div>
+<div class="shot"><img src="mapas/punto06_satelite.jpg" alt="Punto 6 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Está a solo 70 m del punto 4. Probablemente sea el mismo frente o un lote contiguo.</dd><dt class="g">A favor</dt><dd>Igual que el punto 4.</dd><dt class="r">En contra</dt><dd>Igual que el punto 4. Conviene tratarlos como una sola ubicación.</dd><dt>Más cercanos</dt><dd class="mono">P4: 70 m · P7: 290 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/ivYvQNs51PLPyn8u8" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p7">
+<header><span class="n">7</span><div><h3>Intercomunal Andrés Bello con Av. Rotaria</h3><p class="mono">10°10'01.2"N 64°40'59.5"W <span class="dim">(10.16700, -64.68319)</span></p></div><span class="tag">C · Corredor norte</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 7">
+<button class="on" data-v="satelite" data-p="7">Satélite</button><button data-v="calles" data-p="7">Calles</button><button data-v="contexto" data-p="7">Contexto</button></div>
+<div class="shot"><img src="mapas/punto07_satelite.jpg" alt="Punto 7 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Cruce que conecta con los sectores populosos de Tronconal, al este. Se ve un estacionamiento en el mapa.</dd><dt class="g">A favor</dt><dd>Nodo vial. Tronconal aporta mucha población como clientela.</dd><dt class="r">En contra</dt><dd>Esquina de alto tráfico y congestión. Cerca del humedal.</dd><dt>Más cercanos</dt><dd class="mono">P6: 290 m · P4: 360 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/xxeVSruegU55TPJ18" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p8">
+<header><span class="n">8</span><div><h3>Urb. Portugal, Av. Monagas</h3><p class="mono">10°08'27.8"N 64°40'59.5"W <span class="dim">(10.14106, -64.68319)</span></p></div><span class="tag">A · Centro-sur</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 8">
+<button class="on" data-v="satelite" data-p="8">Satélite</button><button data-v="calles" data-p="8">Calles</button><button data-v="contexto" data-p="8">Contexto</button></div>
+<div class="shot"><img src="mapas/punto08_satelite.jpg" alt="Punto 8 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Entre la Intercomunal y el Paseo Río Neverí. Calles residenciales y lotes pequeños.</dd><dt class="g">A favor</dt><dd>Acceso directo a la Intercomunal. A 160 m del punto 9.</dd><dt class="r">En contra</dt><dd>Pegado al cauce del Neverí. Hay que revisar el riesgo de inundación.</dd><dt>Más cercanos</dt><dd class="mono">P9: 160 m · P1: 590 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/5vV278k7WGkuBJGSA" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p9">
+<header><span class="n">9</span><div><h3>Portugal Abajo, Av. Cajigal</h3><p class="mono">10°08'29.8"N 64°40'54.7"W <span class="dim">(10.14161, -64.68186)</span></p></div><span class="tag">A · Centro-sur</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 9">
+<button class="on" data-v="satelite" data-p="9">Satélite</button><button data-v="calles" data-p="9">Calles</button><button data-v="contexto" data-p="9">Contexto</button></div>
+<div class="shot"><img src="mapas/punto09_satelite.jpg" alt="Punto 9 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Lado este de la Intercomunal, rodeado de barrios muy consolidados como Portugal Abajo y El Espejo. La Vía Alterna queda a unos 800 m.</dd><dt class="g">A favor</dt><dd>Mercado residencial denso en el entorno.</dd><dt class="r">En contra</dt><dd>Calles angostas y tejido urbano muy cerrado.</dd><dt>Más cercanos</dt><dd class="mono">P8: 160 m · P1: 710 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/1McdYYLtauaPEzqx8" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p10">
+<header><span class="n">10</span><div><h3>Parcelamiento Río, Av. Domingo Guzmán Lander</h3><p class="mono">10°09'11.8"N 64°41'01.1"W <span class="dim">(10.15328, -64.68364)</span></p></div><span class="tag">B · Centro-norte</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 10">
+<button class="on" data-v="satelite" data-p="10">Satélite</button><button data-v="calles" data-p="10">Calles</button><button data-v="contexto" data-p="10">Contexto</button></div>
+<div class="shot"><img src="mapas/punto10_satelite.jpg" alt="Punto 10 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Frente a una unidad educativa, en una vía paralela a la Intercomunal.</dd><dt class="g">A favor</dt><dd>Zona mixta de servicios cerca de la Intercomunal. A 400 m del punto 11.</dd><dt class="r">En contra</dt><dd>Cerca del cauce del Neverí. El uso real de las manzanas está por confirmar en sitio.</dd><dt>Más cercanos</dt><dd class="mono">P3: 340 m · P11: 400 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/bNnJkRshujYr3adf7" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p11">
+<header><span class="n">11</span><div><h3>Av. Domingo Guzmán Lander, cerca de Calle Sucre</h3><p class="mono">10°08'59.5"N 64°40'57.3"W <span class="dim">(10.14986, -64.68258)</span></p></div><span class="tag">A · Centro-sur</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 11">
+<button class="on" data-v="satelite" data-p="11">Satélite</button><button data-v="calles" data-p="11">Calles</button><button data-v="contexto" data-p="11">Contexto</button></div>
+<div class="shot"><img src="mapas/punto11_satelite.jpg" alt="Punto 11 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Cruce con comercios. El mapa marca supermercados cercanos.</dd><dt class="g">A favor</dt><dd>Eje comercial establecido, con clientela y movimiento.</dd><dt class="r">En contra</dt><dd>Hay competencia directa de supermercados cerca. Calles muy transitadas.</dd><dt>Más cercanos</dt><dd class="mono">P12: 330 m · P10: 400 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/Qk8pHrJHjGfX6q57A" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p12">
+<header><span class="n">12</span><div><h3>Av. Fuerzas Armadas con Av. Country Club (Palotal)</h3><p class="mono">10°08'51.1"N 64°41'04.1"W <span class="dim">(10.14753, -64.68447)</span></p></div><span class="tag">A · Centro-sur</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 12">
+<button class="on" data-v="satelite" data-p="12">Satélite</button><button data-v="calles" data-p="12">Calles</button><button data-v="contexto" data-p="12">Contexto</button></div>
+<div class="shot"><img src="mapas/punto12_satelite.jpg" alt="Punto 12 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Está sobre el puente y el cauce del Neverí. Conecta con Nueva Barcelona al oeste.</dd><dt class="g">A favor</dt><dd>Nodo vial importante, de paso hacia varios sectores.</dd><dt class="r">En contra</dt><dd>Es el punto más expuesto a una crecida del río. Es crítico revisar el riesgo de inundación.</dd><dt>Más cercanos</dt><dd class="mono">P11: 330 m · P10: 650 m</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/Xc81AK4DfUix9uEq5" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+<article class="pt" id="p13">
+<header><span class="n">13</span><div><h3>Av. El Ejército con Av. La Costanera, Brisas del Neverí</h3><p class="mono">10°09'41.9"N 64°41'32.4"W <span class="dim">(10.16164, -64.69233)</span></p></div><span class="tag">D · Suelto</span></header>
+<div class="views" role="tablist" aria-label="Vista del punto 13">
+<button class="on" data-v="satelite" data-p="13">Satélite</button><button data-v="calles" data-p="13">Calles</button><button data-v="contexto" data-p="13">Contexto</button></div>
+<div class="shot"><img src="mapas/punto13_satelite.jpg" alt="Punto 13 satélite" loading="lazy" class=""></div>
+<dl><dt>Entorno</dt><dd>Borde oeste, junto a un meandro del Neverí. Al noroeste hay grandes superficies sin construir (Parcelamiento Delta del Neverí).</dd><dt class="g">A favor</dt><dd>Zona con espacio para lotes grandes. Conecta por la costanera hacia Lechería.</dd><dt class="r">En contra</dt><dd>Llanura de inundación del Neverí. Agua y luz por confirmar.</dd><dt>Más cercanos</dt><dd class="mono">P3: 1.1 km · P7: 1.2 km</dd></dl>
+<p class="lk"><a href="https://maps.app.goo.gl/rbeTg85egxPTDGXn7" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article>
+</div>
+</section>
+
+<section id="suelo">
+  <h2>Riesgos y suelo</h2>
+  <div class="risk">
+    <div class="hi"><b>Inundación fluvial</b>Alta, según ThinkHazard para el estado. El Neverí se desbordó en 2021.</div>
+    <div class="hi"><b>Inundación urbana</b>Alta. En 2022 las lluvias mostraron drenajes sin mantenimiento en Barcelona.</div>
+    <div class="hi"><b>Deslizamientos</b>Alta para el estado. Afecta sobre todo a laderas como el Cerro La Pedrera, en el corredor norte.</div>
+    <div class="md"><b>Inundación costera</b>Media. Con 0,5 m más de nivel del mar, el estudio estima 41 % de la población y 36 % de las viviendas afectadas en el sector Barcelona, Lechería, Puerto La Cruz y Guanta.</div>
+    <div class="un"><b>Sismos</b>Hay fallas conocidas en la región (Deflexión de Barcelona, falla de Urica) y daños por sismos en 2026 en un bloque de Las Casitas. La categoría de ThinkHazard no la pude verificar.</div>
+  </div>
+  <ul>
+    <li><b>Suelo.</b> No hay un estudio de suelo público de estos puntos. Lo que sigue es una inferencia mía: los puntos pegados al Neverí están en una llanura aluvial, con suelos blandos que puede requerir cimentación especial <span class="pc">por confirmar</span>. El estudio real lo hace un ingeniero geotécnico con sondeos, y la microzonificación sísmica y los mapas de riesgo se piden a Protección Civil o a Sigraed.</li>
+    <li><b>Servicios.</b> Un reportaje de mayo de 2026 dice que en Barcelona los cortes de luz son recurrentes y que el agua llega cada tres días. Para un supermercado, la luz estable es clave por la cadena de frío <span class="pc">por confirmar</span>.</li>
+    <li><b>Vialidad.</b> La Intercomunal Andrés Bello es la arteria principal. Un reporte de 2022 describe tramos muy dañados en la Intercomunal (Av. Jorge Rodríguez), y en 2023 hubo un paro de transportistas rurales por el estado de las vías. Hay que verificar cómo están hoy.</li>
+  </ul>
+</section>
+
+<section id="mercado">
+  <h2>Mercado de la zona</h2>
+  <div class="grid2">
+    <div class="box"><h3>Dónde se mueve el mercado</h3><p>Según un reportaje de mayo de 2026, el 62 % de las operaciones inmobiliarias de Anzoátegui se concentran en Lechería y solo el 14 % en Barcelona. En Lechería casi no quedan terrenos. En Barcelona sí.</p></div>
+    <div class="box"><h3>Precios de referencia <span class="pc">por confirmar</span></h3><p>La mediana de terrenos en el municipio Simón Bolívar es de USD 45.936 según un portal, sin fecha ni tamaño. Un terreno de 140.000 m² en la Vía El Rincón se anunció a USD 480.000 en marzo de 2024, unos USD 3,4 por m² (cálculo mío), pero está fuera de esta zona.</p></div>
+    <div class="box"><h3>Motor económico</h3><p>Anzoátegui es un estado petrolero y la refinería de Puerto La Cruz está en la zona. El gobierno proyecta USD 1.400 millones de inversión petrolera en 2026 para todo el país. Un reportaje espera que Barcelona pase de 600.000 a casi un millón de habitantes <span class="pc">por confirmar</span>.</p></div>
+    <div class="box"><h3>Comercio y poder de compra</h3><p>Un reporte de diciembre de 2024 decía que en Barcelona casi todos los rubros, menos alimentos y medicinas, vivían horas bajas. Fedecámaras reporta una inflación de 130 % en el primer semestre de 2026. Eso afecta cualquier precio en bolívares <span class="pc">por confirmar</span>.</p></div>
+  </div>
+</section>
+
+<section id="empresas">
+  <h2>Las tres cadenas que miran a Venezuela</h2>
+  <p>Ara, D1 y Dollarcity operan en Colombia, pero tienen orígenes distintos. Dollarcity no es colombiana.</p>
+  <div class="scroll"><table class="cmp">
+    <thead><tr><th></th><th>Ara</th><th>D1</th><th>Dollarcity</th></tr></thead>
+    <tbody>
+      <tr><td>Origen y dueños</td><td>Portugal. Grupo Jerónimo Martins.</td><td>Colombia. Koba, con Valórem (Grupo Santo Domingo). Un medio dice que los Santo Domingo tienen 60 % con fondos de Suiza y Canadá, y otro dice 23 % <span class="pc">por confirmar</span>.</td><td>El Salvador. La canadiense Dollarama tiene la mayoría (60,1 % según una fuente, 50,1 % según otra) <span class="pc">por confirmar</span>. Fundador citado: Marco Baldocchi Kriete.</td></tr>
+      <tr><td>Tiempo en el mercado</td><td>Desde 2012-2013 en Colombia.</td><td>Cambió su razón social a D1 S.A.S. en 2022, tras 12 años como Koba Colombia.</td><td>Desde 2009-2010 en El Salvador. En Colombia, entre 2015 y 2021 según la fuente.</td></tr>
+      <tr><td>Tamaño</td><td>1.653 tiendas al cierre de 2025. Más de 19.000 colaboradores.</td><td>Unas 2.500 tiendas a fines de 2024, en 31 departamentos y 520 municipios.</td><td>Más de 800 tiendas en 5 países. Colombia tiene 432 (al 30-jun-2026).</td></tr>
+      <tr><td>Ventas</td><td>COP 14,7 billones en 2025 (+17,4 %). COP 8,5 billones en el primer semestre de 2026 (+21 %).</td><td>COP 21,56 billones en 2025 (+11,1 %). Utilidad de 2024: COP 373.210 millones.</td><td>Más de USD 1.200 millones al año.</td></tr>
+      <tr><td>Poder de inversión</td><td>Capex de unos 228 millones de euros en 2025. Nuevo centro logístico en Girardota.</td><td>Unos COP 200.000 millones al año en expansión. Meta de 3.500 a 3.600 tiendas.</td><td>Meta de 1.050 tiendas en 2031. Prepara su entrada a México.</td></tr>
+      <tr><td>Formato de tienda</td><td>Sin dato <span class="pc">por confirmar</span></td><td>Sin dato <span class="pc">por confirmar</span></td><td>Entre 700 y 850 m² en promedio.</td></tr>
+      <tr><td>Venezuela</td><td>Nada encontrado.</td><td>Delegación de 11 ejecutivos evaluó el mercado. Posible llegada en 2027.</td><td>Nada encontrado.</td></tr>
+    </tbody></table></div>
+  <div class="grid2" style="margin-top:18px">
+    <div class="box"><h3>Lo que dice el gremio de supermercados</h3><p>El presidente de ANSA dice que empresas colombianas podrían llegar en el segundo cuatrimestre de 2027, y menciona a D1, Éxito e Ísimo. También dice que un grupo de Portugal explora el negocio. Ara pertenece a un grupo portugués, pero no puedo confirmar que sea el mismo <span class="pc">por confirmar</span>. Se esperan unos 60 supermercados nuevos en el país durante 2026.</p></div>
+    <div class="box"><h3>Qué podríamos ofrecerles</h3><ul><li>Un informe de zonas posibles en Caracas, con locales y terrenos cruzados con RE/MAX y MercadoLibre, cada uno con su enlace.</li><li>Una ficha de requisitos: metros, frente, estacionamiento, carga y descarga, y servicios.</li><li>Acompañamiento legal y de negociación con el respaldo de Luis León.</li></ul><p class="dim">Sin prometer nada de lo que las empresas no han anunciado.</p></div>
+  </div>
+</section>
+
+<section id="falta">
+  <h2>Lo que falta y las dudas</h2>
+  <ul>
+    <li><b>Uso de la búsqueda de Barcelona:</b> no sé si es para galpón, comercial o residencial, ni quién la pidió. Cambia qué puntos conviene priorizar.</li>
+    <li><b>Qué hay en cada punto:</b> si son terrenos con dueño, con precio y con metros. Ahora solo tengo coordenadas.</li>
+    <li><b>Si el límite norte es el punto 5:</b> ese punto cae en Puerto La Cruz, no en Barcelona.</li>
+    <li><b>Zonas de Caracas para las cadenas:</b> falta investigar y cruzar con los inmuebles de RE/MAX y MercadoLibre.</li>
+    <li><b>Datos de las empresas:</b> falta el tamaño de las tiendas de Ara y D1, los porcentajes de propiedad de D1 y Dollarcity, y la reputación con fuentes independientes.</li>
+    <li><b>Para el estudio de suelo y la inundación:</b> un geotecnista y el mapa de zonas inundables de Protección Civil.</li>
+  </ul>
+</section>
+
+<section id="fuentes" class="src">
+  <h2>Fuentes</h2>
+  <ul>
+    <li><a href="https://www.valoraanalitik.com/ventas-de-tiendas-ara-aumentaron-174-en-2025/" target="_blank" rel="noopener">Ventas de Tiendas Ara aumentaron 17,4 % en 2025 (Valora Analitik)</a></li>
+    <li><a href="https://reports.jeronimomartins.com/annual-report/2025/management-report/performance-of-the-business-areas/food-distribution/ara.html" target="_blank" rel="noopener">Informe anual 2025 de Jerónimo Martins: Ara</a></li>
+    <li><a href="https://www.portafolio.co/negocios/empresas/quien-es-el-dueno-de-tiendas-d1-y-como-obtuvo-la-empresa-en-colombia-633834" target="_blank" rel="noopener">¿Quién es el dueño de Tiendas D1? (Portafolio)</a></li>
+    <li><a href="https://www.las2orillas.co/los-otros-dos-poderosos-socios-que-junto-a-los-santo-domingo-son-los-duenos-de-d1/" target="_blank" rel="noopener">Los socios de D1 (Las2orillas)</a></li>
+    <li><a href="https://www.valoraanalitik.com/tiendas-d1-aumento-sus-ventas-en-2024/" target="_blank" rel="noopener">Tiendas D1 aumentó sus ventas en 2024 (Valora Analitik)</a></li>
+    <li><a href="https://www.peru-retail.com/dollarcity-alcanza-las-800-tiendas-en-america-latina-cuantas-tiene-en-peru/" target="_blank" rel="noopener">Dollarcity alcanza las 800 tiendas (Perú Retail)</a></li>
+    <li><a href="https://www.portafolio.co/tendencias/la-historia-detras-de-dollarcity-y-quienes-son-sus-fundadores-579963" target="_blank" rel="noopener">La historia detrás de Dollarcity (Portafolio)</a></li>
+    <li><a href="https://www.noticiasrcn.com/economia/d1-exito-e-isimo-podrian-expandirse-a-venezuela-a-partir-de-2027-1083043" target="_blank" rel="noopener">D1, Éxito e Ísimo podrían expandirse a Venezuela (Noticias RCN)</a></li>
+    <li><a href="https://es.ara.cat/internacional/america/barcelona-venezolana-quiere-hacerse-rica-petroleo_130_5753401.html" target="_blank" rel="noopener">Barcelona quiere hacerse rica con petróleo (Ara.cat)</a></li>
+    <li><a href="https://thinkhazard.org/es/report/3303-r-b-de-venezuela-anzoategui/EQ" target="_blank" rel="noopener">ThinkHazard: Anzoátegui</a></li>
+    <li><a href="https://saber.ucv.ve/jspui/bitstream/10872/15830/1/20090629_TEG.pdf" target="_blank" rel="noopener">Tesis UCV sobre microzonificación sísmica de Anzoátegui</a></li>
+    <li><a href="https://es.mongabay.com/2025/06/venezuela-aumento-nivel-mar-amenaza-pueblos-anzoategui/" target="_blank" rel="noopener">Aumento del nivel del mar y Anzoátegui (Mongabay)</a></li>
+    <li><a href="https://lapatilla.com/2022/07/11/la-avenida-intercomunal-de-barcelona-solo-apta-para-rusticos/" target="_blank" rel="noopener">La Intercomunal de Barcelona (La Patilla)</a></li>
+    <li><a href="https://lapatilla.com/2026/07/02/vecinos-piden-ayuda-por-danos-que-dejaron-los-sismos-en-bloque-de-las-casitas-en-barcelona/" target="_blank" rel="noopener">Daños por sismos en Las Casitas (La Patilla)</a></li>
+    <li><a href="https://fedecamaras.org.ve/wp-content/uploads/2026/08/Panorama_Edicion-Especial.pdf" target="_blank" rel="noopener">Panorama, Fedecámaras (agosto de 2026)</a></li>
+  </ul>
+  <p class="dim">Mapas: imágenes de Esri World Imagery y teselas de OpenStreetMap. Direcciones de calles con Nominatim.</p>
+</section>
+
+<footer>Análisis preparado con los datos disponibles al 21 de noviembre de 2026. Los datos sin confirmar no deben usarse con clientes hasta que Eduardo o Luis León los validen.</footer>
+</div>
+
+<script>
+(function(){
+  var gen=document.getElementById('img-gen');
+  document.querySelectorAll('#tab-gen button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('#tab-gen button').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on'); gen.src='mapas/'+b.dataset.g+'.jpg';
+    });
+  });
+  document.querySelectorAll('.pt').forEach(function(card){
+    var im=card.querySelector('.shot img'), btns=card.querySelectorAll('.views button');
+    btns.forEach(function(b){
+      b.addEventListener('click',function(){
+        btns.forEach(function(x){x.classList.remove('on')}); b.classList.add('on');
+        var p=('0'+b.dataset.p).slice(-2); im.src='mapas/punto'+p+'_'+b.dataset.v+'.jpg';
+      });
+    });
+  });
+})();
+</script>
